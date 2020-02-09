@@ -1,0 +1,27 @@
+[
+  {
+    "title": "isystk's blog",
+    "text": "ITエンジニアとして学んだ事や作成したサンプルアプリなどを掲載しているブログサイトです。",
+    "url": "https://blog.isystk.com/",
+    "imageUrl": "/img/work_blog.png"
+  },
+  {
+    "title": "Web Hack by カイジ",
+    "text": "XSS を利用したJavascriptアニメーションです。脆弱性があると「ざわざわ」して最後に何かが起こります..",
+    "url": "https://isystk.github.io/kaiji/",
+    "imageUrl": "/img/work_kaiji.jpg"
+  },
+  {
+    "title": "jQueryプラグインサンプル集",
+    "text": "jQueryで作成したプラグインの一部です。",
+    "url": "http://isystk.github.io/jquery/",
+    "imageUrl": "/img/work_jquery.jpg"
+  },
+  {
+    "title": "このポートフォリオサイトです。",
+    "text": "Nuxt.js + TypeScript + Vuetify で作られています。",
+    "url": "https://profile.isystk.com/",
+    "imageUrl": "/img/work_portfolio.jpg"
+  }
+]
+ 
