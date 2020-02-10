@@ -59,7 +59,6 @@ $ npm install -g yarn
 # 依存モジュールのインストール
 $ yarn install
 
-
 # ビルド&起動
 $ yarn run local
 $ curl http://localhost:3000/
