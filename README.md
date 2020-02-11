@@ -19,39 +19,10 @@ Nuxt.js、TypeScript、Vuetify を学習する目的で、自分のポートフ�
 
 ## Usage
 
-### ※DockerWindows(WSL)を利用している場合は以下の設定が必要です。
-$ vi ~/.bashrc
-``` 
-export DOCKER_HOST=tcp://localhost:2375
-```
-
-$ sudo vi /etc/wsl.conf
-``` 
-[automount]
-root = /
-options = "metadata"
-```
-
-``` bash
-# Nginxを起動する
-$ yarn run nginx:start
-
-# Nginxを停止する
-$ yarn run nginx:stop
-
-# DockerImageを作成する
-$ yarn run webapp:build
-
-# DockerImageを起動する
-$ yarn run webapp:up
-```
 
 ## Install
 
 ``` bash
-# 環境構築
-$ nodebrew install v12.13.0
-$ nodebrew use v12.13.0
 
 # yarn(パッケージマネージャ)のインストール
 $ npm install -g yarn
@@ -59,9 +30,8 @@ $ npm install -g yarn
 # 依存モジュールのインストール
 $ yarn install
 
-
 # ビルド&起動
-$ yarn run local
+$ yarn run dev
 $ curl http://localhost:3000/
 ```
 

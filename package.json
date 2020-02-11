@@ -5,20 +5,8 @@
   "version": "0.0.1",
   "description": "isystk のポートフォリオです。このサイトは、Nuxt.js + TypeScript + Vuetify で作られています。",
   "scripts": {
-    "local": "npm run dev",
-    "dev": "cross-env NODE_ENV=development NODE_OPTIONS=\"--max-old-space-size=4096\" nuxt-ts",
-    "build": "nuxt-ts build --no-lock",
-    "build:static": "nuxt-ts build --spa --no-lock",
-    "build:dev": "cross-env NODE_ENV=development nuxt-ts build --no-lock",
-    "build:production": "cross-env NODE_ENV=production nuxt-ts build --no-lock",
-    "start": "nuxt-ts start",
-    "generate": "nuxt-ts generate",
-    "docker:stats": "docker container stats",
-    "docker:rmi": "docker-compose -f ./docker/docker-compose.yml down --rmi all --volumes",
-    "webapp:build": "docker-compose -f ./docker/docker-compose.yml build --no-cache webapp",
-    "webapp:up": "docker-compose -f ./docker/docker-compose.yml up webapp",
-    "nginx:start": "docker-compose -f ./docker/docker-compose.yml up -d nginx",
-    "nginx:stop": "docker-compose -f ./docker/docker-compose.yml stop nginx && docker-compose -f ./docker/docker-compose.yml rm -f nginx"
+    "build": "nuxt-ts generate",
+    "dev": "nuxt-ts"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "0.2.2",
