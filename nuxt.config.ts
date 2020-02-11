@@ -78,6 +78,9 @@ const config = {
     scope: "/",
     start_url: "/"
   },
+  icon: {
+    iconFileName: "img/icon-512x512.png"
+  },
   /**
    * Axios module configuration
    */
