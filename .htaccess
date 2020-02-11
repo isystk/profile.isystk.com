@@ -8,6 +8,7 @@ ErrorDocument 500 /error/500.html
 RewriteEngine On
 
 RewriteCond %{REQUEST_URI} !/dist/
+RewriteCond %{REQUEST_URI} !/_nuxt/
 RewriteCond %{REQUEST_URI} !/git-hook.php
 RewriteRule ^(.*)$ dist/$1 [L]
 
