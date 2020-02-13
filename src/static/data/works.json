@@ -6,7 +6,7 @@
     "imageUrl": "/img/work_blog.png"
   },
   {
-    "title": "XSSカイジ",
+    "title": "ざわざわスクリプト",
     "text": "XSS を利用したJavascriptアニメーションです。脆弱性があると「ざわざわ」して最後に何かが起こります..",
     "url": "http://demo.isystk.com/kaiji/",
     "imageUrl": "/img/work_kaiji.jpg"
@@ -14,7 +14,7 @@
   {
     "title": "このポートフォリオサイトです。",
     "text": "Nuxt.js + TypeScript + Vuetify で作られています。",
-    "url": "https://profile.isystk.com/",
+    "url": "https://blog.isystk.com/web_production/portfolio/147/",
     "imageUrl": "/img/work_portfolio.jpg"
   }
 ]
