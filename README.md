@@ -1,13 +1,13 @@
-Nuxt.js TypeScript Vuetify サンプル
+isystk's ポートフォリオ
 ====
-
-Nuxt.js、TypeScript、Vuetify を利用したサンプルです。
 
 ## Description
 
-Nuxt.js、TypeScript、Vuetify を学習する目的で、自分のポートフォリオを作成してみました。
+isystk のポートフォリオです。このサイトは、Nuxt.js + TypeScript + Vuetify で作られています。
 
 ## Demo
+
+https://profile.isystk.com/
 
 ## VS. 
 
@@ -23,9 +23,6 @@ Nuxt.js、TypeScript、Vuetify を学習する目的で、自分のポートフ�
 ## Install
 
 ``` bash
-
-# yarn(パッケージマネージャ)のインストール
-$ npm install -g yarn
 
 # 依存モジュールのインストール
 $ yarn install
@@ -58,7 +55,7 @@ Nuxt.js
 
 ## Licence
 
-[MIT](https://github.com/isystk/nuxtjs_typescript_vuetify/LICENCE)
+[MIT](https://github.com/isystk/profile.isystk.com/LICENCE)
 
 ## Author
 
