@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "description": "isystk のポートフォリオです。このサイトは、Nuxt.js + TypeScript + Vuetify で作られています。",
   "scripts": {
-    "build": "nuxt-ts generate",
+    "generate": "nuxt-ts generate",
     "dev": "nuxt-ts"
   },
   "dependencies": {
