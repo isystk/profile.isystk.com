@@ -60,7 +60,10 @@ const config = {
   buildModules: ["@nuxt/typescript-build"],
   modules: [
     "@nuxtjs/axios",
-    "@nuxtjs/pwa"
+    "@nuxtjs/pwa",
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-11964840-8'
+    }]
   ],
   plugins: [
     "@plugins/vuetify",
@@ -86,14 +89,7 @@ const config = {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-  },
-
-  /**
-   * nuxt サーバーを API サーバーとして使う場合のミドルウェアを定義する
-   */
-  serverMiddleware: [
-    { path: '/api/healthcheck', handler: '~/api/healthcheck.js' }
-  ]
+  }
 }
 
 module.exports = config
