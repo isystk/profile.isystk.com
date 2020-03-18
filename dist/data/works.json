@@ -12,12 +12,6 @@
     "imageUrl": "/img/work_kaiji.jpg"
   },
   {
-    "title": "検索機能付きセレクトボックス－jquery-searchbox（プラグイン）",
-    "text": "セレクトボックスを選択するとテキストボックスのように文字を入力する事が可能となっていて、文字を入力するとセレクトボックスが自動で絞り込みされます。",
-    "url": "https://demo.isystk.com/jquery-searchbox/",
-    "imageUrl": "/img/jquery-serchbox.jpg"
-  },
-  {
     "title": "このポートフォリオサイトです。",
     "text": "Nuxt.js + TypeScript + Vuetify を利用して作成しています。ブログの方で作成した経緯やシステム構成について詳しく掲載していますので良かったら御覧ください。",
     "url": "https://blog.isystk.com/web_production/portfolio/147/",
