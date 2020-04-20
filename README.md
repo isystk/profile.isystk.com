@@ -1,38 +1,51 @@
-isystk's ポートフォリオ
+🌙 isystk's ポートフォリオ
 ====
 
 ## Description
 
-isystk のポートフォリオです。このサイトは、Nuxt.js + TypeScript + Vuetify で作られています。
+📗 isystk のポートフォリオです。このサイトは、Nuxt.js + TypeScript + Vuetify で作られています。
 
-## Demo
+## 🖊️ VS. 
+
+### 利用している技術
+- Nuxtjs 2.10
+- Typescript 
+- vuetify 2.1
+
+## 🌐 Demo
 
 https://profile.isystk.com/
 
-## VS. 
+## 🎨 Requirement
 
-## Requirement
+推奨するNodeのバージョン v13.13.0
 
-* Nuxt.js@2.10.2
-* Vue.js@2.6.10 
-* Vuetify@2.1.6 
+## 💬 Usage
 
-## Usage
-
-
-## Install
-
-``` bash
-
-# 依存モジュールのインストール
-$ yarn install
-
-# ビルド&起動
+```bash
 $ yarn run dev
-$ curl http://localhost:3000/
 ```
 
-## Contribution
+## 📦 Install
+
+```bash
+# node inistall
+$ nodebrew install v13.13.0
+# yarn inistall
+$ node install -g yarn
+# module inistall
+$ yarn
+```
+
+## 🔧 Contribution
+
+1. Fork it ( http://github.com/isystk/profile.isystk.com/fork )
+2. Create your feature branch (git checkout -b my-new-feature)
+3. Commit your changes (git commit -am 'Add some feature')
+4. Push to the branch (git push origin my-new-feature)
+5. Create new Pull Request
+
+## 🔗 参考
 
 Vue.js  
 [https://v1-jp.vuejs.org/guide/](https://v1-jp.vuejs.org/guide/)  
@@ -53,11 +66,11 @@ TypeScript
 Nuxt.js
 [typescript-nuxtjs-boilerplate-docs](https://typescript-nuxtjs-boilerplate-docs.netlify.com/#/nuxt/examples)
 
-## Licence
+## 🎫 Licence
 
-[MIT](https://github.com/isystk/profile.isystk.com/LICENCE)
+[MIT](https://github.com/isystk/profile.isystk.com/blob/master/LICENSE)
 
-## Author
+## 👀 Author
 
 [isystk](https://github.com/isystk)
 
