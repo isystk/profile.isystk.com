@@ -1,65 +1,65 @@
-import { MutationTree, ActionTree, ActionContext } from "vuex";
-import { Context as AppContext } from "@nuxt/types";
-import { RootState, Profile, Skill, Work, Contact } from "../types";
-import profileData from "../static/data/profile.json";
-import skillsData from "../static/data/skills.json";
-import worksData from "../static/data/works.json";
-import contactsData from "../static/data/contacts.json";
+import { ActionContext } from "vuex";
+import { ILoginCheckPayload } from "@/interfaces/api/User/ILoginCheck";
+import { setToken, unsetToken } from "@/utilities/";
 
-export const state = (): RootState => ({
-  profile: {
-    imageUrl: "#",
-    message: "",
-    email: ""
-  },
-  skills: [],
-  works: [],
-  contacts: []
-})
+/**
+ * store 用インターフェイス
+ */
+export interface StateInterface {
+  isServerInitCalled: boolean;
+  isClientInitCalled: boolean;
+}
 
-export const mutations: MutationTree<RootState> = {
-  setProfile(state: RootState, profile: Profile): void {
-    state.profile = profile
+/**
+ * state
+ */
+// @ts-ignore
+export const state = (): StateInterface => ({
+  isServerInitCalled: false,
+  isClientInitCalled: false
+});
+
+/**
+ * getters
+ */
+export const getters = {
+  isServerInitCalled(state: StateInterface): boolean {
+    return state.isServerInitCalled;
   },
-  setSkills(state: RootState, skills: Skill[]): void {
-    state.skills = skills
-  },
-  setWorks(state: RootState, works: Work[]): void {
-    state.works = works
-  },
-  setContacts(state: RootState, contacts: Contact[]): void {
-    state.contacts = contacts
+  isClientInitCalled(state: StateInterface): boolean {
+    return state.isClientInitCalled;
   }
-}
+};
 
-interface Actions<S, R> extends ActionTree<S, R> {
-  nuxtServerInit (actionContext: ActionContext<S, R>, appContext: AppContext): void
-}
-
-export const actions: Actions<RootState, RootState> = {
-  async nuxtServerInit({ commit }, context) {
-    let profile: Profile;
-    profile = context.isStatic ?
-      profileData :
-      await context.app.$axios.$get("./data/profile.json");
-    commit("setProfile", profile);
-    
-    let skills: Skill[] = [];
-    skills = context.isStatic ?
-      skillsData :
-      await context.app.$axios.$get("./data/skills.json");
-    commit("setSkills", skills);
-    
-    let works: Work[] = [];
-    works = context.isStatic ?
-      worksData :
-      await context.app.$axios.$get("./data/works.json");
-    commit("setWorks", works);
-    
-    let contacts: Contact[] = [];
-    contacts = context.isStatic ?
-      contactsData :
-      await context.app.$axios.$get("./data/contacts.json");
-    commit("setContacts", contacts);
+/**
+ * mutations
+ */
+export const mutations = {
+  setIsServerInitCalled(state: StateInterface): void {
+    state.isServerInitCalled = true;
+  },
+  setIsClientInitCalled(state: StateInterface): void {
+    state.isClientInitCalled = true;
   }
-}
+};
+
+/**
+ * actions
+ */
+export const actions = {
+  /**
+   * サーバー初期化時の処理
+   */
+  async nuxtServerInit(
+    // @ts-ignore
+    { dispatch, commit, state }: ActionContext<any, any>,
+    // @ts-ignore
+    { req, res, error }
+  ): Promise<void> {
+    await console.log("nuxtServerInit");
+    // commit("setIsServerInitCalled");
+
+    // // ログインチェック
+    // await dispatch("auth/loginCheck", {} as ILoginCheckPayload);
+  }
+};
