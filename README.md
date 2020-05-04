@@ -3,16 +3,17 @@
 
 ## Description
 
-📗 isystk のポートフォリオです。このサイトは、Nuxt.js + TypeScript + Vuetify で作られています。
+📗 isystk のポートフォリオです。このサイトは、Nuxt.js & TypeScript で作られています。
 
 ## 🖊️ VS. 
 
 ### 利用している技術
 - Nuxtjs 2.10
 - Typescript 
-- vuetify 2.1
 
 ## 🌐 Demo
+
+![DEMO](./demo.jpg "DEMO")
 
 https://profile.isystk.com/
 
@@ -47,24 +48,11 @@ $ yarn
 
 ## 🔗 参考
 
-Vue.js  
-[https://v1-jp.vuejs.org/guide/](https://v1-jp.vuejs.org/guide/)  
-  
-Vuetify  
-[https://vuetifyjs.com/ja/getting-started/quick-start](https://vuetifyjs.com/ja/getting-started/quick-start)  
-[https://codepen.io/mzoks/pen/JpqwVO](https://codepen.io/mzoks/pen/JpqwVO)  
-  
-DMI  
-[https://cdn.materialdesignicons.com/4.5.95/](https://cdn.materialdesignicons.com/4.5.95/)  
-  
-SASS  
-[https://sass-lang.com/documentation](https://sass-lang.com/documentation)  
-
-TypeScript  
-[仕事で使えるTypeScript](https://future-architect.github.io/typescript-guide/index.html)　 
-
-Nuxt.js
-[typescript-nuxtjs-boilerplate-docs](https://typescript-nuxtjs-boilerplate-docs.netlify.com/#/nuxt/examples)
+| [公式ドキュメント - Nuxt.js](https://ja.nuxtjs.org/guide/)| 公式ドキュメント - Nuxt.js|
+| [公式ドキュメント - TypeScript](https://www.typescriptlang.org/docs/home)| 公式ドキュメント - TypeScript|
+| [仕事ですぐに使えるTypeScript](https://future-architect.github.io/typescript-guide/)| 仕事ですぐに使えるTypeScript|
+| [アイコン（fontawesome）](https://fontawesome.com/icons?d=gallery)| アイコン（fontawesome）|
+| [SASS](https://sass-lang.com/documentation) | SASS |
 
 ## 🎫 Licence
 

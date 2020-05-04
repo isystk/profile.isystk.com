@@ -1,0 +1,40 @@
+{
+  "text": {
+    "header": {
+      "title": "Nuxt-Typescript",
+      "logout": "ログアウト"
+    },
+    "sideMenu": {
+      "home": "HOME",
+      "auth": "認証",
+      "login": "ログイン",
+      "form": "入力フォーム",
+      "basic": "フォーム",
+      "calendar": "カレンダー",
+      "chart": "チャート",
+      "line": "折れ線",
+      "bar": "棒グラフ",
+      "radar": "レーダー",
+      "circle": "円グラフ",
+      "api": "API",
+      "coindesk": "仮想通貨",
+      "ui": "UI",
+      "carousel": "カルーセル",
+      "overlay": "オーバーレイ",
+      "settings": "設定"
+    },
+    "login": {
+      "title": "ログイン",
+      "headMessage": "メールアドレスとパスワードを入力して下さい",
+      "logout": "ログアウト",
+      "username": "メールアドレス",
+      "password": "パスワード",
+      "login": "ログイン"
+    }
+  },
+  "error": {
+    "home": {
+      "errorMessage": "これはエラーメッセージです"
+    }
+  }
+}
