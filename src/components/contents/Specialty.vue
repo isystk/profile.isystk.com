@@ -190,3 +190,20 @@ export default class Specialty extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+/* 5-2 特技 */
+
+#specialty .chart {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+  #specialty .chart {
+    margin: 10px;
+  }
+}
+</style>

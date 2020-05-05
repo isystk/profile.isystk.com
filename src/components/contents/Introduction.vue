@@ -14,7 +14,12 @@
       </div>
       <p class="box_item text">
         <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
-          {{ profileData.message }}
+          <span
+            v-html="
+              $sanitize(formatter.replaceLineFeedCodeToBR(profileData.message))
+            "
+          >
+          </span>
         </Scrollin>
       </p>
     </div>
@@ -25,6 +30,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import Scrollin from "@/components/parts/Scrollin.vue";
 import { portfolioModule, Profile } from "@/store/portfolio";
+import { formatter } from "@/utilities";
 
 @Component({
   components: {
@@ -46,6 +52,9 @@ export default class Introduction extends Vue {
     window.removeEventListener("load", this.onScroll);
     window.removeEventListener("scroll", this.onScroll);
   }
+
+  /** フォーマッタ ユーティリティ */
+  public formatter = formatter;
 
   // 画面スクロール時の処理
   onScroll(): void {
@@ -77,3 +86,27 @@ export default class Introduction extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+/* 5-1 自己紹介 */
+
+#introduction .text {
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 10px;
+  text-align: left;
+}
+#introduction .avatar img {
+  border-radius: 50%;
+  width: 50%;
+}
+
+@media screen and (min-width: 992px) {
+  #introduction .box {
+    flex-direction: row-reverse;
+  }
+  #introduction .text {
+    font-size: 18px;
+  }
+}
+</style>

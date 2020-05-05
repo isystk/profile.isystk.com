@@ -60,3 +60,104 @@ export default class Header extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+/*--------------------------------------------------------------------
+
+  3 ヘッダー
+
+--------------------------------------------------------------------*/
+
+.header {
+  width: 100%;
+  height: 60px;
+  background: #000d6d;
+}
+
+/** ハンバーガーメニュー */
+.header .nav {
+  position: relative;
+}
+.header .nav .nav-link {
+  display: none;
+}
+.header .menu-btn {
+  position: absolute;
+  top: 30px;
+  transform: translateY(-50%);
+  box-sizing: border-box;
+  z-index: 9999;
+  line-height: 0;
+}
+.header .menu-btn {
+  cursor: pointer;
+  right: 20px;
+  width: 26px;
+  height: 22px;
+}
+.header .menu-btn figure {
+  position: absolute;
+  margin: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.25s;
+}
+.header .menu-btn figure:nth-child(1) {
+  top: 0;
+}
+.header .menu-btn figure:nth-child(2) {
+  top: 50%;
+  margin-top: -1px;
+}
+.header .menu-btn figure:nth-child(3) {
+  bottom: 0;
+}
+.header .menu-btn.on {
+  position: fixed;
+}
+.header .menu-btn.on figure {
+  background: #000;
+}
+.header .menu-btn.on figure:nth-child(1) {
+  top: 50%;
+  margin-top: -1px;
+  transform: rotate(45deg);
+}
+.header .menu-btn.on figure:nth-child(2) {
+  background: transparent;
+}
+.header .menu-btn.on figure:nth-child(3) {
+  bottom: 50%;
+  margin-bottom: -1px;
+  transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 992px) {
+  .header .nav .nav-link {
+    display: block;
+    position: absolute;
+    right: 0;
+    font-size: 18px;
+    margin: 21px;
+  }
+  .header .nav .nav-link a {
+    color: #fff;
+    margin: 0 20px;
+  }
+  .header .nav .nav-link li {
+    list-style: none;
+    float: left;
+    border-right: solid 1px #fff;
+  }
+  .header .nav .nav-link li:last-child {
+    border-right: none;
+  }
+
+  .header .nav .menu-btn {
+    display: none;
+  }
+}
+</style>

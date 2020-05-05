@@ -120,3 +120,21 @@ export default class Twitter extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+/* 5-5 Twitter */
+
+#twitter {
+}
+
+#twitter .title {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+#twitter .followers {
+  font-size: 80px;
+}
+
+@media screen and (min-width: 992px) {
+}
+</style>
