@@ -293,8 +293,8 @@ img {
 		display: block;
     position: absolute;
 		right: 0;
-    font-size: 20px;
-    margin: 20px;
+    font-size: 18px;
+    margin: 21px;
 	}
 	.header .nav .nav-link a{
 		color: #fff;
@@ -726,11 +726,9 @@ display:none;
 .thanks .sns-buttons {
 	position: absolute;
 	top: 60%;
-	left: 16%;
-	width: 70%;
-}
-.thanks .sns-buttons ul{
-	height:auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
 .thanks .sns-buttons li{
 	font-size:16px;
@@ -800,9 +798,6 @@ display:none;
  
 	.thanks .intro {
 		width: 75%;
-	}
-	.thanks .sns-buttons {
-		left: 40%;
 	}
   
 }

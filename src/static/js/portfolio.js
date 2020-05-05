@@ -69,7 +69,7 @@ $(function() {
     // チャートの表示
     if (scroll > $('#specialty').offset().top - windowHeight + windowHeight/2){
       if (!isShowChart) {
-        viewChart();
+        // viewChart();
         isShowChart = true;
       }
     }
@@ -163,93 +163,93 @@ $(function() {
   })();
 
 
-	var viewChart = function() {
-    // レーダーチャート
-    (function() {
-      var radar = document.getElementById('radar').getContext('2d');
-      var options = {
-        responsive: true,
-        responsiveAnimationDuration: 0,
-        maintainAspectRatio: false,
-        title: {
-          display: true,
-          position: "top",
-          fontSize: 16,
-          padding: 10,
-          text: "Webシステムにおける開発能力"
-        },
-        legend: {
-          display: false,
-        },
-        tooltips: {
-          display: true
-        },
-        scale: {
-          ticks: {
-            suggestedMin: 0,
-            suggestedMax: 100
-          }
-        }
-      };
-      new Chart(radar, {
-        type: 'radar',
-        data: {
-          labels: ["スピード感", "精度", "セキュリティ対応", "デザイン力", "SEO"],
-          datasets: [
-            {
-              label: "Webシステムにおける開発能力",
-              backgroundColor: "rgba(0, 50, 255, 0.5)",
-              borderColor: "rgba(0, 50, 255, 0.5)",
-              lineTension: 0,
-              fill: true,
-              borderWidth: 3,
-              data: [100, 80, 60, 40, 70]
-            }
-          ]
-        },
-        options: options
-      });
-    })();
+	// var viewChart = function() {
+  //   // レーダーチャート
+  //   (function() {
+  //     var radar = document.getElementById('radar').getContext('2d');
+  //     var options = {
+  //       responsive: true,
+  //       responsiveAnimationDuration: 0,
+  //       maintainAspectRatio: false,
+  //       title: {
+  //         display: true,
+  //         position: "top",
+  //         fontSize: 16,
+  //         padding: 10,
+  //         text: "Webシステムにおける開発能力"
+  //       },
+  //       legend: {
+  //         display: false,
+  //       },
+  //       tooltips: {
+  //         display: true
+  //       },
+  //       scale: {
+  //         ticks: {
+  //           suggestedMin: 0,
+  //           suggestedMax: 100
+  //         }
+  //       }
+  //     };
+  //     new Chart(radar, {
+  //       type: 'radar',
+  //       data: {
+  //         labels: ["スピード感", "精度", "セキュリティ対応", "デザイン力", "SEO"],
+  //         datasets: [
+  //           {
+  //             label: "Webシステムにおける開発能力",
+  //             backgroundColor: "rgba(0, 50, 255, 0.5)",
+  //             borderColor: "rgba(0, 50, 255, 0.5)",
+  //             lineTension: 0,
+  //             fill: true,
+  //             borderWidth: 3,
+  //             data: [100, 80, 60, 40, 70]
+  //           }
+  //         ]
+  //       },
+  //       options: options
+  //     });
+  //   })();
       
-    // ドーナツチャート
-    (function() {
-      var doughnut = document.getElementById('doughnut').getContext('2d');
-      var options = {
-        responsive: true,
-        responsiveAnimationDuration: 0,
-        maintainAspectRatio: false,
-        title: {
-          display: true,
-          position: "top",
-          fontSize: 16,
-          padding: 10,
-          text: "プログラミングの得意言語"
-        },
-        legend: {
-          display: true, // 凡例を表示します。
-          position: "bottom" // 凡例の位置
-        },
-        tooltips: {
-          display: true
-        }
-      };
-      new Chart(doughnut, {
-        type: 'doughnut',
-        data: {
-          labels: ["Java", "Jquery", "Typescript", "Nuxt.js", "Kotlin", "PHP", "Python"],
-          datasets: [
-            {
-              label: "プログラミングの得意言語",
-              backgroundColor:  ["#FF0000", "#FFFF00", "#00FFFF", "#800000", "#00FF00", "#FF00FF", "#C0C0C0"],
-              borderColor: "#FFFFFF",
-              data: [40, 25, 15, 10, 5, 3, 2]
-            }
-          ]
-        },
-        options: options
-      });
-    })();
-	};
+  //   // ドーナツチャート
+  //   (function() {
+  //     var doughnut = document.getElementById('doughnut').getContext('2d');
+  //     var options = {
+  //       responsive: true,
+  //       responsiveAnimationDuration: 0,
+  //       maintainAspectRatio: false,
+  //       title: {
+  //         display: true,
+  //         position: "top",
+  //         fontSize: 16,
+  //         padding: 10,
+  //         text: "プログラミングの得意言語"
+  //       },
+  //       legend: {
+  //         display: true, // 凡例を表示します。
+  //         position: "bottom" // 凡例の位置
+  //       },
+  //       tooltips: {
+  //         display: true
+  //       }
+  //     };
+  //     new Chart(doughnut, {
+  //       type: 'doughnut',
+  //       data: {
+  //         labels: ["Java", "Jquery", "Typescript", "Nuxt.js", "Kotlin", "PHP", "Python"],
+  //         datasets: [
+  //           {
+  //             label: "プログラミングの得意言語",
+  //             backgroundColor:  ["#FF0000", "#FFFF00", "#00FFFF", "#800000", "#00FF00", "#FF00FF", "#C0C0C0"],
+  //             borderColor: "#FFFFFF",
+  //             data: [40, 25, 15, 10, 5, 3, 2]
+  //           }
+  //         ]
+  //       },
+  //       options: options
+  //     });
+  //   })();
+	// };
 
 	
 });
