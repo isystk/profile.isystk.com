@@ -64,7 +64,6 @@ const nuxtConfig: NuxtConfiguration = {
     ],
     script: [
       { src: "/js/jquery-3.4.1.min.js" },
-      { src: "/js/Chart.min.js" },
       { src: "/js/jquery.particleground.min.js" },
       { src: "/js/portfolio.js" }
     ]

@@ -26,7 +26,7 @@
       <div class="link fadein scrollin-delay2">
         <a href="#" class="js-link" data-target="#introduction">
           SCROLL<br />
-          <i class="fas fa-angle-down"></i>
+          <font-awesome-icon :icon="['fas', 'angle-down']" />
         </a>
       </div>
     </div>
@@ -38,9 +38,7 @@
         <p class="title fadein">
           Thanks you
         </p>
-      </div>
-      <div class="sns-buttons">
-        <ul>
+        <ul class="sns-buttons">
           <li class="share-twitter">
             <a
               href="http://twitter.com/intent/tweet?text=Isystk's Portfolio%20http://profile.isystk.com/"
