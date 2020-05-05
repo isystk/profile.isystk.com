@@ -61,11 +61,6 @@ const nuxtConfig: NuxtConfiguration = {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: PUBLIC_PATH + "favicon.ico" }
-    ],
-    script: [
-      { src: "/js/jquery-3.4.1.min.js" },
-      { src: "/js/jquery.particleground.min.js" },
-      { src: "/js/portfolio.js" }
     ]
   },
   // loading: { color: "#fff" },
@@ -101,13 +96,7 @@ const nuxtConfig: NuxtConfiguration = {
     // https://ja.nuxtjs.org/api/configuration-build/#devtools
     devtools: true,
 
-    plugins: [
-      new webpack.ProvidePlugin({
-        // グローバルなモジュール
-        jQuery: "jquery",
-        $: "jquery"
-      })
-    ],
+    plugins: [],
 
     /**
      * You can extend webpack config here

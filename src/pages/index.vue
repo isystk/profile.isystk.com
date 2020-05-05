@@ -1,37 +1,37 @@
 <template>
   <div>
-    <article id="introduction" class="bg">
-      <Scrollin>
+    <article id="introduction">
+      <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
         <h2>
           INTRODUCTION
         </h2>
       </Scrollin>
-      <hr />
+      <hr :class="{ centerToSide: isScreenin() }" />
       <div class="box">
-        <Scrollin>
-          <div class="box_item avatar">
+        <div class="box_item avatar">
+          <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
             <img src="/img/avatar.jpg" />
-          </div>
-        </Scrollin>
-        <Scrollin>
-          <p class="box_item text">
+          </Scrollin>
+        </div>
+        <p class="box_item text">
+          <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
             はじめまして。伊勢と申します。<br />
             Webを中心にシステムエンジニアとして15年ほど業務しています。<br />
             新卒では中小企業のSIerに入社しました。常駐先で基本設計から開発/テストまでウォーターフォール型のシステム開発を学び、Javaを中心に証券会社や保険会社などの基幹システム開発に携わりました。<br />
             5年努めたのちSOHOとして独立、独立後はNode.jsやReact.jsを中心としたソーシャルゲーム開発やB2Cサイト開発などに携わることが多くフロントエンドを学びました。現在は、NuxtjsやTypescriptを中心にフルスタックエンジニアとして業務しております。<br />
             (2020年4月更新)
-          </p>
-        </Scrollin>
+          </Scrollin>
+        </p>
       </div>
     </article>
     <article id="specialty" class="dark">
-      <Scrollin>
+      <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
         <h2>
           SPECIALTY
         </h2>
       </Scrollin>
-      <hr />
-      <div class="box">
+      <hr :class="{ centerToSide: isScreenin() }" />
+      <div v-if="isShowChart" class="box">
         <div class="box_item chart">
           <ChartRadar
             :chart-data="raderChart.data"
@@ -47,13 +47,13 @@
       </div>
     </article>
     <article id="skills">
-      <Scrollin>
+      <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
         <h2>
           SKILLS
         </h2>
       </Scrollin>
-      <hr />
-      <Scrollin>
+      <hr :class="{ centerToSide: isScreenin() }" />
+      <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
         <div class="skill">
           <div class="skill-header">
             フロントエンド
@@ -118,7 +118,7 @@
           </div>
         </div>
       </Scrollin>
-      <Scrollin>
+      <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
         <div class="skill">
           <div class="skill-header">
             Java
@@ -173,7 +173,7 @@
           </div>
         </div>
       </Scrollin>
-      <Scrollin>
+      <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
         <div class="skill">
           <div class="skill-header">
             DB
@@ -211,7 +211,7 @@
           </div>
         </div>
       </Scrollin>
-      <Scrollin>
+      <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
         <div class="skill">
           <div class="skill-header">
             インフラ
@@ -259,7 +259,7 @@
           </div>
         </div>
       </Scrollin>
-      <Scrollin>
+      <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
         <div class="skill">
           <div class="skill-header">
             検索エンジン
@@ -287,7 +287,7 @@
           </div>
         </div>
       </Scrollin>
-      <Scrollin>
+      <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
         <div class="skill">
           <div class="skill-header">
             保有資格
@@ -312,15 +312,15 @@
       </Scrollin>
     </article>
     <article id="works">
-      <Scrollin>
+      <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
         <h2>
           WORKS
         </h2>
       </Scrollin>
-      <hr />
+      <hr :class="{ centerToSide: isScreenin() }" />
       <div class="box">
         <div class="box_item">
-          <Scrollin>
+          <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
             <div class="mockup">
               <img src="/img/imac.png" width="100%" />
               <div class="site">
@@ -333,7 +333,7 @@
         </div>
         <div class="box_item">
           <div class="mockup-description">
-            <Scrollin>
+            <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
               <div class="number">
                 <div class="line"></div>
                 <div class="label">
@@ -341,7 +341,10 @@
                 </div>
               </div>
             </Scrollin>
-            <Scrollin :class-object="'scrollin-delay1'">
+            <Scrollin
+              :class-default="'fadein'"
+              :class-change="'scrollin scrollin-delay1'"
+            >
               <a href="https://blog.isystk.com/" target="_blank">
                 <p class="title">
                   isystk's blog
@@ -357,7 +360,7 @@
       </div>
       <div class="box">
         <div class="box_item">
-          <Scrollin>
+          <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
             <div class="card">
               <a href="#" target="_blank">
                 <div class="photo zoom">
@@ -373,7 +376,7 @@
           </Scrollin>
         </div>
         <div class="box_item">
-          <Scrollin>
+          <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
             <div class="card">
               <a href="#" target="_blank">
                 <div class="photo zoom">
@@ -391,7 +394,7 @@
       </div>
       <div class="box">
         <div class="box_item">
-          <Scrollin>
+          <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
             <div class="card">
               <a href="https://demo.isystk.com/kaiji/" target="_blank">
                 <div class="photo zoom">
@@ -406,7 +409,7 @@
           </Scrollin>
         </div>
         <div class="box_item">
-          <Scrollin>
+          <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
             <div class="card">
               <a href="#" target="_blank">
                 <div class="photo zoom">
@@ -423,12 +426,12 @@
       </div>
     </article>
     <article id="twitter">
-      <Scrollin>
+      <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
         <h2>
           Twitter
         </h2>
       </Scrollin>
-      <hr />
+      <hr :class="{ centerToSide: isScreenin() }" />
       <div class="box">
         <div class="box_item">
           <p class="title">
@@ -439,8 +442,23 @@
           </div>
         </div>
         <div class="box_item">
-          <Scrollin>
-            <div class="tweet" style="height: 400px;"></div>
+          <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
+            <div v-if="isShowTwitter" class="tweet" style="height: 400px;">
+              <a
+                class="twitter-timeline"
+                data-height="400"
+                data-dnt="true"
+                data-chrome="noheader,nofooter"
+                href="https://twitter.com/ise0615?ref_src=twsrc%5Etfw"
+              >
+                Tweets by ise0615
+              </a>
+              <script
+                async
+                src="https://platform.twitter.com/widgets.js"
+                charset="utf-8"
+              ></script>
+            </div>
           </Scrollin>
         </div>
       </div>
@@ -488,8 +506,26 @@ export default class extends Vue {
     window.removeEventListener("scroll", this.onScroll);
   }
 
+  // 要素が画面内に表示されているかどうか
+  isScreenin(): boolean {
+    if (!process.browser) {
+      return false;
+    }
+    const el = this.$el as HTMLElement;
+    if (
+      this.scroll >
+      el.offsetTop - this.windowHeight + this.windowHeight / 10
+    ) {
+      return true;
+    }
+    return false;
+  }
+
   // 画面スクロール時の処理
   onScroll(): void {
+    if (!process.browser) {
+      return;
+    }
     this.scroll = window.pageYOffset || document.documentElement.scrollTop;
     this.windowHeight = window.innerHeight;
 
@@ -497,16 +533,44 @@ export default class extends Vue {
     const specialty = document.getElementById("specialty") as HTMLInputElement;
     if (
       this.scroll >
-      specialty.offsetTop - this.windowHeight + this.windowHeight / 2
+      specialty.offsetTop - this.windowHeight + this.windowHeight / 10
     ) {
       if (!this.isShowChart) {
         this.isShowChart = true;
         this.viewChart();
       }
     }
+
+    // 数字のランダム表示
+    const twitter = document.getElementById("twitter") as HTMLInputElement;
+    if (
+      this.scroll >
+      twitter.offsetTop - this.windowHeight + this.windowHeight / 10
+    ) {
+      if (!this.isShowTwitter) {
+        const shuffleNum = document.querySelector(
+          ".js-shuffleNum"
+        ) as HTMLInputElement;
+        const defautVal = shuffleNum.textContent;
+        let count = 0;
+        let id = 0;
+        const setRandom = function(): void {
+          const random = Math.floor(Math.random() * 9999);
+          shuffleNum.textContent = random + "";
+          count++;
+          if (count > 60) {
+            clearInterval(id);
+            shuffleNum.textContent = defautVal;
+          }
+        };
+        id = window.setInterval(setRandom, 20);
+
+        this.isShowTwitter = true;
+      }
+    }
   }
 
-  private viewChart(): any {
+  viewChart(): any {
     // レーダーチャート
     this.raderChart = {
       data: {
