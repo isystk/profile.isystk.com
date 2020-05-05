@@ -1,5 +1,5 @@
 <template>
-  <div class="fadein" :class="[classObject, { scrollin: isInScreen }]">
+  <div :class="[classDefault, isInScreen ? classChange : '']">
     <slot></slot>
   </div>
 </template>
@@ -13,7 +13,10 @@ export default class Scrollin extends Vue {
   windowHeight = 0;
 
   @Prop()
-  classObject?: {};
+  classDefault?: [];
+
+  @Prop()
+  classChange?: {};
 
   isInScreen = false;
 
@@ -28,6 +31,9 @@ export default class Scrollin extends Vue {
   }
 
   onScroll(): void {
+    if (!process.browser) {
+      return;
+    }
     this.scroll = window.pageYOffset || document.documentElement.scrollTop;
     this.windowHeight = window.innerHeight;
     // console.log(
@@ -41,6 +47,9 @@ export default class Scrollin extends Vue {
       this.getPosition() - this.windowHeight + this.windowHeight / 10
     ) {
       this.isInScreen = true;
+      // 表示が完了したらスクロールイベントを削除
+      window.removeEventListener("load", this.onScroll);
+      window.removeEventListener("scroll", this.onScroll);
     }
   }
 

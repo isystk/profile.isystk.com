@@ -14,22 +14,28 @@
     <div class="mv">
       <div class="intro">
         <div>
-          <Scrollin>
+          <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
             <p class="title ">
               ITエンジニアを活きる
             </p>
           </Scrollin>
           <br />
-          <Scrollin :class-object="'scrollin-delay1'">
+          <Scrollin
+            :class-default="'fadein'"
+            :class-change="'scrollin scrollin-delay1'"
+          >
             <p class="name">
               Yoshitaka Ise
             </p>
           </Scrollin>
         </div>
       </div>
-      <Scrollin :class-object="'scrollin-delay2'">
+      <Scrollin
+        :class-default="'fadein'"
+        :class-change="'scrollin scrollin-delay2'"
+      >
         <div class="link">
-          <a href="#" class="js-link" data-target="#introduction">
+          <a href="#" @click.prevent="linkToIntroduction">
             SCROLL<br />
             <font-awesome-icon :icon="['fas', 'angle-down']" />
           </a>
@@ -39,7 +45,7 @@
     <div class="contents">
       <nuxt />
     </div>
-    <Scrollin>
+    <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
       <div class="thanks">
         <div class="message">
           <p class="title">
@@ -79,7 +85,8 @@
           <li class="share-pocket">
           <a href="http://getpocket.com/edit?url=http://profile.isystk.com/" target="_blank">Pocket</a>
           </li>
-          --></ul>
+          -->
+</ul>
         </div>
       </div>
     </Scrollin>
@@ -106,5 +113,16 @@ import PageTop from "@/components/parts/PageTop.vue";
     PageTop
   }
 })
-export default class DefaultLayout extends Vue {}
+export default class DefaultLayout extends Vue {
+  linkToIntroduction(): void {
+    const introduction = document.getElementById(
+      "introduction"
+    ) as HTMLInputElement;
+
+    window.scrollTo({
+      top: introduction.offsetTop,
+      behavior: "smooth"
+    });
+  }
+}
 </script>

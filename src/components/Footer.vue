@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <p>CONTACT</p>
-    <sction class="follow-links">
+    <div class="follow-links">
       <ul class="menu">
         <li>
           <a href="https://twitter.com/ise0615/" target="_blank">
@@ -28,10 +28,10 @@
           </a>
         </li>
       </ul>
-    </sction>
-    <sction class="copylight">
+    </div>
+    <div class="copylight">
       © 2020 isystk's blog
-    </sction>
+    </div>
   </footer>
 </template>
 
