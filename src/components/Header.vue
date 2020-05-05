@@ -1,19 +1,21 @@
 <template>
   <header class="header">
-    <h1 class="header-logo">
-      isystk's Portfolio
-    </h1>
+    <Logo />
     <div class="nav">
       <ul class="nav-link">
-        <li><a href="https://blog.isystk.com/" target="_blank">ブログ</a></li>
         <li>
-          <a href="https://blog.isystk.com/company/" target="_blank">
-            会社概要
+          <a :href="this.$C.URL.BLOG" target="_blank">
+            {{ $t("text.menu.blog") }}
           </a>
         </li>
         <li>
-          <a href="https://blog.isystk.com/contact/" target="_blank">
-            お問い合わせ
+          <a :href="this.$C.URL.COMPANY" target="_blank">
+            {{ $t("text.menu.company") }}
+          </a>
+        </li>
+        <li>
+          <a :href="this.$C.URL.CONTACT" target="_blank">
+            {{ $t("text.menu.contact") }}
           </a>
         </li>
       </ul>
@@ -30,10 +32,12 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from "vue-property-decorator";
+import Logo from "@/components/Logo.vue";
 import SideMenu from "@/components/SideMenu.vue";
 
 @Component({
   components: {
+    Logo,
     SideMenu
   }
 })

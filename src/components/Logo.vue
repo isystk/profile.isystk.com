@@ -1,14 +1,8 @@
 <template>
   <nuxt-link :to="this.$C.URL.HOME" class="brand-link">
-    <img
-      src="~/assets/img/github-icon.svg"
-      alt="github Logo"
-      class="brand-image img-circle elevation-3"
-      style="opacity: .8"
-    />
-    <span class="brand-text font-weight-light">{{
-      $t("text.header.title")
-    }}</span>
+    <h1 class="header-logo">
+      isystk's Portfolio
+    </h1>
   </nuxt-link>
 </template>
 
