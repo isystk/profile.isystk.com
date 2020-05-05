@@ -48,3 +48,26 @@ export default class PageTop extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+/* TOPへ戻る */
+#page-top {
+  position: fixed;
+  bottom: 45px;
+  right: 16px;
+  z-index: 100;
+  transition: top 0.5s, bottom 0.5s;
+}
+#page-top a {
+  background: #333;
+  color: #fff;
+  width: 50px;
+  padding: 16px 0;
+  text-align: center;
+  display: block;
+  border-radius: 25px;
+}
+#page-top.hide {
+  bottom: -100px;
+}
+</style>

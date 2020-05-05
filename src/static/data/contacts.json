@@ -1,22 +1,22 @@
 [
   {
     "name": "Twitter",
-    "linkUrl": "https://twitter.com/ise0615",
-    "icon": "mdi-twitter"
+    "linkUrl": "https://twitter.com/ise0615/",
+    "icon": "twitter"
   },
   {
     "name": "Facebook",
-    "linkUrl": "https://www.facebook.com/ise0615",
-    "icon": "mdi-facebook"
+    "linkUrl": "https://www.facebook.com/ise0615/",
+    "icon": "facebook"
   },
   {
-    "name": "Qiita",
-    "linkUrl": "https://qiita.com/isystk",
-    "icon": "search"
+    "name": "Instagram",
+    "linkUrl": "https://www.instagram.com/isystk/",
+    "icon": "instagram"
   },
   {
     "name": "GitHub",
-    "linkUrl": "https://github.com/isystk",
-    "icon": "mdi-github-circle"
+    "linkUrl": "https://github.com/isystk/",
+    "icon": "github"
   }
 ]

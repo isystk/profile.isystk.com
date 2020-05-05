@@ -67,3 +67,55 @@ export default class MainVisual extends Vue {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+/*--------------------------------------------------------------------
+
+  4 メインビジュアル
+
+--------------------------------------------------------------------*/
+
+.mv {
+  height: calc(100vh - 60px);
+}
+.mv .intro {
+  color: #fff;
+  width: 80%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  z-index: 1;
+  text-align: right;
+}
+.mv .intro .title {
+  text-align: right;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+.mv .intro .name {
+  text-align: right;
+  font-size: 30px;
+}
+.mv .link a {
+  font-size: 20px;
+  color: #fff;
+}
+
+@media screen and (min-width: 992px) {
+  .mv .intro {
+    width: 75%;
+    height: 75%;
+  }
+  .mv .intro .title {
+    font-size: 60px;
+  }
+  .mv .intro .name {
+    font-size: 40px;
+  }
+}
+</style>
