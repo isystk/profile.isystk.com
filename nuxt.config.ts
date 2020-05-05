@@ -71,18 +71,11 @@ const nuxtConfig: NuxtConfiguration = {
    * 他の scss ファイルに依存しない scss はこちらに
    */
   css: ["@/assets/sass/app.scss"],
-  modules: [
-    "@nuxtjs/axios",
-    "@nuxtjs/proxy",
-    "@nuxtjs/pwa",
-    ["@nuxtjs/moment", ["ja"]],
-    "nuxt-fontawesome"
-  ],
+  modules: ["@nuxtjs/pwa", ["@nuxtjs/moment", ["ja"]], "nuxt-fontawesome"],
   plugins: [
     "@/plugins/libraries/sanitize-html.ts",
     "@/plugins/libraries/lodash.ts",
     "@/plugins/libraries/moment.ts",
-    "@/plugins/libraries/axios.ts",
     "@/plugins/constants-inject.ts",
     "@/plugins/env-inject.ts",
     "@/plugins/locale/i18n.ts"

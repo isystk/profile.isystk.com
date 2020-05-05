@@ -1,0 +1,39 @@
+[
+  {
+    "title": "isystk's blog",
+    "text": "ITエンジニアとして学んだ事を掲載している私のブログです。",
+    "url": "https://blog.isystk.com/",
+    "imageUrl": "/img/work_blog.png"
+  },
+  {
+    "title": "Java Springboot Boilerplate",
+    "text": "Java Springboot Doma2を利用したマルチモジュールのボイラープレートです。",
+    "url": "https://blog.isystk.com/system_develop/backend/springboot/722/",
+    "imageUrl": "/img/java-springboot-boilerplate.jpg"
+  },
+  {
+    "title": "Kotlin Springboot Boilerplate",
+    "text": "Kotlin Springboot Doma2を利用したマルチモジュールのボイラープレートです。",
+    "url": "https://github.com/isystk/kotlin-springboot-boilerplate",
+    "imageUrl": "/img/kotlin-springboot-boilerplate.jpg"
+  },
+  {
+    "title": "Nuxt.js Typescript Boilerplate",
+    "text": "Nuxt.js Typescript ESLint を利用したボイラープレートです。",
+    "url": "https://github.com/isystk/nuxtjs-typescript-boilerplate",
+    "imageUrl": "/img/nuxtjs-typescript-boilerplate.jpg"
+  },
+  {
+    "title": "ざわざわスクリプト",
+    "text": "XSSの脆弱性があると「ざわざわ」して最後に何かが起こります..",
+    "url": "http://demo.isystk.com/kaiji/",
+    "imageUrl": "/img/work_kaiji.jpg"
+  },
+  {
+    "title": "このポートフォリオサイトです。",
+    "text": "Nuxt.js + TypeScript + Vuetify を利用して作成しています。",
+    "url": "https://blog.isystk.com/web_production/portfolio/147/",
+    "imageUrl": "/img/work_portfolio.jpg"
+  }
+]
+ 
