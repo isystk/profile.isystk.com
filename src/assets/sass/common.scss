@@ -73,6 +73,7 @@ a {
 a:hover,
 a:hover p {
 	animation: opacity 0.5s both;
+	text-decoration: underline;
 }
 @keyframes opacity {
 	0% {
@@ -204,8 +205,8 @@ img {
 .contents article hr {
 	width: 100px;
 	margin: 30px auto;
-	border-color: #000d6d;
 	transform: scaleY(1) scaleX(0);
+	border: 2px solid #000d6d
 }
 
 .contents article.dark {
