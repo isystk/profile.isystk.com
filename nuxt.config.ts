@@ -61,11 +61,6 @@ const nuxtConfig: NuxtConfiguration = {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: PUBLIC_PATH + "favicon.ico" }
-    ],
-    script: [
-      // polyfill 対応
-      // See https://qiita.com/amishiro/items/db37c6a56ddf7e214144
-      { src: '//polyfill.io/v2/polyfill.min.js?features=WebAnimations,IntersectionObserver' }
     ]
   },
   // loading: { color: "#fff" },
@@ -77,11 +72,12 @@ const nuxtConfig: NuxtConfiguration = {
    */
   css: ["@/assets/sass/app.scss"],
   modules: [
+    "nuxt-polyfill",
     "@nuxtjs/pwa", 
     ["@nuxtjs/moment", ["ja"]], 
     "nuxt-fontawesome",
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-11964840-8'
+    ["@nuxtjs/google-analytics", {
+      id: "UA-11964840-8"
     }]
   ],
   plugins: [
@@ -161,6 +157,18 @@ const nuxtConfig: NuxtConfiguration = {
         set: "@fortawesome/free-brands-svg-icons",
         icons: ["fab"]
       }
+    ]
+  },
+  
+  // polyfill対応
+  // See https://github.com/Timkor/nuxt-polyfill
+  polyfill: {
+    features: [
+        {
+            require: 'smoothscroll-polyfill',
+            detect: () => 'scrollBehavior' in document.documentElement.style && window.__forceSmoothScrollPolyfill__ !== true,
+            install: (smoothscroll) => smoothscroll.polyfill()
+        }
     ]
   }
 };
