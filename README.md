@@ -3,7 +3,7 @@
 
 ## Description
 
-📗 isystk のポートフォリオです。このサイトは、Nuxt.js & TypeScript で作られています。
+📗 isystk のポートフォリオです。Typescript&Nuxt.jsで最近のフロントエンドの技術を取り入れて作成しました。
 
 ## 🖊️ VS. 
 

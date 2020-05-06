@@ -44,7 +44,7 @@ export default class Scrollin extends Vue {
     // );
     if (
       this.scroll >
-      this.getPosition() - this.windowHeight + this.windowHeight / 10
+      this.getPosition() - this.windowHeight + this.windowHeight / 5
     ) {
       this.isInScreen = true;
       // 表示が完了したらスクロールイベントを削除

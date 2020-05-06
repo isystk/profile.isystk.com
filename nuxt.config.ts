@@ -37,7 +37,7 @@ const nuxtConfig: NuxtConfiguration = {
     host: "0.0.0.0" // デフォルト: localhost
   },
   head: {
-    titleTemplate: "%s | " + pkg.name,
+    titleTemplate: pkg.description,
     meta: [
       { hid: "charset", charset: "utf-8" },
       {

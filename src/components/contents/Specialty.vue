@@ -28,6 +28,8 @@ import { Component, Vue } from "vue-property-decorator";
 import Scrollin from "@/components/parts/Scrollin.vue";
 import ChartRadar from "@/components/parts/ChartRadar.vue";
 import ChartDoughnut from "@/components/parts/ChartDoughnut.vue";
+import { portfolioModule, Profile } from "@/store/portfolio";
+import _ from "lodash";
 
 @Component({
   components: {
@@ -87,28 +89,39 @@ export default class Specialty extends Vue {
     const el = this.$el as HTMLElement;
     if (
       this.scroll >
-      el.offsetTop - this.windowHeight + this.windowHeight / 10
+      el.offsetTop - this.windowHeight + this.windowHeight / 3
     ) {
       return true;
     }
     return false;
   }
 
+  // ツイッターフォロワー数
+  get twitterFollower(): number{
+    if (!portfolioModule.profile.twitter_follower) {
+      return 0;
+    }
+    return portfolioModule.profile.twitter_follower;
+  }
   // チャートに表示するデータを設定する
   viewChart(): any {
+    const specialty = portfolioModule.specialty;
+    const quality = specialty[0];
+    const program = specialty[1];
+
     // レーダーチャート
     this.raderChart = {
       data: {
-        labels: ["スピード感", "精度", "セキュリティ対応", "デザイン力", "SEO"],
+        labels: _.map(quality.items, "label"),
         datasets: [
           {
-            label: "Webシステムにおける開発能力",
+            label: quality.title,
             backgroundColor: "rgba(0, 50, 255, 0.5)",
             borderColor: "rgba(0, 50, 255, 0.5)",
             lineTension: 0,
             fill: true,
             borderWidth: 3,
-            data: [100, 80, 60, 40, 70]
+            data: _.map(quality.items, "data")
           }
         ]
       } as Chart.ChartData,
@@ -121,7 +134,7 @@ export default class Specialty extends Vue {
           position: "top",
           fontSize: 16,
           padding: 10,
-          text: "Webシステムにおける開発能力"
+          text: quality.title
         },
         legend: {
           display: false
@@ -141,29 +154,13 @@ export default class Specialty extends Vue {
     // ドーナツチャート
     this.doughnutChart = {
       data: {
-        labels: [
-          "Java",
-          "Jquery",
-          "Typescript",
-          "Nuxt.js",
-          "Kotlin",
-          "PHP",
-          "Python"
-        ],
+        labels: _.map(program.items, "label"),
         datasets: [
           {
-            label: "プログラミングの得意言語",
-            backgroundColor: [
-              "#FF0000",
-              "#FFFF00",
-              "#00FFFF",
-              "#800000",
-              "#00FF00",
-              "#FF00FF",
-              "#C0C0C0"
-            ],
+            label: program.title,
+            backgroundColor: _.map(program.items, "color"),
             borderColor: "#FFFFFF",
-            data: [40, 25, 15, 10, 5, 3, 2]
+            data: _.map(program.items, "data")
           }
         ]
       } as Chart.ChartData,
@@ -176,7 +173,7 @@ export default class Specialty extends Vue {
           position: "top",
           fontSize: 16,
           padding: 10,
-          text: "プログラミングの得意言語"
+          text: program.title
         },
         legend: {
           display: true, // 凡例を表示します。

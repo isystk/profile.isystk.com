@@ -12,7 +12,7 @@
           フォロワー数
         </p>
         <div class="followers js-shuffleNum">
-          7059
+          {{ twitterFollower }}
         </div>
       </div>
       <div class="box_item">
@@ -42,6 +42,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Scrollin from "@/components/parts/Scrollin.vue";
+import { portfolioModule, Profile } from "@/store/portfolio";
 
 @Component({
   components: {
@@ -79,7 +80,7 @@ export default class Twitter extends Vue {
     const twitter = document.getElementById("twitter") as HTMLInputElement;
     if (
       this.scroll >
-      twitter.offsetTop - this.windowHeight + this.windowHeight / 10
+      twitter.offsetTop - this.windowHeight + this.windowHeight / 3
     ) {
       if (!this.isShowTwitter) {
         const shuffleNum = document.querySelector(
@@ -92,7 +93,7 @@ export default class Twitter extends Vue {
           const random = Math.floor(Math.random() * 9999);
           shuffleNum.textContent = random + "";
           count++;
-          if (count > 60) {
+          if (count > 50) {
             clearInterval(id);
             shuffleNum.textContent = defautVal;
           }
@@ -112,11 +113,19 @@ export default class Twitter extends Vue {
     const el = this.$el as HTMLElement;
     if (
       this.scroll >
-      el.offsetTop - this.windowHeight + this.windowHeight / 10
+      el.offsetTop - this.windowHeight + this.windowHeight / 3
     ) {
       return true;
     }
     return false;
+  }
+  
+  // ツイッターフォロワー数
+  get twitterFollower(): number{
+    if (!portfolioModule.profile.twitter_follower) {
+      return 0;
+    }
+    return portfolioModule.profile.twitter_follower;
   }
 }
 </script>

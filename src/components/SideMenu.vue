@@ -84,17 +84,4 @@ export default class SideMenu extends Vue {}
   float: right;
   zoom: 1.5;
 }
-#layer-panel {
-  display: none;
-  z-index: 99;
-  background: #666;
-  opacity: 0.5;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-}
-#layer-panel.on {
-  display: block;
-}
 </style>

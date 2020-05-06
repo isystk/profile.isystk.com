@@ -134,6 +134,19 @@ export default class Header extends Vue {
   margin-bottom: -1px;
   transform: rotate(-45deg);
 }
+#layer-panel {
+  display: none;
+  z-index: 99;
+  background: #666;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+#layer-panel.on {
+  display: block;
+}
 
 @media screen and (min-width: 992px) {
   .header .nav .nav-link {
