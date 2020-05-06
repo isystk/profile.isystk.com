@@ -147,20 +147,4 @@ export default class Twitter extends Vue {
 @media screen and (min-width: 992px) {
 }
 
-/* Twitterのタイムラインがはみ出る問題の対応 */
-@media screen and (max-width: 768px) and (min-width: 480px) {
-	iframe .twitter-timeline-rendered{
-		width: 490px!important;
-	}
-}
-@media screen and (max-width: 480px) {
-	iframe.twitter-timeline-rendered {
-		width: 450px !important;
-		margin:0 auto;
-	}
-}
-.timeline-Widget {
-	max-width: 300px!important;
-	width:200px!important;
-}
 </style>
