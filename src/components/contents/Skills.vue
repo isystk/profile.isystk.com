@@ -29,18 +29,18 @@
               {{ e2.text }}
             </div>
             <div class="rating">
-              <span
+              <template
                 v-for="(e3, index3) in e2.rating"
                 :key="e.title + 'rate1' + index3"
               >
                 ★
-              </span>
-              <span
+              </template>
+              <template
                 v-for="(e3, index3) in 3 - e2.rating"
                 :key="e.title + 'rate2' + index3"
               >
                 ☆
-              </span>
+              </template>
             </div>
           </div>
         </div>

@@ -71,7 +71,14 @@ const nuxtConfig: NuxtConfiguration = {
    * 他の scss ファイルに依存しない scss はこちらに
    */
   css: ["@/assets/sass/app.scss"],
-  modules: ["@nuxtjs/pwa", ["@nuxtjs/moment", ["ja"]], "nuxt-fontawesome"],
+  modules: [
+    "@nuxtjs/pwa", 
+    ["@nuxtjs/moment", ["ja"]], 
+    "nuxt-fontawesome",
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-11964840-8'
+    }]
+  ],
   plugins: [
     "@/plugins/libraries/sanitize-html.ts",
     "@/plugins/libraries/lodash.ts",
