@@ -234,6 +234,7 @@ export default class Works extends Vue {
 }
 #works .title {
   font-size: 22px;
+  font-weight: bold;
   text-align: left;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -272,6 +273,8 @@ export default class Works extends Vue {
     letter-spacing: 2px;
     left: 101px;
     top: -20px;
+    background-color: #000d6d;
+    color: #fff;
   }
 
   #works .mockup-description .title {

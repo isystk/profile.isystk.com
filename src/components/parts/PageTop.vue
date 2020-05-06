@@ -59,7 +59,7 @@ export default class PageTop extends Vue {
   transition: top 0.5s, bottom 0.5s;
 }
 #page-top a {
-  background: #333;
+  background: #000d6d;
   color: #fff;
   width: 50px;
   padding: 16px 0;

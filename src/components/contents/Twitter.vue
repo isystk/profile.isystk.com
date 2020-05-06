@@ -144,6 +144,13 @@ export default class Twitter extends Vue {
   font-size: 80px;
 }
 
+.timeline-Widget {
+    max-width: 1200px;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%!important;
+}
+
 @media screen and (min-width: 992px) {
 }
 </style>

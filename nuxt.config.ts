@@ -61,6 +61,11 @@ const nuxtConfig: NuxtConfiguration = {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: PUBLIC_PATH + "favicon.ico" }
+    ],
+    script: [
+      // polyfill 対応
+      // See https://qiita.com/amishiro/items/db37c6a56ddf7e214144
+      { src: '//polyfill.io/v2/polyfill.min.js?features=WebAnimations,IntersectionObserver' }
     ]
   },
   // loading: { color: "#fff" },
