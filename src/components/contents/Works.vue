@@ -167,7 +167,7 @@ export default class Works extends Vue {
     const el = this.$el as HTMLElement;
     if (
       this.scroll >
-      el.offsetTop - this.windowHeight + this.windowHeight / 10
+      el.offsetTop - this.windowHeight + this.windowHeight / 3
     ) {
       return true;
     }

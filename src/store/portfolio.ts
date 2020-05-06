@@ -14,6 +14,7 @@ import { Context as AppContext } from "@nuxt/types";
 import profileData from "../static/data/profile.json";
 import skillsData from "../static/data/skills.json";
 import worksData from "../static/data/works.json";
+import specialtyData from "../static/data/specialty.json";
 import contactsData from "../static/data/contacts.json";
 
 import store from "@/store/store";
@@ -21,7 +22,7 @@ import store from "@/store/store";
 export interface Profile {
   imageUrl?: string;
   message?: string;
-  email?: string;
+  twitter_follower?: number;
 }
 
 export interface SkillItem {
@@ -46,6 +47,18 @@ export interface Work {
   imageUrl?: string;
 }
 
+export interface SpecialtyItem {
+  label?: string;
+  color?: string;
+  data?: number;
+}
+
+export interface Specialty {
+  title?: string;
+  type?: string;
+  items?: SpecialtyItem[];
+}
+
 export interface Contact {
   name?: string;
   linkUrl?: string;
@@ -57,6 +70,7 @@ export interface PortfolioState {
   profile: Profile;
   skill: Skill[];
   work: Work[];
+  specialty: Specialty[];
   contact: Contact[];
 }
 
@@ -66,6 +80,7 @@ class Portfolio extends VuexModule implements PortfolioState {
   profile: Profile = {};
   skill: Skill[] = [];
   work: Work[] = [];
+  specialty: Specialty[] = [];
   contact: Contact[] = [];
 
   @MutationAction({ mutate: ["profile"] })
@@ -87,6 +102,13 @@ class Portfolio extends VuexModule implements PortfolioState {
     let data: Work[] = [];
     data = await worksData;
     return { work: data };
+  }
+
+  @MutationAction({ mutate: ["specialty"] })
+  async fetchSpecialty(): Promise<any> {
+    let data: Specialty[] = [];
+    data = await specialtyData;
+    return { specialty: data };
   }
 
   @MutationAction({ mutate: ["contact"] })

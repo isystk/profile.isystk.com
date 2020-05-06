@@ -60,6 +60,7 @@ export default class extends Vue {
     portfolioModule.fetchProfile();
     portfolioModule.fetchSkill();
     portfolioModule.fetchWork();
+    portfolioModule.fetchSpecialty();
     portfolioModule.fetchContact();
   }
 }

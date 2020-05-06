@@ -31,16 +31,9 @@
             <div class="rating">
               <template
                 v-for="(e3, index3) in e2.rating"
-                :key="e.title + 'rate1' + index3"
-              >
-                ★
-              </template>
-              <template
+              >★</template><template
                 v-for="(e3, index3) in 3 - e2.rating"
-                :key="e.title + 'rate2' + index3"
-              >
-                ☆
-              </template>
+              >☆</template>
             </div>
           </div>
         </div>
@@ -96,7 +89,7 @@ export default class Skills extends Vue {
     const el = this.$el as HTMLElement;
     if (
       this.scroll >
-      el.offsetTop - this.windowHeight + this.windowHeight / 10
+      el.offsetTop - this.windowHeight + this.windowHeight / 3
     ) {
       return true;
     }
