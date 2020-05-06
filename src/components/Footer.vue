@@ -44,18 +44,18 @@ export default class Footer extends Vue {
   bottom: 0;
   height: 120px;
   width: 100%;
-  background: #999;
+  background: #f3f3f4;
   position: relative;
 }
 .footer p {
   font-size: 20px;
   margin: 10px 0;
-  color: #fff;
+  color: #000d6d;
   position: absolute;
   width: 100%;
 }
 .footer a {
-  color: #fff;
+  color: #000d6d;
 }
 .footer svg {
   padding-right: 5px;
