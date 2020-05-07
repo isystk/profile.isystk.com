@@ -1,9 +1,38 @@
 🌙 isystk's ポートフォリオ
 ====
 
+![GitHub issues](https://img.shields.io/github/issues/isystk/profile.isystk.com)
+![GitHub forks](https://img.shields.io/github/forks/isystk/profile.isystk.com)
+![GitHub stars](https://img.shields.io/github/stars/isystk/profile.isystk.com)
+![GitHub license](https://img.shields.io/github/license/isystk/profile.isystk.com)
+
 ## Description
 
 📗 isystk のポートフォリオです。Typescript&Nuxt.jsで最近のフロントエンドの技術を取り入れて作成しました。
+
+### ディレクトリ構造
+```
+.
+├── src (Nuxt関連のソースファイル)
+│    ├── @types
+│    ├── assets
+│    ├── common
+│    ├── components
+│    ├── interfaces
+│    ├── middleware
+│    ├── pages
+│    ├── plugins
+│    ├── static
+│    ├── store
+│    ├── test
+│    └── utilities
+├── .babelrc (Babel設定ファイル)
+├── .vscode (VSCode設定ファイル)
+├── jest.config.js
+├── nuxt.config.ts
+├── package.json
+└── tsconfig.json
+```
 
 ## 🖊️ VS. 
 
@@ -30,11 +59,8 @@ $ yarn run dev
 ## 📦 Install
 
 ```bash
-# node inistall
 $ nodebrew install v13.13.0
-# yarn inistall
 $ node install -g yarn
-# module inistall
 $ yarn
 ```
 
@@ -48,6 +74,9 @@ $ yarn
 
 ## 🔗 参考
 
+
+| プロジェクト| 概要|
+| :---------------------------------------| :-------------------------------|
 | [公式ドキュメント - Nuxt.js](https://ja.nuxtjs.org/guide/)| 公式ドキュメント - Nuxt.js|
 | [公式ドキュメント - TypeScript](https://www.typescriptlang.org/docs/home)| 公式ドキュメント - TypeScript|
 | [仕事ですぐに使えるTypeScript](https://future-architect.github.io/typescript-guide/)| 仕事ですぐに使えるTypeScript|
