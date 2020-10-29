@@ -17,7 +17,10 @@ import worksData from "../static/data/works.json";
 import specialtyData from "../static/data/specialty.json";
 import contactsData from "../static/data/contacts.json";
 
+import Env from "../common/env";
 import store from "@/store/store";
+import { API_ENDPOINT } from "@/common/constants";
+import { $axios } from "@/utilities/api";
 
 export interface Profile {
   imageUrl?: string;
@@ -86,35 +89,70 @@ class Portfolio extends VuexModule implements PortfolioState {
   @MutationAction({ mutate: ["profile"] })
   async fetchProfile(): Promise<any> {
     let data: Profile = {};
-    data = await profileData;
+    if (Env.isStatic) {
+      // generateの場合は、静的にjsonファイルを読み込む
+      data = await profileData;
+    } else {
+      // 上記以外は、APIでjsonファイルを読み込む
+      const res = await $axios.get<Profile>(API_ENDPOINT.PROFILE, {});
+      data = res.data;
+    }
     return { profile: data };
   }
 
   @MutationAction({ mutate: ["skill"] })
   async fetchSkill(): Promise<any> {
     let data: Skill[] = [];
-    data = await skillsData;
+    if (Env.isStatic) {
+      // generateの場合は、静的にjsonファイルを読み込む
+      data = await skillsData;
+    } else {
+      // 上記以外は、APIでjsonファイルを読み込む
+      const res = await $axios.get<Skill[]>(API_ENDPOINT.SKILLS, {});
+      data = res.data;
+    }
     return { skill: data };
   }
 
   @MutationAction({ mutate: ["work"] })
   async fetchWork(): Promise<any> {
     let data: Work[] = [];
-    data = await worksData;
+    if (Env.isStatic) {
+      // generateの場合は、静的にjsonファイルを読み込む
+      data = await worksData;
+    } else {
+      // 上記以外は、APIでjsonファイルを読み込む
+      const res = await $axios.get<Work[]>(API_ENDPOINT.WORKS, {});
+      data = res.data;
+    }
     return { work: data };
   }
 
   @MutationAction({ mutate: ["specialty"] })
   async fetchSpecialty(): Promise<any> {
     let data: Specialty[] = [];
-    data = await specialtyData;
+    if (Env.isStatic) {
+      // generateの場合は、静的にjsonファイルを読み込む
+      data = await specialtyData;
+    } else {
+      // 上記以外は、APIでjsonファイルを読み込む
+      const res = await $axios.get<Specialty[]>(API_ENDPOINT.SPECIALTY, {});
+      data = res.data;
+    }
     return { specialty: data };
   }
 
   @MutationAction({ mutate: ["contact"] })
   async fetchContact(): Promise<any> {
     let data: Contact[] = [];
-    data = await contactsData;
+    if (Env.isStatic) {
+      // generateの場合は、静的にjsonファイルを読み込む
+      data = await contactsData;
+    } else {
+      // 上記以外は、APIでjsonファイルを読み込む
+      const res = await $axios.get<Contact[]>(API_ENDPOINT.CONTACTS, {});
+      data = res.data;
+    }
     return { contact: data };
   }
 }
