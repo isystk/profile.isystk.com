@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  
+  nginx:
+    image: aws-ecr-sample-nginx
+    container_name: aws-ecr-sample-nginx
+    build:
+      context: "./nginx"
+      dockerfile: "Dockerfile"
+    ports:
+     - "80:80"
+     - "443:443"
+
+  webapp:
+    image: aws-ecr-sample-webapp
+    container_name: aws-ecr-sample-webapp
+    build:
+      context: ".."
+      dockerfile: "./docker/webapp/Dockerfile"
+    ports:
+     - "3000:3000"
