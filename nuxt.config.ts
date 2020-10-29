@@ -5,6 +5,8 @@ import webpack, {
   Plugin as WebpackPlugin
 } from "webpack";
 
+require("dotenv").config();
+
 const pkg = require("./package");
 
 const PUBLIC_PATH = "/";
@@ -72,18 +74,24 @@ const nuxtConfig: NuxtConfiguration = {
    */
   css: ["@/assets/sass/app.scss"],
   modules: [
+    "@nuxtjs/dotenv",
+    "@nuxtjs/axios",
     "nuxt-polyfill",
-    "@nuxtjs/pwa", 
-    ["@nuxtjs/moment", ["ja"]], 
+    "@nuxtjs/pwa",
+    ["@nuxtjs/moment", ["ja"]],
     "nuxt-fontawesome",
-    ["@nuxtjs/google-analytics", {
-      id: "UA-11964840-8"
-    }]
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-11964840-8"
+      }
+    ]
   ],
   plugins: [
     "@/plugins/libraries/sanitize-html.ts",
     "@/plugins/libraries/lodash.ts",
     "@/plugins/libraries/moment.ts",
+    "@/plugins/libraries/axios.ts",
     "@/plugins/constants-inject.ts",
     "@/plugins/env-inject.ts",
     "@/plugins/locale/i18n.ts"
@@ -159,16 +167,18 @@ const nuxtConfig: NuxtConfiguration = {
       }
     ]
   },
-  
+
   // polyfill対応
   // See https://github.com/Timkor/nuxt-polyfill
   polyfill: {
     features: [
-        {
-            require: 'smoothscroll-polyfill',
-            detect: () => 'scrollBehavior' in document.documentElement.style && window.__forceSmoothScrollPolyfill__ !== true,
-            install: (smoothscroll) => smoothscroll.polyfill()
-        }
+      {
+        require: "smoothscroll-polyfill",
+        detect: () =>
+          "scrollBehavior" in document.documentElement.style &&
+          window.__forceSmoothScrollPolyfill__ !== true,
+        install: smoothscroll => smoothscroll.polyfill()
+      }
     ]
   }
 };

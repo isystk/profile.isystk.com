@@ -119,9 +119,9 @@ export default class Twitter extends Vue {
     }
     return false;
   }
-  
+
   // ツイッターフォロワー数
-  get twitterFollower(): number{
+  get twitterFollower(): number {
     if (!portfolioModule.profile.twitter_follower) {
       return 0;
     }
@@ -146,5 +146,4 @@ export default class Twitter extends Vue {
 
 @media screen and (min-width: 992px) {
 }
-
 </style>

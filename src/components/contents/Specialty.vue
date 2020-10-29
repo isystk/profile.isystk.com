@@ -25,11 +25,11 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import _ from "lodash";
 import Scrollin from "@/components/parts/Scrollin.vue";
 import ChartRadar from "@/components/parts/ChartRadar.vue";
 import ChartDoughnut from "@/components/parts/ChartDoughnut.vue";
 import { portfolioModule, Profile } from "@/store/portfolio";
-import _ from "lodash";
 
 @Component({
   components: {
@@ -97,12 +97,13 @@ export default class Specialty extends Vue {
   }
 
   // ツイッターフォロワー数
-  get twitterFollower(): number{
+  get twitterFollower(): number {
     if (!portfolioModule.profile.twitter_follower) {
       return 0;
     }
     return portfolioModule.profile.twitter_follower;
   }
+
   // チャートに表示するデータを設定する
   viewChart(): any {
     const specialty = portfolioModule.specialty;
