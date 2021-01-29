@@ -7,21 +7,33 @@
   },
   {
     "title": "Java Springboot Boilerplate",
-    "text": "Java Springboot Doma2を利用した\nマルチモジュールのボイラープレートです。",
+    "text": "最近の主流な Javaのフレームワークを厳選しながら大規模なプロジェクトでも利用できるようなSpringBoot のボイラープレートです。フロント、管理画面、バッチ、検索エンジン、会員登録 などのよくある構成を最低限必要な機能に絞ってコンパクトに纏めています。",
     "url": "https://blog.isystk.com/system_develop/backend/springboot/722/",
     "imageUrl": "/img/java-springboot-boilerplate.jpg"
   },
   {
     "title": "Nuxt.js Typescript Boilerplate",
-    "text": "Nuxt.js Typescript ESLint を利用した\nボイラープレートです。",
-    "url": "https://github.com/isystk/nuxtjs-typescript-boilerplate",
+    "text": "Nuxt.js Typescript ESLint を利用したボイラープレートです。チャート表示や画像カルーセル、モーダル表示などよく利用される機能をサンプルとして纏めています。",
+    "url": "https://blog.isystk.com/web_production/boilerplate/1108/",
     "imageUrl": "/img/nuxtjs-typescript-boilerplate.jpg"
   },
   {
     "title": "ざわざわスクリプト",
-    "text": "XSSの脆弱性があると「ざわざわ」して最後に何かが起こります..",
-    "url": "http://demo.isystk.com/kaiji/",
+    "text": "XSSの脆弱性を検証する為に作成したサンプルスクリプトです。Webサイト内にサニタイズ漏れがあると「ざわざわ」して最後に何かが起こります..。サンプルも公開しているので是非ご覧ください。",
+    "url": "https://blog.isystk.com/web_production/xss/214/",
     "imageUrl": "/img/kaiji.gif"
+  },
+  {
+    "title": "自作のWordpress用テンプレートです。",
+    "text": "私が運営しているブログで利用している自作のWordpress用テンプレートです。格安で販売しております。",
+    "url": "https://blog.isystk.com/web_production/wordpress/1085/",
+    "imageUrl": "/img/wordpress-template.jpg"
+  },
+  {
+    "title": "Kotlin Springboot Boilerplate",
+    "text": "Java Springboot Boilerplate を Kotlinでリメイクしました。フロントエンドには、Next.js（React）・Typescript を利用しています。管理画面にはCSSフレームワークとしてADMIN LTE3を採用しました。",
+    "url": "https://github.com/isystk/kotlin-springboot-boilerplate",
+    "imageUrl": "/img/kotlin-springboot-boilerplate.jpg"
   },
   {
     "title": "このポートフォリオサイトです。",
