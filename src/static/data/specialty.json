@@ -42,12 +42,17 @@
       {
         "label": "Jquery",
         "color": "#FFFF00", 
-        "data": 25
+        "data": 15
       },
       {
-        "label": "Nuxt.js",
+        "label": "Vue.js",
         "color": "#00FFFF", 
         "data": 15
+      },
+      {
+        "label": "React.js",
+        "color": "#C0C0C0", 
+        "data": 10
       },
       {
         "label": "Typescript",
@@ -63,11 +68,6 @@
         "label": "PHP",
         "color": "#FF00FF", 
         "data": 3
-      },
-      {
-        "label": "Python",
-        "color": "#C0C0C0", 
-        "data": 2
       }
     ]
   }
