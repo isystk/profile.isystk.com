@@ -1,6 +1,6 @@
 {
   "name": "isystk-portfolio",
-  "description": "Typescript&Nuxt.jsで最近のフロントエンドの技術を取り入れて作成したポートフォリオ。Isystk's Portfolio",
+  "description": "ポートフォリオ｜伊勢 功崇（いせ　よしたか）",
   "version": "1.0.0",
   "private": true,
   "scripts": {
