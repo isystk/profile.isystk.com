@@ -145,7 +145,7 @@ export default class Skills extends Vue {
 .skill-item .rating {
   margin: 8px;
   float: right;
-  font-size: 20px;
+  font-size: 14px;
   letter-spacing: 5px;
   color: #fff000;
 }
