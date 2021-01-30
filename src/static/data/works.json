@@ -7,13 +7,13 @@
   },
   {
     "title": "Java Springboot Boilerplate",
-    "text": "最近の主流な Javaのフレームワークを厳選しながら大規模なプロジェクトでも利用できるようなSpringBoot のボイラープレートです。フロント、管理画面、バッチ、検索エンジン、会員登録 などのよくある構成を最低限必要な機能に絞ってコンパクトに纏めています。",
+    "text": "大規模プロジェクトでも利用できるようなSpringBootのボイラープレートを作成しました。フロント、管理画面、バッチ、検索エンジン、会員登録 などのよくある構成を最低限の機能に絞ってコンパクトに纏めています。",
     "url": "https://blog.isystk.com/system_develop/backend/springboot/722/",
     "imageUrl": "/img/java-springboot-boilerplate.jpg"
   },
   {
     "title": "Nuxt.js Typescript Boilerplate",
-    "text": "Nuxt.js Typescript ESLint を利用したボイラープレートです。チャート表示や画像カルーセル、モーダル表示などよく利用される機能をサンプルとして纏めています。",
+    "text": "Nuxt.js Typescript ESLint を利用したボイラープレートです。チャート表示や画像カルーセル、モーダル表示など利用頻度の高い機能をサンプルとして纏めています。",
     "url": "https://blog.isystk.com/web_production/boilerplate/1108/",
     "imageUrl": "/img/nuxtjs-typescript-boilerplate.jpg"
   },
@@ -25,7 +25,7 @@
   },
   {
     "title": "自作のWordpress用テンプレートです。",
-    "text": "私が運営しているブログで利用している自作のWordpress用テンプレートです。格安で販売しております。",
+    "text": "私が運営しているブログで利用している自作のWordpress用テンプレートです。格安で販売しておりますのでご興味のある方はどうぞ。",
     "url": "https://blog.isystk.com/web_production/wordpress/1085/",
     "imageUrl": "/img/wordpress-template.jpg"
   },
