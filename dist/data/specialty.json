@@ -5,27 +5,27 @@
     "items" : [
       {
         "label": "スピード感",
-        "color": "#FF0000", 
+        "color": "#FF0000",
         "data": 100
       },
       {
         "label": "精度",
-        "color": "#FFFF00", 
+        "color": "#FFFF00",
         "data": 80
       },
       {
         "label": "セキュリティ対応",
-        "color": "#00FFFF", 
+        "color": "#00FFFF",
         "data": 70
       },
       {
         "label": "デザイン力",
-        "color": "#800000", 
+        "color": "#800000",
         "data": 50
       },
       {
         "label": "SEO",
-        "color": "#C0C0C0", 
+        "color": "#C0C0C0",
         "data": 80
       }
     ]
@@ -36,37 +36,37 @@
     "items" : [
       {
         "label": "java",
-        "color": "#FF0000", 
+        "color": "#FF0000",
         "data": 40
       },
       {
-        "label": "Jquery",
-        "color": "#FFFF00", 
-        "data": 15
+        "label": "PHP(Laravel)",
+        "color": "#FF00FF",
+        "data": 20
       },
       {
-        "label": "Vue.js",
-        "color": "#00FFFF", 
+        "label": "Jquery",
+        "color": "#FFFF00",
         "data": 15
       },
       {
         "label": "React.js",
-        "color": "#C0C0C0", 
+        "color": "#C0C0C0",
         "data": 10
       },
       {
         "label": "Typescript",
-        "color": "#800000", 
+        "color": "#800000",
         "data": 10
       },
       {
-        "label": "Kotlin",
-        "color": "#00FF00", 
+        "label": "Vue.js",
+        "color": "#00FFFF",
         "data": 5
       },
       {
-        "label": "PHP",
-        "color": "#FF00FF", 
+        "label": "Kotlin",
+        "color": "#00FF00",
         "data": 3
       }
     ]
