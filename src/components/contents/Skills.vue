@@ -29,14 +29,12 @@
               {{ e2.text }}
             </div>
             <div class="rating">
-              /* eslint-disable */
               <template v-for="(e3, index3) in e2.rating">
                 ★
               </template>
               <template v-for="(e3, index3) in 3 - e2.rating">
                 ☆
               </template>
-              /* eslint-enable */
             </div>
           </div>
         </div>

@@ -61,7 +61,7 @@ jobs:
       - restore_npm
       - run:
           name: Test
-          command: npm run test:unit
+          command: npm run test
       - save_npm
 
 workflows:
