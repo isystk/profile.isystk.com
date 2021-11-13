@@ -64,14 +64,14 @@ jobs:
           command: npm run test
       - save_npm
 
-  deploy_prod:
+  deploy:
     parameters:
       project:
         type: string
         default: stg-ctodo
     working_directory: ~/<< parameters.project >>
     executor:
-      name: node/default
+      name: default
     steps:
       - setup
       - run:
@@ -96,7 +96,7 @@ workflows:
       - test:
           requires:
             - build
-      - deploy_prod:
+      - deploy:
           name: Deploy to production
           requires:
             - test
