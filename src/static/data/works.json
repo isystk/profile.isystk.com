@@ -37,7 +37,7 @@
   },
   {
     "title": "このポートフォリオサイトです。",
-    "text": "Vue.js(Nuxt.js)&Typescriptを利用してポートフォリオを作成しました。GithubにPushすると自動でCircleCIによってビルドされてVercelに",
+    "text": "Vue.js(Nuxt.js)&Typescriptを利用してポートフォリオを作成しました。GithubにPushすると自動でCircleCIによってビルド・テストが実行されてVercelにデプロイされるようにしています。",
     "url": "https://blog.isystk.com/web_production/portfolio/829/",
     "imageUrl": "/img/portfolio.jpg"
   }

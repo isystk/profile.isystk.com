@@ -51,18 +51,25 @@ https://profile.isystk.com/
 
 推奨するNodeのバージョン v13.13.0
 
-## 💬 Usage
-
-```bash
-$ yarn run dev
-```
-
 ## 📦 Install
 
 ```bash
 $ nodebrew install v13.13.0
 $ node install -g yarn
 $ yarn
+```
+
+## 💬 Usage
+
+```bash
+$ yarn run dev
+```
+
+本番環境へデプロイする場合<br>
+静的ファイルを生成した後、GithubにPushすることでCircleCI経由でVercelにデプロイされます。
+```bash
+$ yarn run generate
+$ git push
 ```
 
 ## 🔧 Contribution
