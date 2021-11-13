@@ -77,7 +77,7 @@ jobs:
               yarn deploy:preview
             else
               yarn deploy:production
-            f
+            fi
       - save_npm
 
 workflows:
