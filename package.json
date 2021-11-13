@@ -11,7 +11,9 @@
     "lint": "eslint --ext .js,.ts,.vue .",
     "lintfix": "eslint --fix --ext .js,.ts,.vue .",
     "precommit": "npm run lint",
-    "test": "jest"
+    "test": "jest",
+    "deploy:production": "now -t $VERCEL_TOKEN -c --prod",
+    "deploy:preview": "now -t $VERCEL_TOKEN -c"
   },
   "author": {
     "name": "isystk",
@@ -76,6 +78,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.8.0",
     "node-sass": "^4.12.0",
+    "now": "^21.0.1",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-i18n": "^6.9.1",
     "nuxt-polyfill": "^1.0.3",

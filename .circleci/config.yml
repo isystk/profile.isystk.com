@@ -64,6 +64,25 @@ jobs:
           command: npm run test
       - save_npm
 
+  deploy:
+    parameters:
+      project:
+        type: string
+        default: stg-ctodo
+    working_directory: ~/<< parameters.project >>
+    executor:
+      name: node/default
+    steps:
+      - setup
+      - run:
+          name: deploy to now
+          command: |
+            if [ ! ${CIRCLE_BRANCH} = master ]; then
+              yarn deploy:preview
+            else
+              yarn deploy:production
+            fi
+
 workflows:
   pull-request:
     jobs:
@@ -77,3 +96,10 @@ workflows:
       - test:
           requires:
             - build
+      - deploy:
+          name: Deploy to production
+          project: profile-isystk-com
+          filters:
+            branches:
+              only:
+                - master
