@@ -18,7 +18,7 @@ commands:
           name: Cache npm dependencies
           key: npm-{{ checksum "package.json" }}
           paths:
-            - ~/workspace/node_modules
+            - node_modules
 
 jobs:
   setup:
