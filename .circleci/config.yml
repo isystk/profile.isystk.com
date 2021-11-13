@@ -68,6 +68,8 @@ jobs:
     executor:
       name: default
     steps:
+      - checkout
+      - restore_npm
       - run:
           name: deploy to now
           command: |
@@ -75,7 +77,8 @@ jobs:
               yarn deploy:preview
             else
               yarn deploy:production
-            fi
+            f
+      - save_npm
 
 workflows:
   pull-request:
