@@ -84,8 +84,7 @@ jobs:
             fi
 
 workflows:
-  version: 2
-  deploy:
+  pull-request:
     jobs:
       - setup
       - lint:
@@ -99,6 +98,8 @@ workflows:
             - build
       - deploy:
           name: Deploy to production
+          requires:
+            - test
           project: profile-isystk-com
           filters:
             branches:
