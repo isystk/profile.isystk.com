@@ -22,6 +22,7 @@ commands:
 
 jobs:
   setup:
+    working_directory: ~/<< parameters.project >>
     executor:
       name: default
     steps:
@@ -32,6 +33,7 @@ jobs:
       - save_npm
 
   lint:
+    working_directory: ~/<< parameters.project >>
     executor:
       name: default
     steps:
@@ -43,6 +45,7 @@ jobs:
       - save_npm
 
   build:
+    working_directory: ~/<< parameters.project >>
     executor:
       name: default
     steps:
@@ -54,6 +57,7 @@ jobs:
       - save_npm
 
   test:
+    working_directory: ~/<< parameters.project >>
     executor:
       name: default
     steps:
@@ -83,24 +87,23 @@ jobs:
             fi
 
 workflows:
-  pull-request:
-    jobs:
-      - setup
-      - lint:
-          requires:
-            - setup
-      - build:
-          requires:
-            - lint
-      - test:
-          requires:
-            - build
-      - deploy:
-          name: Deploy to production
-          requires:
-            - test
-          project: profile-isystk-com
-          filters:
-            branches:
-              only:
-                - master
+  project: profile-isystk-com
+  jobs:
+    - setup
+    - lint:
+        requires:
+          - setup
+    - build:
+        requires:
+          - lint
+    - test:
+        requires:
+          - build
+    - deploy:
+        name: Deploy to production
+        requires:
+          - test
+        filters:
+          branches:
+            only:
+              - master
