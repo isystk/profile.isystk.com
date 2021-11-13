@@ -84,7 +84,8 @@ jobs:
             fi
 
 workflows:
-  pull-request:
+  version: 2
+  deploy:
     jobs:
       - setup
       - lint:
