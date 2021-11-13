@@ -37,12 +37,12 @@
       {
         "label": "java",
         "color": "#FF0000",
-        "data": 40
+        "data": 35
       },
       {
         "label": "PHP(Laravel)",
         "color": "#FF00FF",
-        "data": 20
+        "data": 25
       },
       {
         "label": "Jquery",
@@ -55,19 +55,14 @@
         "data": 10
       },
       {
-        "label": "Typescript",
-        "color": "#800000",
+        "label": "Vue.js",
+        "color": "#00FFFF",
         "data": 10
       },
       {
-        "label": "Vue.js",
-        "color": "#00FFFF",
+        "label": "Typescript",
+        "color": "#800000",
         "data": 5
-      },
-      {
-        "label": "Kotlin",
-        "color": "#00FF00",
-        "data": 3
       }
     ]
   }
