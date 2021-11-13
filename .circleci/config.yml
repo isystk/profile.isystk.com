@@ -73,7 +73,6 @@ jobs:
     executor:
       name: default
     steps:
-      - setup
       - run:
           name: deploy to now
           command: |
