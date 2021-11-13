@@ -64,7 +64,7 @@ jobs:
           command: npm run test
       - save_npm
 
-  deploy:
+  deploy_prod:
     parameters:
       project:
         type: string
@@ -96,7 +96,7 @@ workflows:
       - test:
           requires:
             - build
-      - deploy:
+      - deploy_prod:
           name: Deploy to production
           requires:
             - test
