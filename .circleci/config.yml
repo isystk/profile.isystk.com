@@ -10,7 +10,7 @@ commands:
     steps:
       - restore_cache:
           name: Restore npm dependencies
-          key: npm-{{ checksum "package.json" }
+          key: npm-{{ checksum "package.json" }}
           paths:
             - ~/profile-isystk-com/node_modules
 
