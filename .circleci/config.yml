@@ -64,7 +64,7 @@ jobs:
           command: npm run test
       - save_npm
 
-  generate:
+  deploy:
     executor:
       name: default
     steps:
@@ -73,14 +73,9 @@ jobs:
       - run:
           name: Generate
           command: npm run generate
-      - save_npm
-
-  deploy:
-    executor:
-      name: default
-    steps:
-      - checkout
-      - restore_npm
+      - run:
+          name: Check dist
+          command: ls -la dist
       - run:
           name: deploy to now
           command: |
@@ -104,13 +99,10 @@ workflows:
       - test:
           requires:
             - build
-      - generate:
-          requires:
-            - test
       - deploy:
           name: Deploy to production
           requires:
-            - generate
+            - test
           filters:
             branches:
               only:
