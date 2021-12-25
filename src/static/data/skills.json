@@ -7,7 +7,7 @@
     "items" : [
       {
         "name": "React.js",
-        "rating": 2,
+        "rating": 3,
         "noDivider": false,
         "text": "クラスコンポーネント・関数コンポーネントのどちらの書き方にも対応可能です。Typescript・MatelialUI も導入していました。また、Redux-Toolkitを利用した状態管理も対応可能です。"
       },
