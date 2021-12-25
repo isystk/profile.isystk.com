@@ -18,6 +18,42 @@
     "imageUrl": "/img/java-springboot-boilerplate.jpg"
   },
   {
+    "title": "Nuxt.js JamStack Sample",
+    "text": "MicroCMS と Nuxt.js を利用してJamStackなWebアプリケーションを作成しました。",
+    "url": "https://blog.isystk.com/web_production/vue/1642/",
+    "imageUrl": "/img/nuxtjs-jamstack-sample.jpg"
+  },
+  {
+    "title": "Next.js Typescript Firebase",
+    "text": "Firebase を利用して Next.js でWebアプリケーションを作成ました。",
+    "url": "https://blog.isystk.com/web_production/react/1659/",
+    "imageUrl": "/img/nextjs-typescript-firebase.jpg"
+  },
+  {
+    "title": "Alexa Twitter Trends",
+    "text": "AWS Lambda を利用して AlexaでTwitterのトレンドをお知らせするスキルを作成しました。",
+    "url": "https://blog.isystk.com/web_production/alexa/1669/",
+    "imageUrl": "/img/alexa-twitter-trends.jpg"
+  },
+  {
+    "title": "Nuxt3 Typescript AWS",
+    "text": "Nuxt.js3 を利用してWebアプリケーションを作成しました。",
+    "url": "https://blog.isystk.com/web_production/vue/1675/",
+    "imageUrl": "/img/nuxt3-typescript-aws.jpg"
+  },
+  {
+    "title": "Next.js WebRTC Sample",
+    "text": "Next.js で Web-RTC を利用したZoomのようなビデオ通話アプリを作成しました。",
+    "url": "https://blog.isystk.com/web_production/react/1685/",
+    "imageUrl": "/img/nextjs-webrtc-sample.jpg"
+  },
+  {
+    "title": "Next.js Nest.js GraphQL",
+    "text": "Next.js & Nest.js & Prisma を利用してGraphQLを使ったアプリケーションを作成しました。",
+    "url": "https://blog.isystk.com/web_production/react/1696/",
+    "imageUrl": "/img/nextjs-nestjs-graphql.jpg"
+  },
+  {
     "title": "Nuxt.js＆Typescript Boilerplate",
     "text": "Nuxt.js Typescript ESLint を利用したボイラープレートです。チャート表示や画像カルーセル、モーダル表示など利用頻度の高い機能をサンプルとして纏めています。",
     "url": "https://blog.isystk.com/web_production/boilerplate/1108/",
