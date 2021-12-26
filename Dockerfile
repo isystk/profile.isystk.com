@@ -1,10 +1,12 @@
 FROM node:16.13.1-alpine3.13
 
-WORKDIR /usr/src
+WORKDIR /app
 
 RUN apk update && \
     apk upgrade && \
     apk add bash
+
+COPY . /app/
 
 RUN yarn install
 RUN yarn build
