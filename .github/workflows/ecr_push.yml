@@ -30,6 +30,5 @@ jobs:
         ECR_REPOSITORY: profile.isystk.com
         IMAGE_TAG: latest
       run: |
-        cd docker/nestjs/app
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
