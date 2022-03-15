@@ -7,6 +7,7 @@
     "dev": "STATIC=false nuxt-ts",
     "build": "STATIC=false nuxt-ts build",
     "start": "STATIC=false nuxt-ts start",
+    "start:prd": "STATIC=false nuxt-ts start --port 80",
     "generate": "STATIC=true nuxt-ts generate",
     "lint": "eslint --ext .js,.ts,.vue .",
     "lintfix": "eslint --fix --ext .js,.ts,.vue .",
