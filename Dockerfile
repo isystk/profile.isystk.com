@@ -11,5 +11,5 @@ COPY . /app/
 RUN yarn install
 RUN yarn build
 
-EXPOSE 3000
-CMD ["sh", "-c", "yarn start"]
+EXPOSE 80
+CMD ["sh", "-c", "yarn start:prd"]
