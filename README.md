@@ -49,12 +49,12 @@ https://profile.isystk.com/
 
 ## 🎨 Requirement
 
-推奨するNodeのバージョン v13.13.0
+推奨するNodeのバージョン v14.15.5
 
 ## 📦 Install
 
 ```bash
-$ nodebrew install v13.13.0
+$ nodebrew install v14.15.5
 $ node install -g yarn
 $ yarn
 ```

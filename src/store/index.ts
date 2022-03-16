@@ -1,5 +1,3 @@
-import { ActionContext } from "vuex";
-
 /**
  * store 用インターフェイス
  */
