@@ -3,9 +3,7 @@
     <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
       <div class="thanks">
         <div class="message">
-          <p class="title">
-            Thanks you
-          </p>
+          <p class="title">Thanks you</p>
           <ul class="sns-buttons">
             <li class="share-twitter">
               <a
@@ -54,8 +52,8 @@ import Scrollin from "@/components/parts/Scrollin.vue";
 
 @Component({
   components: {
-    Scrollin
-  }
+    Scrollin,
+  },
 })
 export default class Thanks extends Vue {}
 </script>

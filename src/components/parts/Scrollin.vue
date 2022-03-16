@@ -16,7 +16,7 @@ export default class Scrollin extends Vue {
   classDefault?: [];
 
   @Prop()
-  classChange?: {};
+  classChange?: string;
 
   isInScreen = false;
 

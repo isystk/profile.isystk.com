@@ -11,7 +11,7 @@ export interface StateInterface {
  */
 export const state = (): StateInterface => ({
   locales: ["ja"],
-  locale: "ja"
+  locale: "ja",
 });
 
 /**
@@ -22,5 +22,5 @@ export const mutations = {
     if (state.locales.includes(locale)) {
       state.locale = locale;
     }
-  }
+  },
 };

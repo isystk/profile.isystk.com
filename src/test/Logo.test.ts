@@ -11,15 +11,15 @@ Vue.use(VueI18n);
 const i18n = new VueI18n({
   locale: "ja",
   messages: {
-    ja: require("@/locales/ja.json")
-  }
+    ja: require("@/locales/ja.json"),
+  },
 });
 
 describe("Logo", (): void => {
   test("Vueインスタンスが生成されること", (): void => {
     const wrapper = shallowMount(Logo, {
       i18n,
-      stubs: { NuxtLink: RouterLinkStub }
+      stubs: { NuxtLink: RouterLinkStub },
     });
     expect(wrapper.vm).toBeTruthy();
   });

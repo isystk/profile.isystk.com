@@ -4,17 +4,17 @@
     <div class="nav">
       <ul class="nav-link">
         <li>
-          <a :href="this.$C.URL.BLOG" target="_blank">
+          <a :href="$C.URL.BLOG" target="_blank">
             {{ $t("text.menu.blog") }}
           </a>
         </li>
         <li>
-          <a :href="this.$C.URL.COMPANY" target="_blank">
+          <a :href="$C.URL.COMPANY" target="_blank">
             {{ $t("text.menu.company") }}
           </a>
         </li>
         <li>
-          <a :href="this.$C.URL.CONTACT" target="_blank">
+          <a :href="$C.URL.CONTACT" target="_blank">
             {{ $t("text.menu.contact") }}
           </a>
         </li>
@@ -38,8 +38,8 @@ import SideMenu from "@/components/SideMenu.vue";
 @Component({
   components: {
     Logo,
-    SideMenu
-  }
+    SideMenu,
+  },
 })
 export default class Header extends Vue {
   toggleMenu(): void {

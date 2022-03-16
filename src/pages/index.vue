@@ -51,8 +51,8 @@ import { portfolioModule } from "@/store/portfolio";
     Twitter,
     Thanks,
     Footer,
-    PageTop
-  }
+    PageTop,
+  },
 })
 export default class extends Vue {
   created(): void {

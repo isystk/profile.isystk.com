@@ -43,7 +43,7 @@ export default class PageTop extends Vue {
   moveToTop(): void {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }
 }

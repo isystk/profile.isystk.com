@@ -1,8 +1,6 @@
 <template>
-  <nuxt-link :to="this.$C.URL.HOME" class="brand-link">
-    <h1 class="header-logo">
-      isystk's Portfolio
-    </h1>
+  <nuxt-link :to="$C.URL.HOME" class="brand-link">
+    <h1 class="header-logo">isystk's Portfolio</h1>
   </nuxt-link>
 </template>
 

@@ -2,7 +2,7 @@ import { Configuration as NuxtConfiguration } from "@nuxt/types";
 import webpack, {
   Configuration as WebpackConfiguration,
   Options as WebpackOptions,
-  Plugin as WebpackPlugin
+  Plugin as WebpackPlugin,
 } from "webpack";
 
 require("dotenv").config();
@@ -20,7 +20,7 @@ const nuxtConfig: NuxtConfiguration = {
    * ビルド時に渡される env の値は、ここに記載することで文字列に置換される
    */
   env: {
-    NODE_ENV: process.env.NODE_ENV
+    NODE_ENV: process.env.NODE_ENV,
   },
 
   router: {
@@ -31,14 +31,14 @@ const nuxtConfig: NuxtConfiguration = {
 
     base: PUBLIC_PATH,
 
-    middleware: "i18n"
+    middleware: "i18n",
   },
 
   // https://ja.nuxtjs.org/faq/host-port/
   server: {
     port: 3000,
     // 他のパソコンから IP でつながるように host を変更
-    host: "0.0.0.0" // デフォルト: localhost
+    host: "0.0.0.0", // デフォルト: localhost
   },
   head: {
     titleTemplate: pkg.description,
@@ -47,12 +47,12 @@ const nuxtConfig: NuxtConfiguration = {
       {
         hid: "viewport",
         name: "viewport",
-        content: "width=device-width, initial-scale=1"
+        content: "width=device-width, initial-scale=1",
       },
       {
         hid: "description",
         name: "description",
-        content: pkg.description
+        content: pkg.description,
       },
       { hid: "noydir", name: "robots", content: "noydir" },
       { hid: "noodp", name: "robots", content: "noodp" },
@@ -60,12 +60,12 @@ const nuxtConfig: NuxtConfiguration = {
       {
         hid: "format-detection",
         name: "format-detection",
-        content: "telephone=no"
-      }
+        content: "telephone=no",
+      },
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: PUBLIC_PATH + "favicon.ico" }
-    ]
+      { rel: "icon", type: "image/x-icon", href: PUBLIC_PATH + "favicon.ico" },
+    ],
     // script:[
     //   { src: 'https://platform.twitter.com/widgets.js', defer: true },
     // ]
@@ -88,9 +88,9 @@ const nuxtConfig: NuxtConfiguration = {
     [
       "@nuxtjs/google-analytics",
       {
-        id: "UA-11964840-8"
-      }
-    ]
+        id: "UA-11964840-8",
+      },
+    ],
   ],
   plugins: [
     "@/plugins/libraries/sanitize-html.ts",
@@ -99,7 +99,7 @@ const nuxtConfig: NuxtConfiguration = {
     "@/plugins/libraries/axios.ts",
     "@/plugins/constants-inject.ts",
     "@/plugins/env-inject.ts",
-    "@/plugins/locale/i18n.ts"
+    "@/plugins/locale/i18n.ts",
   ],
   /**
    * Build configuration
@@ -131,7 +131,7 @@ const nuxtConfig: NuxtConfiguration = {
             enforce: "pre",
             test: /\.(js|ts|vue)$/,
             loader: "eslint-loader",
-            exclude: /(node_modules)/
+            exclude: /(node_modules)/,
           });
         }
       }
@@ -143,10 +143,10 @@ const nuxtConfig: NuxtConfiguration = {
         compress: {
           // nuxt buildでproductionビルドするときにconsole.logを削除する
           // https://www.lancard.com/blog/2019/04/05/delete_console-log_at_nuxt_build/
-          drop_console: process.env.NODE_ENV === "production" // eslint-disable-line @typescript-eslint/camelcase
-        }
-      }
-    }
+          drop_console: process.env.NODE_ENV === "production",
+        },
+      },
+    },
   },
   buildcd: {},
   buildModules: ["@nuxt/typescript-build"],
@@ -164,13 +164,13 @@ const nuxtConfig: NuxtConfiguration = {
     imports: [
       {
         set: "@fortawesome/free-solid-svg-icons",
-        icons: ["fas"]
+        icons: ["fas"],
       },
       {
         set: "@fortawesome/free-brands-svg-icons",
-        icons: ["fab"]
-      }
-    ]
+        icons: ["fab"],
+      },
+    ],
   },
 
   // polyfill対応
@@ -182,10 +182,10 @@ const nuxtConfig: NuxtConfiguration = {
         detect: () =>
           "scrollBehavior" in document.documentElement.style &&
           window.__forceSmoothScrollPolyfill__ !== true,
-        install: smoothscroll => smoothscroll.polyfill()
-      }
-    ]
-  }
+        install: (smoothscroll) => smoothscroll.polyfill(),
+      },
+    ],
+  },
 };
 
 export default nuxtConfig;
