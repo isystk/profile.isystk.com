@@ -3,7 +3,7 @@ executors:
   default:
     working_directory: ~/profile-isystk-com
     docker:
-      - image: node:14
+      - image: node:16
 
 commands:
   restore_npm:
