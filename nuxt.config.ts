@@ -19,7 +19,9 @@ const nuxtConfig: NuxtConfiguration = {
    * 環境変数
    * ビルド時に渡される env の値は、ここに記載することで文字列に置換される
    */
-  env: {},
+  env: {
+    NODE_ENV: process.env.NODE_ENV
+  },
 
   router: {
     // リロードのタイミングでは SSR 側で実行される
@@ -64,6 +66,9 @@ const nuxtConfig: NuxtConfiguration = {
     link: [
       { rel: "icon", type: "image/x-icon", href: PUBLIC_PATH + "favicon.ico" }
     ]
+    // script:[
+    //   { src: 'https://platform.twitter.com/widgets.js', defer: true },
+    // ]
   },
   // loading: { color: "#fff" },
   // ローディングを使わない場合はここを false
@@ -138,7 +143,7 @@ const nuxtConfig: NuxtConfiguration = {
         compress: {
           // nuxt buildでproductionビルドするときにconsole.logを削除する
           // https://www.lancard.com/blog/2019/04/05/delete_console-log_at_nuxt_build/
-          drop_console: process.env.envName === "production" // eslint-disable-line @typescript-eslint/camelcase
+          drop_console: process.env.NODE_ENV === "production" // eslint-disable-line @typescript-eslint/camelcase
         }
       }
     }

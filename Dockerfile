@@ -12,4 +12,4 @@ RUN yarn install
 RUN yarn build
 
 EXPOSE 80
-CMD ["sh", "-c", "yarn start:prd"]
+CMD ["sh", "-c", "yarn start"]
