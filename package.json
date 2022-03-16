@@ -77,7 +77,7 @@
     "eslint-plugin-nuxt": "^0.5.0",
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.8.0",
-    "node-sass": "4.14.1",
+    "node-sass": "7.0.0",
     "now": "^21.0.1",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-i18n": "^6.9.1",
