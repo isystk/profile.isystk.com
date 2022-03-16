@@ -1,8 +1,8 @@
 import { mount, shallowMount, RouterLinkStub } from "@vue/test-utils";
 import Vue from "vue";
 import VueI18n from "vue-i18n";
-import Logo from "@/components/Logo.vue";
 import * as C from "@/common/constants/";
+import Logo from "@/components/Logo.vue";
 
 Vue.prototype.$C = C;
 Vue.use(VueI18n);
@@ -21,6 +21,6 @@ describe("Logo", (): void => {
       i18n,
       stubs: { NuxtLink: RouterLinkStub }
     });
-    expect(wrapper.isVueInstance()).toBeTruthy();
+    expect(wrapper.vm).toBeTruthy();
   });
 });

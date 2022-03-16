@@ -1,16 +1,9 @@
 import {
-  Mutation,
   MutationAction,
-  Action,
   VuexModule,
   getModule,
   Module
 } from "vuex-module-decorators";
-import _ from "lodash";
-import moment from "moment";
-import { AxiosRequestConfig } from "axios";
-import { MutationTree, ActionTree, ActionContext } from "vuex";
-import { Context as AppContext } from "@nuxt/types";
 import profileData from "../static/data/profile.json";
 import skillsData from "../static/data/skills.json";
 import worksData from "../static/data/works.json";
