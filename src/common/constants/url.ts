@@ -7,5 +7,5 @@ export const URL = {
   /** 会社概要 */
   COMPANY: "https://blog.isystk.com/company/",
   /** お問い合わせ */
-  CONTACT: "https://blog.isystk.com/contact/"
+  CONTACT: "https://blog.isystk.com/contact/",
 };

@@ -8,14 +8,14 @@
  * @param error
  * @param redirect
  */
-export default function({
+export default function ({
   isHMR,
   app,
   store,
   route,
   params,
   error,
-  redirect
+  redirect,
 }): void {
   const defaultLocale = app.i18n.fallbackLocale;
   // If middleware is called from hot module replacement, ignore it

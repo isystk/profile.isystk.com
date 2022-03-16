@@ -1,23 +1,19 @@
 <template>
   <article id="twitter">
     <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
-      <h2>
-        Twitter
-      </h2>
+      <h2>Twitter</h2>
     </Scrollin>
     <hr :class="{ centerToSide: isScreenin() }" />
     <div class="box">
       <div class="box_item">
-        <p class="title">
-          フォロワー数
-        </p>
+        <p class="title">フォロワー数</p>
         <div class="followers js-shuffleNum">
           {{ twitterFollower }}
         </div>
       </div>
       <div class="box_item">
         <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
-          <div v-if="isShowTwitter" class="tweet" style="height: 400px;">
+          <div v-if="isShowTwitter" class="tweet" style="height: 400px">
             <a
               class="twitter-timeline"
               data-height="400"
@@ -46,8 +42,8 @@ import { portfolioModule, Profile } from "@/store/portfolio";
 
 @Component({
   components: {
-    Scrollin
-  }
+    Scrollin,
+  },
 })
 export default class Twitter extends Vue {
   // スクロール位置
@@ -89,7 +85,7 @@ export default class Twitter extends Vue {
         const defautVal = shuffleNum.textContent;
         let count = 0;
         let id = 0;
-        const setRandom = function(): void {
+        const setRandom = function (): void {
           const random = Math.floor(Math.random() * 9999);
           shuffleNum.textContent = random + "";
           count++;

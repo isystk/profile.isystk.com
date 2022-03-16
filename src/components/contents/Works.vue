@@ -1,9 +1,7 @@
 <template>
   <article id="works">
     <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
-      <h2>
-        WORKS
-      </h2>
+      <h2>WORKS</h2>
     </Scrollin>
     <hr :class="{ centerToSide: isScreenin() }" />
     <div v-if="workBlogData" class="box">
@@ -24,9 +22,7 @@
           <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
             <div class="number">
               <div class="line"></div>
-              <div class="label">
-                01
-              </div>
+              <div class="label">01</div>
             </div>
           </Scrollin>
           <Scrollin
@@ -128,8 +124,8 @@ import { formatter } from "@/utilities";
 
 @Component({
   components: {
-    Scrollin
-  }
+    Scrollin,
+  },
 })
 export default class Works extends Vue {
   // スクロール位置

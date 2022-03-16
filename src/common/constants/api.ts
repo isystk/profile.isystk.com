@@ -31,7 +31,7 @@ export const API_ENDPOINT = {
   /** 特性 */
   SPECIALTY: getBffUrl("/data/specialty.json"),
   /** お問い合わせ */
-  CONTACTS: getBffUrl("/data/contacts.json")
+  CONTACTS: getBffUrl("/data/contacts.json"),
 };
 
 /** アクセストークンヘッダ名 - API サーバーとのログインセッション用のトークン名 */
@@ -47,5 +47,5 @@ export const HTTP_STATUS = {
   /** 認証が必要である */
   UNAUTHORIZED: 401,
   /** サービス利用不可 */
-  SERVICE_UNAVAILABLE: 503
+  SERVICE_UNAVAILABLE: 503,
 };

@@ -8,7 +8,7 @@ import {
   setToken,
   unsetToken,
   getTokenFromCookie,
-  initializeAxios
+  initializeAxios,
 } from "@/utilities/";
 
 const accessor = ({ $axios, app, req, error }): void => {

@@ -11,9 +11,7 @@
         </li>
       </ul>
     </div>
-    <div class="copylight">
-      © 2020 isystk's blog
-    </div>
+    <div class="copylight">© 2020 isystk's blog</div>
   </footer>
 </template>
 

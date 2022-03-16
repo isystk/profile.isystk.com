@@ -1,9 +1,7 @@
 <template>
   <article id="specialty" class="dark">
     <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
-      <h2>
-        SPECIALTY
-      </h2>
+      <h2>SPECIALTY</h2>
     </Scrollin>
     <hr :class="{ centerToSide: isScreenin() }" />
     <div v-if="isShowChart" class="box">
@@ -26,6 +24,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import _ from "lodash";
+import Chart from "chart.js";
 import Scrollin from "@/components/parts/Scrollin.vue";
 import ChartRadar from "@/components/parts/ChartRadar.vue";
 import ChartDoughnut from "@/components/parts/ChartDoughnut.vue";
@@ -35,8 +34,8 @@ import { portfolioModule, Profile } from "@/store/portfolio";
   components: {
     Scrollin,
     ChartRadar,
-    ChartDoughnut
-  }
+    ChartDoughnut,
+  },
 })
 export default class Specialty extends Vue {
   // スクロール位置
@@ -122,9 +121,9 @@ export default class Specialty extends Vue {
             lineTension: 0,
             fill: true,
             borderWidth: 3,
-            data: _.map(quality.items, "data")
-          }
-        ]
+            data: _.map(quality.items, "data"),
+          },
+        ],
       } as Chart.ChartData,
       options: {
         responsive: true,
@@ -135,21 +134,21 @@ export default class Specialty extends Vue {
           position: "top",
           fontSize: 16,
           padding: 10,
-          text: quality.title
+          text: quality.title,
         },
         legend: {
-          display: false
+          display: false,
         },
         tooltips: {
-          display: true
+          display: true,
         },
         scale: {
           ticks: {
             suggestedMin: 0,
-            suggestedMax: 100
-          }
-        }
-      } as Chart.ChartOptions
+            suggestedMax: 100,
+          },
+        },
+      } as Chart.ChartOptions,
     };
 
     // ドーナツチャート
@@ -161,9 +160,9 @@ export default class Specialty extends Vue {
             label: program.title,
             backgroundColor: _.map(program.items, "color"),
             borderColor: "#FFFFFF",
-            data: _.map(program.items, "data")
-          }
-        ]
+            data: _.map(program.items, "data"),
+          },
+        ],
       } as Chart.ChartData,
       options: {
         responsive: true,
@@ -174,16 +173,16 @@ export default class Specialty extends Vue {
           position: "top",
           fontSize: 16,
           padding: 10,
-          text: program.title
+          text: program.title,
         },
         legend: {
           display: true, // 凡例を表示します。
-          position: "bottom" // 凡例の位置
+          position: "bottom", // 凡例の位置
         },
         tooltips: {
-          display: true
-        }
-      } as Chart.ChartOptions
+          display: true,
+        },
+      } as Chart.ChartOptions,
     };
   }
 }

@@ -1,9 +1,7 @@
 <template>
   <article id="skills">
     <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
-      <h2>
-        SKILLS
-      </h2>
+      <h2>SKILLS</h2>
     </Scrollin>
     <hr :class="{ centerToSide: isScreenin() }" />
     <template v-for="(e, index) in skillData">
@@ -29,12 +27,8 @@
               {{ e2.text }}
             </div>
             <div class="rating">
-              <template v-for="(e3, index3) in e2.rating">
-                ★
-              </template>
-              <template v-for="(e3, index3) in 3 - e2.rating">
-                ☆
-              </template>
+              <template v-for="(e3, index3) in e2.rating"> ★ </template>
+              <template v-for="(e3, index3) in 3 - e2.rating"> ☆ </template>
             </div>
           </div>
         </div>
@@ -51,8 +45,8 @@ import { formatter } from "@/utilities";
 
 @Component({
   components: {
-    Scrollin
-  }
+    Scrollin,
+  },
 })
 export default class Skills extends Vue {
   // スクロール位置

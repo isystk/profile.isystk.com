@@ -14,18 +14,14 @@
       <div class="intro">
         <div>
           <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
-            <p class="title ">
-              ITエンジニアを活きる
-            </p>
+            <p class="title">ITエンジニアを活きる</p>
           </Scrollin>
           <br />
           <Scrollin
             :class-default="'fadein'"
             :class-change="'scrollin scrollin-delay1'"
           >
-            <p class="name">
-              Yoshitaka Ise
-            </p>
+            <p class="name">Yoshitaka Ise</p>
           </Scrollin>
         </div>
       </div>
@@ -50,8 +46,8 @@ import Scrollin from "@/components/parts/Scrollin.vue";
 
 @Component({
   components: {
-    Scrollin
-  }
+    Scrollin,
+  },
 })
 export default class MainVisual extends Vue {
   // メインビジュアルのスクロールリンク
@@ -62,7 +58,7 @@ export default class MainVisual extends Vue {
 
     window.scrollTo({
       top: introduction.offsetTop,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }
 }

@@ -2,7 +2,7 @@ import {
   MutationAction,
   VuexModule,
   getModule,
-  Module
+  Module,
 } from "vuex-module-decorators";
 import profileData from "../static/data/profile.json";
 import skillsData from "../static/data/skills.json";

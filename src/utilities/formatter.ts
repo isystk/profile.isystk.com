@@ -14,8 +14,9 @@ export class Formatter {
     // 年月日の値（ISO 8601を想定）をDateオブジェクトに変換
     const thisDate = new Date(date);
     // 変数展開で変換
-    const formatted = `${thisDate.getFullYear()}年${thisDate.getMonth() +
-      1}月${thisDate.getDate()}日`.replace(/\n|\r/g, "");
+    const formatted = `${thisDate.getFullYear()}年${
+      thisDate.getMonth() + 1
+    }月${thisDate.getDate()}日`.replace(/\n|\r/g, "");
     return formatted;
   }
 
@@ -42,8 +43,9 @@ export class Formatter {
     // 今日の年月日の値（ISO 8601を想定）をDateオブジェクトで取得
     const thisDate = new Date();
     // 変数展開で変換
-    const formatted = `${thisDate.getFullYear()}年${thisDate.getMonth() +
-      1}月${thisDate.getDate()}日`.replace(/\n|\r/g, "");
+    const formatted = `${thisDate.getFullYear()}年${
+      thisDate.getMonth() + 1
+    }月${thisDate.getDate()}日`.replace(/\n|\r/g, "");
     return formatted;
   }
 

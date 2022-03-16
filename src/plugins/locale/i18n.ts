@@ -14,8 +14,8 @@ export default ({ app, store }): void => {
     locale: store.state.i18n.locale,
     fallbackLocale: "ja",
     messages: {
-      ja: require("@/locales/ja.json")
-    }
+      ja: require("@/locales/ja.json"),
+    },
   });
 
   // app.i18n.path = (link) => {

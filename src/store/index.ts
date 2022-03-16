@@ -9,10 +9,9 @@ export interface StateInterface {
 /**
  * state
  */
-// @ts-ignore
 export const state = (): StateInterface => ({
   isServerInitCalled: false,
-  isClientInitCalled: false
+  isClientInitCalled: false,
 });
 
 /**
@@ -24,7 +23,7 @@ export const getters = {
   },
   isClientInitCalled(state: StateInterface): boolean {
     return state.isClientInitCalled;
-  }
+  },
 };
 
 /**
@@ -36,7 +35,7 @@ export const mutations = {
   },
   setIsClientInitCalled(state: StateInterface): void {
     state.isClientInitCalled = true;
-  }
+  },
 };
 
 /**
@@ -47,9 +46,7 @@ export const actions = {
    * サーバー初期化時の処理
    */
   async nuxtServerInit(
-    // @ts-ignore
-    { dispatch, commit, state }: ActionContext<any, any>,
-    // @ts-ignore
+    { dispatch, commit, state },
     { req, res, error }
   ): Promise<void> {
     await console.log("nuxtServerInit");
@@ -57,5 +54,5 @@ export const actions = {
 
     // // ログインチェック
     // await dispatch("auth/loginCheck", {} as ILoginCheckPayload);
-  }
+  },
 };
