@@ -49,12 +49,12 @@ https://profile.isystk.com/
 
 ## 🎨 Requirement
 
-推奨するNodeのバージョン v14.15.5
+推奨するNodeのバージョン v16.13.1 
 
 ## 📦 Install
 
 ```bash
-$ nodebrew install v14.15.5
+$ nodebrew install v16.13.1 
 $ node install -g yarn
 $ yarn
 ```
@@ -65,7 +65,7 @@ $ yarn
 $ yarn run dev
 ```
 
-本番環境へデプロイする場合<br>
+本番環境(Vercel)へデプロイする場合<br>
 静的ファイルを生成した後、GithubにPushすることでCircleCI経由でVercelにデプロイされます。
 ```bash
 $ yarn run generate
