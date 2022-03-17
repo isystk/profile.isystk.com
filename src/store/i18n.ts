@@ -18,7 +18,7 @@ export const state = (): StateInterface => ({
  * mutations
  */
 export const mutations = {
-  SET_LANG(state, locale): void {
+  SET_LANG(state: StateInterface, locale: string): void {
     if (state.locales.includes(locale)) {
       state.locale = locale;
     }
