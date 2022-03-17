@@ -60,7 +60,7 @@ export class Formatter {
    * \n 改行を <br> に変更
    * span(v-html="$sanitize({someContent})") で利用可能
    */
-  public replaceLineFeedCodeToBR(s): string {
+  public replaceLineFeedCodeToBR(s: string): string {
     if (!s) {
       return "";
     }
