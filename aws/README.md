@@ -2,6 +2,9 @@
 ## ネットワーク構成
 ![ネットワーク構成](./network.png "ネットワーク構成")
 
+## 見積もり
+https://calculator.aws/#/estimate?id=554054049fbca3545079c3a1213b3beea21d54d4
+
 ## VPCネットワークを構築する
 CloudFormation → スタック → スタックの作成
 - Igress(ALB)用のパブリックサブネット

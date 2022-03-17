@@ -66,9 +66,6 @@ const nuxtConfig: NuxtConfiguration = {
     link: [
       { rel: "icon", type: "image/x-icon", href: PUBLIC_PATH + "favicon.ico" },
     ],
-    // script:[
-    //   { src: 'https://platform.twitter.com/widgets.js', defer: true },
-    // ]
   },
   // loading: { color: "#fff" },
   // ローディングを使わない場合はここを false
