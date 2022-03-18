@@ -23,7 +23,7 @@ Parameters:
   BackendHost:
     Description : Input DNS A record of backend ALB
     Type: String
-    Default: internal-isystk-alb-internal-XXXXXXXXX.ap-northeast-1.elb.amazonaws.com
+    Default: http://internal-isystk-alb-internal-XXXXXXXXX.ap-northeast-1.elb.amazonaws.com
 
 
 Resources:
@@ -47,12 +47,10 @@ Resources:
               HostPort: 80
               Protocol: tcp
           Environment:
-            - Name: SESSION_SECRET_KEY
-              Value: 41b678c65b37bf99c37bcab522802760
-            - Name: APP_SERVICE_HOST
-              Value: !Sub "http://${BackendHost}"
-            - Name: NOTIF_SERVICE_HOST
-              Value: !Sub "http://${BackendHost}"
+            - Name: internalEndpointUrl
+              Value: !Sub "${BackendHost}"
+            - Name: externalEndpointUrl
+              Value: !Sub "${BackendHost}"
           LogConfiguration:
               LogDriver: awslogs
               Options:

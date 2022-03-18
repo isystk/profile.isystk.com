@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
-    "build": "cross-env NODE_ENV=dev nuxt-ts build",
+    "build": "cross-env NODE_ENV=staging nuxt-ts build",
     "start": "nuxt-ts start --port 80",
     "generate": "cross-env NODE_ENV=production nuxt-ts generate",
     "lint": "eslint --ext .js,.ts,.vue .",
