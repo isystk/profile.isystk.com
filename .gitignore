@@ -28,5 +28,3 @@ sw.*
 
 /.settings/
 /.project
-
-src/.env
