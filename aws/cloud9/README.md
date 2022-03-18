@@ -94,7 +94,7 @@ $ docker image ls
 $ docker image pull ${AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/profile.isystk.com:v1
 
 # Dockerコンテナを起動する
-$ docker container run -d -p 8080:80 ${AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/profile.isystk.com:v1
+$ docker container run -d -e externalEndpointUrl=https://profile.isystk.com -p 8080:80 ${AWS_ACCOUNT_ID}.dkr.ecr.ap-northeast-1.amazonaws.com/profile.isystk.com:v1
 $ docker container ls
 CONTAINER ID   IMAGE                                                                 COMMAND   CREATED          STATUS          PORTS                                   NAMES
 53f64e2b8d72   004796740041.dkr.ecr.ap-northeast-1.amazonaws.com/profile.isystk.com:v1   "/main"   16 seconds ago   Up 15 seconds   0.0.0.0:8080->80/tcp, :::8080->80/tcp   kind_bardeen

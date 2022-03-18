@@ -1,17 +1,8 @@
-import { Configuration as NuxtConfiguration } from "@nuxt/types";
-import webpack, {
-  Configuration as WebpackConfiguration,
-  Options as WebpackOptions,
-  Plugin as WebpackPlugin,
-} from "webpack";
-
-require("dotenv").config();
-
 const pkg = require("./package");
 
 const PUBLIC_PATH = "/";
 
-const nuxtConfig: NuxtConfiguration = {
+const nuxtConfig = {
   mode: "universal",
   srcDir: "src/",
 
@@ -78,7 +69,6 @@ const nuxtConfig: NuxtConfiguration = {
    */
   css: ["@/assets/sass/app.scss"],
   modules: [
-    "@nuxtjs/dotenv",
     "@nuxtjs/axios",
     "nuxt-polyfill",
     "@nuxtjs/pwa",
@@ -115,7 +105,7 @@ const nuxtConfig: NuxtConfiguration = {
      * You can extend webpack config here
      */
     extend(
-      config: WebpackConfiguration,
+      config,
       ctx: {
         isDev: boolean;
         isClient: boolean;

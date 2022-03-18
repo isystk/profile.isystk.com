@@ -32,6 +32,7 @@ CloudFormation → スタック → スタックの作成
 ALBSecurityGroupId：「igress」と名前のつくもの
 ALBSubnetId1：「igress-1a」
 ALBSubnetId2：「igress-1c」
+BackendHost：「https://profile.isystk.com」
 VpcId：「IsystkVpc」
 上記以外はデフォルトのまま
 ```
