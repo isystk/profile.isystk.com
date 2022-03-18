@@ -21,6 +21,8 @@ const nuxtConfig: NuxtConfiguration = {
    */
   env: {
     NODE_ENV: process.env.NODE_ENV,
+    internalEndpointUrl: process.env.internalEndpointUrl,
+    externalEndpointUrl: process.env.externalEndpointUrl,
   },
 
   router: {
