@@ -175,6 +175,19 @@ const nuxtConfig = {
       },
     ],
   },
+  render: {
+    static: {
+      setHeaders(res) {
+        res.setHeader("X-Frame-Options", "ALLOWALL");
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.setHeader("Access-Control-Allow-Methods", "GET");
+        res.setHeader(
+          "Access-Control-Allow-Headers",
+          "Origin, X-Requested-With, Content-Type, Accept"
+        );
+      },
+    },
+  },
 };
 
 export default nuxtConfig;
