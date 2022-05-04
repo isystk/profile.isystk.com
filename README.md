@@ -62,13 +62,13 @@ $ yarn
 ## 💬 Usage
 
 ```bash
-$ yarn run dev
+$ yarn dev
 ```
 
 本番環境(Vercel)へデプロイする場合<br>
 静的ファイルを生成した後、GithubにPushすることでCircleCI経由でVercelにデプロイされます。
 ```bash
-$ yarn run generate
+$ yarn generate
 $ git push
 ```
 
