@@ -12,7 +12,14 @@ internals
 stories
 tools
 
-# js vendor file with import/require
-src/assets/**
-# static vendor file . use with nuxt.config.js script
-src/static/**
+# build file 
+out/**
+
+# config file 
+.eslintrc.js
+nuxt.config.ts
+tailwind.config.js
+
+
+
+src/models

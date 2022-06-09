@@ -1,30 +1,35 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# dependencies
 node_modules
-
-# Optional npm cache directory
-.npm
-
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-
-# nuxt.js build output
+*.log
 .nuxt
+nuxt.d.ts
+.output
 
-# Nuxt generate
-dist
+# vercel
+.vercel
 
-# IDE
+.env
+
+#amplify-do-not-edit-begin
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/logs
+amplify/mock-data
+amplify/backend/amplify-meta.json
+amplify/backend/.temp
+build/
+dist/
+node_modules/
+aws-exports.js
+awsconfiguration.json
+amplifyconfiguration.json
+amplifyconfiguration.dart
+amplify-build-config.json
+amplify-gradle-config.json
+amplifytools.xcconfig
+.secret-*
+**.sample
+#amplify-do-not-edit-end
+
+#editor
 .idea
-
-# Service worker
-sw.*
-
-/.settings/
-/.project
+.vscode

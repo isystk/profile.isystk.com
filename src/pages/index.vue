@@ -1,67 +1,45 @@
 <template>
-  <div>
-    <Header />
-    <MainVisual />
-    <div class="contents">
-      <div>
-        <Introduction />
-      </div>
-      <div>
-        <Specialty />
-      </div>
-      <div>
-        <Skills />
-      </div>
-      <div>
-        <Works />
-      </div>
-      <div>
-        <Twitter />
-      </div>
-    </div>
-    <Thanks />
-    <Footer />
-    <PageTop />
-  </div>
+  <v-card class="mx-auto">
+    <v-container fluid>
+      <v-row dense>
+        <v-col v-for="(data, postId) in posts" :key="postId" cols="12" md="4">
+          <v-card>
+            <NuxtLink :to="`${Url.POSTS}/${postId}`">
+              <v-img :src="data.photo" style="width: 92vw; height: 50vh" cover>
+                <v-card-title class="text-white">
+                  {{ data.title }}
+                </v-card-title>
+              </v-img>
+
+              <v-card-actions>
+                <v-spacer />
+                <v-btn
+                  size="small"
+                  color="surface-variant"
+                  variant="text"
+                  icon="mdi-heart"
+                />
+              </v-card-actions>
+            </NuxtLink>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { State } from "vuex-class";
-import Header from "@/components/Header.vue";
-import MainVisual from "@/components/contents/MainVisual.vue";
-import Introduction from "@/components/contents/Introduction.vue";
-import Specialty from "@/components/contents/Specialty.vue";
-import Skills from "@/components/contents/Skills.vue";
-import Works from "@/components/contents/Works.vue";
-import Twitter from "@/components/contents/Twitter.vue";
-import Thanks from "@/components/contents/Thanks.vue";
-import Footer from "@/components/Footer.vue";
-import PageTop from "@/components/parts/PageTop.vue";
-import { portfolioModule } from "@/store/portfolio";
-
-@Component({
-  components: {
-    Header,
-    MainVisual,
-    Introduction,
-    Specialty,
-    Skills,
-    Works,
-    Twitter,
-    Thanks,
-    Footer,
-    PageTop,
-  },
+<script setup lang="ts">
+import { computed, onBeforeMount } from 'vue'
+import { useMeta } from 'nuxt/app'
+useMeta({
+  title: 'Top',
 })
-export default class extends Vue {
-  created(): void {
-    // ポートフォリオデータをストアに設定
-    portfolioModule.fetchProfile();
-    portfolioModule.fetchSkill();
-    portfolioModule.fetchWork();
-    portfolioModule.fetchSpecialty();
-    portfolioModule.fetchContact();
-  }
-}
+import { Url } from '@/constants/url'
+import { injectStore } from '@/store'
+const main = injectStore()
+onBeforeMount(async () => {
+  // 投稿一覧の取得
+  await main?.post?.readPosts()
+})
+const posts = computed(() => main?.post?.posts)
 </script>
