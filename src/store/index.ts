@@ -1,23 +1,23 @@
-import { Store } from "vuex";
-import { ActionContext } from "vuex/types";
-import { Context } from "@nuxt/types";
-import { initialiseStores } from "~/utilities/store-accessor";
+import { computed, inject, InjectionKey, provide } from 'vue'
+import { useMainStore } from '@/store/main'
 
-// RootStateを追加
-export const state = () => ({});
-export type RootState = ReturnType<typeof state>;
+const rootStore = () => {
+  const store = useMainStore()
+  return {
+    get main() {
+      return store.getMain()
+    },
+  }
+}
 
-const initializer = (store: Store<any>) => initialiseStores(store);
-export const plugins = [initializer];
+type RootStore = ReturnType<typeof rootStore>
+const RootStoreKey: InjectionKey<RootStore> = Symbol('rootStore')
 
-// Rootのactionsを追加
-export const actions = {
-  nuxtServerInit: async (
-    context: ActionContext<RootState, RootState>,
-    server: Context
-  ) => {
-    // nuxtServerInitの処理
-  },
-};
+export const provideStore = () => {
+  provide(RootStoreKey, rootStore())
+}
 
-export * from "~/utilities/store-accessor";
+export const injectStore = () => {
+  const rootStore = inject(RootStoreKey)
+  return rootStore?.main
+}
