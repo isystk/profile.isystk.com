@@ -85,11 +85,13 @@ $ git push
 
 | プロジェクト| 概要|
 | :---------------------------------------| :-------------------------------|
-| [公式ドキュメント - Nuxt.js](https://ja.nuxtjs.org/guide/)| 公式ドキュメント - Nuxt.js|
-| [公式ドキュメント - TypeScript](https://www.typescriptlang.org/docs/home)| 公式ドキュメント - TypeScript|
-| [仕事ですぐに使えるTypeScript](https://future-architect.github.io/typescript-guide/)| 仕事ですぐに使えるTypeScript|
-| [アイコン（fontawesome）](https://fontawesome.com/icons?d=gallery)| アイコン（fontawesome）|
-| [SASS](https://sass-lang.com/documentation) | SASS |
+| [Nuxt3 Docs](https://v3.nuxtjs.org/guide/concepts/introduction)| Nuxt3 Docs |
+| [Vuetify 3 Beta](https://next.vuetifyjs.com/en/getting-started/installation/)| Vuetify 3 Beta |
+| [Material Design Icons](https://pictogrammers.github.io/@mdi/font/2.0.46/)| Material Design Icons |
+| [Tailwind CSS](https://tailwindcss.com/docs/installation)| Tailwind CSS |
+| [vee-validate](https://vee-validate.logaretm.com/v4/guide/components)| vee-validate |
+| [husky v6 のインストール方法と使い方。lint-staged も導入して、品質を保とう](https://fwywd.com/tech/husky-setup)| husky v6 のインストール方法と使い方。lint-staged も導入して、品質を保とう |
+
 
 ## 🎫 Licence
 

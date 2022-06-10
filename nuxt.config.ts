@@ -33,11 +33,6 @@ const nuxtConfig = defineNuxtConfig({
     define: {
       'process.env.DEBUG': false,
     },
-    resolve: {
-      alias: {
-        './runtimeConfig': './runtimeConfig.browser',
-      },
-    },
   },
 })
 
