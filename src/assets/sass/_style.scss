@@ -1,3 +1,190 @@
-.card-header {
-  background-color: $secondary-color;
+@charset "UTF-8";
+
+a:hover,
+a:hover p {
+  animation: opacity 0.5s both;
+  text-decoration: underline;
+}
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* バックグラウンド 動画*/
+.vide-wrap {
+}
+.vide-wrap video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 100%;
+  height: 100%;
+  z-index: -100;
+  background-color: #333;
+  opacity: 0.8;
+}
+
+/* 下からフェイドインするアニメーション */
+.fadein {
+  opacity: 0;
+  transform: translate(0, 50px);
+  -moz-transform: translate(0, 50px);
+  -webkit-transform: translate(0, 50px);
+}
+.fadein.scrollin {
+  animation: fadein 0.5s both;
+  -moz-animation: fadein 0.5s both;
+  -webkit-animation: fadein 0.5s both;
+}
+.fadein.scrollin-delay1 {
+  animation-delay: 0.6s;
+}
+.fadein.scrollin-delay2 {
+  animation-delay: 1.2s;
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translate(0, 50px);
+    -moz-transform: translate(0, 50px);
+    -webkit-transform: translate(0, 50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+  }
+}
+
+/* 中央からサイドに下線を太くするアニメーション */
+.centerToSide {
+  animation: centerToSide .3s ease 0s 1 forwards;
+}
+@keyframes centerToSide {
+  0% {
+    transform: scaleY(1) scaleX(0);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+/* マウスオーバーで画像をズームするアニメーション */
+.zoom{
+  overflow: hidden;
+}
+.zoom img:hover{
+  animation: imgZoom .5s ease 0s 1 forwards;
+}
+@keyframes imgZoom {
+  0% {
+    transform:scale(1,1);
+  }
+  100% {
+    transform:scale(1.1, 1.1);
+  }
+}
+
+/*--------------------------------------------------------------------
+
+  2 レイアウト設定
+
+--------------------------------------------------------------------*/
+
+#wrapper {
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+/*--------------------------------------------------------------------
+
+  5 コンテンツ
+
+--------------------------------------------------------------------*/
+
+.contents {
+  margin: 30px 10px;
+  background-color: #f3f3f4;
+}
+
+.contents .container {
+  padding: 60px 10px;
+}
+
+.contents .container h2 {
+  font-size: 32px;
+}
+
+.contents .container hr {
+  width: 100px;
+  margin: 30px auto;
+  transform: scaleY(1) scaleX(0);
+  border: 2px solid #000d6d
+}
+
+.contents .container.dark {
+  background-color: #000;
+  color: #fff;
+}
+.contents .container.dark hr {
+  border-color: #fff;
+}
+
+.contents .container .box{
+}
+.box_item {
+  margin: 30px 0;
+  width: 100%;
+}
+
+@media screen and (min-width:992px){
+  .contents {
+    margin: 60px 30px;
+  }
+
+  .contents .container {
+    padding: 120px 30px;
+  }
+
+  .contents .container h2 {
+    font-size: 48px;
+  }
+
+  .contents .container .box{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* Twitterのタイムラインがはみ出る問題の対応 */
+@media screen and (max-width: 768px) and (min-width: 480px) {
+  iframe .twitter-timeline-rendered{
+    width: 490px!important;
+  }
+}
+@media screen and (max-width: 480px) {
+  iframe.twitter-timeline-rendered {
+    width: 450px !important;
+    margin:0 auto;
+  }
+}
+.timeline-Widget {
+  max-width: 300px!important;
+  width:200px!important;
 }
