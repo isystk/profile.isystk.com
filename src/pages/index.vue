@@ -13,6 +13,6 @@ useMeta({
 import { injectStore } from '@/store'
 const main = injectStore()
 onBeforeMount(async () => {
-  console.log("beforeMount")
+  console.log('beforeMount')
 })
 </script>
