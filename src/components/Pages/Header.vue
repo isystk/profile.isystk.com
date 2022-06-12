@@ -4,13 +4,9 @@
       <pages-logo />
       <v-spacer />
 
-      <NuxtLink :to="Url.LOGIN" class="invisible md:visible">
-        ログイン
-      </NuxtLink>
-
       <v-app-bar-nav-icon
         variant="text"
-        class="visible md:invisible"
+        class="visible"
         @click.stop="toggleMenu"
       />
     </v-app-bar>
@@ -47,14 +43,12 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { useRouter } from 'nuxt/app'
 import { Url } from '@/constants/url'
 import MainService from '@/services/main'
 const props = defineProps<{
   store: MainService
 }>()
 
-const router = useRouter()
 const drawer = ref(false)
 
 const toggleMenu = () => {
@@ -66,12 +60,7 @@ const items = computed(() => {
     {
       text: 'ログイン',
       icon: 'mdi-login-variant',
-      func: () => router.push(Url.LOGIN),
-    },
-    {
-      text: 'マイページ',
-      icon: 'mdi-account',
-      func: () => router.push(Url.MEMBER),
+      func: () => (location.href = Url.LOGIN),
     },
   ]
 })
