@@ -1,5 +1,5 @@
 <template>
-  <span id="page-top" class="link" :class="{ hide: !state.isShow }" >
+  <span id="page-top" class="link" :class="{ hide: !state.isShow }">
     <a href="#" @click.prevent="moveToTop">
       <v-icon icon="mdi-chevron-up" />
     </a>
@@ -20,7 +20,7 @@ type State = {
   isShow: boolean
 }
 const state = reactive<State>({
-  isShow: false
+  isShow: false,
 })
 
 onBeforeMount(() => {
@@ -39,10 +39,10 @@ const onScroll = (): void => {
   const windowHeight = window.innerHeight
   if (scrollTop > windowHeight) {
     if (!state.isShow) {
-      this.isShow = true
+      state.isShow = true
     }
   } else if (state.isShow) {
-    this.isShow = false
+    state.isShow = false
   }
 }
 
@@ -56,7 +56,6 @@ const moveToTop = (): void => {
 </script>
 
 <style lang="scss" scoped>
-/* TOPへ戻る */
 #page-top {
   position: fixed;
   bottom: 45px;

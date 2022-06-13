@@ -5,6 +5,7 @@
       <slot />
     </v-main>
     <pages-footer :store="main" />
+    <elements-page-top />
   </v-app>
 </template>
 
@@ -34,7 +35,6 @@ useHead({
 .wrapper {
   width: 95%;
   max-width: 1440px;
-  height: 100%;
   margin: 0 auto;
   overflow: hidden;
 }
