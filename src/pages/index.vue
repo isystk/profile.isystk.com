@@ -4,6 +4,10 @@
     <div class="contents">
       <pages-introduction />
       <pages-specialty />
+      <pages-skills />
+      <pages-works />
+      <pages-twitter />
+      <pages-thanks />
     </div>
   </div>
 </template>
