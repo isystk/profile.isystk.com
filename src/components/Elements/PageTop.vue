@@ -1,0 +1,79 @@
+<template>
+  <span id="page-top" class="link" :class="{ hide: !state.isShow }" >
+    <a href="#" @click.prevent="moveToTop">
+      <v-icon icon="mdi-chevron-up" />
+    </a>
+  </span>
+</template>
+
+<script lang="ts" setup>
+import {
+  ref,
+  reactive,
+  computed,
+  onBeforeMount,
+  onBeforeUnmount,
+  onMounted,
+} from 'vue'
+
+type State = {
+  isShow: boolean
+}
+const state = reactive<State>({
+  isShow: false
+})
+
+onBeforeMount(() => {
+  window.addEventListener('scroll', onScroll)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScroll)
+})
+onMounted(() => {
+  onScroll()
+})
+
+// 画面スクロール時の処理
+const onScroll = (): void => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+  const windowHeight = window.innerHeight
+  if (scrollTop > windowHeight) {
+    if (!state.isShow) {
+      this.isShow = true
+    }
+  } else if (state.isShow) {
+    this.isShow = false
+  }
+}
+
+// スクロールしてトップ
+const moveToTop = (): void => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  })
+}
+</script>
+
+<style lang="scss" scoped>
+/* TOPへ戻る */
+#page-top {
+  position: fixed;
+  bottom: 45px;
+  right: 16px;
+  z-index: 100;
+  transition: top 0.5s, bottom 0.5s;
+}
+#page-top a {
+  background: #000d6d;
+  color: #fff;
+  width: 50px;
+  padding: 16px 0;
+  text-align: center;
+  display: block;
+  border-radius: 25px;
+}
+#page-top.hide {
+  bottom: -100px;
+}
+</style>

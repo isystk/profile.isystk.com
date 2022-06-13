@@ -1,8 +1,9 @@
 <template>
   <div>
+    <pages-main-visual />
     <div class="contents">
-      <pages-main-visual />
       <pages-introduction />
+      <pages-specialty />
     </div>
   </div>
 </template>
