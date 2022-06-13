@@ -60,7 +60,8 @@ const componentRef = ref<HTMLElement | null>(null)
 const getPosition = (): number => {
   const el = componentRef.value
   if (el) {
-    return el.getBoundingClientRect().top
+    return el.offsetTop
+    // return el.getBoundingClientRect().top
   } else {
     return 0
   }

@@ -30,7 +30,6 @@ useHead({
 })
 </script>
 
-
 <style lang="scss" scoped>
 .wrapper {
   width: 95%;

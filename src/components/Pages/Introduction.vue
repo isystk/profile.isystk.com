@@ -1,24 +1,18 @@
 <template>
-  <v-card id="introduction">
+  <v-card id="introduction" ref="componentRef">
     <v-container fluid class="container">
       <elements-scrollin class-default="fadein" class-change="scrollin">
         <h2 class="text-center">INTRODUCTION</h2>
       </elements-scrollin>
-      <hr ref="componentRef" :class="{centerToSide: state.isInScreen}" />
+      <hr :class="{ centerToSide: state.isInScreen }" />
       <v-row dense>
         <v-col cols="12" md="6" class="order-md-last">
-          <elements-scrollin
-            class-default="fadein"
-            class-change="scrollin"
-          >
+          <elements-scrollin class-default="fadein" class-change="scrollin">
             <img :src="profileData.imageUrl" class="avatar" />
           </elements-scrollin>
         </v-col>
         <v-col cols="12" md="6">
-          <elements-scrollin
-            class-default="fadein"
-            class-change="scrollin"
-          >
+          <elements-scrollin class-default="fadein" class-change="scrollin">
             <span v-html="profileData.message"></span>
           </elements-scrollin>
         </v-col>
@@ -28,7 +22,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, computed, onBeforeMount, onBeforeUnmount, onMounted } from 'vue'
+import {
+  ref,
+  reactive,
+  computed,
+  onBeforeMount,
+  onBeforeUnmount,
+  onMounted,
+} from 'vue'
 
 type State = {
   scroll: number
@@ -62,18 +63,22 @@ const onScroll = (): void => {
   //   getPosition(),
   //   state.windowHeight
   // )
-  if (state.scroll > getPosition() - state.windowHeight + state.windowHeight / 3) {
+  if (
+    state.scroll >
+    getPosition() - state.windowHeight + state.windowHeight / 3
+  ) {
     state.isInScreen = true
   } else {
     state.isInScreen = false
   }
-};
+}
 
 const componentRef = ref<HTMLElement | null>(null)
 const getPosition = (): number => {
   const el = componentRef.value
   if (el) {
-    return el.getBoundingClientRect().top
+    return el.offsetTop
+    // return el.getBoundingClientRect().top
   } else {
     return 0
   }
@@ -90,7 +95,6 @@ const profileData = {
 </script>
 
 <style lang="scss" scoped>
-
 #introduction {
   color: #000d6d;
   font-size: 18px;
@@ -102,5 +106,4 @@ const profileData = {
   width: 50%;
   margin: auto;
 }
-
 </style>

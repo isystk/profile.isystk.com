@@ -1,5 +1,5 @@
 <template>
-  <article id="specialty" class="dark">
+  <article id="specialty" class="dark" ref="componentRef">
     <Scrollin :class-default="'fadein'" :class-change="'scrollin'">
       <h2>SPECIALTY</h2>
     </Scrollin>
