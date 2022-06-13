@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <pages-header :store="main" />
-    <v-main>
+    <v-main class="wrapper">
       <slot />
     </v-main>
     <pages-footer :store="main" />
@@ -29,3 +29,14 @@ useHead({
   },
 })
 </script>
+
+
+<style lang="scss" scoped>
+.wrapper {
+  width: 95%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+</style>

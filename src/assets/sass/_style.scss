@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+body {
+  font-family: "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
 a:hover,
 a:hover p {
   animation: opacity 0.5s both;
@@ -96,21 +104,6 @@ img {
     transform:scale(1.1, 1.1);
   }
 }
-
-/*--------------------------------------------------------------------
-
-  2 レイアウト設定
-
---------------------------------------------------------------------*/
-
-#wrapper {
-  width: 100%;
-  max-width: 1440px;
-  height: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
 
 /*--------------------------------------------------------------------
 
