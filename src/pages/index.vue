@@ -1,6 +1,6 @@
 <template>
-  <pages-main-visual />
   <div class="contents">
+    <pages-main-visual />
     <pages-introduction />
   </div>
 </template>

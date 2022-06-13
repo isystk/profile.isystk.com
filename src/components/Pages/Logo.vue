@@ -1,6 +1,8 @@
 <template>
   <NuxtLink :to="Url.TOP">
-    <v-toolbar-title class="w-64">isystk's Portfolio</v-toolbar-title>
+    <v-toolbar-title
+      ><h1 class="md:text-2xl">isystk's Portfolio</h1></v-toolbar-title
+    >
   </NuxtLink>
 </template>
 
