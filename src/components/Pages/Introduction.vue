@@ -1,23 +1,23 @@
 <template>
   <v-card id="introduction">
     <v-container fluid class="container">
-      <elements-scrollin :class-default="'fadein'" :class-change="'scrollin'">
-        <h2>INTRODUCTION</h2>
+      <elements-scrollin class-default="fadein" class-change="scrollin">
+        <h2 class="text-center">INTRODUCTION</h2>
       </elements-scrollin>
-      <hr :class="{ centerToSide: isScreenin() }" />
+      <hr ref="componentRef" :class="{centerToSide: state.isInScreen}" />
       <v-row dense>
-        <v-col cols="12" md="6">
+        <v-col cols="12" md="6" class="order-md-last">
           <elements-scrollin
-            :class-default="'fadein'"
-            :class-change="'scrollin'"
+            class-default="fadein"
+            class-change="scrollin"
           >
-            <img :src="profileData.imageUrl" />
+            <img :src="profileData.imageUrl" class="avatar" />
           </elements-scrollin>
         </v-col>
         <v-col cols="12" md="6">
           <elements-scrollin
-            :class-default="'fadein'"
-            :class-change="'scrollin'"
+            class-default="fadein"
+            class-change="scrollin"
           >
             <span v-html="profileData.message"></span>
           </elements-scrollin>
@@ -28,47 +28,55 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, onBeforeMount, onBeforeUnmount } from 'vue'
+import { ref, reactive, computed, onBeforeMount, onBeforeUnmount, onMounted } from 'vue'
 
-const state = reactive({
-  // スクロール位置
+type State = {
+  scroll: number
+  windowHeight: number
+  isInScreen: boolean
+}
+
+const state = reactive<State>({
   scroll: 0,
-  // 表示画面の高さ
   windowHeight: 0,
+  isInScreen: false,
 })
 
 onBeforeMount(() => {
-  window.addEventListener('load', onScroll)
   window.addEventListener('scroll', onScroll)
 })
 onBeforeUnmount(() => {
-  window.removeEventListener('load', onScroll)
   window.removeEventListener('scroll', onScroll)
+})
+onMounted(() => {
+  onScroll()
 })
 
 // 画面スクロール時の処理
 const onScroll = (): void => {
-  if (!process.browser) {
-    return
-  }
   state.scroll = window.pageYOffset || document.documentElement.scrollTop
   state.windowHeight = window.innerHeight
-}
+  // console.log(
+  //   'scroll:%s,position:%s,windowHeight:%s',
+  //   state.scroll,
+  //   getPosition(),
+  //   state.windowHeight
+  // )
+  if (state.scroll > getPosition() - state.windowHeight + state.windowHeight / 3) {
+    state.isInScreen = true
+  } else {
+    state.isInScreen = false
+  }
+};
 
-// 要素が画面内に表示されているかどうか
 const componentRef = ref<HTMLElement | null>(null)
-const isScreenin = (): boolean => {
-  if (!process.browser) {
-    return false
-  }
+const getPosition = (): number => {
   const el = componentRef.value
-  if (
-    el &&
-    state.scroll > el.offsetTop - state.windowHeight + state.windowHeight / 3
-  ) {
-    return true
+  if (el) {
+    return el.getBoundingClientRect().top
+  } else {
+    return 0
   }
-  return false
 }
 
 // 自己紹介データ
@@ -82,25 +90,17 @@ const profileData = {
 </script>
 
 <style lang="scss" scoped>
-/* 5-1 自己紹介 */
 
-#introduction .text {
-  font-size: 16px;
+#introduction {
+  color: #000d6d;
+  font-size: 18px;
   line-height: 1.5;
-  padding: 10px;
-  text-align: left;
 }
-#introduction .avatar img {
+
+#introduction img.avatar {
   border-radius: 50%;
   width: 50%;
+  margin: auto;
 }
 
-@media screen and (min-width: 992px) {
-  #introduction .box {
-    flex-direction: row-reverse;
-  }
-  #introduction .text {
-    font-size: 18px;
-  }
-}
 </style>

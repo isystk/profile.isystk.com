@@ -44,7 +44,6 @@
 // メインビジュアルのスクロールリンク
 const linkToIntroduction = () => {
   const introduction = document.getElementById('introduction') as HTMLElement
-  console.log(introduction.offsetTop)
   window.scrollTo({
     top: introduction.offsetTop,
     behavior: 'smooth',
