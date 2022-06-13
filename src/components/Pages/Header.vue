@@ -4,37 +4,37 @@
       <pages-logo />
       <v-spacer />
 
+      <ul class="nav-link">
+        <li v-for="(item, i) in items" :key="i" :value="item">
+          <a :href="item.url" target="_blank">
+            {{ item.text }}
+          </a>
+        </li>
+      </ul>
       <v-app-bar-nav-icon
         variant="text"
-        class="visible"
+        class="visible md:invisible"
         @click.stop="toggleMenu"
       />
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" bottom temporary position="right">
+    <v-navigation-drawer v-model="drawer" permanent location="right">
       <v-list>
-        <v-list-item
-          prepend-avatar="/images/user_dummy.png"
-          :title="name"
-          subtitle="Logged in"
-        />
-      </v-list>
-      <v-divider />
-      <v-list density="compact">
         <v-list-subheader>Menu</v-list-subheader>
         <v-list-item-group>
-          <v-list-item
-            v-for="(item, i) in items"
-            :key="i"
-            :value="item"
-            active-color="primary"
-            @click="item.func"
-          >
-            <v-list-item-avatar start>
-              <v-icon :icon="item.icon" />
-            </v-list-item-avatar>
-            <v-list-item-title>{{ item.text }}</v-list-item-title>
-          </v-list-item>
+          <div v-for="(item, i) in items" :key="i" :value="item">
+            <v-list-item
+              active-color="primary"
+              :href="item.url"
+              target="_blank"
+            >
+              <v-list-item-avatar start>
+                <v-icon :icon="item.icon" />
+              </v-list-item-avatar>
+              <v-list-item-title>{{ item.text }}</v-list-item-title>
+            </v-list-item>
+            <v-divider />
+          </div>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -58,10 +58,51 @@ const toggleMenu = () => {
 const items = computed(() => {
   return [
     {
-      text: 'ログイン',
+      text: 'ブログ',
       icon: 'mdi-login-variant',
-      func: () => (location.href = Url.LOGIN),
+      url: 'https://blog.isystk.com/',
+    },
+    {
+      text: '会社概要',
+      icon: 'mdi-login-variant',
+      url: 'https://blog.isystk.com/company/',
+    },
+    {
+      text: 'お問い合わせ',
+      icon: 'mdi-login-variant',
+      url: 'https://blog.isystk.com/contact/',
     },
   ]
 })
 </script>
+
+<style lang="scss" scoped>
+header .nav-link {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  header .nav-link {
+    display: block;
+    position: absolute;
+    right: 0;
+    font-size: 18px;
+    margin: 21px;
+  }
+  header .nav-link a {
+    color: #fff;
+    margin: 0 20px;
+  }
+  header .nav-link li {
+    list-style: none;
+    float: left;
+    border-right: solid 1px #fff;
+  }
+  header .nav-link li:last-child {
+    border-right: none;
+  }
+
+  header .menu-btn {
+    display: none;
+  }
+}
+</style>

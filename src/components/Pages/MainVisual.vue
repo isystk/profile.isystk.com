@@ -13,29 +13,26 @@
     <div class="mv">
       <div class="intro">
         <div>
-          <elements-scrollin
-            :class-default="'fadein'"
-            :class-change="'scrollin'"
-          >
+          <elements-scrollin class-default="fadein" class-change="scrollin">
             <p class="title">ITエンジニアを活きる</p>
           </elements-scrollin>
           <br />
           <elements-scrollin
-            :class-default="'fadein'"
-            :class-change="'scrollin scrollin-delay1'"
+            class-default="fadein"
+            class-change="scrollin scrollin-delay1"
           >
             <p class="name">Yoshitaka Ise</p>
           </elements-scrollin>
         </div>
       </div>
       <elements-scrollin
-        :class-default="'fadein'"
-        :class-change="'scrollin scrollin-delay2'"
+        class-default="fadein"
+        class-change="scrollin scrollin-delay2"
       >
-        <div class="link">
+        <div class="link text-center">
           <a href="#" @click.prevent="linkToIntroduction">
             SCROLL<br />
-            <font-awesome-icon :icon="['fas', 'angle-down']" />
+            <v-icon icon="mdi-chevron-down" />
           </a>
         </div>
       </elements-scrollin>
@@ -45,21 +42,17 @@
 
 <script lang="ts" setup>
 // メインビジュアルのスクロールリンク
-const introduction = document.getElementById('introduction') as HTMLInputElement
-
-// window.scrollTo({
-//   top: introduction.offsetTop,
-//   behavior: 'smooth',
-// })
+const linkToIntroduction = () => {
+  const introduction = document.getElementById('introduction') as HTMLElement
+  console.log(introduction.offsetTop)
+  window.scrollTo({
+    top: introduction.offsetTop,
+    behavior: 'smooth',
+  })
+}
 </script>
 
 <style lang="scss" scoped>
-/*--------------------------------------------------------------------
-
-  4 メインビジュアル
-
---------------------------------------------------------------------*/
-
 .mv {
   height: calc(100vh - 60px);
 }
