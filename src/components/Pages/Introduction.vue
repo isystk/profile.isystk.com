@@ -1,12 +1,12 @@
 <template>
-  <v-card id="introduction" ref="componentRef">
+  <v-card id="introduction">
     <v-container fluid class="container">
       <elements-scrollin class-default="fadein" class-change="scrollin">
         <h2 class="text-center">INTRODUCTION</h2>
       </elements-scrollin>
-      <hr :class="{ centerToSide: state.isInScreen }" />
+      <elements-hr />
       <v-row dense>
-        <v-col cols="12" md="6" class="order-md-last">
+        <v-col cols="12" md="6" class="order-md-last mb-10 mb-md-0">
           <elements-scrollin class-default="fadein" class-change="scrollin">
             <img :src="profileData.imageUrl" class="avatar" />
           </elements-scrollin>
@@ -22,68 +22,6 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  ref,
-  reactive,
-  computed,
-  onBeforeMount,
-  onBeforeUnmount,
-  onMounted,
-} from 'vue'
-
-type State = {
-  scroll: number
-  windowHeight: number
-  isInScreen: boolean
-}
-
-const state = reactive<State>({
-  scroll: 0,
-  windowHeight: 0,
-  isInScreen: false,
-})
-
-onBeforeMount(() => {
-  window.addEventListener('scroll', onScroll)
-})
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', onScroll)
-})
-onMounted(() => {
-  onScroll()
-})
-
-// 画面スクロール時の処理
-const onScroll = (): void => {
-  state.scroll = window.pageYOffset || document.documentElement.scrollTop
-  state.windowHeight = window.innerHeight
-  // console.log(
-  //   'scroll:%s,position:%s,windowHeight:%s',
-  //   state.scroll,
-  //   getPosition(),
-  //   state.windowHeight
-  // )
-  if (
-    state.scroll >
-    getPosition() - state.windowHeight + state.windowHeight / 3
-  ) {
-    state.isInScreen = true
-  } else {
-    state.isInScreen = false
-  }
-}
-
-const componentRef = ref<HTMLElement | null>(null)
-const getPosition = (): number => {
-  const el = componentRef.value
-  if (el) {
-    return el.offsetTop
-    // return el.getBoundingClientRect().top
-  } else {
-    return 0
-  }
-}
-
 // 自己紹介データ
 const profileData = {
   // return portfolioModule.profile
@@ -96,8 +34,6 @@ const profileData = {
 
 <style lang="scss" scoped>
 #introduction {
-  color: #000d6d;
-  font-size: 18px;
   line-height: 1.5;
 }
 
@@ -105,5 +41,12 @@ const profileData = {
   border-radius: 50%;
   width: 50%;
   margin: auto;
+}
+
+@media screen and (min-width: 992px) {
+  #introduction {
+    font-size: 18px;
+    line-height: 1.5;
+  }
 }
 </style>

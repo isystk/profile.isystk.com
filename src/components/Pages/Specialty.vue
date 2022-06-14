@@ -1,10 +1,10 @@
 <template>
   <v-card id="specialty">
-    <v-container fluid class="container">
+    <v-container fluid class="container dark">
       <elements-scrollin class-default="fadein" class-change="scrollin">
         <h2 class="text-center">SPECIALTY</h2>
       </elements-scrollin>
-      <hr />
+      <elements-hr />
       <div v-if="state.isShowChart" class="box">
         <div class="box_item chart">
           <RadarChart
@@ -77,7 +77,7 @@ const onScroll = (): void => {
   // チャートの表示
   if (
     state.scroll >
-    getPosition() - state.windowHeight + state.windowHeight / 10
+    getPosition() - state.windowHeight + state.windowHeight / 3
   ) {
     if (!state.isShowChart) {
       state.isShowChart = true
@@ -90,8 +90,8 @@ const componentRef = ref<HTMLElement | null>(null)
 const getPosition = (): number => {
   const el = componentRef.value
   if (el) {
-    return el.offsetTop
-    // return el.getBoundingClientRect().top
+    // return el.offsetTop
+    return el.getBoundingClientRect().top
   } else {
     return 0
   }
@@ -207,8 +207,6 @@ const viewChart = (): any => {
 
 <style lang="scss" scoped>
 #specialty {
-  background-color: #000;
-  color: #fff;
 }
 
 #specialty .chart {

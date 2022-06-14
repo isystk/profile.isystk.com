@@ -1,10 +1,10 @@
 <template>
-  <v-card id="skills" ref="componentRef">
+  <v-card id="skills">
     <v-container fluid class="container">
       <elements-scrollin class-default="fadein" class-change="scrollin">
         <h2 class="text-center">SKILLS</h2>
       </elements-scrollin>
-      <hr :class="{ centerToSide: isScreenin() }" />
+      <elements-hr />
       <div v-for="(e, index) in skillData" :key="index">
         <elements-scrollin class-default="fadein" class-change="scrollin">
           <div class="skill">
@@ -19,14 +19,19 @@
               :key="e.title + index2"
               class="skill-item"
             >
-              <div class="text">
-                <p>{{ e2.name }}</p>
-                {{ e2.text }}
-              </div>
-              <div class="rating">
-                <template v-for="() in e2.rating"> ★ </template>
-                <template v-for="() in 3 - e2.rating"> ☆ </template>
-              </div>
+              <p>{{ e2.name }}</p>
+              <v-row dense>
+                <v-col cols="12" md="3" class="order-md-last text-center">
+                  <v-rating
+                    v-model="e2.rating"
+                    bg-color="orange-lighten-1"
+                    color="orange"
+                  ></v-rating>
+                </v-col>
+                <v-col cols="12" md="9">
+                  {{ e2.text }}
+                </v-col>
+              </v-row>
             </div>
           </div>
         </elements-scrollin>
@@ -36,62 +41,6 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  ref,
-  reactive,
-  computed,
-  onBeforeMount,
-  onBeforeUnmount,
-  onMounted,
-} from 'vue'
-
-type State = {
-  scroll: number
-  windowHeight: number
-  isInScreen: boolean
-}
-
-const state = reactive<State>({
-  scroll: 0,
-  windowHeight: 0,
-  isInScreen: false,
-})
-
-onBeforeMount((): void => {
-  window.addEventListener('scroll', onScroll)
-})
-onBeforeUnmount((): void => {
-  window.removeEventListener('scroll', onScroll)
-})
-
-// 画面スクロール時の処理
-const onScroll = (): void => {
-  state.scroll = window.pageYOffset || document.documentElement.scrollTop
-  state.windowHeight = window.innerHeight
-}
-
-// 要素が画面内に表示されているかどうか
-const isScreenin = (): boolean => {
-  if (
-    state.scroll >
-    getPosition() - state.windowHeight + state.windowHeight / 3
-  ) {
-    return true
-  }
-  return false
-}
-
-const componentRef = ref<HTMLElement | null>(null)
-const getPosition = (): number => {
-  const el = componentRef.value
-  if (el) {
-    return el.offsetTop
-    // return el.getBoundingClientRect().top
-  } else {
-    return 0
-  }
-}
-
 // スキルデータ
 const skillData = [
   {
@@ -304,8 +253,8 @@ const skillData = [
   background-color: #000d6d;
   color: #fff;
   text-align: left;
-  height: 24px;
-  font-size: 24px;
+  height: 45px;
+  font-size: 18px;
   padding: 10px 0 10px 10px;
   border-radius: 8px 8px 0 0;
 }
@@ -318,33 +267,15 @@ const skillData = [
   border-top: solid 1px #000;
 }
 .skill-item p {
-  font-size: 20px;
+  font-weight: bold;
   margin: 10px 0;
-}
-.skill-item .text {
-  display: inline-block;
-  width: 70%;
-  line-height: 1.2;
-}
-.skill-item .rating {
-  margin: 8px;
-  float: right;
-  font-size: 14px;
-  letter-spacing: 5px;
-  color: #fff000;
 }
 
 @media screen and (min-width: 992px) {
   .skill-header {
-    height: 30px;
-    font-size: 28px;
+    height: 50px;
+    font-size: 24px;
     padding: 8px 0 8px 10px;
-  }
-  .skill-item .text {
-    width: 80%;
-  }
-  .skill-item .rating {
-    font-size: 30px;
   }
 }
 </style>

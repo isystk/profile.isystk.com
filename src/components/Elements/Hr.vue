@@ -1,10 +1,5 @@
 <template>
-  <div
-    ref="componentRef"
-    :class="[classDefault, state.isInScreen ? classChange : '']"
-  >
-    <slot />
-  </div>
+  <hr :class="{ centerToSide: state.isInScreen }" ref="componentRef" />
 </template>
 
 <script lang="ts" setup>
@@ -37,17 +32,16 @@ onMounted(() => {
   onScroll()
 })
 
+// 画面スクロール時の処理
 const onScroll = (): void => {
   state.scroll = window.pageYOffset || document.documentElement.scrollTop
   state.windowHeight = window.innerHeight
   // console.log('scroll:%s,position:%s,windowHeight:%s', state.scroll, getPosition(), state.windowHeight)
-  if (
-    state.scroll >
-    getPosition() - state.windowHeight + state.windowHeight / 5
-  ) {
+  if (state.scroll > getPosition() - state.windowHeight) {
     state.isInScreen = true
-    // 表示が完了したらスクロールイベントを削除
-    window.removeEventListener('scroll', onScroll)
+  } else {
+    // 画面から隠れた場合
+    state.isInScreen = false
   }
 }
 
@@ -63,3 +57,18 @@ const getPosition = (): number => {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+/* 中央からサイドに下線を太くするアニメーション */
+.centerToSide {
+  animation: centerToSide 0.3s ease 0s 1 forwards;
+}
+@keyframes centerToSide {
+  0% {
+    transform: scaleY(1) scaleX(0);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+</style>

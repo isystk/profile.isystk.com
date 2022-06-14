@@ -2,9 +2,9 @@
   <v-card id="twitter" ref="componentRef">
     <v-container fluid class="container">
       <elements-scrollin class-default="fadein" class-change="scrollin">
-        <h2>Twitter</h2>
+        <h2 class="text-center">Twitter</h2>
       </elements-scrollin>
-      <hr :class="{ centerToSide: isScreenin() }" />
+      <elements-hr />
       <div class="box">
         <div class="box_item">
           <p class="title">フォロワー数</p>
@@ -74,10 +74,9 @@ const onScroll = (): void => {
   state.windowHeight = window.innerHeight
 
   // 数字のランダム表示
-  const twitter = document.getElementById('twitter') as HTMLInputElement
   if (
     state.scroll >
-    twitter.offsetTop - state.windowHeight + state.windowHeight / 3
+    getPosition() - state.windowHeight + state.windowHeight / 3
   ) {
     if (!state.isShowTwitter) {
       const shuffleNum = document.querySelector(
@@ -100,17 +99,6 @@ const onScroll = (): void => {
       state.isShowTwitter = true
     }
   }
-}
-
-// 要素が画面内に表示されているかどうか
-const isScreenin = (): boolean => {
-  if (
-    state.scroll >
-    getPosition() - state.windowHeight + state.windowHeight / 3
-  ) {
-    return true
-  }
-  return false
 }
 
 const componentRef = ref<HTMLElement | null>(null)

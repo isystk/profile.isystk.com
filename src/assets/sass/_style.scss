@@ -76,19 +76,6 @@ img {
   }
 }
 
-/* 中央からサイドに下線を太くするアニメーション */
-.centerToSide {
-  animation: centerToSide .3s ease 0s 1 forwards;
-}
-@keyframes centerToSide {
-  0% {
-    transform: scaleY(1) scaleX(0);
-  }
-  100% {
-    transform: scaleY(1) scaleX(1);
-  }
-}
-
 /* マウスオーバーで画像をズームするアニメーション */
 .zoom{
   overflow: hidden;
@@ -117,6 +104,7 @@ img {
 }
 
 .contents .container {
+  color: #000d6d;
   padding: 60px 10px;
 }
 
@@ -126,7 +114,7 @@ img {
 
 .contents .container hr {
   width: 100px;
-  margin: 30px auto;
+  margin: 20px auto 40px;
   transform: scaleY(1) scaleX(0);
   border: 2px solid #000d6d
 }
@@ -152,11 +140,15 @@ img {
   }
 
   .contents .container {
-    padding: 120px 30px;
+    padding: 120px 36px;
   }
 
   .contents .container h2 {
     font-size: 48px;
+  }
+
+  .contents .container hr {
+    margin: 20px auto 60px;
   }
 
   .contents .container .box{
