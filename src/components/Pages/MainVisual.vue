@@ -16,7 +16,6 @@
           <elements-scrollin class-default="fadein" class-change="scrollin">
             <p class="title">ITエンジニアを活きる</p>
           </elements-scrollin>
-          <br />
           <elements-scrollin
             class-default="fadein"
             class-change="scrollin scrollin-delay1"
@@ -56,20 +55,15 @@ const linkToIntroduction = () => {
   height: calc(100vh - 60px);
 }
 .mv .intro {
-  color: #fff;
   width: 80%;
   height: 60%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
   margin: auto;
-  z-index: 1;
-  text-align: right;
 }
 .mv .intro .title {
   text-align: right;
-  font-size: 46px;
+  font-size: 45px;
   line-height: 1;
   letter-spacing: 2px;
   margin-bottom: 30px;
@@ -85,11 +79,12 @@ const linkToIntroduction = () => {
 
 @media screen and (min-width: 992px) {
   .mv .intro {
-    width: 75%;
+    width: 46%;
     height: 75%;
   }
   .mv .intro .title {
     font-size: 60px;
+    margin-bottom: 60px;
   }
   .mv .intro .name {
     font-size: 40px;

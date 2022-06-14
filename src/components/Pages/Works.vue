@@ -1,10 +1,10 @@
 <template>
-  <v-card id="works" ref="componentRef">
+  <v-card id="works">
     <v-container fluid class="container">
       <elements-scrollin class-default="fadein" class-change="scrollin">
         <h2 class="text-center">WORKS</h2>
       </elements-scrollin>
-      <hr :class="{ centerToSide: isScreenin() }" />
+      <elements-hr />
       <div v-if="workBlogData" class="box">
         <div class="box_item">
           <elements-scrollin class-default="fadein" class-change="scrollin">
@@ -85,62 +85,7 @@
 </template>
 
 <script lang="ts" setup>
-import {
-  ref,
-  reactive,
-  computed,
-  onBeforeMount,
-  onBeforeUnmount,
-  onMounted,
-} from 'vue'
-
-type State = {
-  scroll: number
-  windowHeight: number
-  isInScreen: boolean
-}
-
-const state = reactive<State>({
-  scroll: 0,
-  windowHeight: 0,
-  isInScreen: false,
-})
-
-onBeforeMount((): void => {
-  window.addEventListener('scroll', onScroll)
-})
-onBeforeUnmount((): void => {
-  window.removeEventListener('scroll', onScroll)
-})
-
-// 画面スクロール時の処理
-const onScroll = (): void => {
-  state.scroll = window.pageYOffset || document.documentElement.scrollTop
-  state.windowHeight = window.innerHeight
-}
-
-// 要素が画面内に表示されているかどうか
-const isScreenin = (): boolean => {
-  if (
-    state.scroll >
-    getPosition() - state.windowHeight + state.windowHeight / 3
-  ) {
-    return true
-  }
-  return false
-}
-
-const componentRef = ref<HTMLElement | null>(null)
-const getPosition = (): number => {
-  const el = componentRef.value
-  if (el) {
-    return el.offsetTop
-    // return el.getBoundingClientRect().top
-  } else {
-    return 0
-  }
-}
-
+import { computed } from 'vue'
 const portfolioModule = [
   {
     title: "isystk's blog",
@@ -243,7 +188,7 @@ const workOtherData = computed(() => {
   if (portfolioModule.length <= 0) {
     return null
   }
-  const other = [ ...portfolioModule ].splice(1)
+  const other = [...portfolioModule].splice(1)
   const data: any[] = []
   let count = -1
   for (let i = 0; i < other.length; i++) {
@@ -259,7 +204,6 @@ const workOtherData = computed(() => {
 
 <style lang="scss" scoped>
 #works {
-  background-color: #fff;
 }
 #works .mockup {
   position: relative;
@@ -274,6 +218,7 @@ const workOtherData = computed(() => {
 }
 #works .mockup .site img {
   width: 85%;
+  margin: 10px auto auto;
 }
 
 #works .mockup-description {
@@ -303,6 +248,7 @@ const workOtherData = computed(() => {
 @media screen and (min-width: 992px) {
   #works .mockup .site img {
     width: 90%;
+    margin: 20px auto auto;
   }
 
   #works .mockup-description .number {

@@ -66,11 +66,11 @@ const moveToTop = (): void => {
 #page-top a {
   background: #000d6d;
   color: #fff;
-  width: 50px;
+  width: 60px;
   padding: 16px 0;
   text-align: center;
   display: block;
-  border-radius: 25px;
+  border-radius: 30px;
 }
 #page-top.hide {
   bottom: -100px;

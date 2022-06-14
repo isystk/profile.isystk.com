@@ -23,7 +23,7 @@ export default defineNuxtPlugin((nuxtApp) => {
             info: '#0984e3',
             secondary: '#EDF2F7',
             success: '#00cec9',
-            surface: '#fff',
+            surface: '#f3f3f4',
             warning: '#2d3436',
           },
           dark: false,
