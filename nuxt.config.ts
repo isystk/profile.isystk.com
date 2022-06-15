@@ -12,6 +12,7 @@ const nuxtConfig = defineNuxtConfig({
   publicRuntimeConfig: {
     APP_NAME: name,
     APP_DESCRIPTION: description,
+    EXTERNAL_ENDPOIN: process.env.VITE_EXTERNAL_ENDPOIN,
   },
 
   // https://ja.nuxtjs.org/faq/host-port/
@@ -23,7 +24,7 @@ const nuxtConfig = defineNuxtConfig({
   css: ['~/assets/sass/app.scss'],
   buildModules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@intlify/nuxt3'],
   build: {
-    transpile: ['vuetify', 'moment'],
+    transpile: ['vuetify', 'moment']
   },
   intlify: {
     localeDir: 'locales',

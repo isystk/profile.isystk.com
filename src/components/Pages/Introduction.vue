@@ -22,14 +22,12 @@
 </template>
 
 <script lang="ts" setup>
-// 自己紹介データ
-const profileData = {
-  // return portfolioModule.profile
-  imageUrl: '/img/avatar.jpg',
-  message:
-    'はじめまして。伊勢と申します。Webを中心にシステムエンジニアとして18年ほど業務しています。\n新卒では中小企業のSIerに入社しました。SESとして常駐先で基本設計から開発/テストまでウォーターフォール型のシステム開発を学び、Javaを中心に証券会社や保険会社などの基幹システム開発に携わりました。\n5年努めたのちSOHOとして独立、独立後はソーシャルゲーム開発やReact.jsやVue.jsなどフロントエンドの技術を学びました。現在は、故郷の北海道（函館）に移住して、フルリモートでシステムエンジニアに従事しております。サーバーサイドからフロントエンド、サーバー構築までフルスタックに対応致します。\n(2022年3月更新)',
-  twitter_follower: 6832,
-}
+import { computed } from 'vue'
+import { injectStore } from '@/store'
+import MainService from '@/services/main'
+const main = injectStore<MainService>()
+
+const profileData = computed(() => main?.profile?.data);
 </script>
 
 <style lang="scss" scoped>

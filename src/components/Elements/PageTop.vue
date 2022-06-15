@@ -62,6 +62,7 @@ const moveToTop = (): void => {
   right: 16px;
   z-index: 100;
   transition: top 0.5s, bottom 0.5s;
+  opacity: 0.8;
 }
 #page-top a {
   background: #000d6d;
