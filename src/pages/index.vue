@@ -5,7 +5,7 @@
       <pages-introduction />
       <pages-specialty />
       <pages-skills />
-      <pages-works />
+      <pages-outputs />
       <pages-twitter />
       <pages-thanks />
     </div>
@@ -20,6 +20,6 @@ useMeta({
 import { injectStore } from '@/store'
 const main = injectStore()
 onBeforeMount(async () => {
-  console.log('beforeMount')
+  await main.readAll();
 })
 </script>

@@ -51,6 +51,21 @@ const linkToIntroduction = () => {
 </script>
 
 <style lang="scss" scoped>
+/* バックグラウンド 動画*/
+.vide-wrap {
+}
+.vide-wrap video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: initial;
+  min-height: 100%;
+  height: 100%;
+  z-index: -100;
+  background-color: #333;
+  opacity: 0.8;
+}
 .mv {
   height: calc(100vh - 60px);
 }
