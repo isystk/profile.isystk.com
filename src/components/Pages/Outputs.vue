@@ -43,21 +43,26 @@
         </div>
       </div>
       <v-row dense>
-        <v-col cols="12" md="6" v-for="(e, index) in workOtherData" :key="index">
+        <v-col
+          cols="12"
+          md="6"
+          v-for="(e, index) in workOtherData"
+          :key="index"
+        >
           <elements-scrollin class-default="fadein" class-change="scrollin">
-             <div class="card">
-                <a :href="e.url" target="_blank">
-                  <div class="photo zoom">
-                    <img :src="e.imageUrl" />
-                  </div>
-                  <p class="title">
-                    <span v-html="e.title"> </span>
-                  </p>
-                  <p class="text">
-                    <span v-html="e.text"> </span>
-                  </p>
-                </a>
-              </div>
+            <div class="card">
+              <a :href="e.url" target="_blank">
+                <div class="photo zoom">
+                  <img :src="e.imageUrl" />
+                </div>
+                <p class="title">
+                  <span v-html="e.title"> </span>
+                </p>
+                <p class="text">
+                  <span v-html="e.text"> </span>
+                </p>
+              </a>
+            </div>
           </elements-scrollin>
         </v-col>
       </v-row>
@@ -82,24 +87,24 @@ const workOtherData = computed(() => {
   if (_.size(main?.output?.data) === 0) {
     return []
   }
-  return  _.slice(main?.output?.data, 1)
+  return _.slice(main?.output?.data, 1)
 })
 </script>
 
 <style lang="scss" scoped>
 /* マウスオーバーで画像をズームするアニメーション */
-.zoom{
+.zoom {
   overflow: hidden;
 }
-.zoom img:hover{
-  animation: imgZoom .5s ease 0s 1 forwards;
+.zoom img:hover {
+  animation: imgZoom 0.5s ease 0s 1 forwards;
 }
 @keyframes imgZoom {
   0% {
-    transform:scale(1,1);
+    transform: scale(1, 1);
   }
   100% {
-    transform:scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
   }
 }
 
@@ -152,11 +157,11 @@ const workOtherData = computed(() => {
 }
 
 @media screen and (min-width: 992px) {
-  #works .box{
+  #works .box {
     display: flex;
     justify-content: space-between;
   }
-  
+
   #works .mockup .site img {
     width: 90%;
     margin: 20px auto auto;

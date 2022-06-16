@@ -16,13 +16,13 @@
         </v-col>
         <v-col cols="12" md="6">
           <elements-scrollin class-default="fadein" class-change="scrollin">
-            <div v-if="state.isShowTwitter" class="tweet text-center" >
+            <div v-if="state.isShowTwitter" class="tweet text-center">
               <a
-                  class="twitter-timeline"
-                  data-chrome="noheader,nofooter"
-                  :data-height="state.twitterTimeline.height"
-                  :data-dnt="state.twitterTimeline.dnt"
-                  :href="state.twitterTimeline.href"
+                class="twitter-timeline"
+                data-chrome="noheader,nofooter"
+                :data-height="state.twitterTimeline.height"
+                :data-dnt="state.twitterTimeline.dnt"
+                :href="state.twitterTimeline.href"
               >
                 Tweets by ise0615
               </a>
@@ -35,58 +35,44 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, reactive, onBeforeMount, onBeforeUnmount, onMounted} from 'vue'
+import { reactive, watch } from 'vue'
 import { injectStore } from '@/store'
 import MainService from '@/services/main'
 const main = injectStore<MainService>()
 
 type State = {
-  scroll: number
-  windowHeight: number
-  isInScreen: boolean
   isShowTwitter: boolean
   twitterFollower: number
 }
 
 const state = reactive<State>({
-  scroll: 0,
-  windowHeight: 0,
-  isInScreen: false,
   isShowTwitter: false,
   twitterFollower: 0,
   twitterTimeline: {
-      height: 400,
-      dnt: true,
-      href:"https://twitter.com/ise0615?ref_src=twsrc%5Etfw"
-  }
-})
-
-onBeforeMount((): void => {
-  window.addEventListener('scroll', onScroll)
-})
-onBeforeUnmount((): void => {
-  window.removeEventListener('scroll', onScroll)
-})
-onMounted(() => {
-  onScroll()
+    height: 400,
+    dnt: true,
+    href: 'https://twitter.com/ise0615?ref_src=twsrc%5Etfw',
+  },
 })
 
 useHead({
   script: [
-    {type: 'text/javascript', async: true, src: 'https://platform.twitter.com/widgets.js'}
-  ]
+    {
+      type: 'text/javascript',
+      async: true,
+      src: 'https://platform.twitter.com/widgets.js',
+    },
+  ],
 })
 
-// 画面スクロール時の処理
-const onScroll = (): void => {
-  state.scroll = window.pageYOffset || document.documentElement.scrollTop
-  state.windowHeight = window.innerHeight
+import useScrollin from '@/helper/scrollin'
+const { componentRef, isInScreen } = useScrollin()
 
-  // 数字のランダム表示
-  if (state.scroll > getPosition() - state.windowHeight + state.windowHeight / 3) {
+watch(isInScreen, () => {
+  if (isInScreen) {
     if (!state.isShowTwitter) {
       // ツイッターフォロワー数
-      const defautVal = main?.profile.data["twitter_follower"]
+      const defautVal = main?.profile.data['twitter_follower']
       let count = 0
       let id = 0
       const setRandom = function (): void {
@@ -102,28 +88,11 @@ const onScroll = (): void => {
 
       // Twitterタイムラインのロード
       window.twttr.widgets.load()
-      
+
       state.isShowTwitter = true
     }
   }
-  if (state.scroll < getPosition() - state.windowHeight) {
-    state.isShowTwitter = false
-    state.twitterFollower = 0;
-  }
-}
-
-const componentRef = ref<HTMLElement | null>(null)
-const getPosition = (): number => {
-  const el = componentRef.value
-  if (el) {
-    const rect = el.getBoundingClientRect()
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-    return rect.top + scrollTop // offset().top;
-  } else {
-    return 0
-  }
-}
-
+})
 </script>
 
 <style lang="scss" scoped>

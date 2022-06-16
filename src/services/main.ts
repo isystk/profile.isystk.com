@@ -20,12 +20,10 @@ export default class MainService {
   }
 
   async readAll() {
-    this.profile.readData();
-    this.specialty.readData();
-    this.skill.readData();
-    this.output.readData();
-    this.contact.readData();
+    this.profile.readData()
+    this.specialty.readData()
+    this.skill.readData()
+    this.output.readData()
+    this.contact.readData()
   }
-  
-  
 }

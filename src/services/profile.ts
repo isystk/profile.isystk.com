@@ -1,6 +1,6 @@
 import MainService from '@/services/main'
 import { Api } from '@/constants/api'
-import axios from 'axios'
+import apiClient from '@/utilities/apiClient'
 
 import Json from '@/public/data/profile.json'
 export type Profile = typeof Json
@@ -15,9 +15,6 @@ export default class ProfileService {
   }
 
   async readData() {
-    this.data = await axios
-      .get(Api.PROFILE, {headers: {},})
-      .then((res) => res.data)
+    this.data = await apiClient.get(Api.PROFILE).then((res) => res.data)
   }
-
 }

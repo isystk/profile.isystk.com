@@ -1,6 +1,6 @@
 import MainService from '@/services/main'
 import { Api } from '@/constants/api'
-import axios from 'axios'
+import apiClient from '@/utilities/apiClient'
 import _ from 'lodash'
 
 import Json from '@/public/data/specialty.json'
@@ -16,9 +16,7 @@ export default class SpecialtyService {
   }
 
   async readData() {
-    this.data = await axios
-      .get(Api.SPECIALTY, {headers: {},})
-      .then((res) => res.data)
+    this.data = await apiClient.get(Api.SPECIALTY).then((res) => res.data)
   }
 
   radarChart() {
@@ -52,9 +50,9 @@ export default class SpecialtyService {
             text: quality.title,
           },
           legend: {
-            display: false
+            display: false,
           },
-        }
+        },
       },
     }
   }
@@ -84,9 +82,8 @@ export default class SpecialtyService {
             display: true, // 凡例を表示します。
             position: 'bottom', // 凡例の位置
           },
-        }
+        },
       },
     }
   }
-
 }

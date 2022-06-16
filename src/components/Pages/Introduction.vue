@@ -27,7 +27,7 @@ import { injectStore } from '@/store'
 import MainService from '@/services/main'
 const main = injectStore<MainService>()
 
-const profileData = computed(() => main?.profile?.data);
+const profileData = computed(() => main?.profile?.data)
 </script>
 
 <style lang="scss" scoped>

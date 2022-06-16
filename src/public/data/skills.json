@@ -2,64 +2,64 @@
   {
     "title": "フロントエンド",
     "color": "yellow",
-    "rating": 3,
-    "text": "フロントエンドは技術の進化が早くて学習することが多いですが、javascriptは一番好きな言語です。ブラウザとエディタだけあれば開発ができる手軽なところと、サーバーサイドや最近ではスマートフォン向けアプリの開発まで出来てしまうプラットフォームの多さに魅力的に感じます。直近ではNext.js・TypeScript・WebRTCを使用したP2Pビデオチャットアプリケーション開発を学んでおります。",
+    "rating": 5,
+    "text": "フロントエンドは技術の進化が早くて学習することが多いですが、javascriptが一番好きな言語です。ブラウザとエディタだけあれば開発ができる手軽なところと、サーバーサイドや最近ではスマートフォン向けアプリの開発まで出来てしまうプラットフォームの多さに魅力的に感じます。直近ではNext.js・TypeScript・WebRTCを使用したP2Pビデオチャットアプリケーション開発を学んでおります。",
     "items" : [
       {
         "name": "React.js",
-        "rating": 3,
+        "rating": 4,
         "noDivider": false,
-        "text": "クラスコンポーネント・関数コンポーネントのどちらの書き方にも対応可能です。Typescript・MatelialUI も導入していました。また、Redux-Toolkitを利用した状態管理も対応可能です。"
+        "text": "Typescriptの利用はもちろん、Matelial UI などUIコンポーネント を利用した開発にも慣れております。クラスコンポーネント・関数コンポーネントのどちらの書き方にも対応可能です。Next.js を利用した開発経験もございます。"
       },
       {
         "name": "Vue.js",
-        "rating": 2,
+        "rating": 4,
         "noDivider": false,
-        "text": "新規でSPAを構築したり、既存のWebアプリに組み込んだりするときに主に使っています。\n簡単かつ柔軟で使いやすく開発で利用するケースも増えています。Nuxt.jsを利用してからは、ディレクトリ構造など規約がしっかりと決まっていて判りやすくなった印象です。"
+        "text": "CompositionAPI を利用したVue3 の開発にも対応可能です。主にSPAでの開発経験が多いですが、SSGやSSR での開発にも対応可能です。個人ではNuxt3 を利用したアプリケーション開発の経験もございます。"
       },
       {
         "name": "Typescript",
-        "rating": 2,
+        "rating": 4,
         "noDivider": false,
-        "text": "TypeScriptの型システムにより未然にエラーや凡ミスを防げることも魅力的に感じます。このサイトもNuxt.js&TypeScript&Vuetifyで作成されています。"
+        "text": "Typescriptを導入した開発経験が豊富です。LintやPrettier、Husky などの技術を組み合わせてプロジェクト全体でコードの統一性を高めるように日頃から心がけています。"
       },
       {
         "name": "JQuery",
-        "rating": 3,
+        "rating": 5,
         "noDivider": true,
-        "text": "DOM操作はもちろんおしゃれなUIを実現するためのプラグイン作成まで対応可能です。クライアントのこだわりの強い難しい要望にも対応可能です。"
+        "text": "DOM操作を利用したユーザビリティ向上の対応はもちろん、クライアントのこだわりに応じて柔軟に対応可能です。これまで多くのオリジナルのプラグインを作成して公開しています。"
       },
       {
         "name": "Node.js",
-        "rating": 2,
+        "rating": 3,
         "noDivider": false,
-        "text": "最近は主にCLIツールとして使用しています。以前は、ソーシャルゲーム開発やExpressを利用したWebアプリケーションを作成していた経験もあります。"
+        "text": "昔はExpressなどを利用したWebアプリケーションに利用していました。最近では主にCLIツールとして使用しています。個人ではNest.js & Prisma を利用してGraghQLからCRUDするアプリケーションを作成した経験もございます。"
       },
       {
         "name": "AMP・PWA",
         "rating": 2,
         "noDivider": false,
-        "text": "SEO対策の一貫でランディングページをAMP化しました。表示が早くなりGoogleからの評価も高くなりました。またPWAではServiceWorkerを作成するなどして負荷改善にも繋がりました。"
+        "text": "SEO対策の一貫でランディングページをAMP化しました。表示が早くなりGoogleからの評価も高くなりました。またPWAではServiceWorkerを作成するなどして負荷改善をした経験もございます。"
       }
     ]
   },
   {
     "title": "Java",
     "color": "red",
-    "rating": 3,
+    "rating": 4,
     "text": "Javaを利用した開発に携わることがもっとも多かったので、開発はもちろんですがフレームワークの選定から基盤構築までアーキテクチャ全体を対応する事が可能です。",
     "items" : [
       {
         "name": "Spring Boot",
-        "rating": 3,
+        "rating": 4,
         "noDivider": true,
-        "text": "Springフレームワーク自体はDI機能が流行りだした2006年頃から利用していました。当時はXMLの記述が複雑で苦労しましたが、進化を遂げて使いやすくなり今でも開発で利用する機会が多いです。"
+        "text": "Springフレームワーク自体はDI機能が流行りだした2006年頃から利用していました。当時はXMLの記述が複雑で苦労しましたが、Spring Boot になってからは激的に使いやすくなり今ではJavaで開発する定番のフレームワークとして利用しています。"
       },
       {
         "name": "SAStruts",
-        "rating": 3,
+        "rating": 4,
         "noDivider": false,
-        "text": "2010年頃から5年ほど複数の開発で利用していました。サポートが終了して以降はあまり利用していません。"
+        "text": "2010年頃から5年ほど複数の開発で利用していました。サポートが終了して以降はあまり利用していませんが、古くから続いている案件では今でも保守対応をすることがあります。"
       },
       {
         "name": "Apache Struts",
@@ -78,14 +78,14 @@
   {
     "title": "PHP",
     "color": "blue",
-    "rating": 2,
+    "rating": 4,
     "text": "PHPを利用した開発経験は少ないのですが、Laravelの洗練された開発効率の良いフレームワークに魅了されて以降、PHPの虜となりました。現在は、Laravelを利用したWebアプリケーション開発のプロジェクトに従事しています。",
     "items" : [
       {
         "name": "Laravel",
-        "rating": 3,
+        "rating": 4,
         "noDivider": true,
-        "text": "Webアプリケーション開発においてよく利用される機能が少ないコードで簡単に利用できるLaravelの開発効率の高さが素晴らしいと感じます。"
+        "text": "Webアプリケーション開発においてよく利用される機能が少ないコードで簡単に利用できるLaravelの開発効率の高さが素晴らしいと感じます。個人ではLaravel9を利用したボイラープレートを作成して公開しております。"
       }
     ]
   },
@@ -97,41 +97,47 @@
     "items" : [
       {
         "name": "MySQL",
-        "rating": 3,
+        "rating": 4,
         "noDivider": false,
-        "text": "業務で8年ほど利用していました。データベースのチューニングやレプリケーションなどの経験もあります。"
+        "text": "業務で10年ほど利用していました。データベースのチューニングやレプリケーションなどの経験もあり最も慣れているデータベースになります。"
       },
       {
         "name": "Oracle",
         "rating": 2,
         "noDivider": true,
-        "text": "業務で6年ほど利用していました。OracleMasterの資格もあります。"
+        "text": "証券会社などの基幹システム開発に携わっていた頃に利用していました。Oracle Masterの資格も取得しております。"
+      },
+      {
+        "name": "DynamoDB",
+        "rating": 4,
+        "noDivider": false,
+        "text": "SPAでの開発時に利用していました。Lambda 経由でのAPIアクセスと、AppSync経由でのGraghQLアクセス を経験したことがあります。"
       },
       {
         "name": "MongoDB",
         "rating": 2,
         "noDivider": false,
-        "text": "Node.jsを利用したWebアプリケーション開発で利用していました。JSONをそのままの形で KeyValueストア出来る使いやすさが印象的でした。"
+        "text": "Node.jsを利用したWebアプリケーション開発で利用していました。"
       }
     ]
   },
   {
     "title": "インフラ",
     "color": "brown",
-    "rating": 2,
+    "rating": 3,
     "text": "元々サーバーサイドのエンジニアだったのでインフラに関わることが多く、ApacheやTomcatの構築なども対応可能です。最近では、ECR(AWS)やDocker の構築も対応しております。",
     "items" : [
       {
-        "name": "AWS",
-        "rating": 2,
+        "name": "Amazon Web Services",
+        "rating": 4,
         "noDivider": true,
         "text": "EC2、RDS、Lambda、API Gateway、ECR など3年ほど業務で利用していました。"
       },
       {
         "name": "Firebase",
-        "rating": 1,
+        "rating": 3,
         "noDivider": false,
-        "text": "FCMを利用したプッシュ通知機能を利用する際に学習しました。"
+        "text": "Firestoreや認証機能を利用して作成してSPAアプリケーションをFirebaseでHostingさせて利用していました。またFCMを利用したプッシュ通知や、Realtime Database を利用したWebRTCの開発をした経験もございます。"
       },
       {
         "name": "Jenkins",
@@ -144,15 +150,7 @@
         "rating": 2,
         "noDivider": false,
         "text": "サイトの死活監視に利用していました。"
-      }
-    ]
-  },
-  {
-    "title": "検索エンジン",
-    "color": "purple",
-    "rating": 3,
-    "text": "ニュースサイトのようなコンシューマー向けの検索結果画面に利用していました。",
-    "items" : [
+      },
       {
         "name": "Solr",
         "rating": 3,
@@ -161,7 +159,7 @@
       },
       {
         "name": "Elasticsearch",
-        "rating": 1,
+        "rating": 2,
         "noDivider": false,
         "text": "クラスタの構築が簡単だった事とUIが使いやすい印象でした。1年ほど業務で利用していました。"
       }
@@ -170,24 +168,24 @@
   {
     "title": "保有資格",
     "color": "grey",
-    "rating": 3,
+    "rating": 4,
     "text": "IT系の資格は以下になります。その他、保有する資格としては、ビジネス能力検定、航空特殊無線技士、牽引自動車、大型特殊自動車、フォークリフト、車両系建設機械、高所作業車、危険物乙4、第二級陸上特殊無線技士、国際航空貨物取扱士、航空危険物取扱士、ガス溶接、アーク溶接、床上操作式クレーン などがあります。",
     "items" : [
       {
         "name": "ORACLE MASTER Silver Oracle9i Database(OCA)",
-        "rating": 3,
+        "rating": 5,
         "noDivider": true,
         "text": "入社して間もない頃にデータベースの学習の為に取得しました。SQLの記述やデータベースの仕組みについてこの時に学んだ内容は今でも生きていると思います。"
       },
       {
         "name": "Sun Certified Programmer for the Java 2 Platform 1.4",
-        "rating": 3,
+        "rating": 5,
         "noDivider": false,
         "text": "Javaを利用した業務に携わることが多く実務経験は豊富でしたが、改めて基礎から学習してみたいと思いこの資格を取得しました。"
       },
       {
         "name": "Linux Professional Institute Certification Level1",
-        "rating": 3,
+        "rating": 5,
         "noDivider": false,
         "text": "シェルコマンドやLinuxサーバのアーキテクチャを学びました。この時に覚えたコマンドや知識が今でも業務で役立っていて、もっとも実務に活かせている資格です。"
       }

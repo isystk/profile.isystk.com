@@ -11,6 +11,7 @@ module.exports = {
     defineExpose: 'readonly',
     withDefaults: 'readonly',
     definePageMeta: 'readonly',
+    useRuntimeConfig: 'readonly',
     useHead: 'readonly',
     useMeta: 'readonly',
     useRoute: 'readonly',
