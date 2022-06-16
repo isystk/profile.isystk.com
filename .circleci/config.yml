@@ -10,13 +10,13 @@ commands:
     steps:
       - restore_cache:
           name: Restore npm dependencies
-          key: npm-202206162008
+          key: npm-202206162008-{{ checksum "yarn.lock" }}
 
   save_npm:
     steps:
       - save_cache:
           name: Cache npm dependencies
-          key: npm-202206162008
+          key: npm-202206162008-{{ checksum "yarn.lock" }}
           paths:
             - ~/profile-isystk-com/node_modules
 
