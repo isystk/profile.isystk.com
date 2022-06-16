@@ -9,7 +9,7 @@
 
 ## Description
 
-📗 isystk のポートフォリオです。Typescript&Nuxt.jsで最近のフロントエンドの技術を取り入れて作成しました。
+📗 Nuxt3 & Vuetify を利用してポートフォリオを作成しました。GithubにPushするとCircleCIにVercelにホスティングされるようにしています。Storybook も導入しています。
 
 ### ディレクトリ構造
 ```
