@@ -1,6 +1,6 @@
 <template>
   <v-footer class="d-flex flex-column" color="primary">
-    <div>
+    <div class="mt-10 mb-10">
       <v-btn
         v-for="(item, index) in items"
         :key="index"

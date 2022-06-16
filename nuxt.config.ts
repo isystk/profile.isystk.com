@@ -36,7 +36,7 @@ const nuxtConfig = defineNuxtConfig({
     define: {
       'process.env.DEBUG': false,
     },
-  },
+  }
 })
 
 export default nuxtConfig
