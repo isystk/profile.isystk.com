@@ -74,7 +74,7 @@ jobs:
       - restore_npm
       - run:
           name: Generate
-          command: yarn generate && cp -rp .output/public dist
+          command: yarn generate && rm -Rf dist && cp -rp .output/public dist
       - run:
           name: Check dist
           command: ls -la dist
