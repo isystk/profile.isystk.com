@@ -1,0 +1,69 @@
+[
+  {
+    "title": "プロジェクトにおける適応範囲",
+    "type": "radar",
+    "items" : [
+      {
+        "label": "フロントエンド開発",
+        "color": "#FF0000",
+        "data": 100
+      },
+      {
+        "label": "バックエンド開発",
+        "color": "#FFFF00",
+        "data": 80
+      },
+      {
+        "label": "インフラ構築",
+        "color": "#00FFFF",
+        "data": 70
+      },
+      {
+        "label": "デザイン作成",
+        "color": "#800000",
+        "data": 30
+      },
+      {
+        "label": "プロジェクト管理",
+        "color": "#C0C0C0",
+        "data": 60
+      }
+    ]
+  },
+  {
+    "title": "プログラミングの得意言語",
+    "type": "doughnut",
+    "items" : [
+      {
+        "label": "React.js",
+        "color": "#FF0000",
+        "data": 25
+      },
+      {
+        "label": "Vue.js",
+        "color": "#FF00FF",
+        "data": 20
+      },
+      {
+        "label": "Jquery",
+        "color": "#FFFF00",
+        "data": 15
+      },
+      {
+        "label": "Typescript",
+        "color": "#800000",
+        "data": 10
+      },
+      {
+        "label": "java",
+        "color": "#C0C0C0",
+        "data": 15
+      },
+      {
+        "label": "PHP(Laravel)",
+        "color": "#00FFFF",
+        "data": 15
+      }
+    ]
+  }
+]

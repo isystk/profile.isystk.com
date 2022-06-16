@@ -1,6 +1,6 @@
-// Variables
-@import 'variables';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-// common
-@import 'common';
-
+@import "variables";
+@import "style";
