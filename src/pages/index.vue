@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onBeforeMount } from 'vue'
+import { onBeforeMount } from 'vue'
 useMeta({
   title: 'ポートフォリオ｜伊勢 功崇（いせ よしたか）',
 })

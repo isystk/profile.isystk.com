@@ -18,7 +18,7 @@
       />
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" permanent location="right">
+    <v-navigation-drawer v-model="drawer" location="right">
       <v-list>
         <v-list-subheader>Menu</v-list-subheader>
         <v-list-item
