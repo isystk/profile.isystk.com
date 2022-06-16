@@ -1,6 +1,6 @@
 import MainService from '@/services/main'
 import { Api } from '@/constants/api'
-import axios from 'axios'
+import apiClient from '@/utilities/apiClient'
 
 import Json from '@/public/data/skills.json'
 export type Skills = typeof Json
@@ -15,9 +15,6 @@ export default class SkillService {
   }
 
   async readData() {
-    this.data = await axios
-      .get(Api.SKILLS, {headers: {},})
-      .then((res) => res.data)
+    this.data = await apiClient.get(Api.SKILLS).then((res) => res.data)
   }
-
 }

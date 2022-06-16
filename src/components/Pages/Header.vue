@@ -21,21 +21,20 @@
     <v-navigation-drawer v-model="drawer" permanent location="right">
       <v-list>
         <v-list-subheader>Menu</v-list-subheader>
-        <v-list-item-group>
-          <div v-for="(item, i) in items" :key="i" :value="item">
-            <v-list-item
-              active-color="primary"
-              :href="item.url"
-              target="_blank"
-            >
-              <v-list-item-avatar start>
-                <v-icon :icon="item.icon" />
-              </v-list-item-avatar>
-              <v-list-item-title>{{ item.text }}</v-list-item-title>
-            </v-list-item>
-            <v-divider />
-          </div>
-        </v-list-item-group>
+        <v-list-item
+          v-for="(item, i) in items"
+          :key="i"
+          :value="item"
+          active-color="primary"
+          :href="item.url"
+          target="_blank"
+        >
+          <v-list-item-avatar start>
+            <v-icon :icon="item.icon" />
+          </v-list-item-avatar>
+          <v-list-item-title>{{ item.text }}</v-list-item-title>
+        </v-list-item>
+        <v-divider />
       </v-list>
     </v-navigation-drawer>
   </div>
@@ -59,17 +58,17 @@ const items = computed(() => {
   return [
     {
       text: 'ブログ',
-      icon: 'mdi-login-variant',
+      icon: 'mdi-pencil-box-outline',
       url: 'https://blog.isystk.com/',
     },
     {
       text: '会社概要',
-      icon: 'mdi-login-variant',
+      icon: 'mdi-domain',
       url: 'https://blog.isystk.com/company/',
     },
     {
       text: 'お問い合わせ',
-      icon: 'mdi-login-variant',
+      icon: 'mdi-message-text-outline',
       url: 'https://blog.isystk.com/contact/',
     },
   ]

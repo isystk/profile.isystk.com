@@ -46,7 +46,7 @@ import { injectStore } from '@/store'
 import MainService from '@/services/main'
 const main = injectStore<MainService>()
 
-const skillData = computed(() => main?.skill?.data);
+const skillData = computed(() => main?.skill?.data)
 </script>
 
 <style lang="scss" scoped>

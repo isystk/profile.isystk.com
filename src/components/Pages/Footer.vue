@@ -27,6 +27,6 @@ const items = [
   { icon: 'mdi-github', link: 'https://github.com/isystk/' },
 ]
 const locate = (item) => {
-  location.href = item.link
+  window.open(item.link, '_blank')
 }
 </script>

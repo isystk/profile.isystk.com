@@ -5,40 +5,11 @@
         <div class="message">
           <p class="title">Thanks you</p>
           <ul class="sns-buttons">
-            <li class="share-twitter">
-              <a
-                href="http://twitter.com/intent/tweet?text=Typescript＆Nuxt.jsで最近のフロントエンドの技術を取り入れて作成したポートフォリオ。Isystk's Portfolio%20http://profile.isystk.com/"
-                target="_blank"
-              >
-                Twitter
+            <li v-for="(e, index) in items" :key="index" :class="e.icon">
+              <a :href="e.href" target="_blank">
+                {{ e.name }}
               </a>
             </li>
-            <li class="share-facebook">
-              <a
-                href="https://www.facebook.com/sharer/sharer.php?u=http://profile.isystk.com/"
-                target="_blank"
-              >
-                Facebook
-              </a>
-            </li>
-            <li class="share-line">
-              <a
-                href="http://line.me/R/msg/text/?Typescript＆Nuxt.jsで最近のフロントエンドの技術を取り入れて作成したポートフォリオ。Isystk's Portfolio%0D%0Ahttp://profile.isystk.com/"
-              >
-                LINE
-              </a>
-            </li>
-            <!--
-              <li class="share-google">
-              <a href="https://plus.google.com/share?url=http://profile.isystk.com/" target="_blank">Google+</a>
-              </li>
-              <li class="share-hatena">
-              <a href="http://b.hatena.ne.jp/add?mode=confirm&url=http://profile.isystk.com/&title=Typescript＆Nuxt.jsで最近のフロントエンドの技術を取り入れて作成したポートフォリオ。Isystk's Portfolio" target="_blank">はてブ</a>
-              </li>
-              <li class="share-pocket">
-              <a href="http://getpocket.com/edit?url=http://profile.isystk.com/" target="_blank">Pocket</a>
-              </li>
-            -->
           </ul>
         </div>
       </div>
@@ -46,7 +17,28 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const $config = useRuntimeConfig()
+const currentUrl = location.href
+
+const items = [
+  {
+    name: 'Twitter',
+    href: `http://twitter.com/intent/tweet?text=${$config.APP_DESCRIPTION}%20${currentUrl}`,
+    icon: 'share-twitter',
+  },
+  {
+    name: 'Facebook',
+    href: `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`,
+    icon: 'share-facebook',
+  },
+  {
+    name: 'LINE',
+    href: `http://line.me/R/msg/text/?${$config.APP_DESCRIPTION}%0D%0A${currentUrl}`,
+    icon: 'share-line',
+  },
+]
+</script>
 
 <style lang="scss" scoped>
 .thanks {
@@ -102,27 +94,6 @@
 }
 .thanks .sns-buttons li.share-facebook:hover {
   background: #4c70ba;
-}
-.thanks .sns-buttons li.share-google {
-  background: #dd4b39;
-  box-shadow: 0 2px #c23321;
-}
-.thanks .sns-buttons li.share-google:hover {
-  background: #e47365;
-}
-.thanks .sns-buttons li.share-hatena {
-  background: #2c6ebd;
-  box-shadow: 0 2px #225694;
-}
-.thanks .sns-buttons li.share-hatena:hover {
-  background: #4888d4;
-}
-.thanks .sns-buttons li.share-pocket {
-  background: #f13d53;
-  box-shadow: 0 2px #e6152f;
-}
-.thanks .sns-buttons li.share-pocket:hover {
-  background: #f26f7f;
 }
 .thanks .sns-buttons li.share-line {
   background: #00c300;

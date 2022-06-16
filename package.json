@@ -1,6 +1,6 @@
 {
-  "name": "profile-isystk-com",
-  "description": "ポートフォリオ｜伊勢 功崇（いせ よしたか）",
+  "name": "profile.isystk.com",
+  "description": "Nuxt3 & Vuetify を利用してポートフォリオを作成しました。GithubにPushするとCircleCIにVercelにホスティングされるようにしています。Storybook も導入しています。",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -48,6 +48,7 @@
     "@intlify/nuxt3": "^0.2.2",
     "@mdi/font": "^6.7.96",
     "@nuxt/types": "^2.15.8",
+    "@nuxtjs/pwa": "^3.3.5",
     "@nuxtjs/tailwindcss": "^5.1.2",
     "@pinia/nuxt": "^0.1.9",
     "@storybook/addon-essentials": "^6.5.6",
@@ -93,6 +94,7 @@
     "vee-validate": "^4.5.11",
     "vitest": "^0.13.1",
     "vue-chart-3": "^3.1.8",
+    "vue-gtag": "^2.0.1",
     "vue-lodash": "^2.1.2",
     "vuejs-image-base64": "^1.2.0",
     "vuetify": "^3.0.0-beta.2",

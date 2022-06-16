@@ -1,13 +1,13 @@
 [
   {
     "title": "isystk's blog",
-    "text": "私が運営しているブログです。\n主にITエンジニアとして学んだ事を掲載しています。",
+    "text": "私が運営しているブログです。\n主にITエンジニアとして成長するために日々の学習で身につけた技術をアウトプットする為に記事の掲載をしています。是非一度御覧ください。",
     "url": "https://blog.isystk.com/",
     "imageUrl": "/img/blog-site.jpg"
   },
   {
     "title": "Laravel＆React.js Boilerplate",
-    "text": "Laravel＆React.jsで作成した簡易的なECサイトのアプリケーションです。フロント画面で購入した商品を管理画面の注文履歴で閲覧したり、在庫の管理を行うことが出来ます。",
+    "text": "Laravel9 ＆ React18 で作成したECサイトのWebアプリケーションです。フロントと管理画面に分かれており、購入した商品を管理画面の注文履歴で閲覧したり在庫管理を行うことが出来ます。",
     "url": "https://blog.isystk.com/web_production/boilerplate/1472/",
     "imageUrl": "/img/laravel-react-boilerplate.jpg"
   },
@@ -18,27 +18,21 @@
     "imageUrl": "/img/java-springboot-boilerplate.jpg"
   },
   {
-    "title": "Nuxt.js JamStack Sample",
-    "text": "MicroCMS と Nuxt.js を利用してJamStackなWebアプリケーションを作成しました。",
+    "title": "Nuxt3 JamStack Sample",
+    "text": "Nuxt3 で作成したJamStackアプリケーションです。MicroCMS で記事を投稿するとGithubActionがHookして、SSG で生成した静的なコンテンツがGithubPagesに自動反映されるようにしています。",
     "url": "https://blog.isystk.com/web_production/vue/1642/",
     "imageUrl": "/img/nuxtjs-jamstack-sample.jpg"
   },
   {
-    "title": "Next.js Typescript Firebase",
-    "text": "Firebase を利用して Next.js でWebアプリケーションを作成ました。",
-    "url": "https://blog.isystk.com/web_production/react/1659/",
+    "title": "Amplify React Sample",
+    "text": "React を利用したAWS Amplify の学習用サンプルアプリケーションです。Material UIを利用しておりGraghQLを利用した認証機能や CRUD などの機能を組み込んでいます。",
+    "url": "https://blog.isystk.com/web_production/react/xxxx/",
     "imageUrl": "/img/nextjs-typescript-firebase.jpg"
   },
   {
-    "title": "Alexa Twitter Trends",
-    "text": "AWS Lambda を利用して AlexaでTwitterのトレンドをお知らせするスキルを作成しました。",
-    "url": "https://blog.isystk.com/web_production/alexa/1669/",
-    "imageUrl": "/img/alexa-twitter-trends.jpg"
-  },
-  {
-    "title": "Nuxt3 Typescript AWS",
-    "text": "Nuxt.js3 を利用してWebアプリケーションを作成しました。",
-    "url": "https://blog.isystk.com/web_production/vue/1675/",
+    "title": "Amplify Nuxt3 Sample",
+    "text": "Nuxt3 を利用したAWS Amplify の学習用サンプルアプリケーションです。Vuetifyを利用しておりGraghQLを利用した認証機能や CRUD などの機能を組み込んでいます。",
+    "url": "https://blog.isystk.com/web_production/vue/xxx/",
     "imageUrl": "/img/nuxt3-typescript-aws.jpg"
   },
   {
@@ -49,31 +43,37 @@
   },
   {
     "title": "Next.js Nest.js GraphQL",
-    "text": "Next.js & Nest.js & Prisma を利用してGraphQLを使ったアプリケーションを作成しました。",
+    "text": "Next.js & Nest.js & Prisma を利用してGraphQLを使ったアプリケーションを作成しました。フロントからバックエンドまで一貫してJavascript で作成しています。",
     "url": "https://blog.isystk.com/web_production/react/1696/",
     "imageUrl": "/img/nextjs-nestjs-graphql.jpg"
   },
   {
+    "title": "Alexa Twitter Trends",
+    "text": "AWS Lambda を利用して AlexaでTwitterのトレンドをお知らせするスキルを作成しました。「アレクサ、日本のトレンドワードを開いて」というとTwitterのトレンドワードを5つ伝えてくれます。",
+    "url": "https://blog.isystk.com/web_production/alexa/1669/",
+    "imageUrl": "/img/alexa-twitter-trends.jpg"
+  },
+  {
     "title": "Nuxt.js＆Typescript Boilerplate",
-    "text": "Nuxt.js Typescript ESLint を利用したボイラープレートです。チャート表示や画像カルーセル、モーダル表示など利用頻度の高い機能をサンプルとして纏めています。",
+    "text": "Nuxt.js Typescript ESLint を利用したボイラープレートです。Nuxt3 が登場する以前に、vue-property-decorator を利用してTypescriptが利用できるように作成しました。",
     "url": "https://blog.isystk.com/web_production/boilerplate/1108/",
     "imageUrl": "/img/nuxtjs-typescript-boilerplate.jpg"
   },
   {
     "title": "クロスサイト・スクリプティング(XSS)の検証サンプル − XSSカイジ",
-    "text": "XSSの脆弱性を検証する為に作成したサンプルスクリプトです。Webサイト内にサニタイズ漏れがあると「ざわざわ」して最後に何かが起こります..。サンプルも公開しているので是非ご覧ください。",
+    "text": "XSSの脆弱性を検証する為に作成したサンプルスクリプトです。Webサイト内にサニタイズ漏れがあると「ざわざわ」して最後に何かが起こります..。サンプルも公開しているので是非一度触ってみてください。",
     "url": "https://blog.isystk.com/web_production/xss/214/",
     "imageUrl": "/img/kaiji.gif"
   },
   {
     "title": "自作のWordpress用テンプレートです。",
-    "text": "私が運営しているブログで利用している自作のWordpress用テンプレートです。SEO対策に最適化しており格安で販売しておりますのでご興味のある方はどうぞ。",
+    "text": "私が運営しているブログで利用している自作のWordpress用テンプレートです。Googleで検索された際に上位に表示されるようにSEOを最適化しておりLighthouseでSEOのスコアは99を記録しております。ご興味のある方はどうぞ。",
     "url": "https://blog.isystk.com/web_production/wordpress/1085/",
     "imageUrl": "/img/wordpress-template.jpg"
   },
   {
     "title": "このポートフォリオサイトです。",
-    "text": "Vue.js(Nuxt.js)&Typescriptを利用してポートフォリオを作成しました。GithubにPushすると自動でCircleCIによってビルド・テストが実行されてVercelにデプロイされるようにしています。",
+    "text": "Nuxt3 & Vuetify を利用してポートフォリオを作成しました。GithubにPushすると自動的にCircleCIでビルドが動き、Vercelにホスティングされるようにしています。就活をする学生さんやフリーランスでお仕事を探している方はこちらをForkしてご利用ください。",
     "url": "https://blog.isystk.com/web_production/portfolio/829/",
     "imageUrl": "/img/portfolio.jpg"
   }
