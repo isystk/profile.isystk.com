@@ -10,13 +10,13 @@ commands:
     steps:
       - restore_cache:
           name: Restore npm dependencies
-          key: npm-v1-{{ checksum "yarn.lock" }}
+          key: npm-{{ checksum "yarn.lock" }}
 
   save_npm:
     steps:
       - save_cache:
           name: Cache npm dependencies
-          key: npm-v1-{{ checksum "yarn.lock" }}
+          key: npm-{{ checksum "yarn.lock" }}
           paths:
             - ~/profile-isystk-com/node_modules
 
@@ -39,7 +39,7 @@ jobs:
       - restore_npm
       - run:
           name: Lint
-          command: yarn lint
+          command: npm run lint
       - save_npm
 
   build:
@@ -50,7 +50,7 @@ jobs:
       - restore_npm
       - run:
           name: Build
-          command: yarn build
+          command: npm run build
       - save_npm
 
   test:
@@ -61,7 +61,7 @@ jobs:
       - restore_npm
       - run:
           name: Test
-          command: yarn test
+          command: npm run test
       - save_npm
 
   deploy:
@@ -72,7 +72,7 @@ jobs:
       - restore_npm
       - run:
           name: Generate
-          command: yarn generate
+          command: npm run generate
       - run:
           name: Check dist
           command: ls -la dist
@@ -80,9 +80,9 @@ jobs:
           name: deploy to now
           command: |
             if [ ! ${CIRCLE_BRANCH} = master ]; then
-              yarn deploy:preview
+              npm run deploy:preview
             else
-              yarn deploy:production
+              npm run deploy:production
             fi
       - save_npm
 
