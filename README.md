@@ -14,32 +14,53 @@
 ### ディレクトリ構造
 ```
 .
-├── src (Nuxt関連のソースファイル)
-│    ├── @types
-│    ├── assets
-│    ├── common
-│    ├── components
-│    ├── interfaces
-│    ├── middleware
-│    ├── pages
-│    ├── plugins
-│    ├── static
-│    ├── store
-│    ├── test
-│    └── utilities
-├── .babelrc (Babel設定ファイル)
-├── .vscode (VSCode設定ファイル)
-├── jest.config.js
+├── Dockerfile
+├── LICENSE
+├── README.md
+├── aws
+│   ├── README.md
+│   ├── cfn
+│   ├── cloud9
+│   └── network.png
+├── demo.jpg
+├── dist -> .output/public
+├── node_modules
 ├── nuxt.config.ts
 ├── package.json
-└── tsconfig.json
+├── postcss.config.js
+├── src
+│   ├── __tests__
+│   ├── app.vue
+│   ├── assets
+│   ├── components
+│   ├── constants
+│   ├── helper
+│   ├── layouts
+│   ├── locales
+│   ├── middleware
+│   ├── pages
+│   ├── plugins
+│   ├── public
+│   ├── services
+│   ├── store
+│   ├── stories
+│   └── utilities
+├── tailwind.config.js
+├── tsconfig.json
+├── vitest.config.ts
+└── yarn.lock
+
 ```
 
 ## 🖊️ VS. 
 
 ### 利用している技術
-- Nuxtjs 2.10
+- Nuxt.js 3
+- Vuetify 3
+- TailwindCSS (Sass)
 - Typescript 
+- Chart.js
+- Storybook
 
 ## 🌐 Demo
 
@@ -65,7 +86,7 @@ $ yarn
 $ yarn dev
 ```
 
-本番環境(Vercel)へデプロイする場合<br>
+#### 本番環境(Vercel)へデプロイする場合
 静的ファイルを生成した後、GithubにPushすることでCircleCI経由でVercelにデプロイされます。
 ```bash
 $ yarn generate
@@ -85,11 +106,13 @@ $ git push
 
 | プロジェクト| 概要|
 | :---------------------------------------| :-------------------------------|
-| [公式ドキュメント - Nuxt.js](https://ja.nuxtjs.org/guide/)| 公式ドキュメント - Nuxt.js|
-| [公式ドキュメント - TypeScript](https://www.typescriptlang.org/docs/home)| 公式ドキュメント - TypeScript|
-| [仕事ですぐに使えるTypeScript](https://future-architect.github.io/typescript-guide/)| 仕事ですぐに使えるTypeScript|
-| [アイコン（fontawesome）](https://fontawesome.com/icons?d=gallery)| アイコン（fontawesome）|
-| [SASS](https://sass-lang.com/documentation) | SASS |
+| [Nuxt3 Docs](https://v3.nuxtjs.org/guide/concepts/introduction)| Nuxt3 Docs |
+| [Vuetify 3 Beta](https://next.vuetifyjs.com/en/getting-started/installation/)| Vuetify 3 Beta |
+| [Material Design Icons](https://pictogrammers.github.io/@mdi/font/2.0.46/)| Material Design Icons |
+| [Tailwind CSS](https://tailwindcss.com/docs/installation)| Tailwind CSS |
+| [vee-validate](https://vee-validate.logaretm.com/v4/guide/components)| vee-validate |
+| [husky v6 のインストール方法と使い方。lint-staged も導入して、品質を保とう](https://fwywd.com/tech/husky-setup)| husky v6 のインストール方法と使い方。lint-staged も導入して、品質を保とう |
+
 
 ## 🎫 Licence
 
