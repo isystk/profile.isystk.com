@@ -18,8 +18,8 @@
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy:production": "now -t $VERCEL_TOKEN -c --prod",
-    "deploy:preview": "now -t $VERCEL_TOKEN -c"
+    "deploy:production": "now -t $VERCEL_TOKEN -c --prod -Q .output/public",
+    "deploy:preview": "now -t $VERCEL_TOKEN -c -Q .output/public"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

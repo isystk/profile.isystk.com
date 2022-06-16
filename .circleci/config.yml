@@ -10,15 +10,13 @@ commands:
     steps:
       - restore_cache:
           name: Restore npm dependencies
-          #key: npm-{{ checksum "yarn.lock" }}
-          key: npm-202206162030
+          key: npm-v1-{{ checksum "yarn.lock" }}
 
   save_npm:
     steps:
       - save_cache:
           name: Cache npm dependencies
-          #key: npm-{{ checksum "yarn.lock" }}
-          key: npm-202206162030
+          key: npm-v1-{{ checksum "yarn.lock" }}
           paths:
             - ~/profile-isystk-com/node_modules
 
@@ -77,7 +75,7 @@ jobs:
           command: yarn generate
       - run:
           name: Check dist
-          command: ls -la dist
+          command: ls -la .output/public
       - run:
           name: deploy to now
           command: |
