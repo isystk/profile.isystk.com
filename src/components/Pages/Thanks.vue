@@ -24,9 +24,7 @@ const currentUrl = location.href
 const items = [
   {
     name: 'Twitter',
-    href: `http://twitter.com/intent/tweet?text=${escape(
-      $config.APP_DESCRIPTION
-    )}%20${currentUrl}`,
+    href: `http://twitter.com/intent/tweet?text=${encodeURIComponent($config.APP_DESCRIPTION)}%20${currentUrl}`,
     icon: 'share-twitter',
   },
   {
@@ -36,9 +34,7 @@ const items = [
   },
   {
     name: 'LINE',
-    href: `http://line.me/R/msg/text/?${escape(
-      $config.APP_DESCRIPTION
-    )}%0D%0A${currentUrl}`,
+    href: `http://line.me/R/msg/text/?${encodeURIComponent($config.APP_DESCRIPTION)}%0D%0A${currentUrl}`,
     icon: 'share-line',
   },
 ]
