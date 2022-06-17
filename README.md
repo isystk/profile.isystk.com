@@ -70,7 +70,7 @@ https://profile.isystk.com/
 
 ## 🎨 Requirement
 
-推奨するNodeのバージョン v16.13.1 
+推奨するNodeのバージョン v16
 
 ## 📦 Install
 
@@ -87,9 +87,8 @@ $ yarn dev
 ```
 
 #### 本番環境(Vercel)へデプロイする場合
-静的ファイルを生成した後、GithubにPushすることでCircleCI経由でVercelにデプロイされます。
+GithubにPushすることでCircleCI経由でVercelにデプロイされます。
 ```bash
-$ yarn generate
 $ git push
 ```
 

@@ -21,16 +21,8 @@
     <v-navigation-drawer v-model="drawer" location="right">
       <v-list>
         <v-list-subheader>Menu</v-list-subheader>
-        <div
-            v-for="(item, i) in items"
-            :key="i"
-            :value="item"
-        >
-          <v-list-item
-              active-color="primary"
-              :href="item.url"
-              target="_blank"
-          >
+        <div v-for="(item, i) in items" :key="i" :value="item">
+          <v-list-item active-color="primary" :href="item.url" target="_blank">
             <v-list-item-avatar start>
               <v-icon :icon="item.icon" />
             </v-list-item-avatar>
@@ -47,6 +39,7 @@
 import { computed, ref } from 'vue'
 import { Url } from '@/constants/url'
 import MainService from '@/services/main'
+import PagesLogo from '@/components/Pages/Logo.vue'
 const props = defineProps<{
   store: MainService
 }>()
