@@ -26,13 +26,13 @@
   {
     "title": "Amplify React Sample",
     "text": "React を利用したAWS Amplify の学習用サンプルアプリケーションです。Material UIを利用しておりGraghQLを利用した認証機能や CRUD などの機能を組み込んでいます。",
-    "url": "https://blog.isystk.com/web_production/react/xxxx/",
+    "url": "https://github.com/isystk/amplify-reactjs-sample",
     "imageUrl": "/img/nextjs-typescript-firebase.jpg"
   },
   {
     "title": "Amplify Nuxt3 Sample",
     "text": "Nuxt3 を利用したAWS Amplify の学習用サンプルアプリケーションです。Vuetifyを利用しておりGraghQLを利用した認証機能や CRUD などの機能を組み込んでいます。",
-    "url": "https://blog.isystk.com/web_production/vue/xxx/",
+    "url": "https://blog.isystk.com/web_production/vue/1746/",
     "imageUrl": "/img/nuxt3-typescript-aws.jpg"
   },
   {
