@@ -28,7 +28,7 @@
             </elements-scrollin>
             <elements-scrollin
               class-default="fadein"
-              class-change="scrollin scrollin-delay1"
+              class-change="scrollin"
             >
               <a href="https://blog.isystk.com/" target="_blank">
                 <p class="title">

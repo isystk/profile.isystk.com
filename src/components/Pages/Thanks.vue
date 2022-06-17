@@ -24,7 +24,7 @@ const currentUrl = location.href
 const items = [
   {
     name: 'Twitter',
-    href: `http://twitter.com/intent/tweet?text=${$config.APP_DESCRIPTION}%20${currentUrl}`,
+    href: `http://twitter.com/intent/tweet?text=${escape($config.APP_DESCRIPTION)}%20${currentUrl}`,
     icon: 'share-twitter',
   },
   {
@@ -34,7 +34,7 @@ const items = [
   },
   {
     name: 'LINE',
-    href: `http://line.me/R/msg/text/?${$config.APP_DESCRIPTION}%0D%0A${currentUrl}`,
+    href: `http://line.me/R/msg/text/?${escape($config.APP_DESCRIPTION)}%0D%0A${currentUrl}`,
     icon: 'share-line',
   },
 ]
@@ -58,8 +58,7 @@ const items = [
   text-align: right;
 }
 .thanks .message .title {
-  text-align: right;
-  font-size: 54px;
+  font-size: 40px;
   line-height: 1;
   letter-spacing: 2px;
   margin-bottom: 30px;
