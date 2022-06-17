@@ -21,20 +21,23 @@
     <v-navigation-drawer v-model="drawer" location="right">
       <v-list>
         <v-list-subheader>Menu</v-list-subheader>
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :value="item"
-          active-color="primary"
-          :href="item.url"
-          target="_blank"
+        <div
+            v-for="(item, i) in items"
+            :key="i"
+            :value="item"
         >
-          <v-list-item-avatar start>
-            <v-icon :icon="item.icon" />
-          </v-list-item-avatar>
-          <v-list-item-title>{{ item.text }}</v-list-item-title>
-        </v-list-item>
-        <v-divider />
+          <v-list-item
+              active-color="primary"
+              :href="item.url"
+              target="_blank"
+          >
+            <v-list-item-avatar start>
+              <v-icon :icon="item.icon" />
+            </v-list-item-avatar>
+            <v-list-item-title>{{ item.text }}</v-list-item-title>
+          </v-list-item>
+          <v-divider />
+        </div>
       </v-list>
     </v-navigation-drawer>
   </div>
