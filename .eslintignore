@@ -19,7 +19,3 @@ out/**
 .eslintrc.js
 nuxt.config.ts
 tailwind.config.js
-
-
-
-src/models
