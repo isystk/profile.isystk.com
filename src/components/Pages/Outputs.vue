@@ -26,10 +26,7 @@
                 <div class="label">01</div>
               </div>
             </elements-scrollin>
-            <elements-scrollin
-              class-default="fadein"
-              class-change="scrollin"
-            >
+            <elements-scrollin class-default="fadein" class-change="scrollin">
               <a href="https://blog.isystk.com/" target="_blank">
                 <p class="title">
                   <span v-html="workBlogData.title"> </span>

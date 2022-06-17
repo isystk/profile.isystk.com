@@ -46,15 +46,15 @@ app.use(vuetify)
 
 import '@/assets/sass/app.scss'
 
-// Components
-const pageContext = import.meta.globEager('../src/components/**/*.vue')
-Object.keys(pageContext).forEach((key) => {
-  const paths = key
-    .split('/')
-    .filter((path) => path !== '..' && path !== 'src' && path !== 'components')
-  const name = paths.pop().split('.')[0]
-  return app.component([...paths, name].join(''), pageContext[key].default)
-})
+// Components Auto Load
+// const pageContext = import.meta.globEager('../src/components/**/*.vue')
+// Object.keys(pageContext).forEach((key) => {
+//   const paths = key
+//     .split('/')
+//     .filter((path) => path !== '..' && path !== 'src' && path !== 'components')
+//   const name = paths.pop().split('.')[0]
+//   return app.component([...paths, name].join(''), pageContext[key].default)
+// })
 
 export const decorators = [
   (story) => ({
