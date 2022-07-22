@@ -18,6 +18,12 @@
     "imageUrl": "/img/java-springboot-boilerplate.jpg"
   },
   {
+    "title": "Kotlin Springboot Boilerplate",
+    "text": "Java&Springbootで作成したECサイトのWebアプリケーションをKotlinでリメイクしました。Kotlinを導入することでコードが簡潔になりNULL安全で開発しやすい環境を整えました。",
+    "url": "https://blog.isystk.com/system_develop/backend/springboot/1863/",
+    "imageUrl": "/img/kotlin-springboot-boilerplate.jpg"
+  },
+  {
     "title": "Nuxt3 JamStack Sample",
     "text": "Nuxt3 で作成したJamStackアプリケーションです。MicroCMS で記事を投稿するとGithubActionがHookして、SSG で生成した静的なコンテンツがGithubPagesに自動反映されるようにしています。",
     "url": "https://blog.isystk.com/web_production/vue/1642/",

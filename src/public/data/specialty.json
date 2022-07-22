@@ -35,34 +35,39 @@
     "type": "doughnut",
     "items" : [
       {
-        "label": "React.js",
+        "label": "Java",
         "color": "#FF0000",
-        "data": 25
+        "data": 30
       },
       {
-        "label": "Vue.js",
+        "label": "PHP(Laravel)",
         "color": "#FF00FF",
         "data": 20
       },
       {
-        "label": "Jquery",
+        "label": "React.js",
         "color": "#FFFF00",
-        "data": 15
+        "data": 13
+      },
+      {
+        "label": "Vue.js",
+        "color": "#00FFFF",
+        "data": 12
       },
       {
         "label": "Typescript",
+        "color": "#008000",
+        "data": 10
+      },
+      {
+        "label": "jQuery",
         "color": "#800000",
         "data": 10
       },
       {
-        "label": "java",
+        "label": "Kotlin",
         "color": "#C0C0C0",
-        "data": 15
-      },
-      {
-        "label": "PHP(Laravel)",
-        "color": "#00FFFF",
-        "data": 15
+        "data": 5
       }
     ]
   }

@@ -76,6 +76,20 @@
     ]
   },
   {
+    "title": "Kotlin",
+    "color": "green",
+    "rating": 3,
+    "text": "Kotlinを利用した開発経験は少ないのですが、Javaの代替として生み出された言語と言われているので日頃から学習しています。従来のプログラミング言語のノウハウを貪欲に取り込んだ新しい言語を学ぶことで良いコードのパターンを吸収するようにしています。",
+    "items" : [
+      {
+        "name": "Spring Boot",
+        "rating": 3,
+        "noDivider": true,
+        "text": "JavaでWebアプリケーションを構築する上で定番となったSpringBootフレームワークをKotlinでリメイクしました。"
+      }
+    ]
+  },
+  {
     "title": "PHP",
     "color": "blue",
     "rating": 4,
