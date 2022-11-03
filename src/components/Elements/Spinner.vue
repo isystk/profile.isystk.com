@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     className: function () {
-      let name = 'text-center'
+      const name = 'text-center'
       return name
     },
   },
