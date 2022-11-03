@@ -1,38 +1,22 @@
-<template>
-  <div>
-    <v-app-bar class="overflow-visible" color="primary" prominent>
-      <pages-logo />
-      <v-spacer />
-
-      <ul class="nav-link">
-        <li v-for="(item, i) in items" :key="i" :value="item">
-          <a :href="item.url" target="_blank">
-            {{ item.text }}
-          </a>
-        </li>
-      </ul>
-      <v-app-bar-nav-icon
-        variant="text"
-        class="visible md:invisible"
-        @click.stop="toggleMenu"
-      />
-    </v-app-bar>
-
-    <v-navigation-drawer v-model="drawer" location="right">
-      <v-list>
-        <v-list-subheader>Menu</v-list-subheader>
-        <div v-for="(item, i) in items" :key="i" :value="item">
-          <v-list-item active-color="primary" :href="item.url" target="_blank">
-            <v-list-item-avatar start>
-              <v-icon :icon="item.icon" />
-            </v-list-item-avatar>
-            <v-list-item-title>{{ item.text }}</v-list-item-title>
-          </v-list-item>
-          <v-divider />
-        </div>
-      </v-list>
-    </v-navigation-drawer>
-  </div>
+<template lang="pug">
+div
+  v-app-bar.overflow-visible(color='primary' prominent='')
+    pages-logo
+    v-spacer
+    ul.nav-link
+      li(v-for='(item, i) in items' :key='i' :value='item')
+        a(:href='item.url' target='_blank')
+          | {{ item.text }}
+    v-app-bar-nav-icon.visible(variant='text' class='md:invisible' @click.stop='toggleMenu')
+  v-navigation-drawer(v-model='drawer' location='right')
+    v-list
+      v-list-subheader Menu
+      div(v-for='(item, i) in items' :key='i' :value='item')
+        v-list-item(active-color='primary' :href='item.url' target='_blank')
+          v-list-item-avatar(start='')
+            v-icon(:icon='item.icon')
+          v-list-item-title {{ item.text }}
+        v-divider
 </template>
 
 <script setup lang="ts">

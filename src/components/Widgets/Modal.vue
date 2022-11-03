@@ -1,19 +1,14 @@
-<template>
-  <v-dialog v-model="_isOpen">
-    <v-card>
-      <v-card-title class="card-header">
-        {{ title }}
-        <v-spacer />
-        <v-btn icon @click="handleClose">
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
-      </v-card-title>
-      <v-divider />
-      <v-card-text>
-        <slot />
-      </v-card-text>
-    </v-card>
-  </v-dialog>
+<template lang="pug">
+v-dialog(v-model='_isOpen')
+  v-card
+    v-card-title.card-header
+      | {{ title }}
+      v-spacer
+      v-btn(icon='' @click='handleClose')
+        v-icon mdi-close
+    v-divider
+    v-card-text
+      slot
 </template>
 
 <script setup lang="ts">

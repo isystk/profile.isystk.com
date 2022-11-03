@@ -1,37 +1,20 @@
-<template>
-  <v-card id="twitter">
-    <v-container fluid class="container">
-      <elements-scrollin class-default="fadein" class-change="scrollin">
-        <h2 class="text-center">Twitter</h2>
-      </elements-scrollin>
-      <elements-hr />
-      <v-row dense>
-        <v-col cols="12" md="6" class="mb-10 mb-md-0">
-          <div ref="componentRef">
-            <p class="title">フォロワー数</p>
-            <div class="followers js-shuffleNum">
-              {{ state.twitterFollower }}
-            </div>
-          </div>
-        </v-col>
-        <v-col cols="12" md="6">
-          <elements-scrollin class-default="fadein" class-change="scrollin">
-            <div v-if="state.isShowTwitter" class="tweet text-center">
-              <a
-                class="twitter-timeline"
-                data-chrome="noheader,nofooter"
-                :data-height="state.twitterTimeline.height"
-                :data-dnt="state.twitterTimeline.dnt"
-                :href="state.twitterTimeline.href"
-              >
-                Tweets by ise0615
-              </a>
-            </div>
-          </elements-scrollin>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-card>
+<template lang="pug">
+v-card#twitter
+  v-container.container(fluid='')
+    elements-scrollin(class-default='fadein' class-change='scrollin')
+      h2.text-center Twitter
+    elements-hr
+    v-row(dense='')
+      v-col.mb-10.mb-md-0(cols='12' md='6')
+        div(ref='componentRef')
+          p.title フォロワー数
+          .followers.js-shuffleNum
+            | {{ state.twitterFollower }}
+      v-col(cols='12' md='6')
+        elements-scrollin(class-default='fadein' class-change='scrollin')
+          .tweet.text-center(v-if='state.isShowTwitter')
+            a.twitter-timeline(data-chrome='noheader,nofooter' :data-height='state.twitterTimeline.height' :data-dnt='state.twitterTimeline.dnt' :href='state.twitterTimeline.href')
+              | Tweets by ise0615
 </template>
 
 <script lang="ts" setup>

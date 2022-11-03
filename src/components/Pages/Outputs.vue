@@ -1,70 +1,40 @@
-<template>
-  <v-card id="works">
-    <v-container fluid class="container">
-      <elements-scrollin class-default="fadein" class-change="scrollin">
-        <h2 class="text-center">OUTPUT</h2>
-      </elements-scrollin>
-      <elements-hr />
-      <div v-if="workBlogData" class="box">
-        <div class="box_item">
-          <elements-scrollin class-default="fadein" class-change="scrollin">
-            <div class="mockup">
-              <img src="/img/imac.png" class="mac" />
-              <div class="site">
-                <a href="https://blog.isystk.com/" target="_blank">
-                  <img :src="workBlogData.imageUrl" width="100%" />
-                </a>
-              </div>
-            </div>
-          </elements-scrollin>
-        </div>
-        <div class="box_item">
-          <div class="mockup-description">
-            <elements-scrollin class-default="fadein" class-change="scrollin">
-              <div class="number">
-                <div class="line"></div>
-                <div class="label">01</div>
-              </div>
-            </elements-scrollin>
-            <elements-scrollin class-default="fadein" class-change="scrollin">
-              <a href="https://blog.isystk.com/" target="_blank">
-                <p class="title">
-                  <span v-html="workBlogData.title"> </span>
-                </p>
-                <p class="text">
-                  <span v-html="workBlogData.text"> </span>
-                </p>
-              </a>
-            </elements-scrollin>
-          </div>
-        </div>
-      </div>
-      <v-row dense>
-        <v-col
-          cols="12"
-          md="6"
-          v-for="(e, index) in workOtherData"
-          :key="index"
-        >
-          <elements-scrollin class-default="fadein" class-change="scrollin">
-            <div class="card">
-              <a :href="e.url" target="_blank">
-                <div class="photo zoom">
-                  <img :src="e.imageUrl" />
-                </div>
-                <p class="title">
-                  <span v-html="e.title"> </span>
-                </p>
-                <p class="text">
-                  <span v-html="e.text"> </span>
-                </p>
-              </a>
-            </div>
-          </elements-scrollin>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-card>
+<template lang="pug">
+v-card#works
+  v-container.container(fluid='')
+    elements-scrollin(class-default='fadein' class-change='scrollin')
+      h2.text-center OUTPUT
+    elements-hr
+    .box(v-if='workBlogData')
+      .box_item
+        elements-scrollin(class-default='fadein' class-change='scrollin')
+          .mockup
+            img.mac(src='/img/imac.png')
+            .site
+              a(href='https://blog.isystk.com/' target='_blank')
+                img(:src='workBlogData.imageUrl' width='100%')
+      .box_item
+        .mockup-description
+          elements-scrollin(class-default='fadein' class-change='scrollin')
+            .number
+              .line
+              .label 01
+          elements-scrollin(class-default='fadein' class-change='scrollin')
+            a(href='https://blog.isystk.com/' target='_blank')
+              p.title
+                span(v-html='workBlogData.title')
+              p.text
+                span(v-html='workBlogData.text')
+    v-row(dense='')
+      v-col(cols='12' md='6' v-for='(e, index) in workOtherData' :key='index')
+        elements-scrollin(class-default='fadein' class-change='scrollin')
+          .card
+            a(:href='e.url' target='_blank')
+              .photo.zoom
+                img(:src='e.imageUrl')
+              p.title
+                span(v-html='e.title')
+              p.text
+                span(v-html='e.text')
 </template>
 
 <script lang="ts" setup>

@@ -1,43 +1,23 @@
-<template>
-  <v-card id="skills">
-    <v-container fluid class="container">
-      <elements-scrollin class-default="fadein" class-change="scrollin">
-        <h2 class="text-center">SKILLS</h2>
-      </elements-scrollin>
-      <elements-hr />
-      <div v-for="(e, index) in skillData" :key="index">
-        <elements-scrollin class-default="fadein" class-change="scrollin">
-          <div class="skill">
-            <div class="skill-header">
-              {{ e.title }}
-            </div>
-            <div class="skill-caption">
-              {{ e.text }}
-            </div>
-            <div
-              v-for="(e2, index2) in e.items"
-              :key="e.title + index2"
-              class="skill-item"
-            >
-              <p>{{ e2.name }}</p>
-              <v-row dense>
-                <v-col cols="12" md="3" class="order-md-last text-center">
-                  <v-rating
-                    v-model="e2.rating"
-                    bg-color="orange-lighten-1"
-                    color="orange"
-                  ></v-rating>
-                </v-col>
-                <v-col cols="12" md="9">
-                  {{ e2.text }}
-                </v-col>
-              </v-row>
-            </div>
-          </div>
-        </elements-scrollin>
-      </div>
-    </v-container>
-  </v-card>
+<template lang="pug">
+v-card#skills
+  v-container.container(fluid='')
+    elements-scrollin(class-default='fadein' class-change='scrollin')
+      h2.text-center SKILLS
+    elements-hr
+    div(v-for='(e, index) in skillData' :key='index')
+      elements-scrollin(class-default='fadein' class-change='scrollin')
+        .skill
+          .skill-header
+            | {{ e.title }}
+          .skill-caption
+            | {{ e.text }}
+          .skill-item(v-for='(e2, index2) in e.items' :key='e.title + index2')
+            p {{ e2.name }}
+            v-row(dense='')
+              v-col.order-md-last.text-center(cols='12' md='3')
+                v-rating(v-model='e2.rating' bg-color='orange-lighten-1' color='orange')
+              v-col(cols='12' md='9')
+                | {{ e2.text }}
 </template>
 
 <script lang="ts" setup>

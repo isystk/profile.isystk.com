@@ -1,8 +1,6 @@
-<template>
-  <hr
-    :class="[classDefault, { centerToSide: isInScreen }]"
-    ref="componentRef"
-  />
+<template lang="pug">
+hr(:class="[classDefault, { centerToSide: isInScreen }]" ref="componentRef")
+|
 </template>
 
 <script lang="ts" setup>

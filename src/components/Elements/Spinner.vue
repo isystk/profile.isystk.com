@@ -1,8 +1,7 @@
-<template>
-  <div :class="className">
-    <v-progress-circular indeterminate :size="50" />
-    <span class="sr-only">{{ label }}</span>
-  </div>
+<template lang="pug">
+div(:class='className')
+  v-progress-circular(indeterminate='' :size='50')
+    span.sr-only {{ label }}
 </template>
 <script>
 export default {

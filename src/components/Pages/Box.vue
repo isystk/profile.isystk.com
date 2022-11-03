@@ -1,21 +1,14 @@
-<template>
-  <div>
-    <v-breadcrumbs :items="items">
-      <template #text="{ item }">
-        {{ item.text }}
-      </template>
-    </v-breadcrumbs>
-    <v-container :fluid="fluid">
-      <v-card class="mx-auto">
-        <v-card-title class="mb-3 card-header">
-          {{ items[items.length - 1].text }}
-        </v-card-title>
-        <v-card-text>
-          <slot />
-        </v-card-text>
-      </v-card>
-    </v-container>
-  </div>
+<template lang="pug">
+div
+  v-breadcrumbs(:items='items')
+    template(#text='{ item }')
+      | {{ item.text }}
+  v-container(:fluid='fluid')
+    v-card.mx-auto
+      v-card-title.mb-3.card-header
+        | {{ items[items.length - 1].text }}
+      v-card-text
+        slot
 </template>
 
 <script setup lang="ts">

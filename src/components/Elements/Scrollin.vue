@@ -1,10 +1,6 @@
-<template>
-  <div
-    ref="componentRef"
-    :class="[classDefault, isInScreen ? classChange : '']"
-  >
-    <slot />
-  </div>
+<template lang="pug">
+div(ref='componentRef' :class="[classDefault, isInScreen ? classChange : '']")
+  slot
 </template>
 
 <script lang="ts" setup>

@@ -1,18 +1,8 @@
-<template>
-  <v-footer class="d-flex flex-column" color="primary">
-    <div class="mt-10 mb-10">
-      <v-btn
-        v-for="(item, index) in items"
-        :key="index"
-        class="mx-4 text-white"
-        :icon="item.icon"
-        variant="text"
-        @click="locate(item)"
-      />
-    </div>
-
-    <div class="text-white pt-0">© 2020 isystk&apos;s sample</div>
-  </v-footer>
+<template lang="pug">
+v-footer.d-flex.flex-column(color='primary')
+  .mt-10.mb-10
+    v-btn.mx-4.text-white(v-for='(item, index) in items' :key='index' :icon='item.icon' variant='text' @click='locate(item)')
+  .text-white.pt-0 © 2020 isystk's sample
 </template>
 
 <script setup lang="ts">

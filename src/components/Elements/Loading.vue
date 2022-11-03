@@ -1,7 +1,6 @@
-<template>
-  <div class="mt-15">
-    <elements-spinner :label="label" :variant="variant" :small="small" />
-  </div>
+<template lang="pug">
+.mt-15
+  elements-spinner(:label='label' :variant='variant' :small='small')
 </template>
 <script>
 export default {

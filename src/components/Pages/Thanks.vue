@@ -1,20 +1,13 @@
-<template>
-  <div>
-    <elements-scrollin class-default="fadein" class-change="scrollin">
-      <div class="thanks">
-        <div class="message">
-          <p class="title">Thanks you</p>
-          <ul class="sns-buttons">
-            <li v-for="(e, index) in items" :key="index" :class="e.icon">
-              <a :href="e.href" target="_blank">
-                {{ e.name }}
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </elements-scrollin>
-  </div>
+<template lang="pug">
+div
+  elements-scrollin(class-default='fadein' class-change='scrollin')
+    .thanks
+      .message
+        p.title Thanks you
+        ul.sns-buttons
+          li(v-for='(e, index) in items' :key='index' :class='e.icon')
+            a(:href='e.href' target='_blank')
+              | {{ e.name }}
 </template>
 
 <script lang="ts" setup>

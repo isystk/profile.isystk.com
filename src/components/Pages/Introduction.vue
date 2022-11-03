@@ -1,24 +1,16 @@
-<template>
-  <v-card id="introduction">
-    <v-container fluid class="container">
-      <elements-scrollin class-default="fadein" class-change="scrollin">
-        <h2 class="text-center">INTRODUCTION</h2>
-      </elements-scrollin>
-      <elements-hr />
-      <v-row dense>
-        <v-col cols="12" md="6" class="order-md-last mb-10 mb-md-0">
-          <elements-scrollin class-default="fadein" class-change="scrollin">
-            <img :src="profileData.imageUrl" class="avatar" />
-          </elements-scrollin>
-        </v-col>
-        <v-col cols="12" md="6">
-          <elements-scrollin class-default="fadein" class-change="scrollin">
-            <span v-html="profileData.message"></span>
-          </elements-scrollin>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-card>
+<template lang="pug">
+v-card#introduction
+  v-container.container(fluid='')
+    elements-scrollin(class-default='fadein' class-change='scrollin')
+      h2.text-center INTRODUCTION
+    elements-hr
+    v-row(dense='')
+      v-col.order-md-last.mb-10.mb-md-0(cols='12' md='6')
+        elements-scrollin(class-default='fadein' class-change='scrollin')
+          img.avatar(:src='profileData.imageUrl')
+      v-col(cols='12' md='6')
+        elements-scrollin(class-default='fadein' class-change='scrollin')
+          span(v-html='profileData.message')
 </template>
 
 <script lang="ts" setup>

@@ -1,15 +1,13 @@
-<template>
-  <div>
-    <pages-main-visual />
-    <div class="contents">
-      <pages-introduction />
-      <pages-specialty />
-      <pages-skills />
-      <pages-outputs />
-      <pages-twitter />
-      <pages-thanks />
-    </div>
-  </div>
+<template lang="pug">
+div
+  pages-main-visual
+  .contents
+    pages-introduction
+    pages-specialty
+    pages-skills
+    pages-outputs
+    pages-twitter
+    pages-thanks
 </template>
 
 <script setup lang="ts">

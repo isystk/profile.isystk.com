@@ -1,42 +1,22 @@
-<template>
-  <div>
-    <div class="vide-wrap">
-      <video muted="" playsinline="" loop="" autoplay="" preload="metadata">
-        <source data-src="/video/mv.mp4" type="video/mp4" src="/video/mv.mp4" />
-        <source
-          data-src="/video/mv.webm"
-          type="video/webm"
-          src="/video/mv.webm"
-        />
-      </video>
-    </div>
-    <div class="mv">
-      <div class="intro">
-        <div>
-          <elements-scrollin class-default="fadein" class-change="scrollin">
-            <p class="title">ITエンジニアを活きる</p>
-          </elements-scrollin>
-          <elements-scrollin
-            class-default="fadein"
-            class-change="scrollin scrollin-delay1"
-          >
-            <p class="name">Yoshitaka Ise</p>
-          </elements-scrollin>
-        </div>
-      </div>
-      <elements-scrollin
-        class-default="fadein"
-        class-change="scrollin scrollin-delay2"
-      >
-        <div class="link text-center">
-          <a href="#" @click.prevent="linkToIntroduction">
-            SCROLL<br />
-            <v-icon icon="mdi-chevron-down" />
-          </a>
-        </div>
-      </elements-scrollin>
-    </div>
-  </div>
+<template lang="pug">
+div
+  .vide-wrap
+    video(muted='' playsinline='' loop='' autoplay='' preload='metadata')
+      source(data-src='/video/mv.mp4' type='video/mp4' src='/video/mv.mp4')
+      source(data-src='/video/mv.webm' type='video/webm' src='/video/mv.webm')
+  .mv
+    .intro
+      div
+        elements-scrollin(class-default='fadein' class-change='scrollin')
+          p.title ITエンジニアを活きる
+        elements-scrollin(class-default='fadein' class-change='scrollin scrollin-delay1')
+          p.name Yoshitaka Ise
+    elements-scrollin(class-default='fadein' class-change='scrollin scrollin-delay2')
+      .link.text-center
+        a(href='#' @click.prevent='linkToIntroduction')
+          | SCROLL
+          br
+          v-icon(icon='mdi-chevron-down')
 </template>
 
 <script lang="ts" setup>

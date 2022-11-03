@@ -1,9 +1,7 @@
-<template>
-  <span id="page-top" class="link" :class="{ hide: !state.isShow }">
-    <a href="#" @click.prevent="moveToTop">
-      <v-icon icon="mdi-chevron-up" />
-    </a>
-  </span>
+<template lang="pug">
+span#page-top.link(:class='{ hide: !state.isShow }')
+  a(href='#' @click.prevent='moveToTop')
+    v-icon(icon='mdi-chevron-up')
 </template>
 
 <script lang="ts" setup>
