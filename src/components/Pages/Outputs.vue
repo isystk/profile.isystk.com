@@ -4,14 +4,14 @@ v-card#works
     elements-scrollin(class-default='fadein' class-change='scrollin')
       h2.text-center OUTPUT
     elements-hr
-    .box(v-if='workBlogData')
+    .box(v-if='workYoutubeData')
       .box_item
         elements-scrollin(class-default='fadein' class-change='scrollin')
           .mockup
             img.mac(src='/img/imac.png')
             .site
-              a(href='https://blog.isystk.com/' target='_blank')
-                img(:src='workBlogData.imageUrl' width='100%')
+              a(:href='workYoutubeData.url' target='_blank')
+                img(:src='workYoutubeData.imageUrl' width='100%')
       .box_item
         .mockup-description
           elements-scrollin(class-default='fadein' class-change='scrollin')
@@ -19,11 +19,11 @@ v-card#works
               .line
               .label 01
           elements-scrollin(class-default='fadein' class-change='scrollin')
-            a(href='https://blog.isystk.com/' target='_blank')
+            a(:href='workYoutubeData.url' target='_blank')
               p.title
-                span(v-html='workBlogData.title')
+                span(v-html='workYoutubeData.title')
               p.text
-                span(v-html='workBlogData.text')
+                span(v-html='workYoutubeData.text')
     v-row(dense='')
       v-col(cols='12' md='6' v-for='(e, index) in workOtherData' :key='index')
         elements-scrollin(class-default='fadein' class-change='scrollin')
@@ -44,8 +44,8 @@ import MainService from '@/services/main'
 import * as _ from 'lodash'
 const main = injectStore<MainService>()
 
-// 作品データ(ブログ)
-const workBlogData = computed(() => {
+// 作品データ(Youtube)
+const workYoutubeData = computed(() => {
   return _.slice(main?.output?.data, 0, 1)[0]
 })
 

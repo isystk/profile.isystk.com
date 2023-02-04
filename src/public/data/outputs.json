@@ -1,9 +1,9 @@
 [
   {
-    "title": "isystk's blog",
-    "text": "私が運営しているブログです。\n主にITエンジニアとして成長するために日々の学習で身につけた技術をアウトプットする為に記事の掲載をしています。是非一度御覧ください。",
-    "url": "https://blog.isystk.com/",
-    "imageUrl": "/img/blog-site.jpg"
+    "title": "JSの学び舎",
+    "text": "日々の業務や自己学習で培ったJavascriptに関する知識や最新NEWSをコツコツyoutubeで発信するVtuberをやってます。是非一度ご覧ください。",
+    "url": "https://www.youtube.com/@isystk",
+    "imageUrl": "/img/youtube.jpg"
   },
   {
     "title": "Laravel＆React.js Boilerplate",
