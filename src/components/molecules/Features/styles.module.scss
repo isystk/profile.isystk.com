@@ -1,0 +1,74 @@
+@use "@/assets/styles/variable" as *;
+
+.features {
+  background-color: $white;
+  height: 100vh;
+  width: 100%;
+}
+
+.inner {
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.title {
+  color: black;
+  font-weight: bold;
+  font-size: 1.875rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.featureBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  margin-top: 200px;
+}
+
+/* 左右ボックス共通 */
+.featureBoxWrapperLeft,
+.featureBoxWrapperRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.scrollCardLeft,
+.scrollCardRight {
+  width: 100%;
+}
+
+.featureCard {
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.cardTitle {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.image {
+  border-radius: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .featureBoxWrapperLeft,
+  .featureBoxWrapperRight {
+    width: 50%;
+  }
+
+  .featureBoxWrapperLeft {
+    justify-content: flex-end;
+  }
+
+  .featureBoxWrapperRight {
+    justify-content: flex-start;
+  }
+
+}

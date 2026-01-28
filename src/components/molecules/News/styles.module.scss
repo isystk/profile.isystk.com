@@ -1,0 +1,103 @@
+@use "@/assets/styles/variable" as *;
+
+.news {
+  background-color: $white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.title {
+  color: black;
+  font-weight: bold;
+  font-size: 1.875rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contents {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsItem {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.left,
+.right {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+
+  .newsItem {
+    padding: 20px;
+    width: 50%;
+    margin-bottom: 4rem;
+  }
+  
+  .left {
+    width: 50%;
+    padding-right: 20px;
+  }
+
+  .right {
+    width: 50%;
+  }
+}
+
+.leftInner {
+  width: 100%;
+}
+
+.titleDateWrapper {
+  position: relative;
+}
+
+.itemTitle {
+  font-weight: bold;
+  height: 50px;
+  margin: 0;
+}
+
+.itemDate {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.text {
+  word-break: break-word;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.image {
+  border-radius: 0.5rem;
+}
+
+.divider {
+  background-color: #d1d5db;
+  height: 1px;
+  flex: none;
+}
+
+.bottomSpace {
+  margin-bottom: 9rem;
+}
+

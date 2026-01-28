@@ -1,0 +1,15 @@
+.zoomableImage {
+    transition: transform 0.3s ease;
+    display: block;
+    width: 100%;
+    height: auto;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.imageWrapper {
+    width: 100%;
+    overflow: hidden;
+}

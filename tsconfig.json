@@ -1,18 +1,22 @@
 {
   "compilerOptions": {
-    /* 基本オプション */
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"],
-    },
-    "target": "esnext",                          /* ECMAScriptのターゲットバージョンを指定します: 'ES3'（デフォルト）, 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018'または 'ESNEXT' */
-    "module": "commonjs",                          /* モジュールコード生成: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015',または 'ESNext'を指定します。targetがes3かes5ならcommonjsとなる。 */
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
     "jsx": "preserve",
-    "types": ["webpack-env", "jest", "vuetify"],
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    },
 
     /* 厳密な型チェックオプション */
     "strict": true,                           /* すべての厳密な型チェックオプションを有効にします。 */
@@ -34,10 +38,9 @@
     "noFallthroughCasesInSwitch": true,       /* switchステートメントのfallthrough caseのエラーを報告します。 */
 
     "removeComments": true,                   /* コメントを出力しません。 */
-    // "noEmit": true,                        /* コンパイル結果の.jsファイルなどを出力しなくなる。 */
-    // "sourceMap": true,                     /* 対応する '.map'ファイルを生成します。 */
-    "resolveJsonModule": true,
-
+    "noEmit": true,                           /* コンパイル結果の.jsファイルなどを出力しなくなる。 */
+    "sourceMap": true,                        /* 対応する '.map'ファイルを生成します。 */
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

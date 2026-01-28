@@ -1,0 +1,43 @@
+@use '@/assets/styles/variable' as *;
+
+.sideMenu {
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+
+    &.sub {
+      margin-left: 1rem;
+      font-size: 0.9em;
+    }
+
+    &.active button {
+      font-weight: bold;
+      color: #d23669;
+    }
+
+    button {
+      all: unset;
+      cursor: pointer;
+      color: #0070f3;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

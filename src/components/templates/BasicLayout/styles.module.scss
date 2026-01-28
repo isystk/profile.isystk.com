@@ -1,0 +1,22 @@
+@use '@/assets/styles/variable' as *;
+
+.wrapper {
+  background-image:
+    linear-gradient(to right, $gray 1px, transparent 1px),
+    linear-gradient(to bottom, $gray 1px, transparent 1px);
+  background-size: 100px 100px;
+}
+
+.content {
+  background-color: $white;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+@media only screen and (min-width: 767px) {
+  .content {
+    min-height: 100vh;
+  }
+}

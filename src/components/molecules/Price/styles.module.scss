@@ -1,0 +1,131 @@
+@use "@/assets/styles/variable" as *;
+
+.priceContainer {
+  background-color: $black;
+  min-height: 100vh;
+}
+
+.priceInner {
+  width: 100%;
+  padding: 4rem 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.title {
+  color: white;
+  font-weight: bold;
+  font-size: 1.875rem;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.priceBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* 左右ボックス共通 */
+.priceBoxWrapperLeft,
+.priceBoxWrapperRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.scrollCardLeft,
+.scrollCardRight {
+  width: 100%;
+}
+
+.priceCard {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+  height: 16rem;
+  margin-bottom: 2rem;
+}
+
+.cardDescription {
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cardPrice {
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.paidPrices {
+  padding-left: 4rem;
+}
+
+.priceText {
+  color: white;
+  font-weight: bold;
+  font-size: 2.25rem;
+  text-align: left;
+}
+
+.priceLabel {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.lineButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background-color: $orange;
+  border-radius: 9999px;
+  text-decoration: none;
+}
+
+.lineButtonText {
+  font-weight: bold;
+  color: $white;
+  margin-left: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .priceBoxWrapperLeft,
+  .priceBoxWrapperRight {
+    width: 50%;
+  }
+
+  .priceBoxWrapperLeft {
+    justify-content: flex-end;
+  }
+
+  .priceBoxWrapperRight {
+    justify-content: flex-start;
+  }
+
+  .scrollCardLeft {
+    width: 18rem;
+    margin-right: 2rem;
+  }
+
+  .scrollCardRight {
+    width: 18rem;
+    margin-left: 2rem;
+  }
+
+}
