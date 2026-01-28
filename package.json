@@ -9,7 +9,7 @@
     "start": "next start",
     "test": "vitest run",
     "ts-check": "tsc --noEmit",
-    "lint": "next lint",
+    "lint": "eslint .",
     "storybook": "storybook dev -p 6006 --ci",
     "build-storybook": "storybook build",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.5",
-    "@eslint/eslintrc": "^3",
+    "@eslint/compat": "^2.0.1",
     "@storybook/addon-essentials": "^8.6.4",
     "@storybook/addon-onboarding": "^8.6.4",
     "@storybook/blocks": "^8.6.4",

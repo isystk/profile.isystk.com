@@ -27,7 +27,7 @@ const StoreVisual = () => {
             </ScrollIn>
             <ScrollIn delay="2s">
               <a href="#" className={styles.lineButton}>
-                <Image src={lineIconImage.src} width="50" height="50" alt="LINE icon" />
+                <Image src={lineIconImage.src} width={50} height={50} alt="LINE icon" />
                 <span className={styles.lineButtonText}>友達に追加して質問してみる</span>
               </a>
             </ScrollIn>
