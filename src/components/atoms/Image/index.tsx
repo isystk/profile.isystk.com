@@ -38,7 +38,8 @@ const DivImage = ({
 };
 
 const NoDivImage = ({ src, alt = '', loading = 'lazy', className, ...props }: Props) => {
-  {/* eslint-disable-next-line @next/next/no-img-element */}
+  {
+  }
   return <img src={src} alt={alt} loading={loading} className={className} {...props} />;
 };
 

@@ -9,10 +9,10 @@
     "start": "next start",
     "test": "vitest run",
     "ts-check": "tsc --noEmit",
-    "lint": "eslint .",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx --fix",
     "storybook": "storybook dev -p 6006 --ci",
     "build-storybook": "storybook build",
-    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
+    "prettier": "prettier"
   },
   "dependencies": {
     "@stripe/react-stripe-js": "^3.7.0",

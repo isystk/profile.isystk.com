@@ -3,7 +3,7 @@ import styles from './styles.module.scss';
 import React from 'react';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import lineIconImage from '@/assets/images/icon_line.png';
-import Image from "@/components/atoms/Image";
+import Image from '@/components/atoms/Image';
 
 const Price = () => {
   return (
