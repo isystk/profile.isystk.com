@@ -1,64 +1,69 @@
 import React from 'react';
-import { describe, it, expect } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { render, screen, fireEvent, act } from '@testing-library/react';
 import * as stories from './index.stories';
 import { composeStories } from '@storybook/react';
 
 const { Default } = composeStories(stories);
 
-describe('ScrollTopButton Storybook Tests', async () => {
-  it('初期の状態では非表示であること', () => {
-    render(<Default />);
-    const button = screen.queryByRole('button');
-    expect(button).toBeInTheDocument();
-    expect(button).toHaveClass('hide');
+describe('ScrollTopButton Storybook Tests', () => {
+  beforeEach(() => {
+    // vi.stubGlobal を使用して型安全にプロパティをモック
+    vi.stubGlobal('pageYOffset', 0);
+    vi.stubGlobal('scrollY', 0);
+
+    // scrollTop は document.documentElement のプロパティなので直接定義
+    Object.defineProperty(document.documentElement, 'scrollTop', {
+      value: 0,
+      writable: true,
+      configurable: true,
+    });
+
+    window.scrollTo = vi.fn();
+    vi.useFakeTimers();
   });
 
-  // TODO エラーになるのでコメントアウト
-  // it('スクロールすると表示されること', async () => {
-  //   vi.useFakeTimers();
-  //   render(<DisplayAfterScroll />);
-  //
-  //   // React state update のために時間を進める
-  //   await act(() => {
-  //     vi.advanceTimersByTime(2000);
-  //     return Promise.resolve();
-  //   });
-  //
-  //   const buttonAfter = screen.getByRole('button');
-  //   expect(buttonAfter).not.toHaveClass('hide');
-  //
-  //   vi.useRealTimers();
-  // });
-  //
-  // it('ボタンをクリックしいた際にスクロール位置をリセットする', () => {
-  //   vi.useFakeTimers();
-  //   render(<Default />);
-  //
-  //   // スクロール位置を300pxに設定してボタンを表示
-  //   act(() => {
-  //     window.scrollTo(0, 301);
-  //   });
-  //
-  //   const button = screen.getByRole('button');
-  //   fireEvent.click(button);
-  //
-  //   // スクロール位置を設定し、scroll イベントを発火
-  //   await act(() => {
-  //     window.scrollTo(0, 301);
-  //     window.dispatchEvent(new Event('scroll'));
-  //     return Promise.resolve();
-  //   });
-  //
-  //   // React state update のために時間を進める
-  //   await act(() => {
-  //     vi.advanceTimersByTime(1000);
-  //     return Promise.resolve();
-  //   });
-  //
-  //   // スクロール位置をリセットする関数が呼ばれたことを確認
-  //   expect(window.scrollTo).toHaveBeenCalledTimes(2); // 2回呼ばれたことを確認
-  //   expect(window.scrollTo).toHaveBeenCalledWith(0, 0); // 上部にスクロール
-  //   vi.useRealTimers();
-  // });
+  afterEach(() => {
+    vi.useRealTimers();
+    vi.unstubAllGlobals();
+    vi.clearAllMocks();
+  });
+
+  it('スクロールすると表示状態になること', async () => {
+    render(<Default />);
+
+    await act(async () => {
+      // stubGlobal で値を更新
+      vi.stubGlobal('pageYOffset', 301);
+      window.dispatchEvent(new Event('scroll'));
+      await vi.advanceTimersByTimeAsync(100);
+    });
+
+    const button = screen.getByRole('link');
+    const classListString = Array.from(button.classList).join(' ');
+    expect(classListString).toContain('show');
+  });
+
+  it('ボタンをクリックした際にアニメーションによる scrollTo が複数回呼ばれること', async () => {
+    render(<Default />);
+
+    await act(async () => {
+      vi.stubGlobal('pageYOffset', 301);
+      vi.stubGlobal('scrollY', 301);
+      window.dispatchEvent(new Event('scroll'));
+      await vi.advanceTimersByTimeAsync(100);
+    });
+
+    const button = screen.getByRole('link');
+
+    await act(async () => {
+      fireEvent.click(button);
+      // アニメーション完了（500ms）を待つ
+      await vi.advanceTimersByTimeAsync(600);
+    });
+
+    expect(window.scrollTo).toHaveBeenCalled();
+    // 最終的に 0 (ページトップ) に到達することを確認
+    expect(window.scrollTo).toHaveBeenLastCalledWith(0, 0);
+  });
 });

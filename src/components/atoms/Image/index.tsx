@@ -1,8 +1,9 @@
 import React from 'react';
+import { StaticImageData } from 'next/image';
 import styles from './styles.module.scss';
 
 type Props = {
-  src: string;
+  src: string | StaticImageData;
   alt?: string;
   width?: number;
   height?: number;
@@ -20,13 +21,17 @@ const DivImage = ({
   alt = '',
   loading = 'lazy',
   zoom = false,
-  className,
+  className = '',
   ...props
 }: Props) => {
+  // src が存在しない場合のガードを追加
+  const imgSrc = typeof src === 'string' ? src : (src?.src ?? '');
+
   return (
     <div className={`${className} ${styles.imageWrapper}`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={src}
+        src={imgSrc}
         alt={alt}
         loading={loading}
         className={`${zoom ? styles.zoomableImage : ''}`}
@@ -36,8 +41,11 @@ const DivImage = ({
   );
 };
 
-const NoDivImage = ({ src, alt = '', loading = 'lazy', className, ...props }: Props) => {
-  return <img src={src} alt={alt} loading={loading} className={className} {...props} />;
+const NoDivImage = ({ src, alt = '', loading = 'lazy', className = '', ...props }: Props) => {
+  // src が存在しない場合のガードを追加
+  const imgSrc = typeof src === 'string' ? src : (src?.src ?? '');
+
+  return <img src={imgSrc} alt={alt} loading={loading} className={className} {...props} />;
 };
 
 export default Image;

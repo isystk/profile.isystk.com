@@ -42,3 +42,6 @@ yarn-error.log*
 next-env.d.ts
 
 storybook-static
+
+# TODO 削除する
+old/

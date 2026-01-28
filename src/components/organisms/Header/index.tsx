@@ -1,119 +1,63 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import Logo from '@/components/atoms/Logo';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { Url } from '@/constants/url';
-import Image from '@/components/atoms/Image';
-import DropDown from '@/components/atoms/DropDown';
 import SideMenu from '@/components/organisms/SideMenu';
-import useAppRoot from '@/states/useAppRoot';
 import CSRFToken from '@/components/atoms/CSRFToken';
-import cartImage from '@/assets/images/cart.png';
+import useAppRoot from '@/states/useAppRoot';
 
-const Header = () => {
+type Props = {
+  isHideTop?: boolean;
+};
+
+const Header = ({ isHideTop = false }: Props) => {
   const { state, service } = useAppRoot();
-  const router = useRouter();
+  // フラグが true なら初期値を true にする
+  const [isVisible, setIsVisible] = useState(!isHideTop);
+
+  useEffect(() => {
+    // 常に表示する場合はスクロール監視をしない
+    if (!isHideTop) return;
+
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [!isHideTop]);
 
   if (!state || !service) return <></>;
-  const { isLogined, name } = state.auth;
+
+  const menuItems = [
+    { text: 'ブログ', href: Url.Blog },
+    { text: '事業概要', href: Url.Compony },
+    { text: 'お問い合わせ', href: Url.Contact },
+  ];
 
   return (
-    <header className={`${styles.header} shadow-sm`}>
-      <nav className="flex flex-wrap items-center justify-between bg-white px-4 py-3">
-        <Logo />
-        {/* メニュー（PC表示） */}
+    <header className={`${styles.header} ${isVisible ? styles.visible : ''} shadow-sm`}>
+      <nav className="flex flex-wrap items-center justify-between px-4 py-3">
+        <Logo text="isystk's Portfolio" />
         <div className={`${styles.menuContainer} hidden md:flex`}>
-          <ul>
-            {(() => {
-              if (isLogined) {
-                return (
-                  <li>
-                    <DropDown
-                      text={`${name} 様`}
-                      items={[
-                        {
-                          text: 'ログアウト',
-                          onClick: async () => {
-                            await service.auth.logout();
-                            router.push(Url.LOGIN);
-                          },
-                        },
-                        {
-                          text: 'カートを見る',
-                          onClick: () => router.push(Url.MYCART),
-                        },
-                      ]}
-                    />
-                  </li>
-                );
-              } else {
-                return (
-                  <>
-                    <li>
-                      <Link className="btn btn-danger" href={Url.LOGIN}>
-                        ログイン
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={Url.REGISTER}>新規登録</Link>
-                    </li>
-                  </>
-                );
-              }
-            })()}
-            <li>
-              <Link href={Url.MYCART}>
-                <Image src={cartImage.src} width={30} height={30} alt="カート" />
-              </Link>
-            </li>
-            <li>
-              <Link href={Url.CONTACT}>お問い合わせ</Link>
-            </li>
+          <ul className={styles.menuList}>
+            {menuItems.map(({ text, href }) => (
+              <li key={href} className={styles.menuItem}>
+                <Link href={href} target="_blank" rel="noopener noreferrer">
+                  {text}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
-        {/* サイドメニュー */}
-        <SideMenu
-          text={isLogined ? `${name} 様` : ''}
-          items={(() => {
-            const items: Array<{ text: string; onClick?: () => void }> = [];
-            if (isLogined) {
-              items.push({
-                text: 'ログアウト',
-                onClick: () => {
-                  const element: HTMLFormElement = document.getElementById(
-                    'logout-form',
-                  ) as HTMLFormElement;
-                  if (element) {
-                    element.submit();
-                  }
-                },
-              });
-            } else {
-              items.push(
-                {
-                  text: 'ログイン',
-                  onClick: () => router.push(Url.LOGIN),
-                },
-                {
-                  text: '新規登録',
-                  onClick: () => router.push(Url.REGISTER),
-                },
-              );
-            }
-            items.push(
-              {
-                text: 'カートを見る',
-                onClick: () => router.push(Url.MYCART),
-              },
-              {
-                text: 'お問い合わせ',
-                onClick: () => router.push(Url.CONTACT),
-              },
-            );
-            return items;
-          })()}
-        />
+        <SideMenu text="" items={menuItems} />
       </nav>
       <form id="logout-form" action={Url.LOGOUT} method="POST">
         <CSRFToken />

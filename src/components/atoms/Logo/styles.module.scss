@@ -1,12 +1,10 @@
 
-.logoImage {
-    width: 150px;
-    height: 45px;
+.logo {
+    font-size: 1.25rem;
 }
 
 @media only screen and (min-width: 767px) {
-    .logoImage {
-        width: 200px;
-        height: 60px;
+    .logo {
+        font-size: 1.5rem;
     }
 }

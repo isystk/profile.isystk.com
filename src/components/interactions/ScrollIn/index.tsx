@@ -1,5 +1,8 @@
-import React, { useRef, useEffect, useState, JSX } from 'react';
+'use client';
+
+import React, { useRef, JSX } from 'react';
 import styles from './styles.module.scss';
+import { useInView } from '@/hooks/useInView';
 
 type Props = {
   children: JSX.Element;
@@ -9,43 +12,10 @@ type Props = {
 };
 
 const ScrollIn = ({ children, className = '', delay = '0s', direction = 'bottom' }: Props) => {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const isVisible = useInView(ref, '-100px');
 
-  useEffect(() => {
-    const checkVisibility = () => {
-      const el = ref.current;
-      if (!el) return;
-
-      const rect = el.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      if (rect.top < windowHeight - 100 && rect.bottom > 0) {
-        // 画面内に入った → 表示
-        setIsVisible(true);
-      } else {
-        // 画面外に出た → 非表示（リセット）
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', checkVisibility);
-    window.addEventListener('resize', checkVisibility);
-
-    // 初期チェック
-    checkVisibility();
-
-    return () => {
-      window.removeEventListener('scroll', checkVisibility);
-      window.removeEventListener('resize', checkVisibility);
-    };
-  }, []);
-
-  const style = isVisible
-    ? {
-        animationDelay: delay,
-      }
-    : undefined;
+  const style = isVisible ? { animationDelay: delay } : undefined;
 
   return (
     <div

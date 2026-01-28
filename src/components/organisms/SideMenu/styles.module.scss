@@ -1,3 +1,4 @@
+@use "@/assets/styles/variable" as *;
 
 /* サイドメニュー */
 .sideMenu {
@@ -6,8 +7,9 @@
     right: 0;
     bottom: 0;
     width: 250px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 10px;
+    height: 100vh;
+    background-color: $white;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 0 10px;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     z-index: 40;

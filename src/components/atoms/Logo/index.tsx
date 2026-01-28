@@ -1,43 +1,28 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import Image from '@/components/atoms/Image';
 import Link from 'next/link';
 import { Url } from '@/constants/url';
-import Env from '@/constants/env';
-import logoImage from '@/assets/images/logo.png';
 
 export type Props = {
   hasLink?: boolean;
+  text: string;
+  className?: string;
 };
 
-const Logo = ({ hasLink = true }: Props) => {
-  return hasLink ? <LinkLogo /> : <NoLinkLogo />;
+const Logo = ({ hasLink = true, ...props }: Props) => {
+  return hasLink ? <LinkLogo {...props} /> : <NoLinkLogo {...props} />;
 };
 
-const LinkLogo = () => {
+const LinkLogo = ({ text, className }: Props) => {
   return (
-    <Link href={Url.TOP} className={`flex items-center`}>
-      <Image
-        src={logoImage.src}
-        width={200}
-        height={60}
-        alt={Env.APP_NAME}
-        className={styles.logoImage}
-      />
+    <Link href={Url.TOP} className={`flex items-center ${styles.logo} ${className}`}>
+      {text}
     </Link>
   );
 };
 
-const NoLinkLogo = () => {
-  return (
-    <Image
-      src={logoImage.src}
-      width={200}
-      height={60}
-      alt={Env.APP_NAME}
-      className={styles.logoImage}
-    />
-  );
+const NoLinkLogo = ({ text, className }: Props) => {
+  return <div className={`${styles.logo} ${className}`}>{text}</div>;
 };
 
 export default Logo;

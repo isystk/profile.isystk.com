@@ -1,69 +1,72 @@
-import React from 'react';
-import { describe, it, expect, beforeAll } from 'vitest';
+import React, { act } from 'react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import * as stories from './index.stories';
 import { composeStories } from '@storybook/react';
+import * as stories from './index.stories';
+import '@testing-library/jest-dom';
 
-const { Default } = composeStories(stories);
-
-beforeAll(() => {
-  Object.defineProperty(HTMLElement.prototype, 'getBoundingClientRect', {
-    value: function () {
-      return {
-        top: 1100, // 表示領域内にあるように見せる
-        bottom: 1200,
-        left: 0,
-        right: 0,
-        width: 0,
-        height: 0,
-      };
-    },
-  });
-});
+const { Default, WithDelay } = composeStories(stories);
 
 describe('ScrollIn Storybook Tests', () => {
-  it('初期表示状態を確認', async () => {
-    render(<Default />);
-    expect(screen.getByText(/スクロールして表示されます/)).toBeInTheDocument();
+  let observerCallback: (entries: Partial<IntersectionObserverEntry>[]) => void;
+
+  beforeEach(() => {
+    vi.stubGlobal(
+      'IntersectionObserver',
+      vi.fn(cb => {
+        observerCallback = cb;
+        return {
+          observe: vi.fn(),
+          unobserve: vi.fn(),
+          disconnect: vi.fn(),
+        };
+      }),
+    );
   });
 
-  // TODO エラーになるのでコメントアウト
-  // it('スクロールして要素が表示領域に入ると表示されること', async () => {
-  //   render(<Default />);
-  //
-  //   // スクロール位置を1000pxに設定してボタンを表示
-  //   act(() => {
-  //     window.scrollTo(0, 1001);
-  //   });
-  //
-  //   await waitFor(
-  //     () => {
-  //       const element = screen.getByText(/スクロールして表示されます/);
-  //       expect(element.parentElement).toHaveClass('show');
-  //     },
-  //   );
-  // });
+  it('初期表示ではアニメーションクラスが付与されていないこと', () => {
+    render(<Default />);
+    const target = screen.getByText('スクロールして表示されます').parentElement!;
+    expect(target.className).not.toContain('animated');
+  });
 
-  // TODO エラーになるのでコメントアウト
-  // it('スクロールして要素が表示領域に入ると1秒遅れて表示されること', async () => {
-  //   vi.useFakeTimers();
-  //   render(<WithDelay />);
-  //   await waitFor(() => {
-  //     expect(screen.getByText(/1秒遅れて表示されます/)).not.toBeInTheDocument();
-  //   });
-  //
-  //   await act(() => {
-  //     vi.advanceTimersByTime(1100);
-  //     return Promise.resolve();
-  //   });
-  //
-  //   await waitFor(
-  //     () => {
-  //       expect(screen.getByText(/1秒遅れて表示されます/)).toBeInTheDocument();
-  //     },
-  //     { timeout: 10000 },
-  //   );
-  //
-  //   vi.useRealTimers();
-  // });
+  it('画面内に入ったときにアニメーションクラスが付与されること', async () => {
+    render(<Default />);
+    const target = screen.getByText('スクロールして表示されます').parentElement!;
+
+    await act(async () => {
+      // isIntersecting だけを持つオブジェクトの配列として渡します
+      observerCallback([{ isIntersecting: true }]);
+    });
+
+    expect(target.className).toContain('animated');
+  });
+
+  it('delay プロパティが style に反映されること', async () => {
+    render(<WithDelay />);
+    const target = screen.getByText('1秒遅れて表示されます').parentElement!;
+
+    await act(async () => {
+      observerCallback([{ isIntersecting: true, target }]);
+    });
+
+    expect(target).toHaveStyle({ animationDelay: '1s' });
+  });
+
+  it('画面外に出たときにアニメーションクラスが外れること', async () => {
+    render(<Default />);
+    const target = screen.getByText('スクロールして表示されます').parentElement!;
+
+    // 画面内へ
+    await act(async () => {
+      observerCallback([{ isIntersecting: true, target }]);
+    });
+    expect(target.className).toContain('animated');
+
+    // 画面外へ
+    await act(async () => {
+      observerCallback([{ isIntersecting: false, target }]);
+    });
+    expect(target.className).not.toContain('animated');
+  });
 });

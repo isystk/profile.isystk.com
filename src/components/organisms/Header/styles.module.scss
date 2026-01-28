@@ -1,7 +1,40 @@
 @use "@/assets/styles/variable" as *;
 
 .header {
-    background-color: $white;
+    width: 100%;
+    z-index: 100;
+    background-color: $dark-blue;
+    color: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    // スクロール時にアニメーションさせるための初期状態
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    // 表示状態（フラグが true または スクロール後）
+    &.visible {
+        transform: translateY(0);
+        pointer-events: auto;
+        opacity: 1;
+    }
+}
+
+.menuList {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    .menuItem {
+        &:not(:last-child)::after {
+            content: "｜";
+            margin: 0 8px;
+            color: $gray;
+        }
+    }
 }
 
 .menuContainer {

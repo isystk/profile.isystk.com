@@ -1,17 +1,19 @@
-'use client';
 import BasicLayout from '@/components/templates/BasicLayout';
-import StoreVisual from '@/components/molecules/StoreVisual';
-import Price from '@/components/molecules/Price';
+import MainVisual from '@/components/molecules/MainVisual';
 import News from '@/components/molecules/News';
 import Features from '@/components/molecules/Features';
-import Footer from '@/components/organisms/Footer';
+import Instroduction from '@/components/molecules/Instroduction';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'ポートフォリオ｜伊勢 功崇（いせ よしたか）',
+};
 
 const LandingPage = () => {
   return (
-    <BasicLayout title="LP サンプル">
-      <StoreVisual />
-      <div className="h-48"></div>
-      <Price />
+    <BasicLayout>
+      <MainVisual />
+      <Instroduction />
       <div className="h-48"></div>
       <Features />
       <div className="h-48"></div>
@@ -44,7 +46,6 @@ const LandingPage = () => {
         ]}
       />
       <div className="h-48"></div>
-      <Footer />
     </BasicLayout>
   );
 };

@@ -1,0 +1,88 @@
+@use "@/assets/styles/variable" as *;
+
+.visualContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh);
+  position: relative;
+  overflow: hidden;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: $white;
+  text-align: right;
+  z-index: 1;
+  transform: translateY(-60%);
+
+  @media (min-width: 768px) {
+    width: 60%;
+    transform: translateY(-80%);
+  }
+}
+
+.textInner {
+  padding: 0 2.5rem 0 2rem;
+}
+
+.registerText {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: 5px;
+
+  @media (min-width: 768px) {
+    font-size: 2.8rem;
+  }
+}
+
+.catchPhrase {
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+}
+
+.scrollWrapper {
+  position: absolute;
+  bottom: 6rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+
+  @media (min-width: 768px) {
+    bottom: 6rem;
+  }
+}
+
+.scrollButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: $white;
+  background-color: $dark-blue;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.75rem;
+  transition: background-color 0.2s;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  @media (min-width: 768px) {
+    font-size: 1.0rem;
+  }
+
+  p {
+    margin: 0 0 0.25rem 0;
+  }
+
+}

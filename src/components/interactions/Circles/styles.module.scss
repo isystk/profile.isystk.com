@@ -6,7 +6,7 @@
   height: 100%;
   padding: 0;
   margin: 0;
-  overflow: hidden;
+  overflow: clip;
 }
 
 .circles {
@@ -21,14 +21,12 @@
   0% {
     top: 100%;
     transform: rotate(0deg);
-    opacity: 1;
-    border-radius: 0;
+    opacity: 0.5;
   }
   100% {
     top: -100px;
     transform: rotate(720deg);
     opacity: 0;
-    border-radius: 50%;
   }
 }
 
@@ -38,6 +36,7 @@
   list-style: none;
   background: $white;
   bottom: -150px;
+  border-radius: 20%;
 }
 
 .circlesLi1 {
