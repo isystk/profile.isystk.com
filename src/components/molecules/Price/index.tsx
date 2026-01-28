@@ -3,6 +3,7 @@ import styles from './styles.module.scss';
 import React from 'react';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import lineIconImage from '@/assets/images/icon_line.png';
+import Image from "@/components/atoms/Image";
 
 const Price = () => {
   return (
@@ -40,7 +41,7 @@ const Price = () => {
         </div>
         <div className={styles.buttonWrapper}>
           <a href="#" className={styles.lineButton}>
-            <img src={lineIconImage.src} width="50" height="50" alt="LINE icon" />
+            <Image src={lineIconImage.src} width="50" height="50" alt="LINE icon" />
             <span className={styles.lineButtonText}>友達に追加して質問してみる</span>
           </a>
         </div>
