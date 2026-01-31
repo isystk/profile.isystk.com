@@ -8,5 +8,5 @@ export default {
   tags: ['autodocs'],
 } as Meta<typeof Logo>;
 
-export const WithLink: StoryFn = () => <Logo hasLink={true} />;
-export const WithoutLink: StoryFn = () => <Logo hasLink={false} />;
+export const WithLink: StoryFn = () => <Logo hasLink={true} text="タイトル" />;
+export const WithoutLink: StoryFn = () => <Logo hasLink={false} text="タイトル" />;

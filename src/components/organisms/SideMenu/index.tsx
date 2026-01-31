@@ -2,10 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import styles from './styles.module.scss';
 import HamburgerButton from '@/components/atoms/HamburgerButton';
+import Link from 'next/link';
 
 type Props = {
   text: string;
-  items: Array<{ text: string; onClick?: () => void }>;
+  items: Array<{ text: string; href: string }>;
   className?: string;
 };
 
@@ -23,17 +24,11 @@ const SideMenu = ({ text, items, className = '' }: Props) => {
         </div>
         <nav className={`sideMenu ${isOpen ? 'open' : ''}`}>
           <ul className={styles.menuList}>
-            {items.map(({ text, onClick }, index) => (
-              <li key={index}>
-                <a
-                  className={styles.menuItem}
-                  onClick={() => {
-                    onClick?.();
-                    setOpen(false);
-                  }}
-                >
+            {items.map(({ text, href }, index) => (
+              <li key={index} className={styles.menuItem}>
+                <Link href={href} target="_blank">
                   {text}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

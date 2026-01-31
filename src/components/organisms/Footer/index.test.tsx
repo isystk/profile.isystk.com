@@ -11,7 +11,7 @@ describe('Footer Storybook Tests', () => {
   it('フッターが表示されること', () => {
     render(<Default />);
     // ロゴが表示されていることをテスト
-    expect(screen.getByAltText('LaraEC')).toBeInTheDocument();
+    expect(screen.getByText('isystk\'s Portfolio')).toBeInTheDocument();
     // フッターコピーが表示されていることをテスト
     expect(screen.getByText(/このページは架空のページです/)).toBeInTheDocument();
   });

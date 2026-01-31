@@ -24,8 +24,8 @@ export const Default: { render: () => JSX.Element } = {
         <SideMenu
           text="メニュー"
           items={[
-            { text: 'ホーム', onClick: () => console.log('ホーム') },
-            { text: 'プロフィール', onClick: () => console.log('プロフィール') },
+            { text: 'ホーム', href: '/' },
+            { text: 'ログイン', href: '/login' },
           ]}
         />
       );

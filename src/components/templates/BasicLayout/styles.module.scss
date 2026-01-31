@@ -1,22 +1,21 @@
 @use '@/assets/styles/variable' as *;
 
 .wrapper {
-  background-image:
-    linear-gradient(to right, $gray 1px, transparent 1px),
-    linear-gradient(to bottom, $gray 1px, transparent 1px);
-  background-size: 100px 100px;
+  background-color: $dark-gray;
 }
 
 .content {
-  background-color: $white;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  min-height: 100vh;
+  padding: 20px 0 20px;
+  min-height: calc(100vh - 272px); /* Header: 69px + Footer: 203px */
 }
 
 @media only screen and (min-width: 767px) {
   .content {
-    min-height: 100vh;
+    padding: 40px 0 40px;
+    min-height: calc(100vh - 328px); /* Header: 84px + Footer: 244px */
   }
 }
+

@@ -1,8 +1,24 @@
 @use "@/assets/styles/variable" as *;
 
 .header {
-    background-color: $white;
+    background-color: $dark-blue;
+    color: $white;
 }
+
+.menuList {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    .menuItem {
+        &:not(:last-child)::after {
+            content: "｜";
+            margin: 0 8px;
+            color: #ccc; // 任意の色
+        }
+    }
+}
+
 
 .menuContainer {
     margin-left: auto;
