@@ -1,17 +1,17 @@
 'use client';
 import BasicLayout from '@/components/templates/BasicLayout';
-import StoreVisual from '@/components/molecules/StoreVisual';
+import MainVisual from '@/components/molecules/MainVisual';
 import Price from '@/components/molecules/Price';
 import News from '@/components/molecules/News';
 import Features from '@/components/molecules/Features';
-import Footer from '@/components/organisms/Footer';
 
 const LandingPage = () => {
   return (
     <BasicLayout title="LP サンプル">
-      <StoreVisual />
-      <div className="h-48"></div>
-      <Price />
+      <MainVisual />
+      <div id="price">
+        <Price />
+      </div>
       <div className="h-48"></div>
       <Features />
       <div className="h-48"></div>
@@ -44,7 +44,6 @@ const LandingPage = () => {
         ]}
       />
       <div className="h-48"></div>
-      <Footer />
     </BasicLayout>
   );
 };

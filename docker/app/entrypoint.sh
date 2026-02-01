@@ -15,8 +15,6 @@ fi
 # Next.js セットアップ
 echo "🔧 Running npm install..."
 npm install
-#echo "🔧 Running npm run build..."
-npm run build || echo "Build failed: ignoring and continuing"
 
 # コンテナを永続化
 echo "🚀 Container is ready. Keeping it alive..."

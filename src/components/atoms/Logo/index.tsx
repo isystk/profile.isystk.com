@@ -6,22 +6,23 @@ import { Url } from '@/constants/url';
 export type Props = {
   hasLink?: boolean;
   text: string;
+  className?: string;
 };
 
 const Logo = ({ hasLink = true, ...props }: Props) => {
   return hasLink ? <LinkLogo {...props} /> : <NoLinkLogo {...props} />;
 };
 
-const LinkLogo = ({ text }: Props) => {
+const LinkLogo = ({ text, className }: Props) => {
   return (
-    <Link href={Url.TOP} className={`flex items-center ${styles.logo}`}>
+    <Link href={Url.TOP} className={`flex items-center ${styles.logo} ${className}`}>
       {text}
     </Link>
   );
 };
 
-const NoLinkLogo = ({ text }: Props) => {
-  return <div className={`${styles.logo}`}>{text}</div>;
+const NoLinkLogo = ({ text, className }: Props) => {
+  return <div className={`${styles.logo} ${className}`}>{text}</div>;
 };
 
 export default Logo;

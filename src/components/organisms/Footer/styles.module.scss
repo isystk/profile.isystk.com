@@ -1,27 +1,33 @@
 @use "@/assets/styles/variable" as *;
 
 .footer {
-    background-color: $dark-gray;
-    padding: 40px 0
+  background-color: $dark-blue;
+  padding: 2rem 1rem;
+  color: $white;
 }
 
 .footerInner {
-    text-align: center;
-    img {
-        margin: auto;
-    }
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .footerCopy {
-    font-size: 0.8rem;
-    margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+
+  small {
+    font-size: inherit;
+  }
 }
 
-@media only screen and (min-width: 767px) {
-    .footer {
-        padding: 60px 0
-    }
-    .footerCopy {
-        font-size: 1rem
-    }
+.footerLogo {
+  font-size: 0.875rem;
+  font-weight: normal;
 }
