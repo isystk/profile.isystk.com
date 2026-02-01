@@ -10,10 +10,16 @@ const MainVisual = () => {
 
     const targetId = 'introduction';
     const targetElement = document.getElementById(targetId);
+    // ヘッダー要素を取得（idやタグ名、クラス名などで指定）
+    const headerElement = document.querySelector('header');
     if (!targetElement) return;
 
+    // ヘッダーの高さを取得（存在しない場合は0）
+    const headerHeight = headerElement?.offsetHeight || 0;
+
     const rect = targetElement.getBoundingClientRect();
-    const targetPos = rect.top + window.scrollY;
+    // ヘッダーの高さ分を差し引いてターゲット位置を計算
+    const targetPos = rect.top + window.scrollY - headerHeight;
 
     const start = window.scrollY;
     const startTime = performance.now();
