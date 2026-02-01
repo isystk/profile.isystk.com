@@ -40,8 +40,8 @@ jobs:
       - run:
           name: Lint and Test
           command: |
-            npm run format
-            npm run test
+            make format
+            make test
 
   deploy:
     executor: default
