@@ -4,7 +4,6 @@ import React from 'react';
 import styles from './styles.module.scss';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import Image from '@/components/atoms/Image';
-import profileImg from '@/assets/images/profile.jpg';
 
 const Introduction = () => {
   return (
@@ -33,7 +32,11 @@ const Introduction = () => {
 
           <ScrollIn className={styles.imageWrapper} delay="0.4s">
             <div className={styles.imageInner}>
-              <Image src={profileImg} alt="Profile" className={styles.profileImage} />
+              <Image
+                src="/assets/images/profile.jpg"
+                alt="Profile"
+                className={styles.profileImage}
+              />
             </div>
           </ScrollIn>
         </div>

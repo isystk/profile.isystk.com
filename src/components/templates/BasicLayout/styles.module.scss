@@ -2,18 +2,30 @@
 
 .wrapper {
   background-color: $dark-gray;
+  position: relative;
+  width: 100%;
+}
+
+.bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .content {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  min-height: calc(100vh - 272px); /* Header: 69px + Footer: 203px */
-}
+  min-height: calc(100vh - 272px);
 
-@media only screen and (min-width: 767px) {
-  .content {
-    min-height: calc(100vh - 328px); /* Header: 84px + Footer: 244px */
+  @media only screen and (min-width: 767px) {
+    min-height: calc(100vh - 328px);
   }
 }
-

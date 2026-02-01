@@ -31,7 +31,17 @@ const BasicLayout = ({ children, title }: Readonly<Props>) => {
       <div className={styles.wrapper}>
         <Header />
         <Circles>
-          <main className={styles.content}>{children}</main>
+          <>
+            <video
+              className={styles.bgVideo}
+              src="/assets/movies/mv.webm"
+              muted
+              autoPlay
+              loop
+              playsInline
+            />
+            <main className={styles.content}>{children}</main>
+          </>
         </Circles>
         <Footer />
         <FlashMessage />
