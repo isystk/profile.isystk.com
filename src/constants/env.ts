@@ -9,27 +9,14 @@ type EnvType = {
   APP_URL: string;
   /** エンドポイント URL */
   ENDPOINT_URL: string;
-  /** Stripe キー */
-  STRIPE_KEY: string;
 };
 
-let Env = {
-  APP_NAME: 'profile.isystk.com',
-  APP_DESCRIPTION:
-    'Next.js、Storybook、Vitest を利用してポートフォリオを作成しました。GithubにPushするとVercelにホスティングされるようにしています。',
-  ENV_NAME: 'local',
-  APP_URL: 'http://localhost',
-  ENDPOINT_URL: 'https://localhost/api',
-  STRIPE_KEY: process.env.NEXT_PUBLIC_STRIPE_KEY,
+const Env = {
+  APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
+  APP_DESCRIPTION: process.env.APP_DESCRIPTION,
+  ENV_NAME: process.env.NEXT_PUBLIC_ENV_NAME,
+  APP_URL: process.env.APP_URL,
+  ENDPOINT_URL: process.env.NEXT_PUBLIC_ENDPOINT_URL,
 } as EnvType;
-if (process.env.NEXT_PUBLIC_ENV_NAME === 'production') {
-  Env = {
-    ...Env,
-    ENV_NAME: process.env.NEXT_PUBLIC_ENV_NAME,
-    APP_URL: process.env.APP_URL,
-    ENDPOINT_URL: process.env.NEXT_PUBLIC_ENDPOINT_URL,
-    STRIPE_KEY: process.env.NEXT_PUBLIC_STRIPE_KEY,
-  } as EnvType;
-}
 
 export default Env;

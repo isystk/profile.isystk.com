@@ -8,22 +8,20 @@ type Props = {
 };
 
 export default function AppWrapper({ children }: Props) {
-  const { state, service } = useAppRoot();
+  const { service } = useAppRoot();
   const [checking, setChecking] = useState(true);
 
-  const { userId } = state?.auth || {};
   useEffect(() => {
-    if (userId || !service) {
+    if (!service) {
       return;
     }
     const check = async () => {
-      // TODO プロフィールデータを読み込む
-      // await service.auth.loginCheck();
-      // await service.const.readConsts();
+      // プロフィールデータを読み込む
+      await service.profile.read();
       setChecking(false);
     };
     check();
-  }, [userId, service]);
+  }, [service]);
 
   if (checking) {
     return <></>;

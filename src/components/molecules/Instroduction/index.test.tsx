@@ -5,11 +5,25 @@ import { composeStories } from '@storybook/react';
 import * as stories from './index.stories';
 import '@testing-library/jest-dom';
 
+// 1. useAppRootをモック
+vi.mock('@/states/useAppRoot', () => ({
+  default: () => ({
+    state: {
+      profile: {
+        profile: {
+          message:
+            'はじめまして。伊勢と申します。現在は、フルリモートでシステムエンジニアに従事しております。',
+          updated_at: '2022-06-01',
+        },
+      },
+    },
+  }),
+}));
+
 const { Default } = composeStories(stories);
 
 describe('Introduction Storybook Tests', () => {
   beforeEach(() => {
-    // IntersectionObserverのモック
     const mockIntersectionObserver = vi.fn();
     mockIntersectionObserver.mockReturnValue({
       observe: vi.fn(),
@@ -32,7 +46,8 @@ describe('Introduction Storybook Tests', () => {
 
   it('更新日が表示されていること', () => {
     render(<Default />);
-    expect(screen.getByText(/\(2022年6月更新\)/)).toBeInTheDocument();
+    // formatYearMonthを通すと "2022年06月" になるため、正規表現で柔軟にマッチさせる
+    expect(screen.getByText(/2022年0?6月更新/)).toBeInTheDocument();
   });
 
   it('プロフィール画像が表示されること', () => {

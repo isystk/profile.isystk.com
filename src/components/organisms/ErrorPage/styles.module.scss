@@ -1,5 +1,18 @@
 @use "@/assets/styles/variable" as *;
 
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: calc(100vh - 272px);
+
+  @media only screen and (min-width: 767px) {
+    min-height: calc(100vh - 328px);
+  }
+}
+
 .wrapper {
     margin: 13vh auto;
 

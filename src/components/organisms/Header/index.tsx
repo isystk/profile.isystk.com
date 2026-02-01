@@ -6,7 +6,6 @@ import Logo from '@/components/atoms/Logo';
 import Link from 'next/link';
 import { Url } from '@/constants/url';
 import SideMenu from '@/components/organisms/SideMenu';
-import CSRFToken from '@/components/atoms/CSRFToken';
 import useAppRoot from '@/states/useAppRoot';
 
 type Props = {
@@ -32,7 +31,7 @@ const Header = ({ isHideTop = false }: Props) => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [!isHideTop]);
+  }, [isHideTop]);
 
   if (!state || !service) return <></>;
 
@@ -59,9 +58,6 @@ const Header = ({ isHideTop = false }: Props) => {
         </div>
         <SideMenu text="" items={menuItems} />
       </nav>
-      <form id="logout-form" action={Url.LOGOUT} method="POST">
-        <CSRFToken />
-      </form>
     </header>
   );
 };

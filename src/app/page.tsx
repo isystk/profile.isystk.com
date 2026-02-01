@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'ポートフォリオ｜伊勢 功崇（いせ よしたか）',
 };
 
-const LandingPage = () => {
+const TopPage = () => {
   return (
     <BasicLayout>
       <MainVisual />
@@ -50,4 +50,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default TopPage;

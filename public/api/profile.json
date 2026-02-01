@@ -1,0 +1,399 @@
+{
+  "profile" : {
+    "imageUrl": "/img/profile.jpg",
+    "message": "はじめまして。伊勢と申します。Webを中心にシステムエンジニアとして従事して18年程になります。\n都内のSIerに入社後、常駐先でSESとして基本設計から製造/テスト、リリースまでウォーターフォール型のシステム開発を学び、Javaを中心に証券会社や保険会社などの基幹システム開発に携わりました。\n5年努めたのちSOHOとして独立、独立後はソーシャルゲーム開発やBtoCを中心としたWebアプリケーション開発に数多く携わり、React.jsやVue.jsなどフロントエンドの技術を学びました。現在は、故郷の北海道（函館）に移住してフルリモートでシステムエンジニアに従事しております。バックエンドからフロントエンド、インフラ構築までフルスタックに対応しております。",
+    "twitter_follower": 6626,
+    "updated_at": "2022-06-01"
+  },
+  "specialty": [
+    {
+      "title": "プロジェクトにおける適応範囲",
+      "type": "radar",
+      "items" : [
+        {
+          "label": "フロントエンド開発",
+          "color": "#FF0000",
+          "data": 100
+        },
+        {
+          "label": "バックエンド開発",
+          "color": "#FFFF00",
+          "data": 80
+        },
+        {
+          "label": "インフラ構築",
+          "color": "#00FFFF",
+          "data": 70
+        },
+        {
+          "label": "デザイン作成",
+          "color": "#800000",
+          "data": 30
+        },
+        {
+          "label": "プロジェクト管理",
+          "color": "#C0C0C0",
+          "data": 60
+        }
+      ]
+    },
+    {
+      "title": "プログラミングの得意言語",
+      "type": "doughnut",
+      "items" : [
+        {
+          "label": "Java",
+          "color": "#FF0000",
+          "data": 30
+        },
+        {
+          "label": "PHP(Laravel)",
+          "color": "#FF00FF",
+          "data": 20
+        },
+        {
+          "label": "React.js",
+          "color": "#FFFF00",
+          "data": 13
+        },
+        {
+          "label": "Vue.js",
+          "color": "#00FFFF",
+          "data": 12
+        },
+        {
+          "label": "Typescript",
+          "color": "#008000",
+          "data": 10
+        },
+        {
+          "label": "jQuery",
+          "color": "#800000",
+          "data": 10
+        },
+        {
+          "label": "Kotlin",
+          "color": "#C0C0C0",
+          "data": 5
+        }
+      ]
+    }
+  ],
+  "skills":
+  [
+    {
+      "title": "フロントエンド",
+      "color": "yellow",
+      "rating": 5,
+      "text": "フロントエンドは技術の進化が早くて学習することが多いですが、javascriptが一番好きな言語です。ブラウザとエディタだけあれば開発ができる手軽なところと、サーバーサイドや最近ではスマートフォン向けアプリの開発まで出来てしまうプラットフォームの多さに魅力的に感じます。直近ではNext.js・TypeScript・WebRTCを使用したP2Pビデオチャットアプリケーション開発を学んでおります。",
+      "items" : [
+        {
+          "name": "React.js・Next.js",
+          "rating": 4,
+          "noDivider": false,
+          "text": "Typescriptの利用はもちろん、Matelial UI などUIコンポーネント を利用した開発にも慣れております。クラスコンポーネント・関数コンポーネントのどちらの書き方にも対応可能です。Next.js を利用した開発経験もございます。"
+        },
+        {
+          "name": "Vue.js・Nuxt.js",
+          "rating": 4,
+          "noDivider": false,
+          "text": "CompositionAPI を利用したVue3 の開発にも対応可能です。主にSPAでの開発経験が多いですが、SSGやSSR での開発にも対応可能です。個人ではNuxt3 を利用したアプリケーション開発の経験もございます。"
+        },
+        {
+          "name": "Typescript",
+          "rating": 4,
+          "noDivider": false,
+          "text": "Typescriptを導入した開発経験が豊富です。LintやPrettier、Husky などの技術を組み合わせてプロジェクト全体でコードの統一性を高めるように日頃から心がけています。"
+        },
+        {
+          "name": "JQuery",
+          "rating": 5,
+          "noDivider": true,
+          "text": "DOM操作を利用したユーザビリティ向上の対応はもちろん、クライアントのこだわりに応じて柔軟に対応可能です。これまで多くのオリジナルのプラグインを作成して公開しています。"
+        },
+        {
+          "name": "Node.js",
+          "rating": 3,
+          "noDivider": false,
+          "text": "昔はExpressなどを利用したWebアプリケーションに利用していました。最近では主にCLIツールとして使用しています。個人ではNest.js & Prisma を利用してGraghQLからCRUDするアプリケーションを作成した経験もございます。"
+        }
+      ]
+    },
+    {
+      "title": "Java",
+      "color": "red",
+      "rating": 5,
+      "text": "Javaを利用した開発に携わることがもっとも多かったので、開発はもちろんですがフレームワークの選定から基盤構築までアーキテクチャ全体を対応する事が可能です。",
+      "items" : [
+        {
+          "name": "Spring Boot",
+          "rating": 5,
+          "noDivider": true,
+          "text": "Springフレームワーク自体はDI機能が流行りだした2006年頃から利用していました。当時はXMLの記述が複雑で苦労しましたが、Spring Boot になってからは激的に使いやすくなり今ではJavaで開発する定番のフレームワークとして利用しています。"
+        },
+        {
+          "name": "SAStruts",
+          "rating": 5,
+          "noDivider": false,
+          "text": "2010年頃から5年ほど複数の開発で利用していました。サポートが終了して以降はあまり利用していませんが、古くから続いている案件では今でも保守対応をすることがあります。"
+        },
+        {
+          "name": "Apache Struts",
+          "rating": 4,
+          "noDivider": false,
+          "text": "2010年頃まではもっとも利用していました。Struts2も利用していましたが脆弱性の問題が発生した2017年以降はあまり利用しなくなりました。"
+        },
+        {
+          "name": "Apache Wicket",
+          "rating": 3,
+          "noDivider": false,
+          "text": "SNSの開発で1年ほど利用していました。軽量でUIに特化したフレームワークで開発しやすい印象でした。"
+        }
+      ]
+    },
+    {
+      "title": "Kotlin",
+      "color": "green",
+      "rating": 3,
+      "text": "Kotlinを利用した開発経験は少ないのですが、Javaの代替として生み出された言語と言われているので日頃から学習しています。従来のプログラミング言語のノウハウを貪欲に取り込んだ新しい言語を学ぶことで良いコードのパターンを吸収するようにしています。",
+      "items" : [
+        {
+          "name": "Spring Boot",
+          "rating": 3,
+          "noDivider": true,
+          "text": "JavaでWebアプリケーションを構築する上で定番となったSpringBootフレームワークをKotlinでリメイクしました。"
+        }
+      ]
+    },
+    {
+      "title": "PHP",
+      "color": "blue",
+      "rating": 4,
+      "text": "PHPを利用した開発経験は少ないのですが、Laravelの洗練された開発効率の高いフレームワークに魅了されて以降、PHPの虜となりました。現在は、Laravelを利用したWebアプリケーション開発のプロジェクトに従事しています。",
+      "items" : [
+        {
+          "name": "Laravel",
+          "rating": 4,
+          "noDivider": true,
+          "text": "Webアプリケーション開発においてよく利用される機能が少ないコードで簡単に利用できるLaravelの開発効率の高さが素晴らしいと感じます。個人ではLaravel9を利用したボイラープレートを作成して公開しております。"
+        },
+        {
+          "name": "Wordpress",
+          "rating": 3,
+          "noDivider": true,
+          "text": "ブログの定番となっているWordpressのテンプレートを自作しました。また、ローカルでWordpressを動作させるための開発環境はDockerで構築しております。"
+        }
+      ]
+    },
+    {
+      "title": "DB",
+      "color": "lime",
+      "rating": 3,
+      "text": "SQLの作成はもちろんですが、データベースのチューニングやレプリケーション構築などの経験もあります。",
+      "items" : [
+        {
+          "name": "MySQL",
+          "rating": 5,
+          "noDivider": false,
+          "text": "業務で10年ほど利用していました。データベースのチューニングやレプリケーションなどの経験もあり最も慣れているデータベースになります。"
+        },
+        {
+          "name": "Oracle",
+          "rating": 2,
+          "noDivider": true,
+          "text": "証券会社などの基幹システム開発に携わっていた頃に利用していました。Oracle Masterの資格も取得しております。"
+        },
+        {
+          "name": "DynamoDB",
+          "rating": 4,
+          "noDivider": false,
+          "text": "SPAでの開発時に利用していました。Lambda 経由でのAPIアクセスと、AppSync経由でのGraghQLアクセス を経験したことがあります。"
+        },
+        {
+          "name": "MongoDB",
+          "rating": 2,
+          "noDivider": false,
+          "text": "Node.jsを利用したWebアプリケーション開発で利用していました。"
+        }
+      ]
+    },
+    {
+      "title": "インフラ",
+      "color": "brown",
+      "rating": 3,
+      "text": "元々サーバーサイドのエンジニアだったのでインフラに関わることが多く、ApacheやTomcatの構築なども対応可能です。最近では、ECR(AWS)やDocker の構築も対応しております。",
+      "items" : [
+        {
+          "name": "Amazon Web Services",
+          "rating": 4,
+          "noDivider": true,
+          "text": "EC2、RDS、Lambda、API Gateway、ECR など3年ほど業務で利用していました。"
+        },
+        {
+          "name": "Firebase",
+          "rating": 3,
+          "noDivider": false,
+          "text": "Firestoreや認証機能を利用して作成してSPAアプリケーションをFirebaseでHostingさせて利用していました。またFCMを利用したプッシュ通知や、Realtime Database を利用したWebRTCの開発をした経験もございます。"
+        },
+        {
+          "name": "Jenkins",
+          "rating": 3,
+          "noDivider": false,
+          "text": "継続的に自動でデプロイする仕組みとして10年ほど業務で利用していました。"
+        },
+        {
+          "name": "Zabbix",
+          "rating": 2,
+          "noDivider": false,
+          "text": "サイトの死活監視に利用していました。"
+        },
+        {
+          "name": "Solr",
+          "rating": 3,
+          "noDivider": true,
+          "text": "スキーマの設計からインデックスを生成するためのバッチ作成・インデックスを利用した検索・取得処理など3年ほど経験があります。機能が豊富で実績も沢山ある検索エンジンなので多くの開発で利用していました。"
+        },
+        {
+          "name": "Elasticsearch",
+          "rating": 2,
+          "noDivider": false,
+          "text": "クラスタの構築が簡単だった事とUIが使いやすい印象でした。1年ほど業務で利用していました。"
+        }
+      ]
+    },
+    {
+      "title": "保有資格",
+      "color": "grey",
+      "rating": 4,
+      "text": "IT系の資格は以下になります。その他、保有する資格としては、ビジネス能力検定、航空特殊無線技士、牽引自動車、大型特殊自動車、フォークリフト、車両系建設機械、高所作業車、危険物乙4、第二級陸上特殊無線技士、国際航空貨物取扱士、航空危険物取扱士、ガス溶接、アーク溶接、床上操作式クレーン などがあります。",
+      "items" : [
+        {
+          "name": "ORACLE MASTER Silver Oracle9i Database(OCA)",
+          "rating": 5,
+          "noDivider": true,
+          "text": "入社して間もない頃にデータベースの学習の為に取得しました。SQLの記述やデータベースの仕組みについてこの時に学んだ内容は今でも生きていると思います。"
+        },
+        {
+          "name": "Sun Certified Programmer for the Java 2 Platform 1.4",
+          "rating": 5,
+          "noDivider": false,
+          "text": "Javaを利用した業務に携わることが多く実務経験は豊富でしたが、改めて基礎から学習してみたいと思いこの資格を取得しました。"
+        },
+        {
+          "name": "Linux Professional Institute Certification Level1",
+          "rating": 5,
+          "noDivider": false,
+          "text": "シェルコマンドやLinuxサーバのアーキテクチャを学びました。この時に覚えたコマンドや知識が今でも業務で役立っていて、もっとも実務に活かせている資格です。"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "title": "JSの学び舎",
+      "text": "日々の業務や自己学習で培ったJavascriptに関する知識や最新NEWSをコツコツyoutubeで発信するVtuberをやってます。是非一度ご覧ください。",
+      "url": "https://www.youtube.com/@isystk",
+      "imageUrl": "/img/youtube.jpg"
+    },
+    {
+      "title": "Laravel＆React.js Boilerplate",
+      "text": "Laravel9 ＆ React18 で作成したECサイトのWebアプリケーションです。フロントと管理画面に分かれており、購入した商品を管理画面の注文履歴で閲覧したり在庫管理を行うことが出来ます。",
+      "url": "https://blog.isystk.com/web_production/boilerplate/1472/",
+      "imageUrl": "/img/laravel-react-boilerplate.jpg"
+    },
+    {
+      "title": "Java Springboot Boilerplate",
+      "text": "大規模プロジェクトでも利用できるようなSpringBootのボイラープレートを作成しました。フロント、管理画面、バッチ、検索エンジン、会員登録 などのよくある構成を最低限の機能に絞ってコンパクトに纏めています。",
+      "url": "https://blog.isystk.com/system_develop/backend/springboot/722/",
+      "imageUrl": "/img/java-springboot-boilerplate.jpg"
+    },
+    {
+      "title": "Kotlin Springboot Boilerplate",
+      "text": "Java&Springbootで作成したECサイトのWebアプリケーションをKotlinでリメイクしました。Kotlinを導入することでコードが簡潔になりNULL安全で開発しやすい環境を整えました。",
+      "url": "https://blog.isystk.com/system_develop/backend/springboot/1864/",
+      "imageUrl": "/img/kotlin-springboot-boilerplate.jpg"
+    },
+    {
+      "title": "Nuxt4 JamStack Sample",
+      "text": "Nuxt4 で作成したJamStackアプリケーションです。MicroCMS で記事を投稿するとGithubActionがHookして、SSG で生成した静的なコンテンツがGithubPagesに自動反映されるようにしています。",
+      "url": "https://blog.isystk.com/web_production/vue/1643/",
+      "imageUrl": "/img/nuxtjs-jamstack-sample.jpg"
+    },
+    {
+      "title": "Amplify React Sample",
+      "text": "React を利用したAWS Amplify の学習用サンプルアプリケーションです。Material UIを利用しておりGraghQLを利用した認証機能や CRUD などの機能を組み込んでいます。",
+      "url": "https://blog.isystk.com/web_production/react/1803/",
+      "imageUrl": "/img/react19-materialui-amplify.jpg"
+    },
+    {
+      "title": "Amplify Nuxt4 Sample",
+      "text": "Nuxt4 を利用したAWS Amplify の学習用サンプルアプリケーションです。Vuetifyを利用しておりGraghQLを利用した認証機能や CRUD などの機能を組み込んでいます。",
+      "url": "https://blog.isystk.com/web_production/vue/1676/",
+      "imageUrl": "/img/nuxt4-vuetify3-amplify.jpg"
+    },
+    {
+      "title": "Next.js WebRTC Sample",
+      "text": "Next.js で Web-RTC を利用したZoomのようなビデオ通話アプリを作成しました。",
+      "url": "https://blog.isystk.com/web_production/react/1686/",
+      "imageUrl": "/img/nextjs-webrtc-sample.jpg"
+    },
+    {
+      "title": "Next.js Nest.js GraphQL",
+      "text": "Next.js & Nest.js & Prisma を利用してGraphQLを使ったアプリケーションを作成しました。フロントからバックエンドまで一貫してJavascript で作成しています。",
+      "url": "https://blog.isystk.com/web_production/react/1697/",
+      "imageUrl": "/img/nextjs-nestjs-graphql.jpg"
+    },
+    {
+      "title": "Alexa Twitter Trends",
+      "text": "AWS Lambda を利用して AlexaでTwitterのトレンドをお知らせするスキルを作成しました。「アレクサ、日本のトレンドワードを開いて」というとTwitterのトレンドワードを6つ伝えてくれます。",
+      "url": "https://blog.isystk.com/web_production/alexa/1670/",
+      "imageUrl": "/img/alexa-twitter-trends.jpg"
+    },
+    {
+      "title": "Nuxt.js＆Typescript Boilerplate",
+      "text": "Nuxt.js Typescript ESLint を利用したボイラープレートです。Nuxt4 が登場する以前に、vue-property-decorator を利用してTypescriptが利用できるように作成しました。",
+      "url": "https://blog.isystk.com/web_production/boilerplate/1109/",
+      "imageUrl": "/img/nuxtjs-typescript-boilerplate.jpg"
+    },
+    {
+      "title": "クロスサイト・スクリプティング(XSS)の検証サンプル − XSSカイジ",
+      "text": "XSSの脆弱性を検証する為に作成したサンプルスクリプトです。Webサイト内にサニタイズ漏れがあると「ざわざわ」して最後に何かが起こります..。サンプルも公開しているので是非一度触ってみてください。",
+      "url": "https://blog.isystk.com/web_production/xss/215/",
+      "imageUrl": "/img/kaiji.gif"
+    },
+    {
+      "title": "自作のWordpress用テンプレートです。",
+      "text": "私が運営しているブログで利用している自作のWordpress用テンプレートです。Googleで検索された際に上位に表示されるようにSEOを最適化しておりLighthouseでSEOのスコアは100を記録しております。ご興味のある方はどうぞ。",
+      "url": "https://blog.isystk.com/web_production/wordpress/1086/",
+      "imageUrl": "/img/wordpress-template.jpg"
+    },
+    {
+      "title": "このポートフォリオサイトです。",
+      "text": "Nuxt4 & Vuetify を利用してポートフォリオを作成しました。GithubにPushすると自動的にCircleCIでビルドが動き、Vercelにホスティングされるようにしています。就活をする学生さんやフリーランスでお仕事を探している方はこちらをForkしてご利用ください。",
+      "url": "https://blog.isystk.com/web_production/portfolio/830/",
+      "imageUrl": "/img/portfolio.jpg"
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Twitter",
+      "linkUrl": "https://twitter.com/ise0616/",
+      "icon": "twitter"
+    },
+    {
+      "name": "Facebook",
+      "linkUrl": "https://www.facebook.com/ise0616/",
+      "icon": "facebook"
+    },
+    {
+      "name": "Instagram",
+      "linkUrl": "https://www.instagram.com/isystk/",
+      "icon": "instagram"
+    },
+    {
+      "name": "GitHub",
+      "linkUrl": "https://github.com/isystk/",
+      "icon": "github"
+    }
+  ]
+}

@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import BasicLayout from '@/components/templates/BasicLayout';
 import Link from 'next/link';
 import { Url } from '@/constants/url';
+import Header from '@/components/organisms/Header';
+import Circles from '@/components/interactions/Circles';
+import Footer from '@/components/organisms/Footer';
 
 type Props = {
   status?: number;
@@ -23,17 +25,23 @@ const ErrorPage = ({ status = 500 }: Props) => {
   const { title, text } = errors[status] || errors[500];
 
   return (
-    <BasicLayout>
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <h1 className={styles.heading}>{title}</h1>
-          <p className={styles.text}>{text}</p>
-          <Link href={Url.TOP} className={styles.link}>
-            ホームに戻る
-          </Link>
-        </div>
-      </div>
-    </BasicLayout>
+    <>
+      <Header />
+      <Circles>
+        <main className={styles.content}>
+          <div className={styles.wrapper}>
+            <div className={styles.container}>
+              <h1 className={styles.heading}>{title}</h1>
+              <p className={styles.text}>{text}</p>
+              <Link href={Url.TOP} className={styles.link}>
+                ホームに戻る
+              </Link>
+            </div>
+          </div>
+        </main>
+      </Circles>
+      <Footer />
+    </>
   );
 };
 
