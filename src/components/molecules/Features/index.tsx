@@ -64,7 +64,11 @@ const Features = () => {
 
               {/* 画像エリア */}
               <div className={styles.featureBoxWrapper}>
-                <ScrollIn className={styles.featureCard} direction={isEven ? 'right' : 'left'}>
+                <ScrollIn
+                  className={styles.featureCard}
+                  direction={isEven ? 'right' : 'left'}
+                  delay="0.5s"
+                >
                   <div className={styles.imageContent}>
                     <a
                       href={item.url}

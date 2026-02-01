@@ -18,12 +18,8 @@ const NewsSection = () => {
   return (
     <section className={styles.news}>
       <div className={styles.inner}>
-        <ScrollIn>
-          <>
-            <h2 className={styles.title}>NEWS</h2>
-            <HorizontalRule />
-          </>
-        </ScrollIn>
+        <h2 className={styles.title}>お知らせ</h2>
+        <HorizontalRule />
 
         <div className={styles.contents}>
           {items.map(({ title, text, date, imageUrl, url }, index) => (

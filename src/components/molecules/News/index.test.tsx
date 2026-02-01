@@ -22,9 +22,9 @@ describe('NewsSection Tests', () => {
     );
   });
 
-  it('セクションタイトル「NEWS」が表示されること', () => {
+  it('セクションタイトル「お知らせ」が表示されること', () => {
     render(<Default />);
-    expect(screen.getByText('NEWS')).toBeInTheDocument();
+    expect(screen.getByText('お知らせ')).toBeInTheDocument();
   });
 
   it('ニュース項目のタイトルと日付が正しく表示されること', () => {
