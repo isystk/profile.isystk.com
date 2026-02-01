@@ -9,6 +9,16 @@ const { Default } = composeStories(stories);
 
 describe('MainVisual Storybook Tests', () => {
   beforeEach(() => {
+    // ScrollIn用のモック
+    vi.stubGlobal(
+      'IntersectionObserver',
+      vi.fn(cb => ({
+        observe: () => cb([{ isIntersecting: true }]),
+        unobserve: vi.fn(),
+        disconnect: vi.fn(),
+      })),
+    );
+
     vi.stubGlobal('scrollTo', vi.fn());
     vi.stubGlobal('requestAnimationFrame', (cb: FrameRequestCallback) => {
       return setTimeout(() => cb(performance.now()), 0);

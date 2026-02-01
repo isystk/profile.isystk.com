@@ -1,17 +1,15 @@
 'use client';
 import BasicLayout from '@/components/templates/BasicLayout';
 import MainVisual from '@/components/molecules/MainVisual';
-import Price from '@/components/molecules/Price';
 import News from '@/components/molecules/News';
 import Features from '@/components/molecules/Features';
+import Instroduction from '@/components/molecules/Instroduction';
 
 const LandingPage = () => {
   return (
     <BasicLayout title="LP サンプル">
       <MainVisual />
-      <div id="price">
-        <Price />
-      </div>
+      <Instroduction />
       <div className="h-48"></div>
       <Features />
       <div className="h-48"></div>

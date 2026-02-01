@@ -1,0 +1,30 @@
+@use "@/assets/styles/variable" as *;
+
+.hr {
+    width: 100px;
+    margin: 20px auto 40px;
+    transform: scaleY(1) scaleX(0);
+    border: none;
+    border-top: 4px solid $dark-blue; // variableに定義がない場合は直接 #000d6d
+}
+
+.white {
+    border-top-color: $white;
+}
+
+.blue {
+    border-top-color: $dark-blue;
+}
+
+.centerToSide {
+    animation: centerToSide 0.3s ease 0.3s 1 forwards;
+}
+
+@keyframes centerToSide {
+    0% {
+        transform: scaleY(1) scaleX(0);
+    }
+    100% {
+        transform: scaleY(1) scaleX(1);
+    }
+}
