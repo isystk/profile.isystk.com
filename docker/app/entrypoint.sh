@@ -16,6 +16,9 @@ fi
 echo "🔧 Running npm install..."
 npm install
 
+echo "🔧 Building Next.js application..."
+npm run build
+
 # コンテナを永続化
 echo "🚀 Container is ready. Keeping it alive..."
 tail -f /dev/null

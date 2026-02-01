@@ -1,0 +1,82 @@
+version: 2.1
+executors:
+  default:
+    working_directory: ~/profile-isystk-com
+    docker:
+      - image: cimg/node:20.10.0
+
+commands:
+  restore_npm:
+    steps:
+      - restore_cache:
+          name: Restore npm dependencies
+          key: npm-v1-{{ checksum "package-lock.json" }}
+
+  save_npm:
+    steps:
+      - save_cache:
+          name: Cache npm dependencies
+          key: npm-v1-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+            - .next/cache
+
+jobs:
+  setup:
+    executor: default
+    steps:
+      - checkout
+      - restore_npm
+      - run:
+          name: Install dependencies
+          command: npm ci
+      - save_npm
+
+  test:
+    executor: default
+    steps:
+      - checkout
+      - restore_npm
+      - run:
+          name: Lint and Test
+          command: |
+            npm run format
+            npm run test
+
+  deploy:
+    executor: default
+    steps:
+      - checkout
+      - restore_npm
+      - run:
+          name: Build and Deploy
+          command: |
+            if ! command -v vercel &> /dev/null; then
+              sudo npm install -g vercel
+            fi
+
+            if [ "${CIRCLE_BRANCH}" != "master" ]; then
+              # master以外はプレビュー環境へデプロイ
+              vercel deploy --token=${VERCEL_TOKEN}
+            else
+              # masterはプロダクション環境へデプロイ
+              vercel deploy --prod --token=${VERCEL_TOKEN}
+            fi
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - setup
+      - test:
+          requires:
+            - setup
+      - deploy:
+          name: Deploy
+          requires:
+            - test
+          filters:
+            branches:
+              only:
+                - master
+                - develop

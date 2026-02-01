@@ -71,15 +71,10 @@
   align-items: center;
   text-decoration: none;
   color: $white;
-  background-color: $dark-blue;
   border-radius: 0.5rem;
   padding: 0.5rem 1.75rem;
   transition: background-color 0.2s;
-  font-size: 0.75rem;
   letter-spacing: 0.3em;
-  @media (min-width: 768px) {
-    font-size: 1.0rem;
-  }
 
   p {
     margin: 0 0 0.25rem 0;

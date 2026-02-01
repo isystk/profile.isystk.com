@@ -6,6 +6,6 @@ const getBffUrl = (path: string): string => {
 
 /** API のエンドポイント */
 export const Api = {
-  /** プロフィール */
+  /** ポートフォリオの取得 */
   Portfolio: getBffUrl('/portfolio.json'),
 };

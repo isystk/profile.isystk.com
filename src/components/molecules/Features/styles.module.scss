@@ -20,19 +20,19 @@
 
 .featureBoxes {
   display: flex;
-  flex-direction: column; // スマホは縦並び
+  flex-direction: column;
   align-items: center;
   padding: 2rem;
   width: 100%;
   max-width: 1200px;
   margin: 200px auto 0;
-  pointer-events: none; // 親はイベントを透過
+  pointer-events: none;
 
   @media (min-width: 768px) {
-    flex-direction: row; // PCは横並び
+    flex-direction: row;
 
     &.reverse {
-      flex-direction: row-reverse; // 交互に入れ替え
+      flex-direction: row-reverse;
     }
   }
 }
@@ -42,7 +42,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  pointer-events: auto; // 子要素でクリックを復活
+  pointer-events: auto;
 
   @media (min-width: 768px) {
     width: 50%;
@@ -84,7 +84,11 @@
 }
 
 .linkWrapper {
+  display: none;
   margin-top: 1.5rem;
+  @media (min-width: 768px) {
+      display: block;
+  }
 }
 
 .viewMoreBtn {
@@ -92,7 +96,7 @@
   align-items: center;
   gap: 10px;
   padding: 0.6rem 1.8rem;
-  border: 1px solid rgba(0, 0, 0, 0.4); // 背景が白なら黒枠に
+  border: 1px solid rgba(0, 0, 0, 0.4);
   color: #333;
   text-decoration: none;
   font-size: 0.8rem;

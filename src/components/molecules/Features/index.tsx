@@ -1,6 +1,6 @@
 'use client';
 import styles from './styles.module.scss';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import Image from '@/components/atoms/Image';
 import ParallaxSticky from '@/components/interactions/ParallaxSticky';
@@ -10,16 +10,30 @@ import { Output } from '@/states/portfolio';
 
 const Features = () => {
   const { state } = useAppRoot();
+  // SP判定用のステート
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const outputs = state?.portfolio?.outputs as Output[] | undefined;
 
   if (!outputs) return null;
+
+  const stickyTop = isMobile ? '100px' : '250px';
 
   const layerComponent = (
     <>
       {outputs.map((item, index) => {
         const isEven = index % 2 === 0;
         return (
-          <ParallaxSticky key={index} height="200vh" top="200px">
+          <ParallaxSticky key={index} height="200vh" top={stickyTop}>
             <div className={`${styles.featureBoxes} ${!isEven ? styles.reverse : ''}`}>
               <div className={styles.featureBoxWrapper}>
                 <ScrollIn className={styles.featureCard} direction={isEven ? 'left' : 'right'}>
