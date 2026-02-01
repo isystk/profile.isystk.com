@@ -40,8 +40,10 @@ jobs:
       - run:
           name: Lint and Test
           command: |
-            make format
-            make test
+            npm run lint
+            npm run ts-check
+            npm run prettier -- --write "src/**/*.{js,jsx,ts,tsx}"
+            npm run test
 
   deploy:
     executor: default
