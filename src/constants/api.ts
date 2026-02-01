@@ -1,15 +1,11 @@
-/**
- * API用の URL を作成する
- */
+import Env from '@/constants/env';
+
+const getBffUrl = (path: string): string => {
+  return [Env.ENDPOINT_URL, path].join('');
+};
+
+/** API のエンドポイント */
 export const Api = {
-  /** 自己紹介 */
-  PROFILE: '/data/profile.json',
-  /** 専門性 */
-  SPECIALTY: '/data/specialty.json',
-  /** スキル */
-  SKILLS: '/data/skills.json',
-  /** アウトプット */
-  OUTPUTS: '/data/outputs.json',
-  /** コンタクト */
-  CONTACTS: '/data/contacts.json',
-}
+  /** ポートフォリオの取得 */
+  Portfolio: getBffUrl('/portfolio.json'),
+};

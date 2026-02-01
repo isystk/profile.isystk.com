@@ -1,0 +1,92 @@
+@use "@/assets/styles/variable" as *;
+
+.container {
+  background-color: $gray;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+}
+
+.skillGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 4px solid var(--accent-color);
+  padding: 2rem;
+  border-radius: 0 8px 8px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.categoryTitle {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.ratingBadge {
+  display: flex;
+  gap: 4px;
+  font-size: 0.8rem;
+}
+
+.starFull { color: var(--accent-color); }
+.starEmpty { color: #444; }
+
+.categoryDescription {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #999;
+  margin-bottom: 2rem;
+}
+
+.itemRow {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+}
+
+.itemMain {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.itemName {
+  font-weight: bold;
+}
+
+.itemRating {
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+
+.itemText {
+  font-size: 0.85rem;
+  color: #999;
+  line-height: 1.5;
+}

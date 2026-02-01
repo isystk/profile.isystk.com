@@ -1,0 +1,78 @@
+@use "@/assets/styles/variable" as *;
+
+.header {
+    width: 100%;
+    z-index: 100;
+    background-color: $dark-blue;
+    color: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    // スクロール時にアニメーションさせるための初期状態
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    // 表示状態（フラグが true または スクロール後）
+    &.visible {
+        transform: translateY(0);
+        pointer-events: auto;
+        opacity: 1;
+    }
+}
+
+.menuList {
+    display: flex;
+    list-style: none;
+    padding: 0;
+
+    .menuItem {
+        &:not(:last-child)::after {
+            content: "｜";
+            margin: 0 8px;
+            color: $gray;
+        }
+    }
+}
+
+.menuContainer {
+    margin-left: auto;
+    ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            display: inline-block;
+            margin-right: 12px;
+        }
+    }
+}
+
+.register-link {
+    color: #e11d48;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+.cart-link {
+    margin-left: 12px;
+}
+
+.cart-image {
+    height: 40px;
+}
+
+.contact-link {
+    color: #e11d48;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+

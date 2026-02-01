@@ -3,110 +3,83 @@ executors:
   default:
     working_directory: ~/profile-isystk-com
     docker:
-      - image: node:16
+      - image: cimg/node:20.10.0
 
 commands:
   restore_npm:
     steps:
       - restore_cache:
           name: Restore npm dependencies
-          #key: npm-{{ checksum "yarn.lock" }}
-          key: npm-202206162219
+          key: npm-v1-{{ checksum "package-lock.json" }}
 
   save_npm:
     steps:
       - save_cache:
           name: Cache npm dependencies
-          #key: npm-{{ checksum "yarn.lock" }}
-          key: npm-202206162219
+          key: npm-v1-{{ checksum "package-lock.json" }}
           paths:
-            - ~/profile-isystk-com/node_modules
+            - node_modules
+            - .next/cache
 
 jobs:
   setup:
-    executor:
-      name: default
+    executor: default
     steps:
       - checkout
+      - restore_npm
       - run:
           name: Install dependencies
-          command: yarn
-      - save_npm
-
-  lint:
-    executor:
-      name: default
-    steps:
-      - checkout
-      - restore_npm
-      - run:
-          name: Lint
-          command: yarn lint
-      - save_npm
-
-  build:
-    executor:
-      name: default
-    steps:
-      - checkout
-      - restore_npm
-      - run:
-          name: Build
-          command: yarn build
+          command: npm ci
       - save_npm
 
   test:
-    executor:
-      name: default
+    executor: default
     steps:
       - checkout
       - restore_npm
       - run:
-          name: Test
-          command: yarn test
-      - save_npm
+          name: Lint and Test
+          command: |
+            npm run build
+            npm run lint
+            npm run ts-check
+            npm run prettier -- --write "src/**/*.{js,jsx,ts,tsx}"
+            npm run test
 
   deploy:
-    executor:
-      name: default
+    executor: default
     steps:
       - checkout
       - restore_npm
       - run:
-          name: Generate
-          command: yarn generate && rm -Rf dist && cp -rp .output/public dist
-      - run:
-          name: Check dist
-          command: ls -la dist
-      - run:
-          name: deploy to now
+          name: Build and Deploy
           command: |
-            if [ ! ${CIRCLE_BRANCH} = master ]; then
-              yarn deploy:preview
-            else
-              yarn deploy:production
+            if ! command -v vercel &> /dev/null; then
+              sudo npm install -g vercel
             fi
-      - save_npm
+
+            if [ "${CIRCLE_BRANCH}" != "master" ]; then
+              # master以外はプレビュー環境へデプロイ
+              vercel deploy --token=${VERCEL_TOKEN}
+            else
+              # masterはプロダクション環境へデプロイ
+              vercel deploy --prod --token=${VERCEL_TOKEN}
+            fi
 
 workflows:
   version: 2
   build_and_test:
     jobs:
       - setup
-      - lint:
-          requires:
-            - setup
-      - build:
-          requires:
-            - lint
       - test:
           requires:
-            - build
+            - setup
       - deploy:
-          name: Deploy to production
+          name: Deploy
           requires:
             - test
           filters:
             branches:
               only:
                 - master
+                - develop

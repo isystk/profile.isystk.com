@@ -1,0 +1,149 @@
+@use "@/assets/styles/variable" as *;
+
+.news {
+  background-color: $white;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  padding: 4rem 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.title {
+  color: black;
+  font-weight: bold;
+  font-size: 1.875rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.contents {
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 0;
+}
+
+.newsItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    width: 50%;
+    padding: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.titleDateContainer {
+  display: flex;
+  flex-direction: column; // 縦に並べる
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.itemTitle {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.4;
+  min-height: 3em;
+  display: flex;
+  align-items: flex-start;
+  transition: color 0.2s ease;
+}
+
+.itemDate {
+  align-self: flex-end; // 日付だけ右寄せにする
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 0.25rem;
+}
+
+.itemLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+
+  &:hover .itemTitle {
+    color: #00bcd4;
+    text-decoration: underline;
+  }
+}
+
+
+.imageLink {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.left {
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 50%;
+    padding-right: 20px;
+  }
+}
+
+.right {
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+}
+
+.titleDateWrapper {
+  position: relative;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1rem;
+}
+
+.itemTitle {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0;
+  min-height: 3em;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.itemDate {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  font-size: 0.75rem;
+  color: #999;
+}
+
+.text {
+  word-break: break-all;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.bottomSpace {
+  height: 9rem;
+}

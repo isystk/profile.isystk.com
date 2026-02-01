@@ -1,0 +1,48 @@
+@use "@/assets/styles/variable" as *;
+
+.inn {
+    position: relative;
+    z-index: 1;
+}
+.parallaxBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.bg {
+    position: sticky;
+    top: 0;
+    z-index: -1;
+}
+
+.scrollBarWrapper {
+    position: absolute;
+    top: 5rem;
+    left: 2.5rem;
+    display: flex;
+    height: 30%;
+    width: 2px;
+
+    @media (min-width: 768px) {
+        top: 20vh;
+    }
+}
+
+.scrollBarTrack {
+    width: 100%;
+    height: 100%;
+    background-color: $dark-gray;
+    border-radius: 9999px;
+    overflow: hidden;
+}
+
+.scrollBarThumb {
+    width: 100%;
+    background-color: $red;
+    border-radius: 9999px;
+    transition: height 0.2s ease;
+}

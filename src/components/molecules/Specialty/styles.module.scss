@@ -1,0 +1,102 @@
+@use "@/assets/styles/variable" as *;
+
+.chartContainer {
+  background-color: $black;
+  min-height: 100vh;
+}
+
+.chartInner {
+  width: 100%;
+  max-width: 1200px; // コンテンツ全体の最大幅を設定
+  margin: 0 auto;    // 中央寄せ
+  padding: 4rem 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+.title {
+  color: white;
+  font-weight: bold;
+  font-size: 1.875rem;
+  text-align: center;
+}
+
+.chartBoxes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* 左右ボックス共通 */
+.chartBoxWrapperLeft,
+.chartBoxWrapperRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.scrollCardLeft,
+.scrollCardRight {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .chartBoxWrapperLeft,
+  .chartBoxWrapperRight {
+    width: 50%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .scrollCardLeft,
+  .scrollCardRight {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .chartBoxWrapperLeft {
+    justify-content: flex-end;
+  }
+
+  .chartBoxWrapperRight {
+    justify-content: flex-start;
+  }
+
+  // 余白の調整
+  .scrollCardLeft {
+    margin-right: 1rem;
+  }
+
+  .scrollCardRight {
+    margin-left: 1rem;
+  }
+}
+
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.lineButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 1rem;
+  background-color: $green;
+  border-radius: 200px;
+  text-decoration: none;
+}
+
+.lineButtonText {
+  font-weight: bold;
+  color: $white;
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,29 @@
+import BasicLayout from '@/components/templates/BasicLayout';
+import MainVisual from '@/components/molecules/MainVisual';
+import News from '@/components/molecules/News';
+import Features from '@/components/molecules/Features';
+import Instroduction from '@/components/molecules/Instroduction';
+import { Metadata } from 'next';
+import Specialty from '@/components/molecules/Specialty';
+import SkillSection from '@/components/molecules/SkillSection';
+import ThanksMessage from '@/components/molecules/ThanksMessage';
+
+export const metadata: Metadata = {
+  title: 'ポートフォリオ｜伊勢 功崇（いせ よしたか）',
+};
+
+const TopPage = () => {
+  return (
+    <BasicLayout>
+      <MainVisual />
+      <Instroduction />
+      <Specialty />
+      <SkillSection />
+      <Features />
+      <News />
+      <ThanksMessage />
+    </BasicLayout>
+  );
+};
+
+export default TopPage;

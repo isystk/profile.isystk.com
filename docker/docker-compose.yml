@@ -1,0 +1,22 @@
+services:
+  
+  profile-isystk-com-app:
+    image: nextjs-boilerplate/app
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: profile-isystk-com-app
+    ports:
+      - 3000:3000
+      - 6006:6006
+    volumes:
+      - ..:/app
+    environment:
+      - NODE_ENV=development
+      - TZ=Asia/Tokyo
+    restart: unless-stopped
+
+networks:
+  default:
+    external: true
+    name: docker_default

@@ -1,5 +1,4 @@
-🌙 isystk's ポートフォリオ
-====
+# 🌙 profile.isystk.com
 
 [![CircleCI](https://circleci.com/gh/isystk/profile.isystk.com/tree/master.svg?style=svg)](https://circleci.com/gh/isystk/profile.isystk.com/tree/master)
 ![GitHub issues](https://img.shields.io/github/issues/isystk/profile.isystk.com)
@@ -7,118 +6,124 @@
 ![GitHub stars](https://img.shields.io/github/stars/isystk/profile.isystk.com)
 ![GitHub license](https://img.shields.io/github/license/isystk/profile.isystk.com)
 
-## Description
+## 📗 プロジェクトの概要
 
-📗 Nuxt3 & Vuetify を利用してポートフォリオを作成しました。GithubにPushするとCircleCIにVercelにホスティングされるようにしています。Storybook も導入しています。
+Next.js、Storybook、Vitest を利用して作成されたポートフォリオサイトです。最新のReactエコシステムを活用し、3Dモデリング（Three.js）や決済（Stripe）の統合、コンポーネント駆動開発を実践しています。
 
-### ディレクトリ構造
-```
-.
-├── Dockerfile
-├── LICENSE
-├── README.md
-├── aws
-│   ├── README.md
-│   ├── cfn
-│   ├── cloud9
-│   └── network.png
-├── demo.jpg
-├── dist -> .output/public
-├── node_modules
-├── nuxt.config.ts
-├── package.json
-├── postcss.config.js
-├── src
-│   ├── __tests__
-│   ├── app.vue
-│   ├── assets
-│   ├── components
-│   ├── constants
-│   ├── helper
-│   ├── layouts
-│   ├── locales
-│   ├── middleware
-│   ├── pages
-│   ├── plugins
-│   ├── public
-│   ├── services
-│   ├── store
-│   ├── stories
-│   └── utilities
-├── tailwind.config.js
-├── tsconfig.json
-├── vitest.config.ts
-└── yarn.lock
+### 対象としている方
 
-```
-
-## 🖊️ VS. 
+- Next.js を利用したモダンなフロントエンド開発に興味がある方
+- Storybook を活用したコンポーネント開発手法を知りたい方
+- Vitest を用いたフロントエンドのテスト構成を参考にしたい方
 
 ### 利用している技術
-- Nuxt.js 3
-- Vuetify 3
-- TailwindCSS (Sass)
-- Typescript 
-- Chart.js
-- Storybook
+
+#### インフラ / 実行環境
+- **Docker / Docker Compose**
+- **Node.js**
+
+#### 使用しているライブラリ
+- **Frontend**: Next.js, React, TypeScript, Three.js, TailwindCSS, Sass, Axios, Formik, Yup
+- **Design/Tool**: Storybook, Vitest, Playwright, ESLint, Prettier
 
 ## 🌐 Demo
 
-![DEMO](./demo.jpg "DEMO")
+[デモサイトはこちら](https://profile.isystk.com)
 
-https://profile.isystk.com/
-
-## 🎨 Requirement
-
-推奨するNodeのバージョン v16
-
-## 📦 Install
-
-```bash
-$ nodebrew install v16.13.1 
-$ node install -g yarn
-$ yarn
+```mermaid
+graph TD
+    User[ユーザー] --> NextJS[Next.js App]
+    NextJS --> ThreeJS[Three.js / 3D Graphics]
+    NextJS --> Stripe[Stripe / Payments]
+    NextJS --> Storybook[Storybook / UI Components]
+    NextJS --> Vitest[Vitest / Unit Testing]
 ```
 
-## 💬 Usage
+## 📦 ディレクトリ構造
 
-```bash
-$ yarn dev
+```text
+.
+├── Makefile
+├── README.md
+├── docker
+│   ├── app
+│   └── docker-compose.yml
+├── documents
+│   ├── front.png
+│   ├── react_cording_rule.md
+│   └── storybook.png
+├── eslint.config.mjs
+├── next-env.d.ts
+├── next.config.ts
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── public
+│   ├── favicon.ico
+│   └── manifest.json
+├── scripts
+│   ├── js-ops.sh
+│   └── utils.sh
+├── src
+│   ├── @types
+│   ├── app
+│   ├── assets
+│   ├── components
+│   ├── constants
+│   ├── services
+│   └── states
+├── tsconfig.json
+├── tsconfig.tsbuildinfo
+└── vitest.config.ts
 ```
 
-#### 本番環境(Vercel)へデプロイする場合
-GithubにPushすることでCircleCI経由でVercelにデプロイされます。
+## 🔧 開発環境の構築
+
+### 前提条件
+
+* Docker / Docker Compose
+* Node.js (v20以上推奨)
+* npm
+
+### セットアップ手順
+
+1. **リポジトリのクローン**
 ```bash
-$ git push
+git clone git@isystk-github.com:isystk/profile.isystk.com.git
+cd profile.isystk.com
 ```
 
-## 🔧 Contribution
+2. **環境構築**
+```bash
+# Dockerコンテナの起動とライブラリのインストール
+make setup
+```
 
-1. Fork it ( http://github.com/isystk/profile.isystk.com/fork )
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Push to the branch (git push origin my-new-feature)
-5. Create new Pull Request
+3. **初期設定・動作確認**
+```bash
+# 開発サーバーの起動
+make dev
+```
 
-## 🔗 参考
+### Makefile の使い方
 
+プロジェクトの管理には Makefile を利用できます。
 
-| プロジェクト| 概要|
-| :---------------------------------------| :-------------------------------|
-| [Nuxt3 Docs](https://v3.nuxtjs.org/guide/concepts/introduction)| Nuxt3 Docs |
-| [Vuetify 3 Beta](https://next.vuetifyjs.com/en/getting-started/installation/)| Vuetify 3 Beta |
-| [Material Design Icons](https://pictogrammers.github.io/@mdi/font/2.0.46/)| Material Design Icons |
-| [Tailwind CSS](https://tailwindcss.com/docs/installation)| Tailwind CSS |
-| [vee-validate](https://vee-validate.logaretm.com/v4/guide/components)| vee-validate |
-| [husky v6 のインストール方法と使い方。lint-staged も導入して、品質を保とう](https://fwywd.com/tech/husky-setup)| husky v6 のインストール方法と使い方。lint-staged も導入して、品質を保とう |
+| コマンド | 内容 |
+| --- | --- |
+| `make setup` | 環境構築（Docker起動 & 依存関係インストール） |
+| `make up` | コンテナの起動 |
+| `make down` | コンテナの停止 |
+| `make dev` | ローカル開発サーバーの起動 |
+| `make build` | プロダクションビルド |
+| `make storybook` | Storybookの起動 |
+| `make test` | Vitestによるテスト実行 |
+| `make lint` | ESLintによる構文チェック |
 
+## 📖 ドキュメント
 
-## 🎫 Licence
-
-[MIT](https://github.com/isystk/profile.isystk.com/blob/master/LICENSE)
+* [コーディング規約](./documents/react_cording_rule.md)
 
 ## 👀 Author
 
 [isystk](https://github.com/isystk)
-
-

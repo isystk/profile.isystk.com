@@ -1,0 +1,41 @@
+@use "@/assets/styles/variable" as *;
+
+.footer {
+  position: relative;
+  z-index: 1;
+  background-color: $dark-blue;
+  padding: 0.5rem 1rem;
+  color: $white;
+
+  @media (min-width: 768px) {
+    padding: 2rem 1rem;
+  }
+}
+
+.footerInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+  }
+}
+
+.footerCopy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+
+  small {
+    font-size: inherit;
+  }
+}
+
+.footerLogo {
+  font-size: 0.875rem;
+  font-weight: normal;
+}

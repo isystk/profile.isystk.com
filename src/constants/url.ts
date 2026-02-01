@@ -1,9 +1,11 @@
-/**
- * フロントエンド用の URL を作成する
- */
+/** 画面のURL */
 export const Url = {
   /** TOP */
   TOP: '/',
-  /** ログイン */
-  LOGIN: '/login',
-}
+  /** ブログ */
+  Blog: 'https://blog.isystk.com/',
+  /** 事業概要 */
+  Compony: 'https://blog.isystk.com/company/',
+  /** お問い合わせ */
+  Contact: 'https://blog.isystk.com/contact/',
+};

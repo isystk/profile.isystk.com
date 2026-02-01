@@ -1,0 +1,41 @@
+@use "@/assets/styles/variable" as *;
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: all 0.4s ease-in-out;
+    color: $white;
+    z-index: 1;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    // テーマ切り替え
+    &.light {
+        background-color: $dark-blue;
+    }
+
+    &.dark {
+        background-color: $dark-gray;
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+}

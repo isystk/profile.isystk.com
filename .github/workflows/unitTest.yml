@@ -1,0 +1,38 @@
+name: unit-test
+
+on:
+  pull_request:
+    branches:
+      - 'master'
+      - 'develop'
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - edited
+  workflow_dispatch:
+
+jobs:
+  unit-test:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: プロジェクトのチェックアウト
+        uses: actions/checkout@v4
+
+      - name: 初期化
+        run: |
+          make init
+
+      - name: Dockerの起動
+        run: |
+          make up
+
+      - name: 60s 待機
+        run: sleep 60
+
+      - name: すべてのチェックを実行
+        run: |
+          make pre-commit
