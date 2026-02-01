@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 import React from 'react';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import Image from '@/components/atoms/Image';
-import dummyImage480x320 from '@/assets/images/dummy_480x320.png';
+import dummyImage from '@/assets/images/dummy.png';
 import HorizontalRule from '@/components/atoms/HorizontalRule';
 import useAppRoot from '@/states/useAppRoot';
 import { News as NewsType } from '@/states/portfolio';
@@ -53,7 +53,7 @@ const NewsSection = () => {
                     className={styles.imageLink}
                   >
                     <Image
-                      src={imageUrl || dummyImage480x320.src}
+                      src={imageUrl || dummyImage.src}
                       alt={title}
                       zoom={true}
                       className={styles.image}
