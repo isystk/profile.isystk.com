@@ -60,10 +60,10 @@ jobs:
 
             if [ "${CIRCLE_BRANCH}" != "master" ]; then
               # master以外はプレビュー環境へデプロイ
-              vercel deploy --token=${VERCEL_TOKEN}
+              vercel deploy --token=${VERCEL_TOKEN} --yes
             else
               # masterはプロダクション環境へデプロイ
-              vercel deploy --prod --token=${VERCEL_TOKEN}
+              vercel deploy --prod --token=${VERCEL_TOKEN} --yes
             fi
 
 workflows:
@@ -83,3 +83,4 @@ workflows:
               only:
                 - master
                 - develop
+
