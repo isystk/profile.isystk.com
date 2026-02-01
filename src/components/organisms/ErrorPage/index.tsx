@@ -23,8 +23,8 @@ const ErrorPage = ({ status = 500 }: Props) => {
   const { title, text } = errors[status] || errors[500];
 
   return (
-    <BasicLayout title={title}>
-      <div className="bg-white h-100 flex items-center justify-center rounded-md shadow-md">
+    <BasicLayout>
+      <div className={styles.wrapper}>
         <div className={styles.container}>
           <h1 className={styles.heading}>{title}</h1>
           <p className={styles.text}>{text}</p>

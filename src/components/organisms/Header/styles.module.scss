@@ -1,25 +1,26 @@
 @use "@/assets/styles/variable" as *;
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     z-index: 100;
     background-color: $dark-blue;
     color: $white;
-
-    // アニメーション設定
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out;
-    pointer-events: none;
-    opacity: 0;
-
-    &.visible {
-        transform: translateY(0);
-        pointer-events: auto;
-        opacity: 1;
-    }
+    transform: translateY(0);
+    opacity: 1;
+    //position: fixed;
+    //top: 0;
+    //left: 0;
+    //// アニメーション設定
+    //transform: translateY(-100%);
+    //transition: transform 0.3s ease-in-out;
+    //pointer-events: none;
+    //opacity: 0;
+    //
+    //&.visible {
+    //    transform: translateY(0);
+    //    pointer-events: auto;
+    //    opacity: 1;
+    //}
 }
 
 .menuList {

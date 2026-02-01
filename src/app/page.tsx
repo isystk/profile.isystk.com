@@ -1,13 +1,17 @@
-'use client';
 import BasicLayout from '@/components/templates/BasicLayout';
 import MainVisual from '@/components/molecules/MainVisual';
 import News from '@/components/molecules/News';
 import Features from '@/components/molecules/Features';
 import Instroduction from '@/components/molecules/Instroduction';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'ポートフォリオ｜伊勢 功崇（いせ よしたか）',
+};
 
 const LandingPage = () => {
   return (
-    <BasicLayout title="LP サンプル">
+    <BasicLayout>
       <MainVisual />
       <Instroduction />
       <div className="h-48"></div>

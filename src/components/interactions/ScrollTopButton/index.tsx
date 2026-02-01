@@ -1,6 +1,7 @@
 import styles from './styles.module.scss';
 import React, { useEffect, useState } from 'react';
 import Portal from '@/components/interactions/Portal';
+import { FaChevronUp } from 'react-icons/fa';
 
 type Props = {
   theme?: 'light' | 'dark';
@@ -14,7 +15,8 @@ const ScrollTopButton = ({ theme = 'light' }: Props) => {
     setIsVisible(scrollTop > 300); // 300px以上スクロールしたら表示
   };
 
-  const scrollToTop = () => {
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
     const duration = 500;
     const start = window.scrollY;
     const startTime = performance.now();
@@ -40,12 +42,14 @@ const ScrollTopButton = ({ theme = 'light' }: Props) => {
 
   return (
     <Portal>
-      <button
+      <a
+        href="#"
         onClick={scrollToTop}
-        className={`${styles['button-' + theme]} ${isVisible ? styles.show : styles.hide} ${isVisible ? '' : 'hide'} `}
+        className={`${styles.button} ${styles[theme]} ${isVisible ? styles.show : ''}`}
+        aria-label="Scroll to top"
       >
-        <span>^</span>
-      </button>
+        <FaChevronUp className={styles.icon} />
+      </a>
     </Portal>
   );
 };

@@ -14,8 +14,9 @@ type EnvType = {
 };
 
 let Env = {
-  APP_NAME: 'LaraEC',
-  APP_DESCRIPTION: ' Next.js、Storybook、Vitest のボイラープレートです。 ',
+  APP_NAME: 'profile.isystk.com',
+  APP_DESCRIPTION:
+    'Next.js、Storybook、Vitest を利用してポートフォリオを作成しました。GithubにPushするとVercelにホスティングされるようにしています。',
   ENV_NAME: 'local',
   APP_URL: 'http://localhost',
   ENDPOINT_URL: 'https://localhost/api',

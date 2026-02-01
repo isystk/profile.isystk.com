@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import styles from './styles.module.scss';
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import Header from '@/components/organisms/Header';
 import Footer from '@/components/organisms/Footer';
 import Circles from '@/components/interactions/Circles';
@@ -14,34 +14,27 @@ import ScrollTopButton from '@/components/interactions/ScrollTopButton';
 
 type Props = {
   children: ReactNode;
-  title: string;
 };
 
-const BasicLayout = ({ children, title }: Readonly<Props>) => {
+const BasicLayout = ({ children }: Readonly<Props>) => {
   const { state, service } = useAppRoot();
-
-  useEffect(() => {
-    document.title = title;
-  }, [title]);
 
   if (!state) return <></>;
 
   return (
     <ErrorBoundary>
       <div className={styles.wrapper}>
+        <video
+          className={styles.bgVideo}
+          src="/assets/movies/mv.webm"
+          muted
+          autoPlay
+          loop
+          playsInline
+        />
         <Header />
         <Circles>
-          <>
-            <video
-              className={styles.bgVideo}
-              src="/assets/movies/mv.webm"
-              muted
-              autoPlay
-              loop
-              playsInline
-            />
-            <main className={styles.content}>{children}</main>
-          </>
+          <main className={styles.content}>{children}</main>
         </Circles>
         <Footer />
         <FlashMessage />

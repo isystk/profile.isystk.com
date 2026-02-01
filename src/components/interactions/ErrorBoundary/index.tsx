@@ -20,13 +20,14 @@ export class ErrorBoundary extends React.Component<Props, State> {
   }
 
   componentDidCatch(error: Error, info: React.ErrorInfo) {
-    // ログ送信などもここで行う
-    console.error('Unexpected Error:', error, info);
+    if (process.env.NODE_ENV === 'development') {
+      console.error('ErrorBoundary caught an error', error, info);
+    }
   }
 
   render() {
     if (this.state.hasError) {
-      return <ErrorPage />;
+      return <ErrorPage status={500} />;
     }
 
     return this.props.children;
