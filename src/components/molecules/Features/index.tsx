@@ -4,6 +4,7 @@ import React from 'react';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import Image from '@/components/atoms/Image';
 import ParallaxSticky from '@/components/interactions/ParallaxSticky';
+import HorizontalRule from '@/components/atoms/HorizontalRule';
 
 const Features = () => {
   const layerComponent = (
@@ -120,7 +121,10 @@ const Features = () => {
       <div className={styles.features}>
         <div className={styles.inner}>
           <ScrollIn>
-            <p className={styles.title}>特徴</p>
+            <>
+              <h2 className={styles.title}>特徴</h2>
+              <HorizontalRule />
+            </>
           </ScrollIn>
         </div>
       </div>

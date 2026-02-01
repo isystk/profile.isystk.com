@@ -10,17 +10,17 @@ import { formatYearMonth, nl2br } from '@/utils';
 
 const Introduction = () => {
   const { state } = useAppRoot();
-  if (!state?.profile) {
+  if (!state?.portfolio) {
     return null;
   }
-  const { profile } = state.profile;
+  const { profile } = state.portfolio;
 
   return (
     <section className={styles.introduction} id="introduction">
       <div className={styles.inner}>
         <ScrollIn>
           <>
-            <h2 className={styles.title}>INTRODUCTION</h2>
+            <h2 className={styles.title}>自己紹介</h2>
             <HorizontalRule />
           </>
         </ScrollIn>

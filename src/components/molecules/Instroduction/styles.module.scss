@@ -1,14 +1,14 @@
 @use "@/assets/styles/variable" as *;
 
 .introduction {
-  padding: 80px 0;
+  padding: 40px 0;
   background-color: $white;
   min-height: calc(100vh);
   position: relative;
   overflow: hidden;
 
   @media (min-width: 768px) {
-    padding: 120px 0;
+    padding: 80px 0;
   }
 }
 
@@ -22,7 +22,6 @@
   font-size: 1.8rem;
   font-weight: bold;
   text-align: center;
-  letter-spacing: 0.2em;
   color: $dark-gray;
 
   @media (min-width: 768px) {

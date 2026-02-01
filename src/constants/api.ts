@@ -7,5 +7,5 @@ const getBffUrl = (path: string): string => {
 /** API のエンドポイント */
 export const Api = {
   /** プロフィール */
-  Profile: getBffUrl('/profile.json'),
+  Portfolio: getBffUrl('/portfolio.json'),
 };

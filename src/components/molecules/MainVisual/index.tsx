@@ -8,18 +8,27 @@ const MainVisual = () => {
   const scrollToNext = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
+    const targetId = 'introduction';
+    const targetElement = document.getElementById(targetId);
+    if (!targetElement) return;
+
+    const rect = targetElement.getBoundingClientRect();
+    const targetPos = rect.top + window.scrollY;
+
     const start = window.scrollY;
-    const targetPos = start + window.innerHeight;
     const startTime = performance.now();
     const duration = 500;
 
     const animate = (currentTime: number) => {
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      const ease = 1 - Math.pow(1 - progress, 3);
+      const ease = 1 - Math.pow(1 - progress, 3); // ease-out cubic
 
       window.scrollTo(0, start + (targetPos - start) * ease);
-      if (progress < 1) requestAnimationFrame(animate);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
     };
     requestAnimationFrame(animate);
   };

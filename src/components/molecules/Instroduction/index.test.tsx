@@ -9,7 +9,7 @@ import '@testing-library/jest-dom';
 vi.mock('@/states/useAppRoot', () => ({
   default: () => ({
     state: {
-      profile: {
+      portfolio: {
         profile: {
           message:
             'はじめまして。伊勢と申します。現在は、フルリモートでシステムエンジニアに従事しております。',
@@ -33,9 +33,9 @@ describe('Introduction Storybook Tests', () => {
     vi.stubGlobal('IntersectionObserver', mockIntersectionObserver);
   });
 
-  it('セクションタイトル「INTRODUCTION」が表示されること', () => {
+  it('セクションタイトル「自己紹介」が表示されること', () => {
     render(<Default />);
-    expect(screen.getByText('INTRODUCTION')).toBeInTheDocument();
+    expect(screen.getByText('自己紹介')).toBeInTheDocument();
   });
 
   it('自己紹介の本文が含まれていること', () => {

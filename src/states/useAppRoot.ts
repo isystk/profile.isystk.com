@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useEffect, useState } from 'react';
 import { useAppState, useAppDispatch } from '@/states/AppContext';
 import MainService from '@/services/main';

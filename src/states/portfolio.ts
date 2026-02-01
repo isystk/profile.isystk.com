@@ -1,4 +1,4 @@
-export interface Profile {
+export interface Portfolio {
   imageUrl: string;
   message: string;
   twitter_follower: number;
@@ -46,7 +46,7 @@ export interface Contact {
 }
 
 export interface PortfolioData {
-  profile: Profile | null;
+  profile: Portfolio | null;
   specialty: Specialty[];
   skills: SkillCategory[];
   outputs: Output[];
@@ -62,7 +62,7 @@ const initialState: PortfolioData = {
 };
 
 export default class ProfileState {
-  profile: Profile | null;
+  profile: Portfolio | null;
   specialty: Specialty[];
   skills: SkillCategory[];
   outputs: Output[];

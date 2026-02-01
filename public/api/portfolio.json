@@ -23,12 +23,12 @@
         {
           "label": "インフラ構築",
           "color": "#00FFFF",
-          "data": 70
+          "data": 60
         },
         {
           "label": "デザイン作成",
           "color": "#800000",
-          "data": 30
+          "data": 70
         },
         {
           "label": "プロジェクト管理",
@@ -42,34 +42,29 @@
       "type": "doughnut",
       "items" : [
         {
-          "label": "Java",
+          "label": "PHP(Laravel)",
           "color": "#FF0000",
           "data": 30
         },
         {
-          "label": "PHP(Laravel)",
-          "color": "#FF00FF",
-          "data": 20
-        },
-        {
           "label": "React.js",
           "color": "#FFFF00",
-          "data": 13
-        },
-        {
-          "label": "Vue.js",
-          "color": "#00FFFF",
-          "data": 12
+          "data": 20
         },
         {
           "label": "Typescript",
           "color": "#008000",
-          "data": 10
+          "data": 15
         },
         {
           "label": "jQuery",
           "color": "#800000",
-          "data": 10
+          "data": 15
+        },
+        {
+          "label": "Java",
+          "color": "#FF00FF",
+          "data": 15
         },
         {
           "label": "Kotlin",
@@ -394,6 +389,11 @@
       "name": "GitHub",
       "linkUrl": "https://github.com/isystk/",
       "icon": "github"
+    },
+    {
+      "name": "LINE",
+      "linkUrl": "http://line.me/R/msg/text/?Nuxt3%20%26%20Vuetify%20%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AA%E3%82%AA%E3%82%92%E4%BD%9C%E6%88%90%E3%81%97%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82Github%E3%81%ABPush%E3%81%99%E3%82%8B%E3%81%A8CircleCI%E3%81%ABVercel%E3%81%AB%E3%83%9B%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%81%95%E3%82%8C%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82Storybook%20%E3%82%82%E5%B0%8E%E5%85%A5%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82%0D%0Ahttps://profile.isystk.com/",
+      "icon": "line"
     }
   ]
 }

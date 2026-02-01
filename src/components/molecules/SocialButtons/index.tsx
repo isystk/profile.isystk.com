@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa6';
+import { FaLine } from 'react-icons/fa';
 
 export type SocialLink = {
   href: string;
   label: string;
-  iconType: 'facebook' | 'twitter' | 'instagram' | 'github';
+  iconType: 'facebook' | 'twitter' | 'instagram' | 'github' | 'line';
 };
 
 export type Props = {
@@ -17,6 +18,7 @@ const iconMap = {
   twitter: <FaTwitter />,
   instagram: <FaInstagram />,
   github: <FaGithub />,
+  line: <FaLine />,
 };
 
 const SocialButtons = ({ links = [] }: Required<Props>) => {

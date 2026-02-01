@@ -16,8 +16,8 @@ export default function AppWrapper({ children }: Props) {
       return;
     }
     const check = async () => {
-      // プロフィールデータを読み込む
-      await service.profile.read();
+      // ポートフォリオデータを読み込む
+      await service.portfolio.read();
       setChecking(false);
     };
     check();

@@ -17,6 +17,7 @@ export const Default: { render: () => JSX.Element } = {
         { iconType: 'twitter' as const, href: '#', label: 'Twitter' },
         { iconType: 'instagram' as const, href: '#', label: 'Instagram' },
         { iconType: 'github' as const, href: '#', label: 'GitHub' },
+        { iconType: 'line' as const, href: '#', label: 'LINE' },
       ],
     };
     return (

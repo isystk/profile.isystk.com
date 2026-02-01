@@ -4,6 +4,7 @@ import React from 'react';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import Image from '@/components/atoms/Image';
 import dummyImage480x320 from '@/assets/images/dummy_480x320.png';
+import HorizontalRule from '@/components/atoms/HorizontalRule';
 
 export type News = {
   title: string;
@@ -21,7 +22,10 @@ const News = ({ items = [] }: Props) => {
     <div className={styles.news}>
       <div className={styles.inner}>
         <ScrollIn>
-          <p className={styles.title}>NEWS</p>
+          <>
+            <h2 className={styles.title}>NEWS</h2>
+            <HorizontalRule />
+          </>
         </ScrollIn>
         <div className={styles.contents}>
           {items.map(({ title, text, date, imageUrl }, index) => (

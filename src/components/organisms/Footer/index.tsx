@@ -2,30 +2,22 @@ import React from 'react';
 import styles from './styles.module.scss';
 import Logo from '@/components/atoms/Logo';
 import SocialButtons, { SocialLink } from '@/components/molecules/SocialButtons';
+import useAppRoot from '@/states/useAppRoot';
 
 const Footer = () => {
-  const links: SocialLink[] = [
-    {
-      href: 'https://www.facebook.com/ise0615/',
-      label: 'Facebook',
-      iconType: 'facebook',
-    },
-    {
-      href: 'https://x.com/ise0615/',
-      label: 'X(Twitter)',
-      iconType: 'twitter',
-    },
-    {
-      href: 'https://www.instagram.com/isystk/',
-      label: 'Instagram',
-      iconType: 'instagram',
-    },
-    {
-      href: 'https://github.com/isystk/',
-      label: 'GitHub',
-      iconType: 'github',
-    },
-  ];
+  const { state } = useAppRoot();
+  const contacts = state?.portfolio?.contacts;
+
+  if (!contacts) return null;
+
+  const links: SocialLink[] = contacts.map(
+    contact =>
+      ({
+        href: contact.linkUrl,
+        label: contact.name === 'Twitter' ? 'X(Twitter)' : contact.name,
+        iconType: contact.icon,
+      }) as SocialLink,
+  );
 
   return (
     <footer className={styles.footer}>

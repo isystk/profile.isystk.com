@@ -1,15 +1,15 @@
-import ProfileService from '@/services/profile';
+import PortfolioService from '@/services/portfolio';
 import RootState from '@/states/root';
 
 export default class MainService {
   public readonly root: RootState;
   private readonly _setRootState: (root: RootState) => void;
-  public profile: ProfileService;
+  public portfolio: PortfolioService;
 
   constructor(root: RootState, setRootState: (root: RootState) => void) {
     this.root = root;
     this._setRootState = setRootState;
-    this.profile = new ProfileService(this);
+    this.portfolio = new PortfolioService(this);
     this.setRootState();
   }
 
