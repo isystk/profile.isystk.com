@@ -1,5 +1,6 @@
 # 🌙 profile.isystk.com
 
+[![CircleCI](https://circleci.com/gh/isystk/profile.isystk.com/tree/master.svg?style=svg)](https://circleci.com/gh/isystk/profile.isystk.com/tree/master)
 ![GitHub issues](https://img.shields.io/github/issues/isystk/profile.isystk.com)
 ![GitHub forks](https://img.shields.io/github/forks/isystk/profile.isystk.com)
 ![GitHub stars](https://img.shields.io/github/stars/isystk/profile.isystk.com)
