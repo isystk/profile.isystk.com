@@ -39,6 +39,14 @@ export interface Output {
   imageUrl: string;
 }
 
+export interface News {
+  title: string;
+  text: string;
+  url: string;
+  imageUrl: string;
+  date: string;
+}
+
 export interface Contact {
   name: string;
   linkUrl: string;
@@ -50,6 +58,7 @@ export interface PortfolioData {
   specialty: Specialty[];
   skills: SkillCategory[];
   outputs: Output[];
+  news: News[];
   contacts: Contact[];
 }
 
@@ -58,6 +67,7 @@ const initialState: PortfolioData = {
   specialty: [],
   skills: [],
   outputs: [],
+  news: [],
   contacts: [],
 };
 
@@ -66,6 +76,7 @@ export default class ProfileState {
   specialty: Specialty[];
   skills: SkillCategory[];
   outputs: Output[];
+  news: News[];
   contacts: Contact[];
 
   constructor() {
@@ -73,6 +84,7 @@ export default class ProfileState {
     this.specialty = initialState.specialty;
     this.skills = initialState.skills;
     this.outputs = initialState.outputs;
+    this.news = initialState.news;
     this.contacts = initialState.contacts;
   }
 }

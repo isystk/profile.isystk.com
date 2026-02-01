@@ -14,7 +14,6 @@ describe('Features Storybook Tests', () => {
       'IntersectionObserver',
       vi.fn(cb => ({
         observe: () => {
-          // ScrollIn や ParallaxSticky が表示状態になるよう即座に発火
           cb([{ isIntersecting: true }]);
           return null;
         },
@@ -23,31 +22,38 @@ describe('Features Storybook Tests', () => {
       })),
     );
 
-    // スクロール関連のモック
+    // ResizeObserver のモック設定 (ScrollIn等で使用)
+    vi.stubGlobal(
+      'ResizeObserver',
+      vi.fn().mockImplementation(() => ({
+        observe: vi.fn(),
+        unobserve: vi.fn(),
+        disconnect: vi.fn(),
+      })),
+    );
+
     vi.stubGlobal('scrollTo', vi.fn());
   });
 
-  it('「タイトル」のテキストが含まれること', () => {
+  it('セクションタイトル「OUTPUT」が表示されること', () => {
     render(<Default />);
-    const text = screen.getByText(/シンプル操作で誰でも使える/);
-    expect(text).toBeInTheDocument();
+    expect(screen.getByText('OUTPUT')).toBeInTheDocument();
   });
 
-  it('「本文」のテキストが含まれること', () => {
+  it('ポートフォリオデータのタイトルが含まれること', () => {
     render(<Default />);
-    const text = screen.getByText(
-      /トーク画面に話しかけるだけで、AIがすぐに返答。専門知識は一切不要。シニア層から学生まで幅広くご利用いただけます。/,
-    );
-    expect(text).toBeInTheDocument();
+    expect(screen.getByText('JSの学び舎')).toBeInTheDocument();
   });
 
-  it('セクションタイトル「特徴」が表示されること', () => {
+  it('ポートフォリオデータの本文が含まれること', () => {
     render(<Default />);
-    expect(screen.getByText('特徴')).toBeInTheDocument();
+    expect(screen.getByText(/Javascriptに関する知識を発信しています。/)).toBeInTheDocument();
   });
 
-  it('プライバシーに関するテキストが含まれること', () => {
+  it('リンクが正しく設定されていること', () => {
     render(<Default />);
-    expect(screen.getByText(/プライバシーにも配慮/)).toBeInTheDocument();
+    const link = screen.getByRole('link', { name: /VIEW MORE/i });
+    expect(link).toHaveAttribute('href', 'https://example.com');
+    expect(link).toHaveAttribute('target', '_blank');
   });
 });

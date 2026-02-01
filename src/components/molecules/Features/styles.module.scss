@@ -20,24 +20,36 @@
 
 .featureBoxes {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; // スマホは縦並び
   align-items: center;
   padding: 2rem;
-  margin-bottom: 4rem;
-  margin-top: 200px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 200px auto 0;
+  pointer-events: none; // 親はイベントを透過
+
+  @media (min-width: 768px) {
+    flex-direction: row; // PCは横並び
+
+    &.reverse {
+      flex-direction: row-reverse; // 交互に入れ替え
+    }
+  }
 }
 
-/* 左右ボックス共通 */
-.featureBoxWrapperLeft,
-.featureBoxWrapperRight {
+.featureBoxWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  pointer-events: auto; // 子要素でクリックを復活
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
 }
 
-.scrollCardLeft,
-.scrollCardRight {
+.textContent, .imageContent {
   width: 100%;
 }
 
@@ -46,28 +58,50 @@
   padding: 2rem;
 }
 
+/* リンク関連のスタイル */
+.titleLink {
+  text-decoration: none;
+  display: inline-block;
+  color: inherit;
+  &:hover .cardTitle {
+    color: #00bcd4;
+    text-decoration: underline;
+  }
+}
+
+.imageLink {
+  display: block;
+  transition: transform 0.4s ease;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
 .cardTitle {
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
-.image {
-  border-radius: 0.5rem;
+.linkWrapper {
+  margin-top: 1.5rem;
 }
 
-@media (min-width: 768px) {
-  .featureBoxWrapperLeft,
-  .featureBoxWrapperRight {
-    width: 50%;
-  }
+.viewMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.6rem 1.8rem;
+  border: 1px solid rgba(0, 0, 0, 0.4); // 背景が白なら黒枠に
+  color: #333;
+  text-decoration: none;
+  font-size: 0.8rem;
+  background: rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 
-  .featureBoxWrapperLeft {
-    justify-content: flex-end;
+  &:hover {
+    background: #333;
+    color: #fff;
+    .arrow { transform: translateX(5px); }
   }
-
-  .featureBoxWrapperRight {
-    justify-content: flex-start;
-  }
-
 }

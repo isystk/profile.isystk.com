@@ -9,6 +9,7 @@ type Props = {
   className?: string;
   delay?: string;
   direction?: 'left' | 'right' | 'bottom';
+  key?: string | number;
 };
 
 const ScrollIn = ({ children, className = '', delay = '0s', direction = 'bottom' }: Props) => {

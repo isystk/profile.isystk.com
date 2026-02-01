@@ -1,0 +1,33 @@
+@use "@/assets/styles/variable" as *;
+
+.container {
+  padding: 10rem 0.5rem;
+  text-align: center;
+  width: 100%;
+  min-height: calc(100vh - 273px); // ヘッダーとフッターの高さを引く
+
+  @media (min-width: 768px) {
+    min-height: calc(100vh - 273px); // ヘッダーとフッターの高さを引く
+  }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.message {
+  font-family: 'Playfair Display', serif; // もし入っていれば。なければ sans-serif
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: $white;
+}
+
+.subMessage {
+  font-size: 1rem;
+  color: $white;
+  line-height: 1.8;
+}

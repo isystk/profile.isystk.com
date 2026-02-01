@@ -5,124 +5,85 @@ import ScrollIn from '@/components/interactions/ScrollIn';
 import Image from '@/components/atoms/Image';
 import ParallaxSticky from '@/components/interactions/ParallaxSticky';
 import HorizontalRule from '@/components/atoms/HorizontalRule';
+import useAppRoot from '@/states/useAppRoot';
+import { Output } from '@/states/portfolio';
 
 const Features = () => {
+  const { state } = useAppRoot();
+  const outputs = state?.portfolio?.outputs as Output[] | undefined;
+
+  if (!outputs) return null;
+
   const layerComponent = (
     <>
-      <ParallaxSticky height="200vh" top="200px">
-        <div className={styles.featureBoxes}>
-          <div className={styles.featureBoxWrapperRight}>
-            <ScrollIn className={styles.featureCard} direction="left">
-              <div className={styles.scrollCardRight}>
-                <p className={styles.cardTitle}>シンプル操作で誰でも使える</p>
-                <p>
-                  トーク画面に話しかけるだけで、AIがすぐに返答。専門知識は一切不要。シニア層から学生まで幅広くご利用いただけます。
-                </p>
+      {outputs.map((item, index) => {
+        const isEven = index % 2 === 0;
+        return (
+          <ParallaxSticky key={index} height="200vh" top="200px">
+            <div className={`${styles.featureBoxes} ${!isEven ? styles.reverse : ''}`}>
+              <div className={styles.featureBoxWrapper}>
+                <ScrollIn className={styles.featureCard} direction={isEven ? 'left' : 'right'}>
+                  <div className={styles.textContent}>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.titleLink}
+                    >
+                      <p className={styles.cardTitle}>{item.title}</p>
+                    </a>
+                    <p>{item.text}</p>
+                    <div className={styles.linkWrapper}>
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.viewMoreBtn}
+                      >
+                        VIEW MORE
+                        <span className={styles.arrow}>→</span>
+                      </a>
+                    </div>
+                  </div>
+                </ScrollIn>
               </div>
-            </ScrollIn>
-          </div>
-          <div className={styles.featureBoxWrapperLeft}>
-            <ScrollIn className={styles.featureCard} direction="right">
-              <div className={styles.scrollCardLeft}>
-                <Image
-                  src="https://picsum.photos/600/400"
-                  alt="dummy"
-                  zoom={true}
-                  className={styles.image}
-                />
+
+              {/* 画像エリア */}
+              <div className={styles.featureBoxWrapper}>
+                <ScrollIn className={styles.featureCard} direction={isEven ? 'right' : 'left'}>
+                  <div className={styles.imageContent}>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.imageLink}
+                    >
+                      <Image
+                        src={item.imageUrl}
+                        alt={item.title}
+                        zoom={true}
+                        className={styles.image}
+                      />
+                    </a>
+                  </div>
+                </ScrollIn>
               </div>
-            </ScrollIn>
-          </div>
-        </div>
-      </ParallaxSticky>
-      <ParallaxSticky height="200vh" top="200px">
-        <div className={`${styles.featureBoxes} md:flex-row-reverse `}>
-          <div className={styles.featureBoxWrapperLeft}>
-            <ScrollIn className={styles.featureCard} direction="right">
-              <div className={styles.scrollCardRight}>
-                <p className={styles.cardTitle}>24時間いつでも対応</p>
-                <p>
-                  夜中でも休日でもOK。LINEでいつでも質問できるから、困ったときにすぐ解決できます。
-                </p>
-              </div>
-            </ScrollIn>
-          </div>
-          <div className={styles.featureBoxWrapperRight}>
-            <ScrollIn className={styles.featureCard} direction="left">
-              <div className={styles.scrollCardLeft}>
-                <Image
-                  src="https://picsum.photos/600/400"
-                  alt="dummy"
-                  zoom={true}
-                  className={styles.image}
-                />
-              </div>
-            </ScrollIn>
-          </div>
-        </div>
-      </ParallaxSticky>
-      <ParallaxSticky height="200vh" top="200px">
-        <div className={styles.featureBoxes}>
-          <div className={styles.featureBoxWrapperRight}>
-            <ScrollIn className={styles.featureCard} direction="left">
-              <div className={styles.scrollCardRight}>
-                <p className={styles.cardTitle}>高精度AIで安心の回答</p>
-                <p>
-                  最新のAI技術を搭載。生活のちょっとした疑問からビジネス相談まで、丁寧で的確な返答が可能です。
-                </p>
-              </div>
-            </ScrollIn>
-          </div>
-          <div className={styles.featureBoxWrapperLeft}>
-            <ScrollIn className={styles.featureCard} direction="right">
-              <div className={styles.scrollCardLeft}>
-                <Image
-                  src="https://picsum.photos/600/400"
-                  alt="dummy"
-                  zoom={true}
-                  className={styles.image}
-                />
-              </div>
-            </ScrollIn>
-          </div>
-        </div>
-      </ParallaxSticky>
-      <ParallaxSticky height="160vh" top="200px">
-        <div className={`${styles.featureBoxes} md:flex-row-reverse`}>
-          <div className={styles.featureBoxWrapperLeft}>
-            <ScrollIn className={styles.featureCard} direction="right">
-              <div className={styles.scrollCardRight}>
-                <p className={styles.cardTitle}>プライバシーにも配慮</p>
-                <p>
-                  個人情報やトーク内容はすべて暗号化し、安全に管理。安心してご利用いただけます。
-                </p>
-              </div>
-            </ScrollIn>
-          </div>
-          <div className={styles.featureBoxWrapperRight}>
-            <ScrollIn className={styles.featureCard} direction="left">
-              <div className={styles.scrollCardLeft}>
-                <Image
-                  src="https://picsum.photos/600/400"
-                  alt="dummy"
-                  zoom={true}
-                  className={styles.image}
-                />
-              </div>
-            </ScrollIn>
-          </div>
-        </div>
-      </ParallaxSticky>
+            </div>
+          </ParallaxSticky>
+        );
+      })}
     </>
   );
 
+  const totalHeight = `${outputs.length * 200}vh`;
+
   return (
-    <ParallaxSticky layerComponent={layerComponent} indicator={true} height="800vh">
+    <ParallaxSticky layerComponent={layerComponent} indicator={true} height={totalHeight}>
       <div className={styles.features}>
         <div className={styles.inner}>
           <ScrollIn>
             <>
-              <h2 className={styles.title}>特徴</h2>
+              <h2 className={styles.title}>OUTPUT</h2>
               <HorizontalRule />
             </>
           </ScrollIn>

@@ -1,25 +1,22 @@
 'use client';
+
 import styles from './styles.module.scss';
 import React from 'react';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import Image from '@/components/atoms/Image';
 import dummyImage480x320 from '@/assets/images/dummy_480x320.png';
 import HorizontalRule from '@/components/atoms/HorizontalRule';
+import useAppRoot from '@/states/useAppRoot';
+import { News as NewsType } from '@/states/portfolio';
 
-export type News = {
-  title: string;
-  text: string;
-  date: string;
-  imageUrl?: string;
-};
+const NewsSection = () => {
+  const { state } = useAppRoot();
+  const items = state?.portfolio?.news as NewsType[] | undefined;
 
-type Props = {
-  items: News[];
-};
+  if (!items) return null;
 
-const News = ({ items = [] }: Props) => {
   return (
-    <div className={styles.news}>
+    <section className={styles.news}>
       <div className={styles.inner}>
         <ScrollIn>
           <>
@@ -27,35 +24,50 @@ const News = ({ items = [] }: Props) => {
             <HorizontalRule />
           </>
         </ScrollIn>
+
         <div className={styles.contents}>
-          {items.map(({ title, text, date, imageUrl }, index) => (
+          {items.map(({ title, text, date, imageUrl, url }, index) => (
             <ScrollIn key={index} className={styles.newsItem}>
               <>
                 <div className={styles.left}>
                   <div className={styles.leftInner}>
-                    <div className={styles.titleDateWrapper}>
-                      <p className={styles.itemTitle}>{title}</p>
+                    <div className={styles.titleDateContainer}>
+                      <a
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.itemLink}
+                      >
+                        <h3 className={styles.itemTitle}>{title}</h3>
+                      </a>
                       <p className={styles.itemDate}>{date}</p>
                     </div>
                     <p className={styles.text}>{text}</p>
                   </div>
                 </div>
                 <div className={styles.right}>
-                  <Image
-                    src={imageUrl || dummyImage480x320.src}
-                    alt={title}
-                    zoom={true}
-                    className={styles.image}
-                  />
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.imageLink}
+                  >
+                    <Image
+                      src={imageUrl || dummyImage480x320.src}
+                      alt={title}
+                      zoom={true}
+                      className={styles.image}
+                    />
+                  </a>
                 </div>
               </>
             </ScrollIn>
           ))}
-          <div className={styles.bottomSpace}></div>
         </div>
+        <div className={styles.bottomSpace} />
       </div>
-    </div>
+    </section>
   );
 };
 
-export default News;
+export default NewsSection;

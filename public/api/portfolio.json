@@ -288,85 +288,78 @@
       "title": "JSの学び舎",
       "text": "日々の業務や自己学習で培ったJavascriptに関する知識や最新NEWSをコツコツyoutubeで発信するVtuberをやってます。是非一度ご覧ください。",
       "url": "https://www.youtube.com/@isystk",
-      "imageUrl": "/img/youtube.jpg"
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2023/02/JS%E3%81%AE%E5%AD%A6%E3%81%B2%E3%82%99%E8%88%8E%E3%83%8F%E3%82%99%E3%83%8A%E3%83%BC-1024x626.jpg"
     },
     {
       "title": "Laravel＆React.js Boilerplate",
       "text": "Laravel9 ＆ React18 で作成したECサイトのWebアプリケーションです。フロントと管理画面に分かれており、購入した商品を管理画面の注文履歴で閲覧したり在庫管理を行うことが出来ます。",
       "url": "https://blog.isystk.com/web_production/boilerplate/1472/",
-      "imageUrl": "/img/laravel-react-boilerplate.jpg"
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2021/05/Laravel-%EF%BC%86-React.js-%E3%81%A6%E3%82%99%E4%BD%9C%E6%88%90%E3%81%97%E3%81%9FEC%E3%82%B5%E3%82%A4%E3%83%88%E6%A7%8B%E7%AF%89%E3%81%AE%E7%82%BA%E3%81%AE%E3%83%9B%E3%82%99%E3%82%A4%E3%83%A9%E3%83%BC%E3%83%95%E3%82%9A%E3%83%AC%E3%83%BC%E3%83%88-1024x576.jpg"
     },
     {
       "title": "Java Springboot Boilerplate",
       "text": "大規模プロジェクトでも利用できるようなSpringBootのボイラープレートを作成しました。フロント、管理画面、バッチ、検索エンジン、会員登録 などのよくある構成を最低限の機能に絞ってコンパクトに纏めています。",
       "url": "https://blog.isystk.com/system_develop/backend/springboot/722/",
-      "imageUrl": "/img/java-springboot-boilerplate.jpg"
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2020/04/SpringbootReact.js-%E3%81%A6%E3%82%99%E4%BD%9C%E6%88%90%E3%81%97%E3%81%9FEC%E3%82%B5%E3%82%A4%E3%83%88%E6%A7%8B%E7%AF%89%E3%81%AE%E7%82%BA%E3%81%AE%E3%83%9B%E3%82%99%E3%82%A4%E3%83%A9%E3%83%BC%E3%83%95%E3%82%9A%E3%83%AC%E3%83%BC%E3%83%88--1024x576.jpg"
     },
     {
       "title": "Kotlin Springboot Boilerplate",
       "text": "Java&Springbootで作成したECサイトのWebアプリケーションをKotlinでリメイクしました。Kotlinを導入することでコードが簡潔になりNULL安全で開発しやすい環境を整えました。",
       "url": "https://blog.isystk.com/system_develop/backend/springboot/1864/",
-      "imageUrl": "/img/kotlin-springboot-boilerplate.jpg"
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2022/07/KotlinSpringboot-%E3%81%A6%E3%82%99%E4%BD%9C%E6%88%90%E3%81%97%E3%81%9FEC%E3%82%B5%E3%82%A4%E3%83%88%E6%A7%8B%E7%AF%89%E3%81%AE%E7%82%BA%E3%81%AE%E3%83%9B%E3%82%99%E3%82%A4%E3%83%A9%E3%83%BC%E3%83%95%E3%82%9A%E3%83%AC%E3%83%BC%E3%83%88-1024x576.jpg"
     },
     {
       "title": "Nuxt4 JamStack Sample",
       "text": "Nuxt4 で作成したJamStackアプリケーションです。MicroCMS で記事を投稿するとGithubActionがHookして、SSG で生成した静的なコンテンツがGithubPagesに自動反映されるようにしています。",
       "url": "https://blog.isystk.com/web_production/vue/1643/",
-      "imageUrl": "/img/nuxtjs-jamstack-sample.jpg"
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2021/12/MicroCMS-%E3%81%A8-Nuxt.js-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6JamStack%E3%81%AA-Web%E3%82%A2%E3%83%95%E3%82%9A%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3-%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B-1024x576.jpg"
     },
     {
       "title": "Amplify React Sample",
       "text": "React を利用したAWS Amplify の学習用サンプルアプリケーションです。Material UIを利用しておりGraghQLを利用した認証機能や CRUD などの機能を組み込んでいます。",
       "url": "https://blog.isystk.com/web_production/react/1803/",
-      "imageUrl": "/img/react19-materialui-amplify.jpg"
-    },
-    {
-      "title": "Amplify Nuxt4 Sample",
-      "text": "Nuxt4 を利用したAWS Amplify の学習用サンプルアプリケーションです。Vuetifyを利用しておりGraghQLを利用した認証機能や CRUD などの機能を組み込んでいます。",
-      "url": "https://blog.isystk.com/web_production/vue/1676/",
-      "imageUrl": "/img/nuxt4-vuetify3-amplify.jpg"
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2022/06/React18-%E3%81%A6%E3%82%99-DynamoDB%E3%82%92-GraghQL%E3%81%A6%E3%82%99%E6%93%8D%E4%BD%9C%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B-1024x576.jpg"
     },
     {
       "title": "Next.js WebRTC Sample",
       "text": "Next.js で Web-RTC を利用したZoomのようなビデオ通話アプリを作成しました。",
       "url": "https://blog.isystk.com/web_production/react/1686/",
-      "imageUrl": "/img/nextjs-webrtc-sample.jpg"
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2021/12/Next.js-%E3%81%A6%E3%82%99-Web-RTC-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9FZoom%E3%81%AE%E3%82%88%E3%81%86%E3%81%AA%E3%83%92%E3%82%99%E3%83%86%E3%82%99%E3%82%AA%E9%80%9A%E8%A9%B1%E3%82%A2%E3%83%95%E3%82%9A%E3%83%AA%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B-1024x576.jpg"
     },
     {
       "title": "Next.js Nest.js GraphQL",
       "text": "Next.js & Nest.js & Prisma を利用してGraphQLを使ったアプリケーションを作成しました。フロントからバックエンドまで一貫してJavascript で作成しています。",
       "url": "https://blog.isystk.com/web_production/react/1697/",
-      "imageUrl": "/img/nextjs-nestjs-graphql.jpg"
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2021/12/Next.js-Nest.js-Prisma-%E3%82%92%E5%88%A9%E7%94%A8%E3%81%97%E3%81%A6GraphQL%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%82%A2%E3%83%95%E3%82%9A%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B-1024x576.jpg"
     },
     {
-      "title": "Alexa Twitter Trends",
-      "text": "AWS Lambda を利用して AlexaでTwitterのトレンドをお知らせするスキルを作成しました。「アレクサ、日本のトレンドワードを開いて」というとTwitterのトレンドワードを6つ伝えてくれます。",
-      "url": "https://blog.isystk.com/web_production/alexa/1670/",
-      "imageUrl": "/img/alexa-twitter-trends.jpg"
-    },
-    {
-      "title": "Nuxt.js＆Typescript Boilerplate",
-      "text": "Nuxt.js Typescript ESLint を利用したボイラープレートです。Nuxt4 が登場する以前に、vue-property-decorator を利用してTypescriptが利用できるように作成しました。",
-      "url": "https://blog.isystk.com/web_production/boilerplate/1109/",
-      "imageUrl": "/img/nuxtjs-typescript-boilerplate.jpg"
-    },
-    {
-      "title": "クロスサイト・スクリプティング(XSS)の検証サンプル − XSSカイジ",
+      "title": "【XSS学習】脆弱性を体験して学ぶ！「XSSカイジ」でセキュリティの基礎をマスターしよう",
       "text": "XSSの脆弱性を検証する為に作成したサンプルスクリプトです。Webサイト内にサニタイズ漏れがあると「ざわざわ」して最後に何かが起こります..。サンプルも公開しているので是非一度触ってみてください。",
-      "url": "https://blog.isystk.com/web_production/xss/215/",
-      "imageUrl": "/img/kaiji.gif"
+      "url": "https://blog.isystk.com/tech/dev-log/214/",
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2026/01/eyecatch-8-1024x572.jpg"
+    }
+  ],
+  "news": [
+    {
+      "title": "ポートフォリオをリニューアルしました。",
+      "text": "Next.js、Storybook、Vitest を利用してポートフォリオを作成しました。就活をする学生さんやフリーランスでお仕事を探している方はこちらをForkしてご利用ください。",
+      "url": "https://blog.isystk.com/career/lifehack/829/",
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2020/05/portfolio_mockup-scaled-1-1024x727.jpg",
+      "date": "2026-02-01"
     },
     {
-      "title": "自作のWordpress用テンプレートです。",
-      "text": "私が運営しているブログで利用している自作のWordpress用テンプレートです。Googleで検索された際に上位に表示されるようにSEOを最適化しておりLighthouseでSEOのスコアは100を記録しております。ご興味のある方はどうぞ。",
-      "url": "https://blog.isystk.com/web_production/wordpress/1086/",
-      "imageUrl": "/img/wordpress-template.jpg"
+      "title": "Alexaアプリ：日本のトレンドニュースをお知らせするスキルをリニューアルしました。",
+      "text": "Alexaが日本のトレンドニュースをお知らせするスキルを作成しました。「アレクサ、日本のトレンドワードを開いて」というとタイムリーなトレンドニュースをAIが解説してくれます。",
+      "url": "https://blog.isystk.com/web_production/alexa/1670/",
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2026/01/eyecatch-6-1024x572.jpg",
+      "date": "2025-01-15"
     },
     {
-      "title": "このポートフォリオサイトです。",
-      "text": "Nuxt4 & Vuetify を利用してポートフォリオを作成しました。GithubにPushすると自動的にCircleCIでビルドが動き、Vercelにホスティングされるようにしています。就活をする学生さんやフリーランスでお仕事を探している方はこちらをForkしてご利用ください。",
-      "url": "https://blog.isystk.com/web_production/portfolio/830/",
-      "imageUrl": "/img/portfolio.jpg"
+      "title": "当ブログのWordPressテーマのコピーを販売しました。",
+      "text": "長年のWeb制作ノウハウを凝縮したオリジナルWordPressテーマのコピー販売を開始しました。この革新的なテーマを使えば、あなたのWeb制作プロジェクトは劇的に効率化され、高品質なサイトを短期間で構築することが可能になります。",
+      "url": "https://blog.isystk.com/info/news/1085/",
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2026/01/screenshot-1024x585.jpg",
+      "date": "2020-05-10"
     }
   ],
   "contacts": [

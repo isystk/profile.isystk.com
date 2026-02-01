@@ -9,6 +9,7 @@ type Props = {
   top?: string; // 画面を固定するtopを指定する。
   className?: string;
   indicator?: boolean; // インジケーターを表示する場合はTrueを設定する
+  key?: number;
 };
 
 const ParallaxSticky = ({
