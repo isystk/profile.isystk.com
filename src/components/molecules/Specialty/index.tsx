@@ -12,11 +12,10 @@ import {
   ArcElement,
 } from 'chart.js';
 import ScrollIn from '@/components/interactions/ScrollIn';
-import Image from '@/components/atoms/Image';
-import lineIconImage from '@/assets/images/icon_line.png';
 import HorizontalRule from '@/components/atoms/HorizontalRule';
 import useAppRoot from '@/states/useAppRoot';
 import SkillChart from '@/components/molecules/SkillChart';
+import { FaLine } from 'react-icons/fa';
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, ArcElement, Tooltip, Legend);
 
@@ -77,7 +76,7 @@ const Specialty = () => {
         </div>
         <div className={styles.buttonWrapper}>
           <a href={lineUrl} className={styles.lineButton} target="_blank" rel="noopener noreferrer">
-            <Image src={lineIconImage.src} width={40} height={40} alt="LINE icon" />
+            <FaLine />
             <span className={styles.lineButtonText}>お問い合わせはこちら</span>
           </a>
         </div>

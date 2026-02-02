@@ -2,8 +2,15 @@ import '@/assets/styles/app.scss';
 import { JSX } from 'react';
 import { AppProvider } from '@/states/AppContext';
 import AppWrapper from '@/app/AppWrapper';
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import Env from '@/constants/env';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   title: Env.APP_NAME,
