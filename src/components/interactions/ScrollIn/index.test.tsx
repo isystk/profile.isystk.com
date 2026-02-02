@@ -35,7 +35,6 @@ describe('ScrollIn Storybook Tests', () => {
     const target = screen.getByText('スクロールして表示されます').parentElement!;
 
     await act(async () => {
-      // isIntersecting だけを持つオブジェクトの配列として渡します
       observerCallback([{ isIntersecting: true }]);
     });
 
@@ -53,20 +52,19 @@ describe('ScrollIn Storybook Tests', () => {
     expect(target).toHaveStyle({ animationDelay: '1s' });
   });
 
-  it('画面外に出たときにアニメーションクラスが外れること', async () => {
+  it('画面外に出てもアニメーションクラスが維持されること', async () => {
     render(<Default />);
     const target = screen.getByText('スクロールして表示されます').parentElement!;
 
-    // 画面内へ
     await act(async () => {
       observerCallback([{ isIntersecting: true, target }]);
     });
     expect(target.className).toContain('animated');
 
-    // 画面外へ
     await act(async () => {
       observerCallback([{ isIntersecting: false, target }]);
     });
-    expect(target.className).not.toContain('animated');
+
+    expect(target.className).toContain('animated');
   });
 });

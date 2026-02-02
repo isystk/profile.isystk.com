@@ -1,26 +1,17 @@
 'use client';
 import styles from './styles.module.scss';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import Image from '@/components/atoms/Image';
 import ParallaxSticky from '@/components/interactions/ParallaxSticky';
 import HorizontalRule from '@/components/atoms/HorizontalRule';
 import useAppRoot from '@/states/useAppRoot';
 import { Output } from '@/states/portfolio';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const Features = () => {
   const { state } = useAppRoot();
-  // SP判定用のステート
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  const isMobile = useIsMobile();
 
   const outputs = state?.portfolio?.outputs as Output[] | undefined;
 

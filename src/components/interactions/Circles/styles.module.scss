@@ -112,7 +112,7 @@
 
 .circlesLi8 {
   @extend .circle;
-  left: 50%;
+  left: 20%;
   width: 25px;
   height: 25px;
   animation: fadeOutRotation 25s linear infinite;
@@ -182,11 +182,11 @@
 
 .circlesLi15 {
   @extend .circle;
-  left: 55%;
-  width: 20px;
-  height: 20px;
+  left: 75%;
+  width: 30px;
+  height: 30px;
   animation: fadeOutRotation 25s linear infinite;
-  animation-delay: 4s;
+  animation-delay: 3s;
   animation-duration: 10s;
 }
 

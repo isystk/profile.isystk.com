@@ -3,8 +3,10 @@ import styles from './styles.module.scss';
 import React from 'react';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import { FaChevronDown } from 'react-icons/fa6';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 const MainVisual = () => {
+  const isMobile = useIsMobile();
   const scrollToNext = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
@@ -54,7 +56,7 @@ const MainVisual = () => {
 
       <div className={styles.scrollWrapper}>
         <ScrollIn delay="2s">
-          <a href="#" className={styles.scrollButton} onClick={scrollToNext}>
+          <a href="#" className={styles.scrollButton} onClick={isMobile ? () => {} : scrollToNext}>
             <p>SCROLL</p>
             <FaChevronDown aria-hidden="true" />
           </a>
