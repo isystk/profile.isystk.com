@@ -33,7 +33,7 @@ const Features = () => {
       {outputs.map((item, index) => {
         const isEven = index % 2 === 0;
         return (
-          <ParallaxSticky key={index} height="200vh" top={stickyTop}>
+          <ParallaxSticky key={index} height="200svh" top={stickyTop}>
             <div className={`${styles.featureBoxes} ${!isEven ? styles.reverse : ''}`}>
               <div className={styles.featureBoxWrapper}>
                 <ScrollIn className={styles.featureCard} direction={isEven ? 'left' : 'right'}>
