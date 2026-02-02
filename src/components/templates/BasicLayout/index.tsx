@@ -4,7 +4,6 @@ import styles from './styles.module.scss';
 import { ReactNode } from 'react';
 import Header from '@/components/organisms/Header';
 import Footer from '@/components/organisms/Footer';
-import Circles from '@/components/interactions/Circles';
 import Loading from '@/components/atoms/Loading';
 import FlashMessage from '@/components/interactions/FlashMessage';
 import { ToastMessage } from '@/components/interactions/ToastMessage';
@@ -33,9 +32,7 @@ const BasicLayout = ({ children }: Readonly<Props>) => {
           playsInline
         />
         <Header isHideTop={true} />
-        <Circles>
-          <main className={styles.content}>{children}</main>
-        </Circles>
+        <main className={styles.content}>{children}</main>
         <Footer />
         <FlashMessage />
         <ToastMessage

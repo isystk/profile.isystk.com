@@ -7,6 +7,7 @@ import { Metadata } from 'next';
 import Specialty from '@/components/molecules/Specialty';
 import SkillSection from '@/components/molecules/SkillSection';
 import ThanksMessage from '@/components/molecules/ThanksMessage';
+import Circles from '@/components/interactions/Circles';
 
 export const metadata: Metadata = {
   title: 'ポートフォリオ｜伊勢 功崇（いせ よしたか）',
@@ -16,10 +17,13 @@ const TopPage = () => {
   return (
     <BasicLayout>
       <MainVisual />
-      <Instroduction />
+      <Circles>
+        <Instroduction />
+      </Circles>
       <Specialty />
       <SkillSection />
       <Features />
+      <div className="h-48"></div>
       <News />
       <ThanksMessage />
     </BasicLayout>

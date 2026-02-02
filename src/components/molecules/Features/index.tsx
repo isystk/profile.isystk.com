@@ -93,7 +93,7 @@ const Features = () => {
     </>
   );
 
-  const totalHeight = `${outputs.length * 200}vh`;
+  const totalHeight = `${outputs.length * 200}svh`;
 
   return (
     <ParallaxSticky layerComponent={layerComponent} indicator={true} height={totalHeight}>
