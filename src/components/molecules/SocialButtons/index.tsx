@@ -5,7 +5,7 @@ import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa6';
 export type SocialLink = {
   href: string;
   label: string;
-  iconType: 'facebook' | 'twitter' | 'instagram' | 'github' | 'line';
+  iconType: 'facebook' | 'twitter' | 'instagram' | 'github';
 };
 
 export type Props = {
