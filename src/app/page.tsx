@@ -20,13 +20,10 @@ const TopPage = () => {
       <Circles>
         <Instroduction />
       </Circles>
-      <div className="h-48"></div>
       <Specialty />
-      <div className="h-48"></div>
       <SkillSection />
-      <div className="h-48"></div>
+      <div className="h-96"></div>
       <Features />
-      <div className="h-48"></div>
       <News />
       <ThanksMessage />
     </BasicLayout>
