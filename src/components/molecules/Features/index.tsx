@@ -21,18 +21,29 @@ const FeatureItem = ({ item, index, stickyTop }: FeatureItemProps) => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start end', 'center center'],
+    // 修正：stickyな要素でも進捗を拾いやすいように offset を広げます
+    offset: ['start end', 'end start'],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [0, 1]);
-  const x = useTransform(scrollYProgress, [0, 1], [isEven ? -300 : 300, 0]);
-  const xReverse = useTransform(scrollYProgress, [0, 1], [isEven ? 300 : -300, 0]);
+  // スライド開始・終了の数値を広めに設定して、動きを確認しやすくします
+  // テキスト：進捗 30% から動き出し、40% で完了
+  const opacityText = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]);
+  const xText = useTransform(scrollYProgress, [0.3, 0.4], [isEven ? -300 : 300, 0]);
+
+  // 画像：進捗 30% から動き出し、40% で完了
+  const opacityImage = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]);
+  const xImage = useTransform(scrollYProgress, [0.3, 0.4], [isEven ? 300 : -300, 0]);
 
   return (
     <ParallaxSticky key={index} height="200svh" top={stickyTop}>
-      <div ref={ref} className={`${styles.featureBoxes} ${!isEven ? styles.reverse : ''}`}>
+      <div
+        ref={ref}
+        className={`${styles.featureBoxes} ${!isEven ? styles.reverse : ''}`}
+        style={{ display: 'flex', alignItems: 'center' }}
+      >
+        {/* テキストエリア */}
         <div className={styles.featureBoxWrapper}>
-          <motion.div style={{ opacity, x }} className={styles.featureCard}>
+          <motion.div style={{ opacity: opacityText, x: xText }} className={styles.featureCard}>
             <div className={styles.textContent}>
               <a
                 href={item.url}
@@ -57,8 +68,9 @@ const FeatureItem = ({ item, index, stickyTop }: FeatureItemProps) => {
           </motion.div>
         </div>
 
+        {/* 画像エリア */}
         <div className={styles.featureBoxWrapper}>
-          <motion.div style={{ opacity, x: xReverse }} className={styles.featureCard}>
+          <motion.div style={{ opacity: opacityImage, x: xImage }} className={styles.featureCard}>
             <div className={styles.imageContent}>
               <a
                 href={item.url}
@@ -93,7 +105,7 @@ const Features = () => {
     </>
   );
 
-  const totalHeight = `${outputs.length * 200}svh`;
+  const totalHeight = `${outputs.length * 200 + 50}svh`;
 
   return (
     <ParallaxSticky layerComponent={layerComponent} indicator={true} height={totalHeight}>
