@@ -59,14 +59,18 @@ app: ## appコンテナに入ります。
 tinker: ## tinkerを実行します。
 	$(APP_CMD) php artisan tinker
 
-.PHONY: npm-run-dev
-npm-run-dev: ## appコンテナで開発用ビルドを実行します。
+.PHONY: dev
+dev: ## appコンテナで開発用ビルドを実行します。
 	$(APP_CMD) npm run dev
 
-.PHONY: npm-run-build
-npm-run-build: ## appコンテナでビルドを実行します。
+.PHONY: build
+build: ## appコンテナでビルドを実行します。
 	$(APP_CMD) npm run build; \
 	$(APP_CMD) npm run build-storybook;
+
+.PHONY: storybook
+storybook: ## appコンテナでStorybookを実行します。
+	$(APP_CMD) npm run storybook
 
 .PHONY: format
 format: ## コード自動整形 [branch|staged|file_paths...]
