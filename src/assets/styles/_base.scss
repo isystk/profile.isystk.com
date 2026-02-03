@@ -28,13 +28,13 @@ time, mark, audio, video, a {
 
 html {
     font-size: 16px;
-    overscroll-behavior-x: none;
+    overflow-x: clip;
     position: relative;
     width: 100%;
 }
 body {
     font-size: 1rem;
-    overscroll-behavior-x: none;
+    overflow-x: clip;
     position: relative;
     width: 100%;
     font-family: ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, sans-serif;
