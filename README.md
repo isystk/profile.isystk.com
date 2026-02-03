@@ -29,7 +29,7 @@ Next.js、Storybook、Vitest を利用して構築された、モダンなフロ
 
 ## 🌐 Demo
 
-[デモ画像](./demo.gif)
+![デモ画像](./demo.gif)
 
 [本家サイトはこちら](https://profile.isystk.com)
 
