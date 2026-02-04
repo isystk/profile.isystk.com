@@ -1,5 +1,6 @@
 {
   "profile": {
+    "name": "伊勢 功崇",
     "imageUrl": "/img/profile.jpg",
     "message": "IT業界で20年、Web技術の変遷を最前線で体現してきたフルスタックエンジニアです。\nSIerでの堅牢な基幹システム開発（Java/Oracle）に始まり、独立後はソーシャルゲームや大規模BtoCサービスにて、モダンなフロントエンド技術（React/Next.js）とスケーラブルなバックエンド構築を数多く経験してきました。\n現在は北海道（函館）を拠点にフルリモートで活動し、単なる実装に留まらず、アーキテクチャ設計からCI/CDパイプラインの構築、セキュリティ対策まで、一気通貫でプロジェクトを成功に導く支援を得意としております。技術発信（YouTube/Blog）を通じたコミュニティ貢献も継続しており、常に最新トレンドを実務に落とし込む最適解を追求しています。",
     "twitter_follower": 6626,
@@ -209,14 +210,14 @@
   ],
   "news": [
     {
-      "title": "Next.js 15 + Vitest ポートフォリオ公開",
+      "title": "【リニューアル】Next.js 15 + Vitest ポートフォリオ公開",
       "text": "最新のApp Routerとテスト駆動開発をベースにしたポートフォリオをオープンソース化。メンテナンス性と品質を両立した設計を提示しています。",
       "url": "https://blog.isystk.com/career/lifehack/829/",
       "imageUrl": "https://blog.isystk.com/wp-content/uploads/2020/05/portfolio_mockup-scaled-1-1024x727.jpg",
       "date": "2026-02-01"
     },
     {
-      "title": "Alexaアプリ：日本のトレンドニュースをお知らせするスキルをリニューアルしました。",
+      "title": "【リニューアル】Alexaアプリ：日本のトレンドニュースをお知らせするスキルを公開",
       "text": "Alexaが日本のトレンドニュースをお知らせするスキルを作成しました。「アレクサ、日本のトレンドワードを開いて」というとタイムリーなトレンドニュースをAIが解説してくれます。",
       "url": "https://blog.isystk.com/web_production/alexa/1670/",
       "imageUrl": "https://blog.isystk.com/wp-content/uploads/2026/01/eyecatch-6-1024x572.jpg",
@@ -224,7 +225,7 @@
     },
     {
       "title": "当ブログのWordPressテーマのコピーを販売しました。",
-      "text": "長年のWeb制作ノウハウを凝縮したオリジナルWordPressテーマのコピー販売を開始しました。この革新的なテーマを使えば、あなたのWeb制作プロジェクトは劇的に効率化され、高品質なサイトを短期間で構築することが可能になります。",
+      "text": "長年のWeb制作ノウハウを凝縮したオリジナルWordPressテーマのコピー販売を開始しました。",
       "url": "https://blog.isystk.com/info/news/1085/",
       "imageUrl": "https://blog.isystk.com/wp-content/uploads/2026/01/screenshot-1024x585.jpg",
       "date": "2020-05-19"

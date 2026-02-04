@@ -17,13 +17,6 @@ const useAppRoot = () => {
     [dispatch],
   );
 
-  // TODO Next.jsでは、useMemoを使ったServiceの初期化はできない。
-  // そのため、useEffectを使ってServiceを初期化する。
-  // const service = useMemo(() => {
-  //   const effectiveState = state ?? new RootState();
-  //   return new MainService(effectiveState, setRootState);
-  // }, [state, setRootState]);
-
   useEffect(() => {
     if (!state) {
       const initialState = new RootState();

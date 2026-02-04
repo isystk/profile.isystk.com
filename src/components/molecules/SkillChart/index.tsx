@@ -17,7 +17,6 @@ const SkillChart = ({ title, type, data }: SkillChartProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref);
 
-  // 1. 基本となる共通オプションを定義
   const commonOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -28,25 +27,41 @@ const SkillChart = ({ title, type, data }: SkillChartProps) => {
     plugins: {
       legend: {
         display: true,
-        position: 'bottom' as const, // リテラル型を明示
-        labels: { color: '#fff' },
+        position: 'bottom' as const,
+        labels: { color: '#fff', padding: 20 },
       },
     },
   };
 
-  // 2. Radar専用のオプションを合成
-  // commonOptions を一旦 unknown にしてから目的の型へキャスト
   const radarOptions: ChartOptions<'radar'> = {
-    ...(commonOptions as unknown as ChartOptions<'radar'>),
+    ...(commonOptions as ChartOptions<'radar'>),
+    layout: {
+      padding: 10,
+    },
     scales: {
       r: {
         angleLines: { color: '#444' },
         grid: { color: '#444' },
-        pointLabels: { color: '#fff', font: { size: 12 } },
+        pointLabels: {
+          color: '#fff',
+          font: { size: 11 },
+          padding: 5,
+          callback: (label: string) => {
+            if (label.length > 6) return [label.slice(0, 6), label.slice(6)];
+            return label;
+          },
+        },
         ticks: { display: false, count: 5 },
         suggestedMin: 0,
         suggestedMax: 100,
       },
+    },
+  };
+
+  const doughnutOptions: ChartOptions<'doughnut'> = {
+    ...(commonOptions as ChartOptions<'doughnut'>),
+    layout: {
+      padding: 35,
     },
   };
 
@@ -59,10 +74,7 @@ const SkillChart = ({ title, type, data }: SkillChartProps) => {
             {type === 'radar' ? (
               <Radar data={data as ChartData<'radar'>} options={radarOptions} />
             ) : (
-              <Doughnut
-                data={data as ChartData<'doughnut'>}
-                options={commonOptions as unknown as ChartOptions<'doughnut'>}
-              />
+              <Doughnut data={data as ChartData<'doughnut'>} options={doughnutOptions} />
             )}
           </>
         )}

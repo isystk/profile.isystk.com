@@ -42,6 +42,7 @@ const Introduction = () => {
           <ScrollIn className={styles.imageWrapper} delay="0.4s">
             <div className={styles.imageInner}>
               <Image src="/assets/images/profile.jpg" alt="Profile" />
+              <p className={styles.name}>{profile?.name}</p>
             </div>
           </ScrollIn>
         </div>

@@ -1,4 +1,5 @@
 export interface Portfolio {
+  name: string;
   imageUrl: string;
   message: string;
   twitter_follower: number;
