@@ -17,7 +17,7 @@ type Story = StoryObj<typeof ThanksMessage>;
 
 export const Default: Story = {
   render: () => (
-    <div style={{ paddingTop: '50dvh', paddingBottom: '50dvh' }}>
+    <div style={{ paddingTop: '50svh', paddingBottom: '50svh' }}>
       <p style={{ textAlign: 'center', color: '#ccc' }}>Scroll down to see the message</p>
       <ThanksMessage />
     </div>

@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100dvh;
+  height: 100svh;
   object-fit: cover;
   z-index: 0;
   pointer-events: none;
@@ -24,9 +24,9 @@
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  min-height: calc(100dvh - 272px);
+  min-height: calc(100svh - 272px);
 
   @media only screen and (min-width: 767px) {
-    min-height: calc(100dvh - 328px);
+    min-height: calc(100svh - 328px);
   }
 }

@@ -35,7 +35,7 @@ const FeatureItem = ({ item, index, stickyTop }: FeatureItemProps) => {
   const xImage = useTransform(scrollYProgress, [0.3, 0.4], [isEven ? 300 : -300, 0]);
 
   return (
-    <ParallaxSticky key={index} height="200dvh" top={stickyTop}>
+    <ParallaxSticky key={index} height="200svh" top={stickyTop}>
       <div
         ref={ref}
         className={`${styles.featureBoxes} ${!isEven ? styles.reverse : ''}`}
@@ -105,7 +105,7 @@ const Features = () => {
     </>
   );
 
-  const totalHeight = `${outputs.length * 200 + 50}dvh`;
+  const totalHeight = `${outputs.length * 200 + 50}svh`;
 
   return (
     <ParallaxSticky layerComponent={layerComponent} indicator={true} height={totalHeight}>
