@@ -1,7 +1,7 @@
 import React from 'react';
 import { JSX, useState } from 'react';
 import TextInput from './index';
-import type { Meta, StoryFn } from '@storybook/nextjs';
+import type { Meta, StoryFn } from '@storybook/react';
 
 export default {
   title: 'Components/Atoms/TextInput',

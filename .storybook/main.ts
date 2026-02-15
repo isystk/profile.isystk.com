@@ -1,5 +1,6 @@
-import type { StorybookConfig } from '@storybook/nextjs';
+import type { StorybookConfig } from '@storybook/react-vite';
 import path from 'path';
+import { mergeConfig } from 'vite';
 
 const config: StorybookConfig = {
   stories: [
@@ -9,22 +10,22 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-onboarding',
     '@chromatic-com/storybook',
-    '@storybook/experimental-addon-test',
+    '@storybook/addon-viewport',
     '@storybook/addon-docs'
   ],
   staticDirs: ['../public'],
   framework: {
-    name: '@storybook/nextjs',
+    name: '@storybook/react-vite',
     options: {},
   },
-  webpackFinal: async (config) => {
-    if (config.resolve) {
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        '@': path.resolve(process.cwd(), 'src'),
-      };
-    }
-    return config;
+  viteFinal: async (config) => {
+    return mergeConfig(config, {
+      resolve: {
+        alias: {
+          '@': path.resolve(process.cwd(), 'src'),
+        },
+      },
+    });
   },
 };
 

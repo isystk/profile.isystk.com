@@ -1,6 +1,6 @@
 import React from 'react';
 import Loading from './index';
-import type { Meta } from '@storybook/nextjs';
+import type { Meta } from '@storybook/react';
 import { JSX, useEffect } from 'react';
 import useAppRoot from '@/states/useAppRoot';
 

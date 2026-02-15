@@ -1,6 +1,6 @@
 import React from 'react';
 import CSRFToken from './index';
-import type { Meta } from '@storybook/nextjs';
+import type { Meta } from '@storybook/react';
 import { JSX } from 'react';
 
 export default {

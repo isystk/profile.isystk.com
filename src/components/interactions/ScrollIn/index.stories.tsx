@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryFn } from '@storybook/nextjs';
+import type { StoryFn } from '@storybook/react';
 import ScrollIn from './index';
 
 const meta = {

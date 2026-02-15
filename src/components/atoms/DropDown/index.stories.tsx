@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import DropDown from './index';
 import React from 'react';
-import type { Meta, StoryFn } from '@storybook/nextjs';
+import type { Meta, StoryFn } from '@storybook/react';
 
 export default {
   title: 'Components/Atoms/DropDown',

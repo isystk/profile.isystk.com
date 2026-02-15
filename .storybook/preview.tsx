@@ -3,7 +3,7 @@ import type { Preview } from '@storybook/nextjs';
 
 import '@/assets/styles/app.scss';
 import { AppProvider } from '@/states/AppContext';
-import { MINIMAL_VIEWPORTS } from 'storybook/viewport';
+import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 // RootコンポーネントをラップしてStorybook上に適用する
 export const decorators = [
