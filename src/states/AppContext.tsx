@@ -5,7 +5,7 @@ import RootState from '@/states/root';
 
 // --- 型定義 ---
 type AppState = {
-  root: RootState | null;
+  root: RootState;
 };
 
 type Action = { type: 'SET_STATE'; payload: RootState };
@@ -27,7 +27,7 @@ const AppDispatchContext = createContext<Dispatch<Action> | undefined>(undefined
 // --- Providerコンポーネント ---
 export const AppProvider = ({ children }: { children: JSX.Element }) => {
   const [state, dispatch] = useReducer(appReducer, {
-    root: null,
+    root: new RootState(),
   });
   return (
     <AppStateContext.Provider value={state}>

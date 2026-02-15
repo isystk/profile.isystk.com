@@ -4,7 +4,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { composeStories } from '@storybook/react';
 import * as stories from './index.stories';
 import '@testing-library/jest-dom';
-import { act } from 'react-dom/test-utils';
+import { act } from 'react';
 
 const { Default } = composeStories(stories);
 
