@@ -72,6 +72,7 @@ const TextArea = (props: Props) => {
         onBlur={props.onBlur}
         value={props.value}
         defaultValue={props.defaultValue}
+        readOnly={props.value !== undefined && !props.onChange}
         rows={props.rows || 4}
         cols={props.cols || 50}
       />

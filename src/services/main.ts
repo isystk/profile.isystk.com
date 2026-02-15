@@ -10,7 +10,6 @@ export default class MainService {
     this.root = root;
     this._setRootState = setRootState;
     this.portfolio = new PortfolioService(this);
-    this.setRootState();
   }
 
   public setRootState() {

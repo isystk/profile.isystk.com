@@ -45,9 +45,12 @@ const NoDivImage = ({ src, alt = '', loading = 'lazy', className = '', ...props 
   // src が存在しない場合のガードを追加
   const imgSrc = typeof src === 'string' ? src : (src?.src ?? '');
 
-  {
-  }
-  return <img src={imgSrc} alt={alt} loading={loading} className={className} {...props} />;
+  return (
+    <>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={imgSrc} alt={alt} loading={loading} className={className} {...props} />;
+    </>
+  );
 };
 
 export default Image;
