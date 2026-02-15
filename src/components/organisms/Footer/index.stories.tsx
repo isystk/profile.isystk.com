@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import Footer from './index';
 import * as useAppRootModule from '@/states/useAppRoot';
 import { vi } from 'vitest';
