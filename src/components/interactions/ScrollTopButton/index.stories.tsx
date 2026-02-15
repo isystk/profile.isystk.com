@@ -1,6 +1,6 @@
 import React from 'react';
 import ScrollTopButton from './index';
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/nextjs';
 
 const meta = {
   title: 'Components/Interactions/ScrollTopButton',

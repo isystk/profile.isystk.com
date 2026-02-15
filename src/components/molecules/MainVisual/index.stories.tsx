@@ -1,5 +1,5 @@
 import React from 'react';
-import type { StoryFn } from '@storybook/react';
+import type { StoryFn } from '@storybook/nextjs';
 import MainVisual from './index';
 
 const meta = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from './index';
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/nextjs';
 
 export default {
   title: 'Components/Atoms/Carousel',

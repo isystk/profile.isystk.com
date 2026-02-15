@@ -1,7 +1,7 @@
 import React from 'react';
 import { JSX, useState } from 'react';
 import Modal from './index';
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/nextjs';
 
 export default {
   title: 'Components/Interactions/Modal',
