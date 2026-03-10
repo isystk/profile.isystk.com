@@ -7,10 +7,10 @@ const config: StorybookConfig = {
     '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
-    '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
     '@chromatic-com/storybook',
     '@storybook/experimental-addon-test',
+    '@storybook/addon-docs'
   ],
   staticDirs: ['../public'],
   framework: {
@@ -18,15 +18,12 @@ const config: StorybookConfig = {
     options: {},
   },
   webpackFinal: async (config) => {
-    config.resolve = {
-      ...(config.resolve || {}),
-      alias: {
-        ...(config.resolve?.alias || {}),
-        '@': path.resolve(__dirname, '../src'),
-        // Next.jsのApp Routerをmock
-        'next/navigation': path.resolve(__dirname, './mocks/navigation.ts'),
-      },
-    };
+    if (config.resolve) {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@': path.resolve(process.cwd(), 'src'),
+      };
+    }
     return config;
   },
 };

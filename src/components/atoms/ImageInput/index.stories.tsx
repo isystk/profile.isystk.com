@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import ImageInput from './index';
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/nextjs';
 
 export default {
   title: 'Components/Atoms/ImageInput',
