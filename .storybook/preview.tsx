@@ -3,7 +3,7 @@ import type { Preview } from '@storybook/nextjs';
 
 import '@/assets/styles/app.scss';
 import { AppProvider } from '@/states/AppContext';
-import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { MINIMAL_VIEWPORTS } from 'storybook/viewport';
 
 // RootコンポーネントをラップしてStorybook上に適用する
 export const decorators = [
@@ -23,7 +23,13 @@ export const parameters: Preview['parameters'] = {
   },
   // デフォルトのViewportを設定する
   viewport: {
-    viewports: MINIMAL_VIEWPORTS,
-    defaultViewport: 'responsive',
+    options: MINIMAL_VIEWPORTS
   },
+};
+
+export const initialGlobals = {
+  viewport: {
+    value: 'responsive',
+    isRotated: false
+  }
 };

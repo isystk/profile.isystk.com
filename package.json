@@ -17,6 +17,7 @@
     "deploy:preview": "now -t $VERCEL_TOKEN -c"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "^1.4.0",
     "axios": "^1.9.0",
     "chart.js": "^4.5.1",
     "formik": "^2.4.6",
@@ -32,17 +33,15 @@
     "three": "^0.177.0",
     "yup": "^1.6.1"
   },
+  "overrides": {
+    "vite": "^6.4.2"
+  },
   "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.5",
+    "@chromatic-com/storybook": "^5.2.1",
     "@eslint/compat": "^2.0.1",
-    "@storybook/addon-essentials": "^8.6.4",
-    "@storybook/addon-onboarding": "^8.6.4",
-    "@storybook/blocks": "^8.6.4",
-    "@storybook/experimental-addon-test": "^8.6.4",
-    "@storybook/experimental-nextjs-vite": "^8.6.14",
-    "@storybook/nextjs": "^8.6.4",
-    "@storybook/react": "^8.6.4",
-    "@storybook/test": "^8.6.4",
+    "@storybook/addon-onboarding": "^10.4.0",
+    "@storybook/nextjs": "^10.4.0",
+    "@storybook/react": "^10.4.0",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -55,13 +54,14 @@
     "autoprefixer": "^10.4.21",
     "eslint": "^9",
     "eslint-config-next": "15.3.2",
-    "eslint-plugin-storybook": "^0.11.4",
+    "eslint-plugin-storybook": "^10.4.0",
     "jsdom": "^26.1.0",
     "playwright": "^1.51.0",
     "prettier": "^3.5.3",
-    "storybook": "^8.6.4",
+    "storybook": "^10.4.0",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vitest": "^3.0.8"
+    "vitest": "^3.0.8",
+    "@storybook/addon-docs": "^10.4.0"
   }
 }

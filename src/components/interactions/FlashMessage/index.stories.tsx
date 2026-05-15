@@ -1,6 +1,6 @@
 import React from 'react';
 import FlashMessage, { MessageTypes } from './index';
-import type { Meta, StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/nextjs';
 
 export default {
   title: 'Components/Interactions/FlashMessage',

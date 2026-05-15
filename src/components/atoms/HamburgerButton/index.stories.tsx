@@ -1,14 +1,15 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import HamburgerButton from './index';
 
 export default {
   title: 'Components/Atoms/HamburgerButton',
   component: HamburgerButton,
   tags: ['autodocs'],
-  parameters: {
+  globals: {
     viewport: {
-      defaultViewport: 'mobile1',
+      value: 'mobile1',
+      isRotated: false,
     },
   },
 } as Meta<typeof HamburgerButton>;
