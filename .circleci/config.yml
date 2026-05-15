@@ -3,7 +3,7 @@ executors:
   default:
     working_directory: ~/profile-isystk-com
     docker:
-      - image: cimg/node:20.10.0
+      - image: cimg/node:22.22
 
 commands:
   restore_npm:
