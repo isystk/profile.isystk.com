@@ -210,6 +210,13 @@
   ],
   "news": [
     {
+      "title": "【新サービス】スキャルピング分析ツール「武蔵トレード」をリリースしました",
+      "text": "スキャルピングトレーダーのための分析ツール「武蔵トレード」を公開しました。リアルタイムのデータと高度な分析機能を提供し、トレードの成功をサポートします。",
+      "url": "https://musashi-trade.isystk.com/",
+      "imageUrl": "https://musashi-trade.isystk.com/images/ogp.jpg",
+      "date": "2026-05-15"
+    },
+    {
       "title": "【リニューアル】Next.js 15 + Vitest ポートフォリオ公開",
       "text": "最新のApp Routerとテスト駆動開発をベースにしたポートフォリオをオープンソース化。メンテナンス性と品質を両立した設計を提示しています。",
       "url": "https://blog.isystk.com/career/lifehack/829/",
