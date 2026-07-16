@@ -21,7 +21,6 @@ export const metadata: Metadata = {
     type: 'website',
     url: Env.APP_URL,
   },
-  viewport: 'width=device-width, initial-scale=1',
 };
 
 type Props = {
