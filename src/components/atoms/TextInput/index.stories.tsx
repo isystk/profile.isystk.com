@@ -1,4 +1,3 @@
-import React from 'react';
 import { JSX, useState } from 'react';
 import TextInput from './index';
 import type { Meta, StoryFn } from '@storybook/nextjs';
@@ -34,20 +33,14 @@ export const WithError: StoryFn = () => (
   />
 );
 
-export const LaravelError: StoryFn = () => {
-  if (typeof window !== 'undefined') {
-    window.laravelErrors = {
-      email: ['Laravel側のエラーです'],
-    };
-  }
-
-  return (
-    <TextInput
-      identity="email"
-      controlType="text"
-      label="メールアドレス"
-      onChange={() => {}}
-      required={true}
-    />
-  );
-};
+// window.laravelErrors はレンダー前に呼び出し側（テストコード等）で設定する想定。
+// コンポーネントのレンダー中に外部変数を変更しないよう、ここでは設定しない。
+export const LaravelError: StoryFn = () => (
+  <TextInput
+    identity="email"
+    controlType="text"
+    label="メールアドレス"
+    onChange={() => {}}
+    required={true}
+  />
+);

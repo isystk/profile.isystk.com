@@ -1,6 +1,6 @@
 'use client';
 import styles from './styles.module.scss';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Radar, Doughnut } from 'react-chartjs-2';
 import { ChartData, ChartOptions } from 'chart.js';
 import { useInView } from '@/hooks/useInView';

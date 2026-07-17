@@ -1,4 +1,3 @@
-import React from 'react';
 import SocialButtons from './index';
 import { JSX } from 'react';
 

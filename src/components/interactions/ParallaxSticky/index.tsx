@@ -1,5 +1,5 @@
 'use client';
-import React, { JSX, useEffect, useRef, useState } from 'react';
+import { JSX, useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 
 type Props = {

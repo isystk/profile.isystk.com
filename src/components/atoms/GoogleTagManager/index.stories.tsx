@@ -1,4 +1,3 @@
-import React from 'react';
 import { JSX } from 'react';
 import GoogleTagManager from './index';
 

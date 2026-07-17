@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryFn } from '@storybook/nextjs';
 import Logo from './index';
 

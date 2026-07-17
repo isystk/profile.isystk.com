@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi, beforeAll, afterAll, type MockInstance } from 'vitest';
 import * as stories from './index.stories';

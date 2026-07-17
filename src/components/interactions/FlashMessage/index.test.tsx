@@ -1,4 +1,3 @@
-import React from 'react';
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, act, fireEvent } from '@testing-library/react';
 import * as stories from './index.stories';
@@ -52,7 +51,9 @@ describe('FlashMessage Storybook Tests', () => {
     });
     expect(message).toHaveClass(styles.fadeOut);
 
-    fireEvent.animationEnd(message);
+    await act(async () => {
+      fireEvent.animationEnd(message);
+    });
     expect(message).toHaveClass(styles.hidden);
 
     vi.useRealTimers();

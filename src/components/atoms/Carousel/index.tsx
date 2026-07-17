@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import styles from './styles.module.scss';
 import Image from '@/components/atoms/Image';

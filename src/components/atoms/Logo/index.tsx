@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './styles.module.scss';
 import Link from 'next/link';
 import { Url } from '@/constants/url';

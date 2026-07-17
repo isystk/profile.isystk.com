@@ -1,4 +1,3 @@
-import React from 'react';
 import FlashMessage, { MessageTypes } from './index';
 import type { Meta, StoryFn } from '@storybook/nextjs';
 
@@ -16,12 +15,11 @@ export const ErrorMessage: StoryFn = () => (
   <FlashMessage message="これはエラーメッセージです。" type={MessageTypes.Error} />
 );
 
-export const LaravelSessionMessage: StoryFn = () => {
-  if (typeof window !== 'undefined') {
-    window.laravelSession = {
-      status: 'Laravel側のメッセージです',
-    };
-  }
+// モジュール読み込み時に一度だけフィクスチャを設定する（コンポーネントのレンダー中に外部変数を変更しないため）
+if (typeof window !== 'undefined') {
+  window.laravelSession = {
+    status: 'Laravel側のメッセージです',
+  };
+}
 
-  return <FlashMessage />;
-};
+export const LaravelSessionMessage: StoryFn = () => <FlashMessage />;

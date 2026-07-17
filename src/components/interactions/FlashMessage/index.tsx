@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 import Portal from '@/components/interactions/Portal';
@@ -16,30 +15,35 @@ type Props = {
 const FlashMessage = ({ type = MessageTypes.Success, ...props }: Props) => {
   const [fadeOut, setFadeOut] = useState(false);
   const [hidden, setHidden] = useState(false);
-  const [message, setMessage] = useState(props.message);
+  // 初回マウント時のみ props.message または Laravel のフラッシュメッセージを取り込む（読み取りは初期化関数で一度だけ行う）
+  const [message] = useState(() => props.message ?? window.laravelSession?.status);
+  const [consumedFromLaravelSession] = useState(
+    () => !props.message && !!window.laravelSession?.status,
+  );
+
+  // グローバル変数の変更は副作用としてエフェクト内で行う
+  useEffect(() => {
+    if (
+      consumedFromLaravelSession &&
+      window.laravelSession &&
+      typeof window.laravelSession === 'object'
+    ) {
+      delete window.laravelSession['status'];
+    }
+  }, [consumedFromLaravelSession]);
 
   useEffect(() => {
-    const laravelMessage = window.laravelSession?.status;
-    if (!message && laravelMessage) {
-      setMessage(laravelMessage);
-      return;
-    }
+    if (!message) return;
 
-    if (message) {
-      const timer = setTimeout(() => {
-        setFadeOut(true);
-      }, 5000);
+    const timer = setTimeout(() => {
+      setFadeOut(true);
+    }, 5000);
 
-      return () => clearTimeout(timer);
-    }
-    return;
+    return () => clearTimeout(timer);
   }, [message]);
 
   if (!message) {
     return <></>;
-  }
-  if (window.laravelSession && typeof window.laravelSession === 'object') {
-    delete window.laravelSession['status'];
   }
 
   const handleAnimationEnd = () => {

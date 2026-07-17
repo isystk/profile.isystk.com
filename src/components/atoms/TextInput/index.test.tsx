@@ -1,4 +1,3 @@
-import React from 'react';
 import { describe, it, expect } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/react';
@@ -26,12 +25,14 @@ describe('TextInput Storybook Tests', () => {
   });
 
   it('未入力の場合にエラーメッセージが表示されること(Laravelのエラー)', () => {
+    window.laravelErrors = { email: ['Laravel側のエラーです'] };
     render(<LaravelError />);
     expect(screen.getByText('Laravel側のエラーです')).toBeInTheDocument();
   });
 
   it('表示された後、グローバル変数からは削除されること', () => {
+    window.laravelErrors = { email: ['Laravel側のエラーです'] };
     render(<LaravelError />);
-    expect(window.laravelErrors.message).toBeUndefined();
+    expect(window.laravelErrors.email).toBeUndefined();
   });
 });

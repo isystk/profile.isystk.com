@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect, useState, ChangeEvent } from 'react';
 import styles from './styles.module.scss';
 
@@ -25,34 +24,25 @@ type Valid = {
 };
 
 const SelectBox = (props: Props) => {
-  const [laravelValid, setLaravelValid] = useState<Valid>({ error: '', isInvalid: '' });
-  const [valid, setValid] = useState<Valid>({ error: '', isInvalid: '' });
+  // 初回マウント時のみ Laravel のエラーを取り込む（読み取りは初期化関数で一度だけ行う）
+  const [laravelValid] = useState<Valid>(() => {
+    if (typeof window !== 'undefined' && window.laravelErrors?.[props.identity]) {
+      return { error: window.laravelErrors[props.identity][0], isInvalid: ' is-invalid' };
+    }
+    return { error: '', isInvalid: '' };
+  });
 
-  // 初回マウント時のみ Laravel のエラーを取り込み
+  // グローバル変数の変更は副作用としてエフェクト内で行う
   useEffect(() => {
     if (typeof window !== 'undefined' && window.laravelErrors?.[props.identity]) {
-      const message = window.laravelErrors[props.identity][0];
-      setLaravelValid({
-        error: message,
-        isInvalid: ' is-invalid',
-      });
       delete window.laravelErrors[props.identity];
     }
   }, [props.identity]);
 
-  useEffect(() => {
-    if (props.error) {
-      setValid({
-        error: props.error,
-        isInvalid: ' is-invalid',
-      });
-    } else {
-      setValid({
-        error: '',
-        isInvalid: '',
-      });
-    }
-  }, [props.error]);
+  // props.error から直接導出する（state化は不要）
+  const valid: Valid = props.error
+    ? { error: props.error, isInvalid: ' is-invalid' }
+    : { error: '', isInvalid: '' };
 
   return (
     <div className={props.className}>

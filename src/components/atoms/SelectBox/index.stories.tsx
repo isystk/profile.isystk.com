@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryFn } from '@storybook/nextjs';
 import SelectBox from './index';
 
@@ -28,12 +27,8 @@ export const WithError: StoryFn = () => (
   />
 );
 
-export const WithLaravelError: StoryFn = () => {
-  if (typeof window !== 'undefined') {
-    window.laravelErrors = {
-      'select-box': ['Laravel側のエラーです'],
-    };
-  }
-
-  return <SelectBox identity="select-box" label="選択肢" options={options} required={true} />;
-};
+// window.laravelErrors はレンダー前に呼び出し側（テストコード等）で設定する想定。
+// コンポーネントのレンダー中に外部変数を変更しないよう、ここでは設定しない。
+export const WithLaravelError: StoryFn = () => (
+  <SelectBox identity="select-box" label="選択肢" options={options} required={true} />
+);

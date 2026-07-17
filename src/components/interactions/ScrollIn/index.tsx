@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useEffect, JSX } from 'react';
+import { useRef, useState, JSX } from 'react';
 import styles from './styles.module.scss';
 import { useInView } from '@/hooks/useInView';
 
@@ -18,12 +18,15 @@ const ScrollIn = ({ children, className = '', delay = '0s', direction = 'bottom'
 
   // 一度表示されたかどうかを保持する状態
   const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
+  // レンダー中に前回のinView値と比較して状態を調整する（Reactが推奨するパターン）
+  // https://react.dev/reference/react/useState#storing-information-from-previous-renders
+  const [prevInView, setPrevInView] = useState(inView);
+  if (inView !== prevInView) {
+    setPrevInView(inView);
     if (inView && !hasAnimated) {
       setHasAnimated(true);
     }
-  }, [inView, hasAnimated]);
+  }
 
   const style = hasAnimated ? { animationDelay: delay } : { opacity: 0 };
 

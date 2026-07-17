@@ -1,4 +1,3 @@
-import React from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/react';
@@ -19,11 +18,13 @@ describe('TextArea', () => {
   });
 
   it('未入力の場合にエラーメッセージが表示されること(Laravelのエラー)', () => {
+    window.laravelErrors = { message: ['Laravel側のエラーです'] };
     render(<LaravelError />);
     expect(screen.getByText('Laravel側のエラーです')).toBeInTheDocument();
   });
 
   it('表示された後、グローバル変数からは削除されること', () => {
+    window.laravelErrors = { message: ['Laravel側のエラーです'] };
     render(<LaravelError />);
     expect(window.laravelErrors.message).toBeUndefined();
   });

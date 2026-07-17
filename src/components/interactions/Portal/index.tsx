@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 type Props = {
@@ -6,27 +6,22 @@ type Props = {
 };
 
 const Portal = ({ children }: Props) => {
-  const elRef = useRef<HTMLElement | null>(null);
-
-  if (typeof document !== 'undefined' && !elRef.current) {
-    elRef.current = document.createElement('div');
-  }
+  // 遅延初期化（useStateの初期化関数）でマウント時に一度だけDOM要素を生成する
+  const [el] = useState<HTMLElement | null>(() =>
+    typeof document !== 'undefined' ? document.createElement('div') : null,
+  );
 
   useEffect(() => {
-    if (!elRef.current) return;
-    document.body.appendChild(elRef.current);
+    if (!el) return;
+    document.body.appendChild(el);
     return () => {
-      if (elRef.current?.parentNode) {
-        if ('parentNode' in elRef.current) {
-          elRef.current.parentNode.removeChild(elRef.current);
-        }
-      }
+      el.parentNode?.removeChild(el);
     };
-  }, []);
+  }, [el]);
 
-  if (typeof document === 'undefined' || !elRef.current) return null;
+  if (!el) return null;
 
-  return createPortal(children, elRef.current);
+  return createPortal(children, el);
 };
 
 export default Portal;

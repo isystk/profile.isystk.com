@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import DropDown from './index';
-import React from 'react';
 import type { Meta, StoryFn } from '@storybook/nextjs';
 
 export default {

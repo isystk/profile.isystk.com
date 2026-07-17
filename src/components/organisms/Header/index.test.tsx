@@ -1,4 +1,3 @@
-import React from 'react'; // JSX Runtimeが未設定の場合に必要
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import * as stories from './index.stories';
