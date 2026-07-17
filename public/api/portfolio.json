@@ -1,10 +1,10 @@
 {
   "profile": {
     "name": "伊勢 功崇",
-    "imageUrl": "/img/profile.jpg",
+    "imageUrl": "/assets/images/profile.jpg",
     "message": "IT業界で20年、Web技術の変遷を最前線で体現してきたフルスタックエンジニアです。\nSIerでの堅牢な基幹システム開発（Java/Oracle）に始まり、独立後はソーシャルゲームや大規模BtoCサービスにて、モダンなフロントエンド技術（React/Next.js）とスケーラブルなバックエンド構築を数多く経験してきました。\n現在は北海道（函館）を拠点にフルリモートで活動し、単なる実装に留まらず、アーキテクチャ設計からCI/CDパイプラインの構築、セキュリティ対策まで、一気通貫でプロジェクトを成功に導く支援を得意としております。技術発信（YouTube/Blog）を通じたコミュニティ貢献も継続しており、常に最新トレンドを実務に落とし込む最適解を追求しています。",
-    "twitter_follower": 6626,
-    "updated_at": "2026-02-01"
+    "twitter_follower": 7626,
+    "updated_at": "2026-07-17"
   },
   "specialty": [
     {
@@ -178,6 +178,12 @@
   ],
   "outputs": [
     {
+      "title": "武蔵トレード（スキャルピング分析ツール）",
+      "text": "個人トレーダー向けのリアルタイム分析ツール。相場データを高度に分析し、トレード判断を支援。公式Xアカウントは開設1か月でフォロワー1,000人を突破しました。",
+      "url": "https://musashi-trade.isystk.com/",
+      "imageUrl": "https://musashi-trade.isystk.com/images/ogp.jpg"
+    },
+    {
       "title": "JSの学び舎 (YouTubeチャンネル)",
       "text": "最新のTypeScript/React/Next.jsの技術解説を行うVtuberとして活動。技術を分かりやすく噛み砕いて伝えるアウトプット能力を磨いています。",
       "url": "https://www.youtube.com/@isystk",
@@ -210,18 +216,18 @@
   ],
   "news": [
     {
-      "title": "【新サービス】スキャルピング分析ツール「武蔵トレード」をリリースしました",
-      "text": "スキャルピングトレーダーのための分析ツール「武蔵トレード」を公開しました。リアルタイムのデータと高度な分析機能を提供し、トレードの成功をサポートします。",
+      "title": "【武蔵トレード】X公式アカウントがフォロワー1,000人を突破",
+      "text": "スキャルピング分析ツール「武蔵トレード」の公式Xアカウントが、開設から1か月ほどでフォロワー1,000人を達成しました。金融リテラシーの高いユーザーとの対話を軸にした運用が奏功しています。",
       "url": "https://musashi-trade.isystk.com/",
       "imageUrl": "https://musashi-trade.isystk.com/images/ogp.jpg",
-      "date": "2026-05-15"
+      "date": "2026-06-09"
     },
     {
-      "title": "【リニューアル】Next.js 15 + Vitest ポートフォリオ公開",
-      "text": "最新のApp Routerとテスト駆動開発をベースにしたポートフォリオをオープンソース化。メンテナンス性と品質を両立した設計を提示しています。",
+      "title": "【アップデート】ポートフォリオをNext.js 16に更新",
+      "text": "ポートフォリオサイトをNext.js 15から16へアップグレード。JSX Transformへの移行に伴うReactインポートの整理や、Vitest v4・Storybook v10.5系への対応など、依存パッケージを一括で最新化しました。",
       "url": "https://blog.isystk.com/career/lifehack/829/",
-      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2020/05/portfolio_mockup-scaled-1-1024x727.jpg",
-      "date": "2026-02-01"
+      "imageUrl": "https://github.com/isystk/profile.isystk.com/raw/master/demo.gif",
+      "date": "2026-07-17"
     },
     {
       "title": "【リニューアル】Alexaアプリ：日本のトレンドニュースをお知らせするスキルを公開",
@@ -236,20 +242,13 @@
       "url": "https://blog.isystk.com/info/news/1085/",
       "imageUrl": "https://blog.isystk.com/wp-content/uploads/2026/01/screenshot-1024x585.jpg",
       "date": "2020-05-19"
-    },
-    {
-      "title": "X(Twitter)フォロワー7000人達成！",
-      "text": "ビジネスを加速させるための具体的なSNS戦略とその実践的な秘訣をマーケティングの観点から徹底解説します。",
-      "url": "https://blog.isystk.com/career/columns/861/",
-      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2026/01/eyecatch-9-1024x572.jpg",
-      "date": "2020-05-12"
     }
 
   ],
   "contacts": [
     {
       "name": "Twitter",
-      "linkUrl": "https://twitter.com/ise0616/",
+      "linkUrl": "https://twitter.com/ise0615/",
       "icon": "twitter"
     },
     {

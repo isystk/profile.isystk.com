@@ -1,5 +1,5 @@
 import styles from './styles.module.scss';
-import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa6';
+import { FaFacebook, FaXTwitter, FaInstagram, FaGithub } from 'react-icons/fa6';
 
 export type SocialLink = {
   href: string;
@@ -13,7 +13,7 @@ export type Props = {
 
 const iconMap = {
   facebook: <FaFacebook />,
-  twitter: <FaTwitter />,
+  twitter: <FaXTwitter />,
   instagram: <FaInstagram />,
   github: <FaGithub />,
 };

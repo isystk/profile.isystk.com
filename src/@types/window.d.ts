@@ -9,5 +9,14 @@ interface Window {
   jQuery;
   $;
   grecaptcha;
+  twttr?: {
+    widgets: {
+      load: (el?: HTMLElement) => void;
+    };
+    events: {
+      bind: (event: string, callback: () => void) => void;
+    };
+    ready: (callback: (twttr: NonNullable<Window['twttr']>) => void) => void;
+  };
 }
 declare const window: Window;
