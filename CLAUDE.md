@@ -76,6 +76,14 @@ src/components/
 
 `NEXT_PUBLIC_ENDPOINT_URL` が API のベース URL となる。`public/api/` 以下に静的 JSON を配置し、それを fetch する構成。
 
+`NEXT_PUBLIC_GTM_CONTAINER_ID` に GTM コンテナID（例: `GTM-XXXXXXX`）を設定すると、GA計測用の GTM タグが埋め込まれる。未設定の場合は何も埋め込まれない（`src/components/atoms/GoogleTagManager`）。
+
+### GTM (Google Tag Manager) 設定
+
+- `@next/third-parties/google` の `GoogleTagManager` コンポーネントを利用し、`src/components/atoms/GoogleTagManager/index.tsx` にラップして `src/app/layout.tsx` の `<body>` 直下に配置している。
+- `noscript` 用の iframe フォールバックは `@next/third-parties` 側で提供されないため、同コンポーネント内で手動追加している（他プロジェクト同様、JS無効時もGTMが機能するようにするため）。
+- コンテナIDは `NEXT_PUBLIC_GTM_CONTAINER_ID` で制御し、未設定時は何も描画しない（ローカル開発・テスト環境での誤発火を防止）。
+
 ## テスト
 
 テストは Storybook の `composeStories` を使って Stories をそのままレンダリングして検証するパターンを採用している。

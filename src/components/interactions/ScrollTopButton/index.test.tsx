@@ -3,8 +3,9 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { render, screen, fireEvent, act } from '@testing-library/react';
 import * as stories from './index.stories';
 import { composeStories } from '@storybook/react';
+import styles from './styles.module.scss';
 
-const { Default } = composeStories(stories);
+const { Default, Dark } = composeStories(stories);
 
 describe('ScrollTopButton Storybook Tests', () => {
   beforeEach(() => {
@@ -65,5 +66,17 @@ describe('ScrollTopButton Storybook Tests', () => {
     expect(window.scrollTo).toHaveBeenCalled();
     // 最終的に 0 (ページトップ) に到達することを確認
     expect(window.scrollTo).toHaveBeenLastCalledWith(0, 0);
+  });
+
+  it('デフォルトでは light テーマのクラスが付与されること', () => {
+    render(<Default />);
+    const button = screen.getByRole('link');
+    expect(button).toHaveClass(styles.light);
+  });
+
+  it('theme="dark" を指定すると dark テーマのクラスが付与されること', () => {
+    render(<Dark />);
+    const button = screen.getByRole('link');
+    expect(button).toHaveClass(styles.dark);
   });
 });

@@ -11,7 +11,7 @@ vi.mock('next/navigation', () => ({
   }),
 }));
 
-const { Default } = composeStories(stories);
+const { Default, HideTop } = composeStories(stories);
 
 describe('Header Storybook Tests', () => {
   it('お問い合わせボタンをクリックするとクリックイベントが発動すること', () => {
@@ -32,5 +32,41 @@ describe('Header Storybook Tests', () => {
     }
 
     fireEvent.click(contactLink);
+  });
+
+  it('isHideTop=false の場合、常に表示状態であること', () => {
+    const { container } = render(<Default />);
+    const header = container.querySelector('header');
+    expect(header?.className).toContain('visible');
+  });
+
+  it('isHideTop=true の場合、初期状態では非表示であること', () => {
+    const { container } = render(<HideTop />);
+    const header = container.querySelector('header');
+    expect(header?.className).not.toContain('visible');
+  });
+
+  it('isHideTop=true の場合、100px以上スクロールすると表示されること', () => {
+    const { container } = render(<HideTop />);
+
+    vi.stubGlobal('scrollY', 150);
+    fireEvent.scroll(window);
+
+    const header = container.querySelector('header');
+    expect(header?.className).toContain('visible');
+    vi.unstubAllGlobals();
+  });
+
+  it('isHideTop=true の場合、100px以下にスクロールが戻ると再度非表示になること', () => {
+    const { container } = render(<HideTop />);
+
+    vi.stubGlobal('scrollY', 150);
+    fireEvent.scroll(window);
+    expect(container.querySelector('header')?.className).toContain('visible');
+
+    vi.stubGlobal('scrollY', 0);
+    fireEvent.scroll(window);
+    expect(container.querySelector('header')?.className).not.toContain('visible');
+    vi.unstubAllGlobals();
   });
 });

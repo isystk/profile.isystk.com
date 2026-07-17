@@ -1,9 +1,10 @@
 import '@/assets/styles/app.scss';
-import { JSX } from 'react';
+import React, { JSX } from 'react';
 import { AppProvider } from '@/states/AppContext';
 import AppWrapper from '@/app/AppWrapper';
 import { Metadata, Viewport } from 'next';
 import Env from '@/constants/env';
+import GoogleTagManager from '@/components/atoms/GoogleTagManager';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -21,7 +22,6 @@ export const metadata: Metadata = {
     type: 'website',
     url: Env.APP_URL,
   },
-  viewport: 'width=device-width, initial-scale=1',
 };
 
 type Props = {
@@ -33,6 +33,7 @@ export default function RootLayout({ children }: Props) {
     <html lang="ja">
       <head />
       <body>
+        <GoogleTagManager />
         <AppProvider>
           <AppWrapper>{children}</AppWrapper>
         </AppProvider>

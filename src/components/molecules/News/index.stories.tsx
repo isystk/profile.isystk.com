@@ -45,3 +45,25 @@ export const Default: Story = {
     return <NewsSection />;
   },
 };
+
+export const WithoutImage: Story = {
+  render: () => {
+    vi.spyOn(useAppRootModule, 'default').mockReturnValue({
+      state: {
+        portfolio: {
+          news: [
+            {
+              title: '画像未設定のお知らせ',
+              text: 'imageUrl が未設定の場合はダミー画像が表示されます。',
+              date: '2026.03.01',
+              url: 'https://example.com/news/3',
+              imageUrl: '',
+            },
+          ],
+        },
+      },
+    } as ReturnType<typeof useAppRootModule.default>);
+
+    return <NewsSection />;
+  },
+};

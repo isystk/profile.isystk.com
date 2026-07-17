@@ -12,3 +12,7 @@ export default meta;
 export const Default: { render: () => JSX.Element } = {
   render: () => <Header />,
 };
+
+export const HideTop: { render: () => JSX.Element } = {
+  render: () => <Header isHideTop={true} />,
+};

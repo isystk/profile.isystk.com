@@ -37,3 +37,14 @@ export const WithEagerLoading: StoryFn = () => (
     height={150}
   />
 );
+
+export const WithZoom: StoryFn = () => (
+  <Image src="/assets/images/profile.jpeg" alt="ズーム可能な画像" zoom={true} className="border" />
+);
+
+export const WithStaticImageData: StoryFn = () => (
+  <Image
+    src={{ src: '/assets/images/dummy.png', width: 10, height: 10 }}
+    alt="StaticImageData画像"
+  />
+);

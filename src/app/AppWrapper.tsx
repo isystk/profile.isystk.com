@@ -1,6 +1,6 @@
 'use client';
 
-import { JSX, useEffect, useState } from 'react';
+import React, { JSX, useEffect, useState } from 'react';
 import useAppRoot from '@/states/useAppRoot';
 
 type Props = {
