@@ -1,4 +1,3 @@
-import React from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import * as stories from './index.stories';
@@ -20,13 +19,15 @@ describe('ImageInput Storybook Tests', () => {
   });
 
   it('画像ファイルが未選択の場合にエラーメッセージが表示されること(Laravelのエラー)', () => {
+    window.laravelErrors = { profile_picture: ['Laravel側のエラーです'] };
     render(<WithLaravelError />);
     expect(screen.getByText('Laravel側のエラーです')).toBeInTheDocument();
   });
 
   it('表示された後、グローバル変数からは削除されること', () => {
+    window.laravelErrors = { profile_picture: ['Laravel側のエラーです'] };
     render(<WithLaravelError />);
-    expect(window.laravelErrors.message).toBeUndefined();
+    expect(window.laravelErrors.profile_picture).toBeUndefined();
   });
 
   it('画像ファイルを選択するとプレビューが表示されること', async () => {

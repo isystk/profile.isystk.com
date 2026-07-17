@@ -1,4 +1,3 @@
-import React from 'react';
 import ErrorPage from './index';
 import { JSX } from 'react';
 

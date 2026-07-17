@@ -1,4 +1,3 @@
-import React from 'react';
 import { useState } from 'react';
 import ImageInput from './index';
 import type { Meta, StoryFn } from '@storybook/nextjs';
@@ -31,17 +30,11 @@ export const WithError: StoryFn = () => (
   />
 );
 
-export const WithLaravelError: StoryFn = () => {
-  if (typeof window !== 'undefined') {
-    window.laravelErrors = {
-      profile_picture: ['Laravel側のエラーです'],
-    };
-  }
-
-  return (
-    <ImageInput identity="profile_picture" label="プロフィール画像" value="" required={true} />
-  );
-};
+// window.laravelErrors はレンダー前に呼び出し側（テストコード等）で設定する想定。
+// コンポーネントのレンダー中に外部変数を変更しないよう、ここでは設定しない。
+export const WithLaravelError: StoryFn = () => (
+  <ImageInput identity="profile_picture" label="プロフィール画像" value="" required={true} />
+);
 
 export const WithPreview: StoryFn = () => {
   const [value] = useState('');

@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect, useState } from 'react';
 
 type Props = {
@@ -7,21 +6,20 @@ type Props = {
 };
 
 const SessionAlert = ({ target, className }: Props) => {
-  const [message, setMessage] = useState<string | undefined>(undefined);
+  // 初回マウント時のみ Laravel のメッセージを取り込む（読み取りは初期化関数で一度だけ行う）
+  const [message] = useState<string | undefined>(() =>
+    typeof window !== 'undefined' ? window.laravelSession?.[target] : undefined,
+  );
 
+  // グローバル変数の変更は副作用としてエフェクト内で行う
   useEffect(() => {
-    const laravelMessage = window.laravelSession?.[target];
-    if (!message && laravelMessage) {
-      setMessage(laravelMessage);
+    if (message && window.laravelSession && typeof window.laravelSession === 'object') {
+      window.laravelSession[target] = '';
     }
-  }, [target, message]);
+  }, [message, target]);
 
   if (!message) {
     return <></>;
-  }
-
-  if (window.laravelSession && typeof window.laravelSession === 'object') {
-    window.laravelSession[target] = '';
   }
 
   return (

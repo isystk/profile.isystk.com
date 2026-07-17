@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import styles from './styles.module.scss';
 import { useInView } from '@/hooks/useInView';
 

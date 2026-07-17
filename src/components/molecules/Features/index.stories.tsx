@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import Features from './index';
 import * as useAppRootModule from '@/states/useAppRoot';

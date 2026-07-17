@@ -1,20 +1,18 @@
-import { FlatCompat } from "@eslint/eslintrc";
-import { includeIgnoreFile } from "@eslint/compat"; // 追加
+import { includeIgnoreFile } from "@eslint/compat";
 import { dirname, resolve } from "path";
 import { fileURLToPath } from "url";
+import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
+import nextTypescript from "eslint-config-next/typescript";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
 
 const eslintConfig = [
   // .gitignore を読み込んで ignores として適用する
   includeIgnoreFile(resolve(__dirname, ".gitignore")),
 
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  ...nextCoreWebVitals,
+  ...nextTypescript,
 
   {
     rules: {

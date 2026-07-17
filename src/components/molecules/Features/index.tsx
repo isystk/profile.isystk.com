@@ -1,6 +1,6 @@
 'use client';
 import styles from './styles.module.scss';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from '@/components/atoms/Image';
 import ParallaxSticky from '@/components/interactions/ParallaxSticky';

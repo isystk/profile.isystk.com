@@ -1,4 +1,3 @@
-import React from 'react';
 import { describe, it, expect, afterEach } from 'vitest';
 import { render } from '@testing-library/react';
 import { renderToStaticMarkup } from 'react-dom/server';

@@ -1,4 +1,3 @@
-import React from 'react';
 import CSRFToken from './index';
 import type { Meta } from '@storybook/nextjs';
 import { JSX } from 'react';

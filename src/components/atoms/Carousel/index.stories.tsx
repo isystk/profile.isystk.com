@@ -1,4 +1,3 @@
-import React from 'react';
 import Carousel from './index';
 import type { Meta, StoryFn } from '@storybook/nextjs';
 

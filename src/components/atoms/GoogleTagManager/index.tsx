@@ -1,4 +1,3 @@
-import React from 'react';
 import { GoogleTagManager as NextGoogleTagManager } from '@next/third-parties/google';
 import Env from '@/constants/env';
 

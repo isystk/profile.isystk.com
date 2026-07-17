@@ -1,7 +1,6 @@
 'use client';
 
 import styles from './styles.module.scss';
-import React from 'react';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import Image from '@/components/atoms/Image';
 import dummyImage from '@/assets/images/dummy.png';

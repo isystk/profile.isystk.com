@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryFn } from '@storybook/nextjs';
 import SelectionInput from './index';
 
@@ -47,20 +46,14 @@ export const WithError: StoryFn = () => (
   />
 );
 
-export const WithLaravelError: StoryFn = () => {
-  if (typeof window !== 'undefined') {
-    window.laravelErrors = {
-      radio: ['Laravel側のエラーです'],
-    };
-  }
-
-  return (
-    <SelectionInput
-      identity="radio"
-      label="ラジオボタン"
-      controlType="radio"
-      options={options}
-      required={true}
-    />
-  );
-};
+// window.laravelErrors はレンダー前に呼び出し側（テストコード等）で設定する想定。
+// コンポーネントのレンダー中に外部変数を変更しないよう、ここでは設定しない。
+export const WithLaravelError: StoryFn = () => (
+  <SelectionInput
+    identity="radio"
+    label="ラジオボタン"
+    controlType="radio"
+    options={options}
+    required={true}
+  />
+);

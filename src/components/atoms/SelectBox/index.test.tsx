@@ -1,4 +1,3 @@
-import React from 'react';
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { composeStories } from '@storybook/react';
@@ -29,12 +28,14 @@ describe('SelectBox Storybook Tests', () => {
   });
 
   it('未選択の場合にエラーメッセージが表示されること(Laravelのエラー)', () => {
+    window.laravelErrors = { 'select-box': ['Laravel側のエラーです'] };
     render(<WithLaravelError />);
     expect(screen.getByText('Laravel側のエラーです')).toBeInTheDocument();
   });
 
   it('表示された後、グローバル変数からは削除されること', () => {
+    window.laravelErrors = { 'select-box': ['Laravel側のエラーです'] };
     render(<WithLaravelError />);
-    expect(window.laravelErrors.message).toBeUndefined();
+    expect(window.laravelErrors['select-box']).toBeUndefined();
   });
 });

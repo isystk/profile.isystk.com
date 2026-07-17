@@ -1,5 +1,5 @@
 import '@/assets/styles/app.scss';
-import React, { JSX } from 'react';
+import { JSX } from 'react';
 import { AppProvider } from '@/states/AppContext';
 import AppWrapper from '@/app/AppWrapper';
 import { Metadata, Viewport } from 'next';

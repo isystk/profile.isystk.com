@@ -1,6 +1,5 @@
-import React from 'react';
 import styles from './styles.module.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export type Props = {
   isOpen: boolean;
@@ -10,10 +9,13 @@ export type Props = {
 
 const HamburgerButton = (props: Props) => {
   const [isOpen, setOpen] = useState(props.isOpen);
-
-  useEffect(() => {
+  // レンダー中に前回のprops.isOpen値と比較して状態を調整する（Reactが推奨するパターン）
+  // https://react.dev/reference/react/useState#storing-information-from-previous-renders
+  const [prevPropsIsOpen, setPrevPropsIsOpen] = useState(props.isOpen);
+  if (props.isOpen !== prevPropsIsOpen) {
+    setPrevPropsIsOpen(props.isOpen);
     setOpen(props.isOpen);
-  }, [props.isOpen]);
+  }
 
   const handleClick = () => {
     const open = !isOpen;
