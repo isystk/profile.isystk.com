@@ -17,11 +17,14 @@ describe('MainVisual Storybook Tests', () => {
     vi.useFakeTimers();
 
     // IntersectionObserver のモック（ScrollIn用）
-    const mockIntersectionObserver = vi.fn(() => ({
-      observe: vi.fn(),
-      unobserve: vi.fn(),
-      disconnect: vi.fn(),
-    }));
+    // vitest v4 では new 演算子でアロー関数を呼び出せないため、function式で実装する
+    const mockIntersectionObserver = vi.fn(function () {
+      return {
+        observe: vi.fn(),
+        unobserve: vi.fn(),
+        disconnect: vi.fn(),
+      };
+    });
     vi.stubGlobal('IntersectionObserver', mockIntersectionObserver);
 
     // 要素の座標取得用モック（scrollToNextで必要）

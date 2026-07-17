@@ -10,11 +10,14 @@ const { Blue } = composeStories(stories);
 describe('HorizontalRule', () => {
   beforeEach(() => {
     // IntersectionObserver をモックして即座に交差（表示）状態にする
+    // vitest v4 では new 演算子で呼び出すモックに mockReturnValue が使えないため mockImplementation を使う
     const mockIntersectionObserver = vi.fn();
-    mockIntersectionObserver.mockReturnValue({
-      observe: vi.fn(),
-      unobserve: vi.fn(),
-      disconnect: vi.fn(),
+    mockIntersectionObserver.mockImplementation(function () {
+      return {
+        observe: vi.fn(),
+        unobserve: vi.fn(),
+        disconnect: vi.fn(),
+      };
     });
     vi.stubGlobal('IntersectionObserver', mockIntersectionObserver);
   });

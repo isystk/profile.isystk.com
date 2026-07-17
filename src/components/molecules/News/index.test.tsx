@@ -9,16 +9,19 @@ const { Default } = composeStories(stories);
 
 describe('NewsSection Tests', () => {
   beforeEach(() => {
+    // vitest v4 では new 演算子でアロー関数を呼び出せないため、function式で実装する
     vi.stubGlobal(
       'IntersectionObserver',
-      vi.fn(cb => ({
-        observe: () => {
-          cb([{ isIntersecting: true }]);
-          return null;
-        },
-        unobserve: vi.fn(),
-        disconnect: vi.fn(),
-      })),
+      vi.fn(function (cb) {
+        return {
+          observe: () => {
+            cb([{ isIntersecting: true }]);
+            return null;
+          },
+          unobserve: vi.fn(),
+          disconnect: vi.fn(),
+        };
+      }),
     );
   });
 
