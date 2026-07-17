@@ -15,7 +15,11 @@ const TWITTER_WIDGETS_SRC = 'https://platform.twitter.com/widgets.js';
 // 同一ハンドルへの widgets.load() 呼び出しを1回に制限するガード。
 // StrictModeの二重effect実行やFast Refreshによる再マウントのたびに
 // syndication APIへ再アクセスし、アクセス制限(429)を招くのを防ぐ。
+// loadedTimelineKeys: レンダリングに成功したキー（再読み込み不要）
+// pendingTimelineKeys: 読み込み中のキー（多重呼び出しの防止用）。
+// 読み込みが失敗した場合はフォールバック表示のタイミングで解除し、次回マウント時に再試行できるようにする。
 const loadedTimelineKeys = new Set<string>();
+const pendingTimelineKeys = new Set<string>();
 
 const XTimeline = ({ handle, height = 500, theme = 'light', fallbackTimeout = 5000 }: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -28,15 +32,19 @@ const XTimeline = ({ handle, height = 500, theme = 'light', fallbackTimeout = 50
 
     const timer = window.setTimeout(() => {
       if (!cancelled) setShowFallback(true);
+      // レンダリングに至らなかったとみなし、次回マウント時の再試行を許可する
+      pendingTimelineKeys.delete(loadKey);
     }, fallbackTimeout);
 
     const bindRenderedEvent = (twttr: NonNullable<Window['twttr']>) => {
       twttr.events.bind('rendered', () => {
         if (!cancelled) setIsRendered(true);
+        loadedTimelineKeys.add(loadKey);
+        pendingTimelineKeys.delete(loadKey);
       });
 
-      if (loadedTimelineKeys.has(loadKey)) return;
-      loadedTimelineKeys.add(loadKey);
+      if (loadedTimelineKeys.has(loadKey) || pendingTimelineKeys.has(loadKey)) return;
+      pendingTimelineKeys.add(loadKey);
       twttr.widgets.load(containerRef.current ?? undefined);
     };
 

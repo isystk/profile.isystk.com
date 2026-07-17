@@ -226,7 +226,7 @@
       "title": "【アップデート】ポートフォリオをNext.js 16に更新",
       "text": "ポートフォリオサイトをNext.js 15から16へアップグレード。JSX Transformへの移行に伴うReactインポートの整理や、Vitest v4・Storybook v10.5系への対応など、依存パッケージを一括で最新化しました。",
       "url": "https://blog.isystk.com/career/lifehack/829/",
-      "imageUrl": "https://github.com/isystk/profile.isystk.com/raw/master/demo.gif",
+      "imageUrl": "https://blog.isystk.com/wp-content/uploads/2026/07/eyecatch-2-1024x572.jpg",
       "date": "2026-07-17"
     },
     {
