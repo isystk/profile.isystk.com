@@ -13,7 +13,8 @@ describe('ScrollIn Storybook Tests', () => {
   beforeEach(() => {
     vi.stubGlobal(
       'IntersectionObserver',
-      vi.fn(cb => {
+      // vitest v4 では new 演算子でアロー関数を呼び出せないため、function式で実装する
+      vi.fn(function (cb) {
         observerCallback = cb;
         return {
           observe: vi.fn(),
