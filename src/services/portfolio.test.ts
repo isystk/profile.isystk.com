@@ -17,7 +17,13 @@ describe('PortfolioService', () => {
   it('read が成功した場合、取得したデータを portfolio に反映して setRootState を呼ぶこと', async () => {
     const { main, setRootState } = setup();
     const responseData = {
-      profile: { name: 'テスト太郎', imageUrl: '', message: '', twitter_follower: 0, updated_at: '' },
+      profile: {
+        name: 'テスト太郎',
+        imageUrl: '',
+        message: '',
+        twitter_follower: 0,
+        updated_at: '',
+      },
       news: [{ title: 'news', text: '', url: '', imageUrl: '', date: '' }],
     };
     vi.stubGlobal(

@@ -24,8 +24,8 @@ describe('AppContext', () => {
       },
       {
         wrapper: ({ children }: { children: React.ReactNode }) => (
-        <AppProvider>{children as JSX.Element}</AppProvider>
-      ),
+          <AppProvider>{children as JSX.Element}</AppProvider>
+        ),
       },
     );
 
