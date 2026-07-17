@@ -4,6 +4,7 @@ import { AppProvider } from '@/states/AppContext';
 import AppWrapper from '@/app/AppWrapper';
 import { Metadata, Viewport } from 'next';
 import Env from '@/constants/env';
+import GoogleTagManager from '@/components/atoms/GoogleTagManager';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: Props) {
     <html lang="ja">
       <head />
       <body>
+        <GoogleTagManager />
         <AppProvider>
           <AppWrapper>{children}</AppWrapper>
         </AppProvider>
