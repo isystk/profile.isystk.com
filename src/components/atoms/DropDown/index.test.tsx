@@ -33,4 +33,15 @@ describe('DropDown Storybook Tests', () => {
     fireEvent.click(item);
     expect(screen.getByText('選択された項目: 選択肢1')).toBeInTheDocument();
   });
+
+  it('メニュー外をクリックするとメニューが閉じること', () => {
+    render(<Default />);
+    const toggle = screen.getByRole('button', { name: 'メニューを開く' });
+    fireEvent.click(toggle);
+    const dropdownMenu = document.querySelector('.dropdownMenu');
+    expect(dropdownMenu).not.toHaveClass('hidden');
+
+    fireEvent.click(document.body);
+    expect(dropdownMenu).toHaveClass('hidden');
+  });
 });

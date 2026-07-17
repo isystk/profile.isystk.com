@@ -21,17 +21,11 @@ export const Default: StoryFn = () => {
   );
 };
 
-export const DisplayAfterScroll: StoryFn = () => {
-  if (typeof window !== 'undefined') {
-    setTimeout(() => {
-      window.scrollTo(0, 500);
-    }, 1000);
-  }
-
+export const Dark: StoryFn = () => {
   return (
-    <div style={{ height: '2000px', padding: '16px' }}>
+    <div style={{ height: '1000px', padding: '16px', background: '#222' }}>
       <p>スクロールしてボタンが表示されるのを確認してください。</p>
-      <ScrollTopButton />
+      <ScrollTopButton theme="dark" />
     </div>
   );
 };

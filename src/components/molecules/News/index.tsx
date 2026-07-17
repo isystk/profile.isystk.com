@@ -49,7 +49,7 @@ const NewsSection = () => {
                     className={styles.imageLink}
                   >
                     <Image
-                      src={imageUrl || dummyImage.src}
+                      src={imageUrl || dummyImage}
                       alt={title}
                       zoom={true}
                       className={styles.image}

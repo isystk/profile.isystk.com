@@ -4,8 +4,10 @@ import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/react';
 import * as stories from './index.stories';
 import '@testing-library/jest-dom';
+import styles from './styles.module.scss';
 
-const { Default, WithLazyLoading, WithEagerLoading } = composeStories(stories);
+const { Default, WithLazyLoading, WithEagerLoading, WithZoom, WithStaticImageData } =
+  composeStories(stories);
 
 // img タグの loading 属性をモックする
 beforeAll(() => {
@@ -38,5 +40,19 @@ describe('Image Storybook Tests', () => {
     render(<WithEagerLoading />);
     const img = screen.getByAltText('即時読み込み画像') as HTMLImageElement;
     expect(img.loading).toBe('eager');
+  });
+
+  it('zoom=true の場合、ラップ用のdivとズーム用クラスが付与されること', () => {
+    render(<WithZoom />);
+    const img = screen.getByAltText('ズーム可能な画像');
+    expect(img.parentElement).toHaveClass('border');
+    expect(img.parentElement).toHaveClass(styles.imageWrapper);
+    expect(img).toHaveClass(styles.zoomableImage);
+  });
+
+  it('src に StaticImageData オブジェクトを渡した場合も src 属性が解決されること', () => {
+    render(<WithStaticImageData />);
+    const img = screen.getByAltText('StaticImageData画像') as HTMLImageElement;
+    expect(img).toHaveAttribute('src', '/assets/images/dummy.png');
   });
 });

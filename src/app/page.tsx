@@ -1,3 +1,4 @@
+import React from 'react';
 import BasicLayout from '@/components/templates/BasicLayout';
 import MainVisual from '@/components/molecules/MainVisual';
 import News from '@/components/molecules/News';

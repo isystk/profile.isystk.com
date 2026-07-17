@@ -1,69 +1,79 @@
 import React from 'react';
-import { describe, it, expect, beforeAll } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi, afterEach } from 'vitest';
+import { render, screen, fireEvent } from '@testing-library/react';
 import * as stories from './index.stories';
 import { composeStories } from '@storybook/react';
+import ParallaxSticky from './index';
+import styles from './styles.module.scss';
 
 const { Default } = composeStories(stories);
 
-beforeAll(() => {
-  Object.defineProperty(HTMLElement.prototype, 'getBoundingClientRect', {
-    value: function () {
-      return {
-        top: 1100, // 表示領域内にあるように見せる
-        bottom: 1200,
-        left: 0,
-        right: 0,
-        width: 0,
-        height: 0,
-      };
-    },
-  });
-});
-
 describe('ParallaxSticky Storybook Tests', () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
   it('初期表示状態を確認', async () => {
     render(<Default />);
     expect(screen.getByText(/タイトル/)).toBeInTheDocument();
   });
 
-  // TODO エラーになるのでコメントアウト
-  // it('スクロールして要素が表示領域に入ると表示されること', async () => {
-  //   render(<Default />);
-  //
-  //   // スクロール位置を1000pxに設定してボタンを表示
-  //   act(() => {
-  //     window.scrollTo(0, 1001);
-  //   });
-  //
-  //   await waitFor(
-  //     () => {
-  //       const element = screen.getByText(/スクロールして表示されます/);
-  //       expect(element.parentElement).toHaveClass('show');
-  //     },
-  //   );
-  // });
+  it('indicator を指定しない場合はインジケーターが表示されないこと', () => {
+    const { container } = render(
+      <ParallaxSticky height="1000px">
+        <div>コンテンツ</div>
+      </ParallaxSticky>,
+    );
+    expect(container.querySelector(`.${styles.scrollBarWrapper}`)).not.toBeInTheDocument();
+  });
 
-  // TODO エラーになるのでコメントアウト
-  // it('スクロールして要素が表示領域に入ると1秒遅れて表示されること', async () => {
-  //   vi.useFakeTimers();
-  //   render(<WithDelay />);
-  //   await waitFor(() => {
-  //     expect(screen.getByText(/1秒遅れて表示されます/)).not.toBeInTheDocument();
-  //   });
-  //
-  //   await act(() => {
-  //     vi.advanceTimersByTime(1100);
-  //     return Promise.resolve();
-  //   });
-  //
-  //   await waitFor(
-  //     () => {
-  //       expect(screen.getByText(/1秒遅れて表示されます/)).toBeInTheDocument();
-  //     },
-  //     { timeout: 10000 },
-  //   );
-  //
-  //   vi.useRealTimers();
-  // });
+  it('indicator=true の場合、スクロール量に応じてインジケーターの高さが更新されること', () => {
+    Object.defineProperty(HTMLDivElement.prototype, 'offsetTop', {
+      configurable: true,
+      value: 0,
+    });
+    Object.defineProperty(HTMLDivElement.prototype, 'offsetHeight', {
+      configurable: true,
+      value: 1000,
+    });
+    vi.stubGlobal('innerHeight', 500);
+    vi.stubGlobal('scrollY', 250);
+
+    const { container } = render(
+      <ParallaxSticky height="1000px" indicator={true}>
+        <div>コンテンツ</div>
+      </ParallaxSticky>,
+    );
+
+    fireEvent.scroll(window);
+
+    // percent = ((scrollY - offsetTop) / (offsetHeight - innerHeight)) * 100 = (250 - 0) / (1000 - 500) * 100 = 50
+    const thumb = container.querySelector(`.${styles.scrollBarThumb}`) as HTMLElement;
+    expect(thumb).toBeInTheDocument();
+    expect(thumb.style.height).toBe('50%');
+  });
+
+  it('スクロール量が範囲外の場合は 0% ～ 100% にクランプされること', () => {
+    Object.defineProperty(HTMLDivElement.prototype, 'offsetTop', {
+      configurable: true,
+      value: 0,
+    });
+    Object.defineProperty(HTMLDivElement.prototype, 'offsetHeight', {
+      configurable: true,
+      value: 1000,
+    });
+    vi.stubGlobal('innerHeight', 500);
+    vi.stubGlobal('scrollY', -100);
+
+    const { container } = render(
+      <ParallaxSticky height="1000px" indicator={true}>
+        <div>コンテンツ</div>
+      </ParallaxSticky>,
+    );
+
+    fireEvent.scroll(window);
+
+    const thumb = container.querySelector(`.${styles.scrollBarThumb}`) as HTMLElement;
+    expect(thumb.style.height).toBe('0%');
+  });
 });

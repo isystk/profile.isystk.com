@@ -4,8 +4,9 @@ import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/react';
 import * as stories from './index.stories';
 import '@testing-library/jest-dom';
+import dummyImage from '@/assets/images/dummy.png';
 
-const { Default } = composeStories(stories);
+const { Default, WithoutImage } = composeStories(stories);
 
 describe('NewsSection Tests', () => {
   beforeEach(() => {
@@ -51,5 +52,12 @@ describe('NewsSection Tests', () => {
     render(<Default />);
     const images = screen.getAllByRole('img');
     expect(images[0]).toHaveAttribute('alt', 'ポートフォリオサイトを公開しました');
+  });
+
+  it('imageUrlが未設定の場合はダミー画像が表示されること', () => {
+    render(<WithoutImage />);
+    const image = screen.getByAltText('画像未設定のお知らせ') as HTMLImageElement;
+    const expectedSrc = typeof dummyImage === 'string' ? dummyImage : dummyImage.src;
+    expect(image.getAttribute('src')).toBe(expectedSrc);
   });
 });
