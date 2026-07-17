@@ -1,6 +1,7 @@
 import BasicLayout from '@/components/templates/BasicLayout';
 import MainVisual from '@/components/molecules/MainVisual';
 import News from '@/components/molecules/News';
+import XProfileCard from '@/components/molecules/XProfileCard';
 import Features from '@/components/molecules/Features';
 import Instroduction from '@/components/molecules/Instroduction';
 import { Metadata } from 'next';
@@ -26,6 +27,7 @@ const TopPage = () => {
       <Features />
       <div className="h-48"></div>
       <News />
+      <XProfileCard />
       <ThanksMessage />
     </BasicLayout>
   );
