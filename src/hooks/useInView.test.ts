@@ -12,9 +12,10 @@ describe('useInView', () => {
     let observerCallback: (entries: Array<{ isIntersecting: boolean }>) => void = () => {};
     const observe = vi.fn();
     const disconnect = vi.fn();
+    // vitest v4 では new 演算子でアロー関数を呼び出せないため、function式で実装する
     vi.stubGlobal(
       'IntersectionObserver',
-      vi.fn(cb => {
+      vi.fn(function (cb) {
         observerCallback = cb;
         return { observe, unobserve: vi.fn(), disconnect };
       }),
@@ -49,9 +50,12 @@ describe('useInView', () => {
 
   it('アンマウント時に observer を disconnect すること', () => {
     const disconnect = vi.fn();
+    // vitest v4 では new 演算子でアロー関数を呼び出せないため、function式で実装する
     vi.stubGlobal(
       'IntersectionObserver',
-      vi.fn(() => ({ observe: vi.fn(), unobserve: vi.fn(), disconnect })),
+      vi.fn(function () {
+        return { observe: vi.fn(), unobserve: vi.fn(), disconnect };
+      }),
     );
 
     const { unmount } = renderHook(() => {
