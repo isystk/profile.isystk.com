@@ -37,6 +37,11 @@
   }
 }
 
+// モバイルの通常フロー表示では sticky演出用の 200px オフセットは不要なため上書きする
+.featureBoxesMobile {
+  margin-top: 2rem;
+}
+
 .featureBoxWrapper {
   display: flex;
   justify-content: center;

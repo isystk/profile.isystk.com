@@ -19,9 +19,7 @@ describe('XTimeline Tests', () => {
 
   it('widgets.js の読み込みスクリプトが挿入されること', () => {
     render(<Default />);
-    const script = document.querySelector(
-      'script[src="https://platform.twitter.com/widgets.js"]',
-    );
+    const script = document.querySelector('script[src="https://platform.twitter.com/widgets.js"]');
     expect(script).not.toBeNull();
   });
 

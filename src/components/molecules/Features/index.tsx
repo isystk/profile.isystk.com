@@ -13,9 +13,10 @@ interface FeatureItemProps {
   item: Output;
   index: number;
   stickyTop: string;
+  isMobile: boolean;
 }
 
-const FeatureItem = ({ item, index, stickyTop }: FeatureItemProps) => {
+const FeatureItem = ({ item, index, stickyTop, isMobile }: FeatureItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const isEven = index % 2 === 0;
 
@@ -34,56 +35,73 @@ const FeatureItem = ({ item, index, stickyTop }: FeatureItemProps) => {
   const opacityImage = useTransform(scrollYProgress, [0.1, 0.5], [0, 1]);
   const xImage = useTransform(scrollYProgress, [0.3, 0.4], [isEven ? 300 : -300, 0]);
 
+  // モバイルはアドレスバーの表示/非表示でwindow.innerHeightが変動し、
+  // それに連動するsticky固定＋scrollYProgressアニメーションが不連続にジャンプするため、
+  // モバイルでは sticky化・スクロール連動アニメーションを行わず通常フローで表示する。
+  const cardContent = (
+    <div
+      ref={ref}
+      className={`${styles.featureBoxes} ${!isEven ? styles.reverse : ''} ${
+        isMobile ? styles.featureBoxesMobile : ''
+      }`}
+      style={{ display: 'flex', alignItems: 'center' }}
+    >
+      {/* テキストエリア */}
+      <div className={styles.featureBoxWrapper}>
+        <motion.div
+          style={isMobile ? undefined : { opacity: opacityText, x: xText }}
+          className={styles.featureCard}
+        >
+          <div className={styles.textContent}>
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.titleLink}
+            >
+              <p className={styles.cardTitle}>{item.title}</p>
+            </a>
+            <p>{item.text}</p>
+            <div className={styles.linkWrapper}>
+              <a
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.viewMoreBtn}
+              >
+                VIEW MORE <span className={styles.arrow}>→</span>
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* 画像エリア */}
+      <div className={styles.featureBoxWrapper}>
+        <motion.div
+          style={isMobile ? undefined : { opacity: opacityImage, x: xImage }}
+          className={styles.featureCard}
+        >
+          <div className={styles.imageContent}>
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.imageLink}
+            >
+              <Image src={item.imageUrl} alt={item.title} zoom={true} className={styles.image} />
+            </a>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+
+  if (isMobile) return cardContent;
+
   return (
     <ParallaxSticky key={index} height="200svh" top={stickyTop}>
-      <div
-        ref={ref}
-        className={`${styles.featureBoxes} ${!isEven ? styles.reverse : ''}`}
-        style={{ display: 'flex', alignItems: 'center' }}
-      >
-        {/* テキストエリア */}
-        <div className={styles.featureBoxWrapper}>
-          <motion.div style={{ opacity: opacityText, x: xText }} className={styles.featureCard}>
-            <div className={styles.textContent}>
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.titleLink}
-              >
-                <p className={styles.cardTitle}>{item.title}</p>
-              </a>
-              <p>{item.text}</p>
-              <div className={styles.linkWrapper}>
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.viewMoreBtn}
-                >
-                  VIEW MORE <span className={styles.arrow}>→</span>
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* 画像エリア */}
-        <div className={styles.featureBoxWrapper}>
-          <motion.div style={{ opacity: opacityImage, x: xImage }} className={styles.featureCard}>
-            <div className={styles.imageContent}>
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.imageLink}
-              >
-                <Image src={item.imageUrl} alt={item.title} zoom={true} className={styles.image} />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </div>
+      {cardContent}
     </ParallaxSticky>
   );
 };
@@ -95,20 +113,30 @@ const Features = () => {
 
   if (!outputs) return null;
 
-  const stickyTop = isMobile ? '100px' : '250px';
+  const stickyTop = '250px';
 
-  const layerComponent = (
-    <>
-      {outputs.map((item, index) => (
-        <FeatureItem key={index} item={item} index={index} stickyTop={stickyTop} />
-      ))}
-    </>
-  );
+  const featureItems = outputs.map((item, index) => (
+    <FeatureItem key={index} item={item} index={index} stickyTop={stickyTop} isMobile={isMobile} />
+  ));
+
+  // モバイルはアドレスバーの表示/非表示による表示位置のジャンプを避けるため、
+  // sticky固定・スクロール連動の演出をせず通常フローで表示する。
+  if (isMobile) {
+    return (
+      <div className={styles.features}>
+        <div className={styles.inner}>
+          <h2 className={styles.title}>OUTPUT</h2>
+          <HorizontalRule />
+        </div>
+        {featureItems}
+      </div>
+    );
+  }
 
   const totalHeight = `${outputs.length * 200 + 50}svh`;
 
   return (
-    <ParallaxSticky layerComponent={layerComponent} indicator={true} height={totalHeight}>
+    <ParallaxSticky layerComponent={<>{featureItems}</>} indicator={true} height={totalHeight}>
       <div className={styles.features}>
         <div className={styles.inner}>
           <h2 className={styles.title}>OUTPUT</h2>
