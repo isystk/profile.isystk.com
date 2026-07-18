@@ -5,6 +5,18 @@ import * as stories from './index.stories';
 import '@testing-library/jest-dom';
 import { act } from 'react';
 
+vi.mock('@/states/useAppRoot', () => ({
+  default: () => ({
+    state: {
+      portfolio: {
+        profile: {
+          name: 'Yoshitaka Ise',
+        },
+      },
+    },
+  }),
+}));
+
 const { Default } = composeStories(stories);
 
 describe('MainVisual Storybook Tests', () => {

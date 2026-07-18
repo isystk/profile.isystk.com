@@ -4,9 +4,12 @@ import React from 'react';
 import ScrollIn from '@/components/interactions/ScrollIn';
 import { FaChevronDown } from 'react-icons/fa6';
 import { useIsMobile } from '@/hooks/useIsMobile';
+import useAppRoot from '@/states/useAppRoot';
 
 const MainVisual = () => {
   const isMobile = useIsMobile();
+  const { state } = useAppRoot();
+  const profile = state?.portfolio?.profile;
   const scrollToNext = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
 
@@ -49,7 +52,7 @@ const MainVisual = () => {
             <h1 className={styles.registerText}>ITエンジニアを活きる</h1>
           </ScrollIn>
           <ScrollIn delay="1s">
-            <p className={styles.catchPhrase}>Yoshitaka Ise</p>
+            <p className={styles.catchPhrase}>{profile?.name}</p>
           </ScrollIn>
         </div>
       </div>
